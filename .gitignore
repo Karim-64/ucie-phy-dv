@@ -1,0 +1,22 @@
+# simulator outputs
+simv
+simv.daidir/
+csrc/
+work/
+xcelium.d/
+INCA_libs/
+transcript
+vsim.wlf
+*.log
+*.vcd
+*.fsdb
+*.wlf
+*.vpd
+ucli.key
+# coverage databases
+*.vdb
+cov_work/
+*.ucdb
+# regression results
+regress/results/*
+!regress/results/.gitkeep

@@ -1,0 +1,17 @@
+vlib work
+
+vlog ../RTL/*.sv +cover
+
+# Compile UVM package, interface, and testbench
+vlog +incdir+../ ../packages/{{ spec.name }}_pkg.sv ../interfaces/{{ spec.name }}_if.sv ../tb/tb_top.sv +cover -covercells
+
+# Elaborate and run
+vsim -voptargs=+acc -classdebug work.tb_top -cover -uvmcontrol=all +UVM_TESTNAME={{ spec.name }}_base_test
+
+coverage save {{ spec.name }}_coverage.ucdb -onexit -du work.{{ spec.dut.module_name if spec.dut else "DUT" }}
+
+run 0
+
+# do wave.do
+
+run -all

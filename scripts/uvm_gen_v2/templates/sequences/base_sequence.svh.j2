@@ -1,0 +1,21 @@
+`ifndef {{ spec.upper }}_BASE_SEQUENCE_SVH
+`define {{ spec.upper }}_BASE_SEQUENCE_SVH
+
+class {{ spec.name }}_base_sequence extends uvm_sequence #({{ spec.name }}_sequence_item);
+  `uvm_object_utils({{ spec.name }}_base_sequence)
+  `uvm_declare_p_sequencer({{ spec.name }}_sequencer)
+
+  function new(string name = "{{ spec.name }}_base_sequence");
+    super.new(name);
+  endfunction
+
+  task body();
+    // TODO: Implement sequence body
+    // e.g. req = {{ spec.name }}_sequence_item::type_id::create("req");
+    // start_item(req);
+    // if (!req.randomize() with { ... }) `uvm_error("SEQ", "Randomization failed")
+    // finish_item(req);
+  endtask
+endclass
+
+`endif // {{ spec.upper }}_BASE_SEQUENCE_SVH

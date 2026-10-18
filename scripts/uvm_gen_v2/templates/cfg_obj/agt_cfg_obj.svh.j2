@@ -1,0 +1,16 @@
+`ifndef {{ spec.upper }}_AGT_CFG_OBJ_SVH
+`define {{ spec.upper }}_AGT_CFG_OBJ_SVH
+
+class {{ spec.name }}_agt_cfg_obj extends uvm_object;
+  `uvm_object_utils({{ spec.name }}_agt_cfg_obj);
+
+  virtual {{ spec.name }}_if#({{ spec.if_param_port_list }}) {{ spec.name }}_vif;
+  uvm_active_passive_enum is_active;
+  bit {{ spec.name }}_has_monitor;
+
+  function new(string name = "{{ spec.name }}_agt_cfg_obj");
+    super.new(name);
+  endfunction
+endclass
+
+`endif // {{ spec.upper }}_AGT_CFG_OBJ_SVH

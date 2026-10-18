@@ -1,0 +1,41 @@
+`ifndef {{ spec.upper }}_SEQUENCE_ITEM_SVH
+`define {{ spec.upper }}_SEQUENCE_ITEM_SVH
+
+class {{ spec.name }}_sequence_item extends uvm_sequence_item;
+  `uvm_object_utils({{ spec.name }}_sequence_item)
+
+  // -------------------------------------------------------------------------
+  //  Stimulus fields (directly driven to the DUT) - declared rand
+  // -------------------------------------------------------------------------
+{% for s in spec.driven_signals %}
+  rand {{ s.sv_type }} {{ s.name }};
+{% endfor %}
+  // -------------------------------------------------------------------------
+  //  Response fields (sampled from the DUT) - NOT rand
+  // -------------------------------------------------------------------------
+{% for s in spec.monitored_signals %}
+  {{ s.sv_type }} {{ s.name }};
+{% endfor %}
+  // -------------------------------------------------------------------------
+  //  Constructor
+  // -------------------------------------------------------------------------
+  function new(string name = "{{ spec.name }}_sequence_item");
+    super.new(name);
+  endfunction
+
+  // -------------------------------------------------------------------------
+  //  convert2string - human-readable representation for logs / debug
+  // -------------------------------------------------------------------------
+  virtual function string convert2string();
+{% set fmt_parts = [] %}
+{% for s in spec.driven_signals + spec.monitored_signals %}
+{% set fmt = s.name ~ "=%0b" if s.width == "1" else s.name ~ "=0x%0h" %}
+{% set _ = fmt_parts.append(fmt) %}
+{% endfor %}
+    return $sformatf("{{ spec.name }}_seq_item: {{ fmt_parts | join(' ') }}",
+      {{ (spec.driven_signals + spec.monitored_signals) | map(attribute='name') | join(', ') }});
+  endfunction
+
+endclass
+
+`endif // {{ spec.upper }}_SEQUENCE_ITEM_SVH

@@ -1,0 +1,27 @@
+interface {{ spec.name }}_if #(
+{% for p in spec.parameters %}
+  parameter {{ p.name }} = {{ p.value }}{{ "," if not loop.last }}
+{% endfor %}
+) (input logic {{ spec.clock_name }});
+{% for s in spec.driven_signals %}
+  wire logic{{ "[" ~ s.width ~ "-1 : 0]" if s.width != "1" }} {{ s.name }};
+{% endfor %}
+
+{% for s in spec.monitored_signals %}
+  wire logic{{ "[" ~ s.width ~ "-1 : 0]" if s.width != "1" }} {{ s.name }};
+{% endfor %}
+
+  clocking drv_cb @(posedge {{ spec.clock_name }});
+    // signals driven by the driver
+{% for s in spec.driven_signals %}
+    output {{ s.name }};
+{% endfor %}
+  endclocking
+
+  clocking mon_cb @(posedge {{ spec.clock_name }});
+    // signals sampled by the monitor
+{% for s in spec.monitored_signals %}
+    input {{ s.name }};
+{% endfor %}
+  endclocking
+endinterface

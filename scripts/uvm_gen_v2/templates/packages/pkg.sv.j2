@@ -1,0 +1,40 @@
+`timescale 1ns/1ps
+package {{ spec.name }}_pkg;
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
+
+  // Shared design parameters
+{% for p in spec.parameters %}
+  parameter {{ p.name }} = {{ p.value }};
+{% endfor %}
+
+  // Configuration Objects (bottom-up: drv/mon -> agt -> env)
+  `include "cfg_obj/{{ spec.name }}_drv_mon_cfg_obj.svh"
+  `include "cfg_obj/{{ spec.name }}_agt_cfg_obj.svh"
+  `include "cfg_obj/{{ spec.name }}_env_cfg_obj.svh"
+
+  // Sequence Items
+  `include "sequences/{{ spec.name }}_sequence_item.svh"
+
+  // UVM Sequencer to be able to uvm_declare_p_sequencer
+  `include "components/{{ spec.name }}_sequencer.svh"
+
+  // Sequences
+  `include "sequences/{{ spec.name }}_base_sequence.svh"
+
+  // UVM Components (bottom-up)
+  `include "components/{{ spec.name }}_driver.svh"
+  `include "components/{{ spec.name }}_monitor.svh"
+  `include "components/{{ spec.name }}_agent.svh"
+
+{% if spec.env.has_scoreboard %}
+  `include "components/{{ spec.name }}_scoreboard.svh"
+{% endif %}
+{% if spec.env.has_subscriber %}
+  `include "components/{{ spec.name }}_subscriber.svh"
+{% endif %}
+  `include "components/{{ spec.name }}_environment.svh"
+
+  // Base Test
+  `include "components/{{ spec.name }}_base_test.svh"
+endpackage

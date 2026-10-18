@@ -1,0 +1,37 @@
+<uvm_env name="mem">
+
+  <parameters>
+    <parameter name="DATA_WIDTH" value="128"/>
+    <parameter name="ADDRESS_WIDTH" value="4"/>
+  </parameters>
+
+  <clock name="clk"/>
+
+  <signals>
+    <signal name="rst"       width="1"            direction="drv"/>
+    <signal name="cs"        width="1"            direction="drv"/>
+    <signal name="we"        width="1"            direction="drv"/>
+    <signal name="addr"      width="ADDRESS_WIDTH" direction="drv"/>
+    <signal name="data_in"   width="DATA_WIDTH"    direction="drv"/>
+    <signal name="data_out"  width="DATA_WIDTH"    direction="mon"/>
+    <signal name="valid_out" width="1"            direction="mon"/>
+  </signals>
+
+  <dut>
+    <module_name>Memory</module_name>
+    <instance_name>dut</instance_name>
+    <port dut_port="data_in"   signal="data_in"/>
+    <port dut_port="addr"      signal="addr"/>
+    <port dut_port="cs"        signal="cs"/>
+    <port dut_port="we"        signal="we"/>
+    <port dut_port="clk"       signal="clk"/>
+    <port dut_port="rst"       signal="rst"/>
+    <port dut_port="data_out"  signal="data_out"/>
+    <port dut_port="valid_out" signal="valid_out"/>
+  </dut>
+
+  <env>
+    <has_scoreboard>true</has_scoreboard>
+  </env>
+
+</uvm_env>

@@ -1,0 +1,14 @@
+`ifndef {{ spec.upper }}_DRV_MON_CFG_OBJ_SVH
+`define {{ spec.upper }}_DRV_MON_CFG_OBJ_SVH
+
+class {{ spec.name }}_drv_mon_cfg_obj extends uvm_object;
+  `uvm_object_utils({{ spec.name }}_drv_mon_cfg_obj)
+
+  virtual {{ spec.name }}_if #({{ spec.if_param_port_list }}) {{ spec.name }}_vif;
+
+  function new(string name = "{{ spec.name }}_drv_mon_cfg_obj");
+    super.new(name);
+  endfunction
+endclass
+
+`endif // {{ spec.upper }}_DRV_MON_CFG_OBJ_SVH

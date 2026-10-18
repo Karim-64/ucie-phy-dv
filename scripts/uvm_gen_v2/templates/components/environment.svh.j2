@@ -1,0 +1,73 @@
+`ifndef {{ spec.upper }}_ENVIRONMENT_SVH
+`define {{ spec.upper }}_ENVIRONMENT_SVH
+
+class {{ spec.name }}_environment extends uvm_env;
+  `uvm_component_utils({{ spec.name }}_environment)
+
+  {{ spec.name }}_agent agt;
+{% if spec.env.has_scoreboard %}
+  {{ spec.name }}_scoreboard sb;
+{% endif %}
+{% if spec.env.has_subscriber %}
+  {{ spec.name }}_subscriber sub;
+{% endif %}
+
+  {{ spec.name }}_env_cfg_obj cfg;
+  {{ spec.name }}_agt_cfg_obj agt_cfg;
+
+  uvm_analysis_port#({{ spec.name }}_sequence_item) {{ spec.name }}_env_aport;
+
+  function new(string name = "{{ spec.name }}_environment", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+
+    {{ spec.name }}_env_aport = new("{{ spec.name }}_env_aport", this);
+
+    if (!uvm_config_db#({{ spec.name }}_env_cfg_obj)::get(this, "", "cfg", cfg))
+      `uvm_fatal("{{ spec.upper }}_ENV", "{{ spec.name }}_env_cfg_obj not found in config_db for {{ spec.name }}_environment")
+
+    if (cfg.{{ spec.name }}_has_agent) begin
+      agt_cfg = {{ spec.name }}_agt_cfg_obj::type_id::create("agt_cfg");
+      agt_cfg.{{ spec.name }}_vif = cfg.{{ spec.name }}_vif;
+      agt_cfg.is_active = cfg.active_passive_agents["{{ spec.name }}"];
+
+      uvm_config_db#({{ spec.name }}_agt_cfg_obj)::set(this, "agt", "cfg", agt_cfg);
+    end
+
+    if (cfg.{{ spec.name }}_has_agent)
+      agt = {{ spec.name }}_agent::type_id::create("agt", this);
+{% if spec.env.has_scoreboard %}
+
+    if (cfg.{{ spec.name }}_has_scoreboard)
+      sb = {{ spec.name }}_scoreboard::type_id::create("sb", this);
+{% endif %}
+{% if spec.env.has_subscriber %}
+
+    if (cfg.{{ spec.name }}_has_subscriber)
+      sub = {{ spec.name }}_subscriber::type_id::create("sub", this);
+{% endif %}
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+
+    if (cfg.{{ spec.name }}_has_agent) begin
+{% if spec.env.has_scoreboard %}
+      if (cfg.{{ spec.name }}_has_scoreboard)
+        agt.agt_aport.connect(sb.sb_aimp);
+
+{% endif %}
+{% if spec.env.has_subscriber %}
+      if (cfg.{{ spec.name }}_has_subscriber)
+        agt.agt_aport.connect(sub.analysis_export);
+
+{% endif %}
+      agt.agt_aport.connect({{ spec.name }}_env_aport);
+    end
+  endfunction
+endclass
+
+`endif // {{ spec.upper }}_ENVIRONMENT_SVH

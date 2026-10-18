@@ -1,0 +1,53 @@
+`ifndef {{ spec.upper }}_SUBSCRIBER_SVH
+`define {{ spec.upper }}_SUBSCRIBER_SVH
+
+class {{ spec.name }}_subscriber extends uvm_subscriber #({{ spec.name }}_sequence_item);
+  `uvm_component_utils({{ spec.name }}_subscriber)
+
+  // Handle to the transaction currently being sampled.
+  {{ spec.name }}_sequence_item cov_tr;
+
+  // ---------------------------------------------------------------------
+  // Functional Coverage
+  //
+  // One coverpoint per interface signal, sampling its raw value with
+  // default binning (auto_bin_max for multi-bit fields). This is
+  // intentionally semantics-free: it does NOT know which combinations
+  // matter for your DUT (e.g. "only sample address on a valid read").
+  // Add `iff` gates and `cross` coverage by hand for anything that
+  // needs DUT-specific context.
+  // ---------------------------------------------------------------------
+  covergroup {{ spec.name }}_cg;
+    option.per_instance = 1;
+
+{% for s in spec.signals %}
+{% if s.width == "1" %}
+    cp_{{ s.name }}: coverpoint cov_tr.{{ s.name }};
+{% else %}
+    cp_{{ s.name }}: coverpoint cov_tr.{{ s.name }} {
+      option.auto_bin_max = 16;
+    }
+{% endif %}
+{% endfor %}
+
+    // TODO: Add iff-gated coverpoints and cross coverage specific to your DUT
+    // (e.g. operation x address, data-pattern classification on valid transfers).
+  endgroup : {{ spec.name }}_cg
+
+  function new(string name = "{{ spec.name }}_subscriber", uvm_component parent = null);
+    super.new(name, parent);
+    {{ spec.name }}_cg = new();
+  endfunction : new
+
+  function void write({{ spec.name }}_sequence_item t);
+    if (t == null) begin
+      `uvm_error("{{ spec.upper }}_COV", "Received a null transaction")
+      return;
+    end
+    cov_tr = t;
+    {{ spec.name }}_cg.sample();
+  endfunction : write
+
+endclass : {{ spec.name }}_subscriber
+
+`endif // {{ spec.upper }}_SUBSCRIBER_SVH

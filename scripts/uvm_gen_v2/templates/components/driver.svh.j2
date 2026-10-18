@@ -1,0 +1,43 @@
+`ifndef {{ spec.upper }}_DRIVER_SVH
+`define {{ spec.upper }}_DRIVER_SVH
+
+// {{ spec.name }}_driver.svh
+// Driver for the {{ spec.name }} sub-environment.
+// Drives stimulus on the {{ spec.name }} virtual interface using {{ spec.name }}_sequence_item.
+
+class {{ spec.name }}_driver extends uvm_driver #({{ spec.name }}_sequence_item);
+  `uvm_component_utils({{ spec.name }}_driver)
+
+  {{ spec.name }}_sequence_item seq_item;
+  {{ spec.name }}_drv_mon_cfg_obj cfg;
+
+  function new(string name = "{{ spec.name }}_driver", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    if (!uvm_config_db #({{ spec.name }}_drv_mon_cfg_obj)::get(this, "", "cfg", cfg))
+      `uvm_fatal("{{ spec.upper }}_DRV", "{{ spec.name }}_drv_mon_cfg_obj not found in config_db for {{ spec.name }}_driver")
+    seq_item = {{ spec.name }}_sequence_item::type_id::create("seq_item");
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    forever begin
+      seq_item_port.get_next_item(seq_item);
+
+      @(cfg.{{ spec.name }}_vif.drv_cb);
+{% for s in spec.driven_signals %}
+      cfg.{{ spec.name }}_vif.drv_cb.{{ s.name }} <= seq_item.{{ s.name }};
+{% endfor %}
+      seq_item_port.item_done();
+    end
+  endtask
+endclass
+
+`endif // {{ spec.upper }}_DRIVER_SVH

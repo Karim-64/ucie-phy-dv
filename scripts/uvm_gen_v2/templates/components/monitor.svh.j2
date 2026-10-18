@@ -1,0 +1,54 @@
+`ifndef {{ spec.upper }}_MONITOR_SVH
+`define {{ spec.upper }}_MONITOR_SVH
+
+class {{ spec.name }}_monitor extends uvm_monitor;
+  `uvm_component_utils({{ spec.name }}_monitor)
+
+  {{ spec.name }}_sequence_item seq_item;
+  {{ spec.name }}_sequence_item seqr_item;
+  {{ spec.name }}_drv_mon_cfg_obj cfg;
+  uvm_analysis_imp#({{ spec.name }}_sequence_item, {{ spec.name }}_monitor) mon_aimp;
+  uvm_analysis_port#({{ spec.name }}_sequence_item) mon_aport;
+
+  function new(string name = "{{ spec.name }}_monitor", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    if (!uvm_config_db#({{ spec.name }}_drv_mon_cfg_obj)::get(this, "", "cfg", cfg))
+      `uvm_fatal("{{ spec.upper }}_MON", "{{ spec.name }}_cfg_obj not found in config_db for {{ spec.name }}_monitor")
+    mon_aport = new("mon_aport", this);
+    mon_aimp = new("mon_aimp", this);
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+  endfunction
+
+  function void write({{ spec.name }}_sequence_item t);
+    seqr_item = {{ spec.name }}_sequence_item::type_id::create("seqr_item");
+{% for s in spec.driven_signals %}
+    seqr_item.{{ s.name }} = t.{{ s.name }};
+{% endfor %}
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    forever begin
+      seq_item = {{ spec.name }}_sequence_item::type_id::create("seq_item");
+      @(cfg.{{ spec.name }}_vif.mon_cb);
+      if (seqr_item) begin
+{% for s in spec.driven_signals %}
+        seq_item.{{ s.name }} <= seqr_item.{{ s.name }};
+{% endfor %}
+      end
+{% for s in spec.monitored_signals %}
+      seq_item.{{ s.name }} <= cfg.{{ spec.name }}_vif.mon_cb.{{ s.name }};
+{% endfor %}
+      #1step mon_aport.write(seq_item);
+    end
+  endtask
+endclass
+
+`endif // {{ spec.upper }}_MONITOR_SVH

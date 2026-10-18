@@ -1,0 +1,46 @@
+`timescale 1ns/1ns
+module tb_top();
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
+
+  import {{ spec.name }}_pkg::*;
+
+  bit {{ spec.clock_name }};
+
+  // Clock generator
+  initial begin
+    {{ spec.clock_name }} = 0;
+    forever begin
+      #1 {{ spec.clock_name }} = ~{{ spec.clock_name }};
+    end
+  end
+
+  // Interface instantiation
+  {{ spec.name }}_if #({% for p in spec.parameters %}.{{ p.name }}({{ p.name }})
+{{- ", " if not loop.last }}{% endfor %})
+      {{ spec.name }}_if_inst (.{{ spec.clock_name }}({{ spec.clock_name }}));
+{% if spec.dut %}
+
+  // DUT instantiation
+  {{ spec.dut.module_name }} #(
+{% for p in spec.parameters %}
+    .{{ p.name }}({{ p.name }}){{ "," if not loop.last }}
+{% endfor %}
+  ) {{ spec.dut.instance_name }} (
+{% for port in spec.dut.ports %}
+{% if port.signal == spec.clock_name %}
+    .{{ port.dut_port }}({{ spec.clock_name }}){{ "," if not loop.last }}
+{% else %}
+    .{{ port.dut_port }}({{ spec.name }}_if_inst.{{ port.signal }}){{ "," if not loop.last }}
+{% endif %}
+{% endfor %}
+  );
+{% endif %}
+
+  // Config DB & test start
+  initial begin
+    uvm_config_db#(virtual {{ spec.name }}_if#({{ spec.if_param_port_list }}))::set(
+        null, "uvm_test_top", "{{ spec.upper }}_VIF", {{ spec.name }}_if_inst);
+    run_test();
+  end
+endmodule
