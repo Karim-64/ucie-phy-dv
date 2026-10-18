@@ -4,11 +4,11 @@ interface {{ spec.name }}_if #(
 {% endfor %}
 ) (input logic {{ spec.clock_name }});
 {% for s in spec.driven_signals %}
-  wire logic{{ "[" ~ s.width ~ "-1 : 0]" if s.width != "1" }} {{ s.name }};
+  wire {{ s.sv_type }} {{ s.name }};
 {% endfor %}
 
 {% for s in spec.monitored_signals %}
-  wire logic{{ "[" ~ s.width ~ "-1 : 0]" if s.width != "1" }} {{ s.name }};
+  wire {{ s.sv_type }} {{ s.name }};
 {% endfor %}
 
   clocking drv_cb @(posedge {{ spec.clock_name }});

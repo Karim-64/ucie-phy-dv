@@ -52,6 +52,11 @@ Rules enforced by the parser before anything is written:
 - `direction="drv"` signals become `rand` sequence-item fields, driven via
   the interface's `drv_cb` clocking block.
 - `direction="mon"` signals become non-`rand` fields, sampled via `mon_cb`.
+- Optional `depth="N"` on a `<signal>` makes it a packed 2D array
+  `logic [N-1:0][width-1:0]` (e.g. `width="8" depth="64"` -> `[63:0][7:0]`).
+  `depth` is an integer literal or a declared parameter, like `width`.
+  The subscriber samples only the first and last element of array signals.
+  Unpacked arrays are not supported. See `examples/demux_spec.xml`.
 - A signal's `width` is either an integer literal or the name of a declared
   `<parameter>` — anything else is rejected.
 - No duplicate parameter/signal/DUT-port names; no signal name collides

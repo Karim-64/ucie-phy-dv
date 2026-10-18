@@ -29,7 +29,7 @@ class {{ spec.name }}_sequence_item extends uvm_sequence_item;
   virtual function string convert2string();
 {% set fmt_parts = [] %}
 {% for s in spec.driven_signals + spec.monitored_signals %}
-{% set fmt = s.name ~ "=%0b" if s.width == "1" else s.name ~ "=0x%0h" %}
+{% set fmt = s.name ~ "=%0b" if s.is_scalar else s.name ~ "=0x%0h" %}
 {% set _ = fmt_parts.append(fmt) %}
 {% endfor %}
     return $sformatf("{{ spec.name }}_seq_item: {{ fmt_parts | join(' ') }}",

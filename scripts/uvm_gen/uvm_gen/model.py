@@ -11,6 +11,12 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 
+def _msb(n: str) -> str:
+    """Upper bound of a [n-1:0] range: folds integer literals ('64' -> '63'),
+    leaves parameter names symbolic ('DATA_WIDTH' -> 'DATA_WIDTH-1')."""
+    return str(int(n) - 1) if n.isdigit() else f"{n}-1"
+
+
 @dataclass
 class ParamSpec:
     name: str
@@ -22,6 +28,21 @@ class SignalSpec:
     name: str
     width: str          # literal integer ("1", "4") or a parameter name ("DATA_WIDTH")
     direction: str       # "drv" or "mon"
+    depth: str | None = None  # optional outer packed dimension (integer literal or parameter name)
+
+    @property
+    def is_array(self) -> bool:
+        return self.depth is not None
+
+    @property
+    def last_index(self) -> str:
+        """Index of the last array element, e.g. '63' (only meaningful if is_array)."""
+        return _msb(self.depth)
+
+    @property
+    def is_scalar(self) -> bool:
+        """True for a plain 1-bit signal (no range at all)."""
+        return self.width == "1" and not self.is_array
 
     @property
     def is_driven(self) -> bool:
@@ -33,16 +54,22 @@ class SignalSpec:
 
     @property
     def width_expr(self) -> str:
-        """SystemVerilog bit-range expression, e.g. '[DATA_WIDTH-1:0]' or '' for width==1."""
+        """Element bit-range, e.g. '[DATA_WIDTH-1:0]' or '' for width==1."""
         if self.width == "1":
             return ""
-        return f"[{self.width}-1:0]"
+        return f"[{_msb(self.width)}:0]"
+
+    @property
+    def dims(self) -> str:
+        """Full packed range, e.g. '[63:0][7:0]' (depth first), '[DATA_WIDTH-1:0]', or ''."""
+        outer = f"[{_msb(self.depth)}:0]" if self.is_array else ""
+        return f"{outer}{self.width_expr}"
 
     @property
     def sv_type(self) -> str:
         """Full 'logic [..]' declaration fragment (no trailing name)."""
-        rng = self.width_expr
-        return f"logic {rng}".rstrip() if rng else "logic"
+        rng = self.dims
+        return f"logic {rng}" if rng else "logic"
 
 
 @dataclass
