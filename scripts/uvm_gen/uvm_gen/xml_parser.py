@@ -106,13 +106,25 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
         if width.isdigit() and int(width) < 1:
             raise SpecError(f"signal '{sname}' has non-positive width literal: {width}")
 
+        depth_raw = s.get("depth")
+        depth: str | None = None
+        if depth_raw is not None:
+            depth = depth_raw.strip()
+            if not (depth.isdigit() or depth in seen_params):
+                raise SpecError(
+                    f"signal '{sname}' has depth '{depth}', which is neither an integer "
+                    f"literal nor a declared <parameter name=\"{depth}\">"
+                )
+            if depth.isdigit() and int(depth) < 1:
+                raise SpecError(f"signal '{sname}' has non-positive depth literal: {depth}")
+
         direction = s.get("direction", "").strip()
         if direction not in ("drv", "mon"):
             raise SpecError(
                 f"signal '{sname}' has direction '{direction}'; must be 'drv' or 'mon'"
             )
 
-        signals.append(SignalSpec(name=sname, width=width, direction=direction))
+        signals.append(SignalSpec(name=sname, width=width, direction=direction, depth=depth))
 
     if not any(s.is_driven for s in signals):
         raise SpecError("At least one signal must have direction=\"drv\" (nothing to drive)")

@@ -5,10 +5,10 @@ interface mem_if #(
   wire logic rst;
   wire logic cs;
   wire logic we;
-  wire logic[ADDRESS_WIDTH-1 : 0] addr;
-  wire logic[DATA_WIDTH-1 : 0] data_in;
+  wire logic [ADDRESS_WIDTH-1:0] addr;
+  wire logic [DATA_WIDTH-1:0] data_in;
 
-  wire logic[DATA_WIDTH-1 : 0] data_out;
+  wire logic [DATA_WIDTH-1:0] data_out;
   wire logic valid_out;
 
   clocking drv_cb @(posedge clk);
