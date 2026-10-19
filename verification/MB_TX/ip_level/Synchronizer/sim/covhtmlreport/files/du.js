@@ -1,0 +1,2 @@
+var g_data = {"data":[{"n":"work.Synchronizer","id":6,"zf":1,"tc":100.00,"s":100.00,"b":100.00,"t":100.00},{"n":"work.Synchronizer_if","id":1,"zf":1,"tc":100.00,"s":100.00,"t":100.00},{"n":"work.Synchronizer_pkg","id":3,"zf":1,"tc":49.46,"s":69.78,"b":28.07,"fc":0.00,"g":100.00},{"n":"work.tb_top","id":5,"zf":1,"tc":100.00,"s":100.00,"t":100.00}]};
+processDuData(g_data);

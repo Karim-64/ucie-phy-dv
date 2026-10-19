@@ -1,0 +1,2 @@
+var g_data = {"11":{"pr":"/Synchronizer_pkg","ty":2,"dui":3,"dun":"work.Synchronizer_pkg","cvgs":[{"h":["\\/Synchronizer_pkg::Synchronizer_subscriber::Synchronizer_cg ",2,1,16,12],"cov":[6,6,100.00],"opts":{"goal":"100","per_instance":"true"}},{"h":["/Synchronizer_pkg/Synchronizer_subscriber/Synchronizer_cg",1,1,12],"cov":[6,6,100.00],"opts":{"goal":"100","merge_instance":"auto(true)"}}]}};
+processCovergroupsData(g_data);
