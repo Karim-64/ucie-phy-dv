@@ -1,0 +1,298 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.MUX_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.MUX_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/MUX_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    11                                       271     Count coming in to IF
+    11              1                        139     
+    11              2                        132     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.MUX_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/MUX_SBTX.sv
+    11              1                        273     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         32        32         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.MUX_SBTX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         16 
+Toggled Node Count   =         16 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (32 of 32 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /mux_sbtx_pkg
+=== Design Unit: work.mux_sbtx_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          6        na        na        na
+            Covergroup Bins         43        43         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /mux_sbtx_pkg/mux_sbtx_subscriber/cg_mux        100.00%        100          -    Covered              
+    covered/total bins:                                    43         43          -                      
+    missing/total bins:                                     0         43          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sel                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_in0                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_in1                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/mux_sbtx_pkg::mux_sbtx_subscriber::cg_mux  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    43         43          -                      
+    missing/total bins:                                     0         43          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sel                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sel_0                                         131          1          -    Covered              
+        bin sel_1                                         139          1          -    Covered              
+        bin toggle_0_1                                     82          1          -    Covered              
+        bin toggle_1_0                                     81          1          -    Covered              
+    Coverpoint cp_in0                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      50          1          -    Covered              
+        bin all_ones                                       47          1          -    Covered              
+        bin alt_10101                                      15          1          -    Covered              
+        bin alt_01010                                      44          1          -    Covered              
+        bin low_range                                      64          1          -    Covered              
+        bin high_range                                     50          1          -    Covered              
+    Coverpoint cp_in1                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      39          1          -    Covered              
+        bin all_ones                                       39          1          -    Covered              
+        bin alt_10101                                      11          1          -    Covered              
+        bin alt_01010                                      43          1          -    Covered              
+        bin low_range                                      70          1          -    Covered              
+        bin high_range                                     68          1          -    Covered              
+    Coverpoint cp_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      48          1          -    Covered              
+        bin all_ones                                       36          1          -    Covered              
+        bin alt_patterns                                   56          1          -    Covered              
+        default bin others                                131                     -    Occurred             
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_1,high_range>                         22          1          -    Covered              
+            bin <sel_1,low_range>                          34          1          -    Covered              
+            bin <sel_0,high_range>                         28          1          -    Covered              
+            bin <sel_0,low_range>                          30          1          -    Covered              
+            bin <sel_1,alt_01010>                          24          1          -    Covered              
+            bin <sel_1,all_ones>                           27          1          -    Covered              
+            bin <sel_1,alt_10101>                           7          1          -    Covered              
+            bin <sel_1,all_zeros>                          25          1          -    Covered              
+            bin <sel_0,alt_01010>                          20          1          -    Covered              
+            bin <sel_0,all_ones>                           20          1          -    Covered              
+            bin <sel_0,alt_10101>                           8          1          -    Covered              
+            bin <sel_0,all_zeros>                          25          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_trans                       163                     -    Occurred             
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_1,high_range>                         36          1          -    Covered              
+            bin <sel_1,low_range>                          36          1          -    Covered              
+            bin <sel_0,high_range>                         32          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_1,alt_01010>                          21          1          -    Covered              
+            bin <sel_1,all_ones>                           16          1          -    Covered              
+            bin <sel_1,alt_10101>                           7          1          -    Covered              
+            bin <sel_1,all_zeros>                          23          1          -    Covered              
+            bin <sel_0,alt_01010>                          22          1          -    Covered              
+            bin <sel_0,all_ones>                           23          1          -    Covered              
+            bin <sel_0,alt_10101>                           4          1          -    Covered              
+            bin <sel_0,all_zeros>                          16          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_trans                       163                     -    Occurred             
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /mux_sbtx_pkg/mux_sbtx_subscriber/cg_mux        100.00%        100          -    Covered              
+    covered/total bins:                                    43         43          -                      
+    missing/total bins:                                     0         43          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sel                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_in0                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_in1                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/mux_sbtx_pkg::mux_sbtx_subscriber::cg_mux  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    43         43          -                      
+    missing/total bins:                                     0         43          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sel                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sel_0                                         131          1          -    Covered              
+        bin sel_1                                         139          1          -    Covered              
+        bin toggle_0_1                                     82          1          -    Covered              
+        bin toggle_1_0                                     81          1          -    Covered              
+    Coverpoint cp_in0                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      50          1          -    Covered              
+        bin all_ones                                       47          1          -    Covered              
+        bin alt_10101                                      15          1          -    Covered              
+        bin alt_01010                                      44          1          -    Covered              
+        bin low_range                                      64          1          -    Covered              
+        bin high_range                                     50          1          -    Covered              
+    Coverpoint cp_in1                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      39          1          -    Covered              
+        bin all_ones                                       39          1          -    Covered              
+        bin alt_10101                                      11          1          -    Covered              
+        bin alt_01010                                      43          1          -    Covered              
+        bin low_range                                      70          1          -    Covered              
+        bin high_range                                     68          1          -    Covered              
+    Coverpoint cp_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      48          1          -    Covered              
+        bin all_ones                                       36          1          -    Covered              
+        bin alt_patterns                                   56          1          -    Covered              
+        default bin others                                131                     -    Occurred             
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_1,high_range>                         22          1          -    Covered              
+            bin <sel_1,low_range>                          34          1          -    Covered              
+            bin <sel_0,high_range>                         28          1          -    Covered              
+            bin <sel_0,low_range>                          30          1          -    Covered              
+            bin <sel_1,alt_01010>                          24          1          -    Covered              
+            bin <sel_1,all_ones>                           27          1          -    Covered              
+            bin <sel_1,alt_10101>                           7          1          -    Covered              
+            bin <sel_1,all_zeros>                          25          1          -    Covered              
+            bin <sel_0,alt_01010>                          20          1          -    Covered              
+            bin <sel_0,all_ones>                           20          1          -    Covered              
+            bin <sel_0,alt_10101>                           8          1          -    Covered              
+            bin <sel_0,all_zeros>                          25          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_trans                       163                     -    Occurred             
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_1,high_range>                         36          1          -    Covered              
+            bin <sel_1,low_range>                          36          1          -    Covered              
+            bin <sel_0,high_range>                         32          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_1,alt_01010>                          21          1          -    Covered              
+            bin <sel_1,all_ones>                           16          1          -    Covered              
+            bin <sel_1,alt_10101>                           7          1          -    Covered              
+            bin <sel_1,all_zeros>                          23          1          -    Covered              
+            bin <sel_0,alt_01010>                          22          1          -    Covered              
+            bin <sel_0,all_ones>                           23          1          -    Covered              
+            bin <sel_0,alt_10101>                           4          1          -    Covered              
+            bin <sel_0,all_zeros>                          16          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_trans                       163                     -    Occurred             
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
