@@ -1,0 +1,2 @@
+var g_data = {"11":{"pr":"/DMUX_1x4_pkg","ty":2,"dui":3,"dun":"work.DMUX_1x4_pkg","cvgs":[{"h":["DMUX_1x4_Functional_Coverage",2,1,24,12],"cov":[39,39,100.00],"opts":{"goal":"100","per_instance":"true"}},{"h":["/DMUX_1x4_pkg/DMUX_1x4_subscriber/DMUX_1x4_cg",1,1,12],"cov":[39,39,100.00],"opts":{"goal":"100"}}]}};
+processCovergroupsData(g_data);

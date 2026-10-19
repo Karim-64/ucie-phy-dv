@@ -1,0 +1,2 @@
+var g_data = {"data":[{"n":"work.DMUX_1x4_if","id":1,"zf":1,"tc":100.00,"s":100.00,"t":100.00},{"n":"work.DMUX_1x4_pkg","id":3,"zf":1,"tc":52.88,"s":68.79,"b":29.12,"fc":13.63,"g":100.00},{"n":"work.Demux_1x4","id":6,"zf":1,"tc":99.69,"s":100.00,"b":100.00,"t":99.08},{"n":"work.tb_top","id":5,"zf":1,"tc":100.00,"s":100.00,"t":100.00}]};
+processDuData(g_data);
