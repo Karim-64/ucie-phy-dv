@@ -1,0 +1,1311 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_top/DMUX_1x4_if_inst
+=== Design Unit: work.DMUX_1x4_if
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top/DMUX_1x4_if_inst --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../interfaces/DMUX_1x4_if.sv
+    13              1                          1     
+    19              1                          1     
+    21              1                          1     
+    22              1                          1     
+    23              1                          1     
+    24              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        646       646         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top/DMUX_1x4_if_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =        323 
+Toggled Node Count   =        323 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (646 of 646 bins)
+
+=================================================================================
+=== Instance: /tb_top/dut
+=== Design Unit: work.Demux_1x4
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tb_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Demux_1x4.sv
+------------------------------------CASE Branch------------------------------------
+    21                                      2522     Count coming in to CASE
+    22              1                        588     
+    23              1                        673     
+    24              1                        643     
+    25              1                        617     
+                                               1     All False Count
+Branch totals: 5 hits of 5 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       9         9         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Demux_1x4.sv
+    13              1                       2522     
+    15              1                       2522     
+    16              1                       2522     
+    17              1                       2522     
+    18              1                       2522     
+    22              1                        588     
+    23              1                        673     
+    24              1                        643     
+    25              1                        617     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        654       648         6    99.08%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            d0[64]           1           0       50.00 
+                                            d1[64]           1           0       50.00 
+                                            d2[64]           1           0       50.00 
+                                            d3[64]           1           0       50.00 
+                                           din[64]           0           0        0.00 
+
+Total Node Count     =        327 
+Toggled Node Count   =        322 
+Untoggled Node Count =          5 
+
+Toggle Coverage      =      99.08% (648 of 654 bins)
+
+=================================================================================
+=== Instance: /tb_top
+=== Design Unit: work.tb_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/tb_top.sv
+    12              1                          1     
+    13              1                          1     
+    14              1                       5232     
+    14              2                       5231     
+    37              1                          1     
+    39              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /DMUX_1x4_pkg
+=== Design Unit: work.DMUX_1x4_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                       182        53       129    29.12%
+
+================================Branch Details================================
+
+Branch Coverage for instance /DMUX_1x4_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ..//cfg_obj/DMUX_1x4_drv_mon_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//cfg_obj/DMUX_1x4_agt_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//cfg_obj/DMUX_1x4_env_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//sequences/DMUX_1x4_sequence_item.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                       2616     Count coming in to IF
+    5               2                    ***0***     
+                                            2616     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                       2616     Count coming in to IF
+    5               5                    ***0***     
+                                            2616     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//sequences/DMUX_1x4_base_sequence.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                          1     Count coming in to IF
+    5               2                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                          1     Count coming in to IF
+    5               5                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                          1     Count coming in to IF
+    6               1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                      2000     Count coming in to IF
+    21              1                    ***0***     
+                                            2000     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    35                                       100     Count coming in to IF
+    35              1                    ***0***     
+                                             100     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                   ***0***     Count coming in to IF
+    36              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                       100     Count coming in to IF
+    49              1                    ***0***     
+                                             100     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                   ***0***     Count coming in to IF
+    50              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                       100     Count coming in to IF
+    63              1                    ***0***     
+                                             100     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    64                                   ***0***     Count coming in to IF
+    64              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                       200     Count coming in to IF
+    77              1                    ***0***     
+                                             200     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    78                                   ***0***     Count coming in to IF
+    78              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    91                                       100     Count coming in to IF
+    91              1                    ***0***     
+                                             100     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    92                                   ***0***     Count coming in to IF
+    92              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    105                                       16     Count coming in to IF
+    105             1                    ***0***     
+                                              16     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    106                                  ***0***     Count coming in to IF
+    106             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//components/DMUX_1x4_driver.svh
+------------------------------------IF Branch------------------------------------
+    20                                         1     Count coming in to IF
+    20              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//components/DMUX_1x4_monitor.svh
+------------------------------------IF Branch------------------------------------
+    19                                         1     Count coming in to IF
+    19              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                      2616     Count coming in to IF
+    40              1                       2615     
+                                               1     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+  File ..//components/DMUX_1x4_agent.svh
+------------------------------------IF Branch------------------------------------
+    22                                         1     Count coming in to IF
+    22              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                         1     Count coming in to IF
+    30              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    41                                         1     Count coming in to IF
+    41              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/DMUX_1x4_scoreboard.svh
+------------------------------------IF Branch------------------------------------
+    43                                      2615     Count coming in to IF
+    43              1                        611     
+    51              1                        694     
+    59              1                        678     
+    67              1                        631     
+                                               1     All False Count
+Branch totals: 5 hits of 5 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                       611     Count coming in to IF
+    44              1                    ***0***     
+    48              1                        611     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    46                                   ***0***     Count coming in to IF
+    46              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                       694     Count coming in to IF
+    52              1                    ***0***     
+    56              1                        694     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                   ***0***     Count coming in to IF
+    54              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                       678     Count coming in to IF
+    60              1                    ***0***     
+    64              1                        678     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    62                                   ***0***     Count coming in to IF
+    62              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                       631     Count coming in to IF
+    68              1                    ***0***     
+    72              1                        631     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    70                                   ***0***     Count coming in to IF
+    70              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    81                                         1     Count coming in to IF
+    81              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    82                                         1     Count coming in to IF
+    82              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    83                                         1     Count coming in to IF
+    83              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    84                                         1     Count coming in to IF
+    84              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    85                                         1     Count coming in to IF
+    85              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    86                                         1     Count coming in to IF
+    86              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    87                                         1     Count coming in to IF
+    87              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    89                                         1     Count coming in to IF
+    89              1                          1     
+    91              1                    ***0***     
+    93              1                    ***0***     
+Branch totals: 1 hit of 3 branches = 33.33%
+
+------------------------------------IF Branch------------------------------------
+    90                                         1     Count coming in to IF
+    90              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    92                                   ***0***     Count coming in to IF
+    92              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    94                                   ***0***     Count coming in to IF
+    94              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    96                                         1     Count coming in to IF
+    96              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/DMUX_1x4_subscriber.svh
+------------------------------------IF Branch------------------------------------
+    134                                     2615     Count coming in to IF
+    134             1                    ***0***     
+                                            2615     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    135                                  ***0***     Count coming in to IF
+    135             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    147                                        1     Count coming in to IF
+    147             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    148                                        1     Count coming in to IF
+    148             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    149                                        1     Count coming in to IF
+    149             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    150                                        1     Count coming in to IF
+    150             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    151                                        1     Count coming in to IF
+    151             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/DMUX_1x4_environment.svh
+------------------------------------IF Branch------------------------------------
+    25                                         1     Count coming in to IF
+    25              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                   ***0***     Count coming in to IF
+    26              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                         1     Count coming in to IF
+    36              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    39                                         1     Count coming in to IF
+    39              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         1     Count coming in to IF
+    42              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                         1     Count coming in to IF
+    49              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                         1     Count coming in to IF
+    50              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                         1     Count coming in to IF
+    53              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/DMUX_1x4_base_test.svh
+------------------------------------IF Branch------------------------------------
+    21                                         1     Count coming in to IF
+    21              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      22         3        19    13.63%
+
+================================Condition Details================================
+
+Condition Coverage for instance /DMUX_1x4_pkg --
+
+  File ..//cfg_obj/DMUX_1x4_drv_mon_cfg_obj.svh
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+
+
+----------------Focused Condition View-------------------
+Line       43 Item    1  (t.sel == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       44 Item    1  (t.d0 != t.din)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (t.d0 != t.din)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t.d0 != t.din)_0     -                             
+  Row   2:    ***0***  (t.d0 != t.din)_1     -                             
+
+----------------Focused Condition View-------------------
+Line       51 Item    1  (t.sel == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       52 Item    1  (t.d1 != t.din)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (t.d1 != t.din)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t.d1 != t.din)_0     -                             
+  Row   2:    ***0***  (t.d1 != t.din)_1     -                             
+
+----------------Focused Condition View-------------------
+Line       59 Item    1  (t.sel == 2)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       60 Item    1  (t.d2 != t.din)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (t.d2 != t.din)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t.d2 != t.din)_0     -                             
+  Row   2:    ***0***  (t.d2 != t.din)_1     -                             
+
+----------------Focused Condition View-------------------
+Line       67 Item    1  (t.sel == 3)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (t.sel == 3)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (t.sel == 3)_0        -                             
+  Row   2:          1  (t.sel == 3)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       68 Item    1  (t.d3 != t.din)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (t.d3 != t.din)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t.d3 != t.din)_0     -                             
+  Row   2:    ***0***  (t.d3 != t.din)_1     -                             
+
+----------------Focused Condition View-------------------
+Line       89 Item    1  ((this.mismatch_count == 0) && (this.total_transactions > 0))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+     (this.mismatch_count == 0)         N  '_0' not hit             Hit '_0'
+  (this.total_transactions > 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:    ***0***  (this.mismatch_count == 0)_0     -                             
+  Row   2:          1  (this.mismatch_count == 0)_1     (this.total_transactions > 0) 
+  Row   3:    ***0***  (this.total_transactions > 0)_0  (this.mismatch_count == 0)    
+  Row   4:          1  (this.total_transactions > 0)_1  (this.mismatch_count == 0)    
+
+----------------Focused Condition View-------------------
+Line       91 Item    1  (this.total_transactions == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                      Input Term   Covered  Reason for no coverage   Hint
+                     -----------  --------  -----------------------  --------------
+  (this.total_transactions == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                        Non-masking condition(s)      
+ ---------  ---------  --------------------              -------------------------     
+  Row   1:    ***0***  (this.total_transactions == 0)_0  -                             
+  Row   2:    ***0***  (this.total_transactions == 0)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       134 Item    1  (t == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (t == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t == null)_0         -                             
+  Row   2:    ***0***  (t == null)_1         -                             
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     282       194        88    68.79%
+
+================================Statement Details================================
+
+Statement Coverage for instance /DMUX_1x4_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ..//cfg_obj/DMUX_1x4_drv_mon_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    10              1                          1     
+  File ..//cfg_obj/DMUX_1x4_agt_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    12              1                          1     
+  File ..//cfg_obj/DMUX_1x4_env_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    15              1                          1     
+  File ..//sequences/DMUX_1x4_sequence_item.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                       2616     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                       2616     
+    5              10                    ***0***     
+    23              1                       7849     
+    62              1                    ***0***     
+  File ..//components/DMUX_1x4_sequencer.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    10              1                          1     
+    14              1                          1     
+    15              1                          1     
+    19              1                          1     
+  File ..//sequences/DMUX_1x4_base_sequence.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                          1     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                          1     
+    5              10                    ***0***     
+    6               1                          1     
+    6               2                    ***0***     
+    9               1                          1     
+    16              1                          1     
+    16              2                       2000     
+    17              1                       2000     
+    18              1                       2000     
+    19              1                       2000     
+    20              1                       2000     
+    22              1                    ***0***     
+    23              1                       2000     
+    24              1                       2000     
+    30              1                          1     
+    30              2                        100     
+    31              1                        100     
+    32              1                        100     
+    33              1                        100     
+    34              1                        100     
+    36              1                    ***0***     
+    37              1                        100     
+    38              1                        100     
+    44              1                          1     
+    44              2                        100     
+    45              1                        100     
+    46              1                        100     
+    47              1                        100     
+    48              1                        100     
+    50              1                    ***0***     
+    51              1                        100     
+    52              1                        100     
+    58              1                          1     
+    58              2                        100     
+    59              1                        100     
+    60              1                        100     
+    61              1                        100     
+    62              1                        100     
+    64              1                    ***0***     
+    65              1                        100     
+    66              1                        100     
+    72              1                          1     
+    72              2                        200     
+    73              1                        200     
+    74              1                        200     
+    75              1                        200     
+    76              1                        200     
+    78              1                    ***0***     
+    79              1                        200     
+    80              1                        200     
+    86              1                          1     
+    86              2                        100     
+    87              1                        100     
+    88              1                        100     
+    89              1                        100     
+    90              1                        100     
+    92              1                    ***0***     
+    93              1                        100     
+    94              1                        100     
+    100             1                          1     
+    100             2                          4     
+    101             1                          4     
+    101             2                         16     
+    102             1                         16     
+    103             1                         16     
+    104             1                         16     
+    106             1                    ***0***     
+    107             1                         16     
+    108             1                         16     
+  File ..//components/DMUX_1x4_driver.svh
+    9               1                    ***0***     
+    9               2                    ***0***     
+    9               3                          2     
+    15              1                          1     
+    19              1                          1     
+    21              1                    ***0***     
+    22              1                          1     
+    26              1                          1     
+    30              1                          1     
+    31              1                          1     
+    32              1                       2617     
+    34              1                       2616     
+    35              1                       2616     
+    36              1                       2616     
+    37              1                       2616     
+  File ..//components/DMUX_1x4_monitor.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    14              1                          1     
+    18              1                          1     
+    20              1                    ***0***     
+    21              1                          1     
+    22              1                          1     
+    26              1                          1     
+    30              1                       2616     
+    31              1                       2616     
+    32              1                       2616     
+    36              1                          1     
+    37              1                          1     
+    38              1                       2616     
+    39              1                       2616     
+    41              1                       2615     
+    42              1                       2615     
+    44              1                       2616     
+    45              1                       2616     
+    46              1                       2616     
+    47              1                       2616     
+    48              1                       2616     
+    48              2                       2615     
+  File ..//components/DMUX_1x4_agent.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    16              1                          1     
+    20              1                          1     
+    23              1                    ***0***     
+    25              1                          1     
+    26              1                          1     
+    28              1                          1     
+    31              1                          1     
+    32              1                          1     
+    35              1                          1     
+    36              1                          1     
+    40              1                          1     
+    42              1                          1     
+    43              1                          1     
+    45              1                          1     
+  File ..//components/DMUX_1x4_scoreboard.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    15              1                          1     
+    19              1                          1     
+    20              1                          1     
+    21              1                          1     
+    22              1                          1     
+    26              1                          1     
+    32              1                          1     
+    33              1                          1     
+    34              1                       2616     
+    35              1                       2615     
+    41              1                       2615     
+    45              1                    ***0***     
+    46              1                    ***0***     
+    49              1                        611     
+    53              1                    ***0***     
+    54              1                    ***0***     
+    57              1                        694     
+    61              1                    ***0***     
+    62              1                    ***0***     
+    65              1                        678     
+    69              1                    ***0***     
+    70              1                    ***0***     
+    73              1                        631     
+    79              1                          1     
+    81              1                          1     
+    82              1                          1     
+    83              1                          1     
+    84              1                          1     
+    85              1                          1     
+    86              1                          1     
+    87              1                          1     
+    90              1                          1     
+    92              1                    ***0***     
+    94              1                    ***0***     
+    96              1                          1     
+  File ..//components/DMUX_1x4_subscriber.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    111             1                          1     
+    112             1                          1     
+    113             1                          1     
+    114             1                          1     
+    115             1                          1     
+    123             1                          1     
+    124             1                          1     
+    125             1                       2616     
+    126             1                       2615     
+    135             1                    ***0***     
+    136             1                    ***0***     
+    138             1                       2615     
+    139             1                       2615     
+    146             1                          1     
+    147             1                          1     
+    148             1                          1     
+    149             1                          1     
+    150             1                          1     
+    151             1                          1     
+  File ..//components/DMUX_1x4_environment.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    17              1                          1     
+    21              1                          1     
+    23              1                          1     
+    26              1                    ***0***     
+    29              1                          1     
+    30              1                          1     
+    31              1                          1     
+    33              1                          1     
+    37              1                          1     
+    40              1                          1     
+    43              1                          1     
+    47              1                          1     
+    51              1                          1     
+    54              1                          1     
+    56              1                          1     
+  File ..//components/DMUX_1x4_base_test.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          4     
+    11              1                          1     
+    15              1                          1     
+    18              1                          1     
+    23              1                    ***0***     
+    26              1                          1     
+    27              1                          1     
+    28              1                          1     
+    29              1                          1     
+    31              1                          1     
+    33              1                          1     
+    37              1                          1     
+    42              1                          1     
+    43              1                          1     
+    44              1                          1     
+    45              1                          1     
+    46              1                          1     
+
+
+Total Coverage By Instance (filtered view): 53.77%
+
