@@ -9,9 +9,9 @@ tool was built from.
 ## Usage
 
 ```bash
-python3 generate_uvm.py --config spec.xml --out-dir ./generated
-python3 generate_uvm.py --config spec.xml --out-dir ./generated --dry-run   # validate + preview only
-python3 generate_uvm.py --config spec.xml --out-dir ./generated --force    # overwrite existing output
+py generate_uvm.py --config spec.xml --out-dir ./generated
+py generate_uvm.py --config spec.xml --out-dir ./generated --dry-run   # validate + preview only
+py generate_uvm.py --config spec.xml --out-dir ./generated --force    # overwrite existing output
 ```
 
 Output lands at `<out-dir>/<agent_name>/...`.
