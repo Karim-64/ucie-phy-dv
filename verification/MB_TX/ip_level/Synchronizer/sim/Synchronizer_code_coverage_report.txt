@@ -1,0 +1,1214 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_top/Synchronizer_if_inst
+=== Design Unit: work.Synchronizer_if
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top/Synchronizer_if_inst --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../interfaces/Synchronizer_if.sv
+    8               1                          1     
+    14              1                          1     
+    16              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          8         8         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top/Synchronizer_if_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          4 
+Toggled Node Count   =          4 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (8 of 8 bins)
+
+=================================================================================
+=== Instance: /tb_top/dut
+=== Design Unit: work.Synchronizer
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tb_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Synchronizer.sv
+------------------------------------IF Branch------------------------------------
+    21                                       604     Count coming in to IF
+    21              1                         48     
+    24              1                        556     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       5         5         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Synchronizer.sv
+    19              1                        604     
+    22              1                         48     
+    23              1                         48     
+    25              1                        556     
+    26              1                        556     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         12        12         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          6 
+Toggled Node Count   =          6 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (12 of 12 bins)
+
+=================================================================================
+=== Instance: /tb_top
+=== Design Unit: work.tb_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/tb_top.sv
+    12              1                          1     
+    13              1                          1     
+    14              1                       1660     
+    14              2                       1659     
+    33              1                          1     
+    35              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /Synchronizer_pkg
+=== Design Unit: work.Synchronizer_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                       171        48       123    28.07%
+
+================================Branch Details================================
+
+Branch Coverage for instance /Synchronizer_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ..//cfg_obj/Synchronizer_drv_mon_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//cfg_obj/Synchronizer_agt_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//cfg_obj/Synchronizer_env_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//sequences/Synchronizer_sequence_item.svh
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                        830     Count coming in to IF
+    7               2                    ***0***     
+                                             830     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***     
+    7               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                        830     Count coming in to IF
+    7               5                    ***0***     
+                                             830     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//sequences/Synchronizer_base_sequence.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                          1     Count coming in to IF
+    5               2                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                          1     Count coming in to IF
+    5               5                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                          1     Count coming in to IF
+    6               1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                        10     Count coming in to IF
+    18              1                    ***0***     
+                                              10     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                   ***0***     Count coming in to IF
+    19              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    28                                        10     Count coming in to IF
+    28              1                    ***0***     
+                                              10     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                        10     Count coming in to IF
+    38              1                    ***0***     
+                                              10     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    39                                   ***0***     Count coming in to IF
+    39              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    48                                       100     Count coming in to IF
+    48              1                    ***0***     
+                                             100     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                   ***0***     Count coming in to IF
+    49              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    58                                       100     Count coming in to IF
+    58              1                    ***0***     
+                                             100     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    59                                   ***0***     Count coming in to IF
+    59              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                       100     Count coming in to IF
+    68              1                    ***0***     
+                                             100     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                   ***0***     Count coming in to IF
+    69              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    78                                       500     Count coming in to IF
+    78              1                    ***0***     
+                                             500     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                   ***0***     Count coming in to IF
+    79              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//components/Synchronizer_driver.svh
+------------------------------------IF Branch------------------------------------
+    20                                         1     Count coming in to IF
+    20              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//components/Synchronizer_monitor.svh
+------------------------------------IF Branch------------------------------------
+    19                                         1     Count coming in to IF
+    19              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                       830     Count coming in to IF
+    40              1                        829     
+                                               1     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+  File ..//components/Synchronizer_agent.svh
+------------------------------------IF Branch------------------------------------
+    22                                         1     Count coming in to IF
+    22              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                         1     Count coming in to IF
+    30              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    41                                         1     Count coming in to IF
+    41              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/Synchronizer_scoreboard.svh
+------------------------------------IF Branch------------------------------------
+    61                                       829     Count coming in to IF
+    61              1                    ***0***     
+                                             829     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    62                                   ***0***     Count coming in to IF
+    62              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                       829     Count coming in to IF
+    68              1                         30     
+    72              1                        799     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                       799     Count coming in to IF
+    77              1                    ***0***     
+    81              1                        799     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                   ***0***     Count coming in to IF
+    79              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    93                                         1     Count coming in to IF
+    93              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    94                                         1     Count coming in to IF
+    94              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    95                                         1     Count coming in to IF
+    95              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    96                                         1     Count coming in to IF
+    96              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    97                                         1     Count coming in to IF
+    97              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    98                                         1     Count coming in to IF
+    98              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    99                                         1     Count coming in to IF
+    99              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    101                                        1     Count coming in to IF
+    101             1                          1     
+    103             1                    ***0***     
+    105             1                    ***0***     
+Branch totals: 1 hit of 3 branches = 33.33%
+
+------------------------------------IF Branch------------------------------------
+    102                                        1     Count coming in to IF
+    102             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    104                                  ***0***     Count coming in to IF
+    104             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    106                                  ***0***     Count coming in to IF
+    106             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    108                                        1     Count coming in to IF
+    108             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/Synchronizer_subscriber.svh
+------------------------------------IF Branch------------------------------------
+    51                                       829     Count coming in to IF
+    51              1                    ***0***     
+                                             829     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                   ***0***     Count coming in to IF
+    52              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    64                                         1     Count coming in to IF
+    64              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                         1     Count coming in to IF
+    65              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                         1     Count coming in to IF
+    66              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    67                                         1     Count coming in to IF
+    67              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                         1     Count coming in to IF
+    68              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/Synchronizer_environment.svh
+------------------------------------IF Branch------------------------------------
+    25                                         1     Count coming in to IF
+    25              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                   ***0***     Count coming in to IF
+    26              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                         1     Count coming in to IF
+    36              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    39                                         1     Count coming in to IF
+    39              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         1     Count coming in to IF
+    42              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                         1     Count coming in to IF
+    49              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                         1     Count coming in to IF
+    50              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                         1     Count coming in to IF
+    53              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/Synchronizer_base_test.svh
+------------------------------------IF Branch------------------------------------
+    22                                         1     Count coming in to IF
+    22              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      16         0        16     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /Synchronizer_pkg --
+
+  File ..//cfg_obj/Synchronizer_drv_mon_cfg_obj.svh
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+
+
+----------------Focused Condition View-------------------
+Line       61 Item    1  (t == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (t == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t == null)_0         -                             
+  Row   2:    ***0***  (t == null)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       77 Item    1  (expected_dst != t.signal_dst)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                      Input Term   Covered  Reason for no coverage   Hint
+                     -----------  --------  -----------------------  --------------
+  (expected_dst != t.signal_dst)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                        Non-masking condition(s)      
+ ---------  ---------  --------------------              -------------------------     
+  Row   1:          1  (expected_dst != t.signal_dst)_0  -                             
+  Row   2:    ***0***  (expected_dst != t.signal_dst)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       101 Item    1  ((this.mismatch_count == 0) && (this.total_transactions > 0))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+     (this.mismatch_count == 0)         N  '_0' not hit             Hit '_0'
+  (this.total_transactions > 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:    ***0***  (this.mismatch_count == 0)_0     -                             
+  Row   2:          1  (this.mismatch_count == 0)_1     (this.total_transactions > 0) 
+  Row   3:    ***0***  (this.total_transactions > 0)_0  (this.mismatch_count == 0)    
+  Row   4:          1  (this.total_transactions > 0)_1  (this.mismatch_count == 0)    
+
+----------------Focused Condition View-------------------
+Line       103 Item    1  (this.total_transactions == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                      Input Term   Covered  Reason for no coverage   Hint
+                     -----------  --------  -----------------------  --------------
+  (this.total_transactions == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                        Non-masking condition(s)      
+ ---------  ---------  --------------------              -------------------------     
+  Row   1:    ***0***  (this.total_transactions == 0)_0  -                             
+  Row   2:    ***0***  (this.total_transactions == 0)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       51 Item    1  (t == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (t == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t == null)_0         -                             
+  Row   2:    ***0***  (t == null)_1         -                             
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     278       194        84    69.78%
+
+================================Statement Details================================
+
+Statement Coverage for instance /Synchronizer_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ..//cfg_obj/Synchronizer_drv_mon_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    10              1                          1     
+  File ..//cfg_obj/Synchronizer_agt_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    12              1                          1     
+  File ..//cfg_obj/Synchronizer_env_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    15              1                          1     
+  File ..//sequences/Synchronizer_sequence_item.svh
+    7               1                    ***0***     
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                        830     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                        830     
+    7              10                    ***0***     
+    104             1                       1662     
+    105             1                       1662     
+    112             1                        830     
+    119             1                    ***0***     
+  File ..//components/Synchronizer_sequencer.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    10              1                          1     
+    14              1                          1     
+    15              1                          1     
+    19              1                          1     
+  File ..//sequences/Synchronizer_base_sequence.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                          1     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                          1     
+    5              10                    ***0***     
+    6               1                          1     
+    6               2                    ***0***     
+    9               1                          1     
+    13              1                          1     
+    14              1                          1     
+    14              2                         10     
+    15              1                         10     
+    16              1                         10     
+    17              1                         10     
+    19              1                    ***0***     
+    20              1                         10     
+    21              1                         10     
+    24              1                          1     
+    24              2                         10     
+    25              1                         10     
+    26              1                         10     
+    27              1                         10     
+    29              1                    ***0***     
+    30              1                         10     
+    31              1                         10     
+    34              1                          1     
+    34              2                         10     
+    35              1                         10     
+    36              1                         10     
+    37              1                         10     
+    39              1                    ***0***     
+    40              1                         10     
+    41              1                         10     
+    44              1                          1     
+    44              2                        100     
+    45              1                        100     
+    46              1                        100     
+    47              1                        100     
+    49              1                    ***0***     
+    50              1                        100     
+    51              1                        100     
+    54              1                          1     
+    54              2                        100     
+    55              1                        100     
+    56              1                        100     
+    57              1                        100     
+    59              1                    ***0***     
+    60              1                        100     
+    61              1                        100     
+    64              1                          1     
+    64              2                        100     
+    65              1                        100     
+    66              1                        100     
+    67              1                        100     
+    69              1                    ***0***     
+    70              1                        100     
+    71              1                        100     
+    74              1                          1     
+    74              2                        500     
+    75              1                        500     
+    76              1                        500     
+    77              1                        500     
+    79              1                    ***0***     
+    80              1                        500     
+    81              1                        500     
+  File ..//components/Synchronizer_driver.svh
+    9               1                    ***0***     
+    9               2                    ***0***     
+    9               3                          2     
+    15              1                          1     
+    19              1                          1     
+    21              1                    ***0***     
+    22              1                          1     
+    26              1                          1     
+    30              1                          1     
+    31              1                          1     
+    32              1                        831     
+    34              1                        830     
+    35              1                        830     
+    36              1                        830     
+    37              1                        830     
+  File ..//components/Synchronizer_monitor.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    14              1                          1     
+    18              1                          1     
+    20              1                    ***0***     
+    21              1                          1     
+    22              1                          1     
+    26              1                          1     
+    30              1                        830     
+    31              1                        830     
+    32              1                        830     
+    36              1                          1     
+    37              1                          1     
+    38              1                        830     
+    39              1                        830     
+    41              1                        829     
+    42              1                        829     
+    44              1                        830     
+    45              1                        830     
+    45              2                        829     
+  File ..//components/Synchronizer_agent.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    16              1                          1     
+    20              1                          1     
+    23              1                    ***0***     
+    25              1                          1     
+    26              1                          1     
+    28              1                          1     
+    31              1                          1     
+    32              1                          1     
+    35              1                          1     
+    36              1                          1     
+    40              1                          1     
+    42              1                          1     
+    43              1                          1     
+    45              1                          1     
+  File ..//components/Synchronizer_scoreboard.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    27              1                          1     
+    28              1                          1     
+    29              1                          1     
+    30              1                          1     
+    31              1                          1     
+    32              1                          1     
+    36              1                          1     
+    37              1                          1     
+    38              1                          1     
+    39              1                          1     
+    43              1                          1     
+    48              1                          1     
+    49              1                          1     
+    50              1                        830     
+    51              1                        829     
+    62              1                    ***0***     
+    63              1                    ***0***     
+    66              1                        829     
+    69              1                         30     
+    70              1                         30     
+    71              1                         30     
+    73              1                        799     
+    74              1                        799     
+    75              1                        799     
+    78              1                    ***0***     
+    79              1                    ***0***     
+    82              1                        799     
+    91              1                          1     
+    93              1                          1     
+    94              1                          1     
+    95              1                          1     
+    96              1                          1     
+    97              1                          1     
+    98              1                          1     
+    99              1                          1     
+    102             1                          1     
+    104             1                    ***0***     
+    106             1                    ***0***     
+    108             1                          1     
+  File ..//components/Synchronizer_subscriber.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    34              1                          1     
+    35              1                          1     
+    36              1                          1     
+    37              1                          1     
+    38              1                          1     
+    43              1                          1     
+    44              1                          1     
+    45              1                        830     
+    46              1                        829     
+    52              1                    ***0***     
+    53              1                    ***0***     
+    55              1                        829     
+    56              1                        829     
+    63              1                          1     
+    64              1                          1     
+    65              1                          1     
+    66              1                          1     
+    67              1                          1     
+    68              1                          1     
+  File ..//components/Synchronizer_environment.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    17              1                          1     
+    21              1                          1     
+    23              1                          1     
+    26              1                    ***0***     
+    29              1                          1     
+    30              1                          1     
+    31              1                          1     
+    33              1                          1     
+    37              1                          1     
+    40              1                          1     
+    43              1                          1     
+    47              1                          1     
+    51              1                          1     
+    54              1                          1     
+    56              1                          1     
+  File ..//components/Synchronizer_base_test.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          4     
+    12              1                          1     
+    16              1                          1     
+    19              1                          1     
+    24              1                    ***0***     
+    27              1                          1     
+    28              1                          1     
+    29              1                          1     
+    30              1                          1     
+    32              1                          1     
+    34              1                          1     
+    35              1                          1     
+    39              1                          1     
+    43              1                          1     
+    44              1                          1     
+    45              1                          1     
+    46              1                          1     
+
+
+Total Coverage By Instance (filtered view): 50.03%
+

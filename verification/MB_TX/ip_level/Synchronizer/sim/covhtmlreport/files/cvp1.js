@@ -1,0 +1,2 @@
+var g_data = {"13":["auto[0]","auto[1]"],"14":["auto[0]","auto[1]"],"15":["auto[0]","auto[1]"],"17":["auto[0]","auto[1]"],"18":["auto[0]","auto[1]"],"19":["auto[0]","auto[1]"]};
+processCoverpointsMapData(g_data);
