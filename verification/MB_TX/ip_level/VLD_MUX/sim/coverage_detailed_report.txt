@@ -1,0 +1,806 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.VLD_MUX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.VLD_MUX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/VLD_MUX.sv
+------------------------------------CASE Branch------------------------------------
+    14                                       401     Count coming in to CASE
+    15              1                         94     
+    18              1                        100     
+    21              1                        102     
+    24              1                        104     
+    27              1                          1     
+Branch totals: 5 hits of 5 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.VLD_MUX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/VLD_MUX.sv
+    12              1                        401     
+    16              1                         94     
+    19              1                        100     
+    22              1                        102     
+    25              1                        104     
+    28              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         84        84         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.VLD_MUX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         42 
+Toggled Node Count   =         42 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (84 of 84 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /VLD_MUX_pkg
+=== Design Unit: work.VLD_MUX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses         10        na        na        na
+            Covergroup Bins        130       130         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /VLD_MUX_pkg/VLD_MUX_subscriber/VLD_MUX_cg      100.00%        100          -    Covered              
+    covered/total bins:                                   130        130          -                      
+    missing/total bins:                                     0        130          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_IN_0                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      27          1          -    Covered              
+        bin all_ones                                       19          1          -    Covered              
+        bin alt_01010101                                   16          1          -    Covered              
+        bin alt_10101010                                   22          1          -    Covered              
+        bin low_range                                     146          1          -    Covered              
+        bin high_range                                    170          1          -    Covered              
+    Coverpoint cp_IN_1                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      24          1          -    Covered              
+        bin all_ones                                       25          1          -    Covered              
+        bin alt_01010101                                   21          1          -    Covered              
+        bin alt_10101010                                   13          1          -    Covered              
+        bin low_range                                     143          1          -    Covered              
+        bin high_range                                    174          1          -    Covered              
+    Coverpoint cp_IN_2                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      18          1          -    Covered              
+        bin all_ones                                       22          1          -    Covered              
+        bin alt_01010101                                   18          1          -    Covered              
+        bin alt_10101010                                   17          1          -    Covered              
+        bin low_range                                     141          1          -    Covered              
+        bin high_range                                    184          1          -    Covered              
+    Coverpoint cp_IN_3                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      22          1          -    Covered              
+        bin all_ones                                       18          1          -    Covered              
+        bin alt_01010101                                   22          1          -    Covered              
+        bin alt_10101010                                   16          1          -    Covered              
+        bin low_range                                     149          1          -    Covered              
+        bin high_range                                    173          1          -    Covered              
+    Coverpoint cp_SEL_1                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sel_0                                          94          1          -    Covered              
+        bin sel_1                                         100          1          -    Covered              
+        bin sel_2                                         102          1          -    Covered              
+        bin sel_3                                         104          1          -    Covered              
+    Coverpoint cp_OUT                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      23          1          -    Covered              
+        bin all_ones                                       20          1          -    Covered              
+        bin alt_01010101                                   17          1          -    Covered              
+        bin alt_10101010                                   23          1          -    Covered              
+        bin low_range                                     151          1          -    Covered              
+        bin high_range                                    167          1          -    Covered              
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         33          1          -    Covered              
+            bin <sel_3,low_range>                          34          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          37          1          -    Covered              
+            bin <sel_0,low_range>                          40          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        6          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        2          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            1          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            7          1          -    Covered              
+            bin <sel_0,all_ones>                            4          1          -    Covered              
+            bin <sel_3,all_zeros>                           8          1          -    Covered              
+            bin <sel_2,all_zeros>                           9          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         47          1          -    Covered              
+            bin <sel_2,high_range>                         42          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         43          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          38          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        3          1          -    Covered              
+            bin <sel_2,alt_10101010>                        5          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        3          1          -    Covered              
+            bin <sel_0,alt_01010101>                        5          1          -    Covered              
+            bin <sel_3,all_ones>                            5          1          -    Covered              
+            bin <sel_2,all_ones>                            8          1          -    Covered              
+            bin <sel_1,all_ones>                            5          1          -    Covered              
+            bin <sel_0,all_ones>                            7          1          -    Covered              
+            bin <sel_3,all_zeros>                           7          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           8          1          -    Covered              
+            bin <sel_0,all_zeros>                           4          1          -    Covered              
+    Cross cx_sel_in2                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         44          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         44          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          36          1          -    Covered              
+            bin <sel_1,low_range>                          36          1          -    Covered              
+            bin <sel_0,low_range>                          33          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        4          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            6          1          -    Covered              
+            bin <sel_0,all_ones>                            5          1          -    Covered              
+            bin <sel_3,all_zeros>                           3          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in3                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         48          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         42          1          -    Covered              
+            bin <sel_3,low_range>                          37          1          -    Covered              
+            bin <sel_2,low_range>                          38          1          -    Covered              
+            bin <sel_1,low_range>                          40          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        4          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        3          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        5          1          -    Covered              
+            bin <sel_0,alt_01010101>                        4          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            2          1          -    Covered              
+            bin <sel_1,all_ones>                            4          1          -    Covered              
+            bin <sel_0,all_ones>                            8          1          -    Covered              
+            bin <sel_3,all_zeros>                           4          1          -    Covered              
+            bin <sel_2,all_zeros>                          10          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           3          1          -    Covered              
+ Covergroup instance \/VLD_MUX_pkg::VLD_MUX_subscriber::VLD_MUX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   130        130          -                      
+    missing/total bins:                                     0        130          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_IN_0                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      27          1          -    Covered              
+        bin all_ones                                       19          1          -    Covered              
+        bin alt_01010101                                   16          1          -    Covered              
+        bin alt_10101010                                   22          1          -    Covered              
+        bin low_range                                     146          1          -    Covered              
+        bin high_range                                    170          1          -    Covered              
+    Coverpoint cp_IN_1                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      24          1          -    Covered              
+        bin all_ones                                       25          1          -    Covered              
+        bin alt_01010101                                   21          1          -    Covered              
+        bin alt_10101010                                   13          1          -    Covered              
+        bin low_range                                     143          1          -    Covered              
+        bin high_range                                    174          1          -    Covered              
+    Coverpoint cp_IN_2                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      18          1          -    Covered              
+        bin all_ones                                       22          1          -    Covered              
+        bin alt_01010101                                   18          1          -    Covered              
+        bin alt_10101010                                   17          1          -    Covered              
+        bin low_range                                     141          1          -    Covered              
+        bin high_range                                    184          1          -    Covered              
+    Coverpoint cp_IN_3                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      22          1          -    Covered              
+        bin all_ones                                       18          1          -    Covered              
+        bin alt_01010101                                   22          1          -    Covered              
+        bin alt_10101010                                   16          1          -    Covered              
+        bin low_range                                     149          1          -    Covered              
+        bin high_range                                    173          1          -    Covered              
+    Coverpoint cp_SEL_1                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sel_0                                          94          1          -    Covered              
+        bin sel_1                                         100          1          -    Covered              
+        bin sel_2                                         102          1          -    Covered              
+        bin sel_3                                         104          1          -    Covered              
+    Coverpoint cp_OUT                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      23          1          -    Covered              
+        bin all_ones                                       20          1          -    Covered              
+        bin alt_01010101                                   17          1          -    Covered              
+        bin alt_10101010                                   23          1          -    Covered              
+        bin low_range                                     151          1          -    Covered              
+        bin high_range                                    167          1          -    Covered              
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         33          1          -    Covered              
+            bin <sel_3,low_range>                          34          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          37          1          -    Covered              
+            bin <sel_0,low_range>                          40          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        6          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        2          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            1          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            7          1          -    Covered              
+            bin <sel_0,all_ones>                            4          1          -    Covered              
+            bin <sel_3,all_zeros>                           8          1          -    Covered              
+            bin <sel_2,all_zeros>                           9          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         47          1          -    Covered              
+            bin <sel_2,high_range>                         42          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         43          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          38          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        3          1          -    Covered              
+            bin <sel_2,alt_10101010>                        5          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        3          1          -    Covered              
+            bin <sel_0,alt_01010101>                        5          1          -    Covered              
+            bin <sel_3,all_ones>                            5          1          -    Covered              
+            bin <sel_2,all_ones>                            8          1          -    Covered              
+            bin <sel_1,all_ones>                            5          1          -    Covered              
+            bin <sel_0,all_ones>                            7          1          -    Covered              
+            bin <sel_3,all_zeros>                           7          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           8          1          -    Covered              
+            bin <sel_0,all_zeros>                           4          1          -    Covered              
+    Cross cx_sel_in2                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         44          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         44          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          36          1          -    Covered              
+            bin <sel_1,low_range>                          36          1          -    Covered              
+            bin <sel_0,low_range>                          33          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        4          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            6          1          -    Covered              
+            bin <sel_0,all_ones>                            5          1          -    Covered              
+            bin <sel_3,all_zeros>                           3          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in3                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         48          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         42          1          -    Covered              
+            bin <sel_3,low_range>                          37          1          -    Covered              
+            bin <sel_2,low_range>                          38          1          -    Covered              
+            bin <sel_1,low_range>                          40          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        4          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        3          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        5          1          -    Covered              
+            bin <sel_0,alt_01010101>                        4          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            2          1          -    Covered              
+            bin <sel_1,all_ones>                            4          1          -    Covered              
+            bin <sel_0,all_ones>                            8          1          -    Covered              
+            bin <sel_3,all_zeros>                           4          1          -    Covered              
+            bin <sel_2,all_zeros>                          10          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           3          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /VLD_MUX_pkg/VLD_MUX_subscriber/VLD_MUX_cg      100.00%        100          -    Covered              
+    covered/total bins:                                   130        130          -                      
+    missing/total bins:                                     0        130          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_IN_0                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      27          1          -    Covered              
+        bin all_ones                                       19          1          -    Covered              
+        bin alt_01010101                                   16          1          -    Covered              
+        bin alt_10101010                                   22          1          -    Covered              
+        bin low_range                                     146          1          -    Covered              
+        bin high_range                                    170          1          -    Covered              
+    Coverpoint cp_IN_1                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      24          1          -    Covered              
+        bin all_ones                                       25          1          -    Covered              
+        bin alt_01010101                                   21          1          -    Covered              
+        bin alt_10101010                                   13          1          -    Covered              
+        bin low_range                                     143          1          -    Covered              
+        bin high_range                                    174          1          -    Covered              
+    Coverpoint cp_IN_2                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      18          1          -    Covered              
+        bin all_ones                                       22          1          -    Covered              
+        bin alt_01010101                                   18          1          -    Covered              
+        bin alt_10101010                                   17          1          -    Covered              
+        bin low_range                                     141          1          -    Covered              
+        bin high_range                                    184          1          -    Covered              
+    Coverpoint cp_IN_3                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      22          1          -    Covered              
+        bin all_ones                                       18          1          -    Covered              
+        bin alt_01010101                                   22          1          -    Covered              
+        bin alt_10101010                                   16          1          -    Covered              
+        bin low_range                                     149          1          -    Covered              
+        bin high_range                                    173          1          -    Covered              
+    Coverpoint cp_SEL_1                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sel_0                                          94          1          -    Covered              
+        bin sel_1                                         100          1          -    Covered              
+        bin sel_2                                         102          1          -    Covered              
+        bin sel_3                                         104          1          -    Covered              
+    Coverpoint cp_OUT                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      23          1          -    Covered              
+        bin all_ones                                       20          1          -    Covered              
+        bin alt_01010101                                   17          1          -    Covered              
+        bin alt_10101010                                   23          1          -    Covered              
+        bin low_range                                     151          1          -    Covered              
+        bin high_range                                    167          1          -    Covered              
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         33          1          -    Covered              
+            bin <sel_3,low_range>                          34          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          37          1          -    Covered              
+            bin <sel_0,low_range>                          40          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        6          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        2          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            1          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            7          1          -    Covered              
+            bin <sel_0,all_ones>                            4          1          -    Covered              
+            bin <sel_3,all_zeros>                           8          1          -    Covered              
+            bin <sel_2,all_zeros>                           9          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         47          1          -    Covered              
+            bin <sel_2,high_range>                         42          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         43          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          38          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        3          1          -    Covered              
+            bin <sel_2,alt_10101010>                        5          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        3          1          -    Covered              
+            bin <sel_0,alt_01010101>                        5          1          -    Covered              
+            bin <sel_3,all_ones>                            5          1          -    Covered              
+            bin <sel_2,all_ones>                            8          1          -    Covered              
+            bin <sel_1,all_ones>                            5          1          -    Covered              
+            bin <sel_0,all_ones>                            7          1          -    Covered              
+            bin <sel_3,all_zeros>                           7          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           8          1          -    Covered              
+            bin <sel_0,all_zeros>                           4          1          -    Covered              
+    Cross cx_sel_in2                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         44          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         44          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          36          1          -    Covered              
+            bin <sel_1,low_range>                          36          1          -    Covered              
+            bin <sel_0,low_range>                          33          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        4          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            6          1          -    Covered              
+            bin <sel_0,all_ones>                            5          1          -    Covered              
+            bin <sel_3,all_zeros>                           3          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in3                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         48          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         42          1          -    Covered              
+            bin <sel_3,low_range>                          37          1          -    Covered              
+            bin <sel_2,low_range>                          38          1          -    Covered              
+            bin <sel_1,low_range>                          40          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        4          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        3          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        5          1          -    Covered              
+            bin <sel_0,alt_01010101>                        4          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            2          1          -    Covered              
+            bin <sel_1,all_ones>                            4          1          -    Covered              
+            bin <sel_0,all_ones>                            8          1          -    Covered              
+            bin <sel_3,all_zeros>                           4          1          -    Covered              
+            bin <sel_2,all_zeros>                          10          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           3          1          -    Covered              
+ Covergroup instance \/VLD_MUX_pkg::VLD_MUX_subscriber::VLD_MUX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   130        130          -                      
+    missing/total bins:                                     0        130          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_IN_0                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      27          1          -    Covered              
+        bin all_ones                                       19          1          -    Covered              
+        bin alt_01010101                                   16          1          -    Covered              
+        bin alt_10101010                                   22          1          -    Covered              
+        bin low_range                                     146          1          -    Covered              
+        bin high_range                                    170          1          -    Covered              
+    Coverpoint cp_IN_1                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      24          1          -    Covered              
+        bin all_ones                                       25          1          -    Covered              
+        bin alt_01010101                                   21          1          -    Covered              
+        bin alt_10101010                                   13          1          -    Covered              
+        bin low_range                                     143          1          -    Covered              
+        bin high_range                                    174          1          -    Covered              
+    Coverpoint cp_IN_2                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      18          1          -    Covered              
+        bin all_ones                                       22          1          -    Covered              
+        bin alt_01010101                                   18          1          -    Covered              
+        bin alt_10101010                                   17          1          -    Covered              
+        bin low_range                                     141          1          -    Covered              
+        bin high_range                                    184          1          -    Covered              
+    Coverpoint cp_IN_3                                100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      22          1          -    Covered              
+        bin all_ones                                       18          1          -    Covered              
+        bin alt_01010101                                   22          1          -    Covered              
+        bin alt_10101010                                   16          1          -    Covered              
+        bin low_range                                     149          1          -    Covered              
+        bin high_range                                    173          1          -    Covered              
+    Coverpoint cp_SEL_1                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sel_0                                          94          1          -    Covered              
+        bin sel_1                                         100          1          -    Covered              
+        bin sel_2                                         102          1          -    Covered              
+        bin sel_3                                         104          1          -    Covered              
+    Coverpoint cp_OUT                                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      23          1          -    Covered              
+        bin all_ones                                       20          1          -    Covered              
+        bin alt_01010101                                   17          1          -    Covered              
+        bin alt_10101010                                   23          1          -    Covered              
+        bin low_range                                     151          1          -    Covered              
+        bin high_range                                    167          1          -    Covered              
+    Cross cx_sel_in0                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         33          1          -    Covered              
+            bin <sel_3,low_range>                          34          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          37          1          -    Covered              
+            bin <sel_0,low_range>                          40          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        6          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        2          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            1          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            7          1          -    Covered              
+            bin <sel_0,all_ones>                            4          1          -    Covered              
+            bin <sel_3,all_zeros>                           8          1          -    Covered              
+            bin <sel_2,all_zeros>                           9          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in1                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         47          1          -    Covered              
+            bin <sel_2,high_range>                         42          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         43          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          35          1          -    Covered              
+            bin <sel_1,low_range>                          38          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        3          1          -    Covered              
+            bin <sel_2,alt_10101010>                        5          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        3          1          -    Covered              
+            bin <sel_0,alt_01010101>                        5          1          -    Covered              
+            bin <sel_3,all_ones>                            5          1          -    Covered              
+            bin <sel_2,all_ones>                            8          1          -    Covered              
+            bin <sel_1,all_ones>                            5          1          -    Covered              
+            bin <sel_0,all_ones>                            7          1          -    Covered              
+            bin <sel_3,all_zeros>                           7          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           8          1          -    Covered              
+            bin <sel_0,all_zeros>                           4          1          -    Covered              
+    Cross cx_sel_in2                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         50          1          -    Covered              
+            bin <sel_2,high_range>                         44          1          -    Covered              
+            bin <sel_1,high_range>                         46          1          -    Covered              
+            bin <sel_0,high_range>                         44          1          -    Covered              
+            bin <sel_3,low_range>                          36          1          -    Covered              
+            bin <sel_2,low_range>                          36          1          -    Covered              
+            bin <sel_1,low_range>                          36          1          -    Covered              
+            bin <sel_0,low_range>                          33          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        8          1          -    Covered              
+            bin <sel_1,alt_10101010>                        3          1          -    Covered              
+            bin <sel_0,alt_10101010>                        1          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        2          1          -    Covered              
+            bin <sel_1,alt_01010101>                        4          1          -    Covered              
+            bin <sel_0,alt_01010101>                        6          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            7          1          -    Covered              
+            bin <sel_1,all_ones>                            6          1          -    Covered              
+            bin <sel_0,all_ones>                            5          1          -    Covered              
+            bin <sel_3,all_zeros>                           3          1          -    Covered              
+            bin <sel_2,all_zeros>                           5          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           5          1          -    Covered              
+    Cross cx_sel_in3                                  100.00%        100          -    Covered              
+        covered/total bins:                                24         24          -                      
+        missing/total bins:                                 0         24          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sel_3,high_range>                         48          1          -    Covered              
+            bin <sel_2,high_range>                         41          1          -    Covered              
+            bin <sel_1,high_range>                         42          1          -    Covered              
+            bin <sel_0,high_range>                         42          1          -    Covered              
+            bin <sel_3,low_range>                          37          1          -    Covered              
+            bin <sel_2,low_range>                          38          1          -    Covered              
+            bin <sel_1,low_range>                          40          1          -    Covered              
+            bin <sel_0,low_range>                          34          1          -    Covered              
+            bin <sel_3,alt_10101010>                        5          1          -    Covered              
+            bin <sel_2,alt_10101010>                        4          1          -    Covered              
+            bin <sel_1,alt_10101010>                        4          1          -    Covered              
+            bin <sel_0,alt_10101010>                        3          1          -    Covered              
+            bin <sel_3,alt_01010101>                        6          1          -    Covered              
+            bin <sel_2,alt_01010101>                        7          1          -    Covered              
+            bin <sel_1,alt_01010101>                        5          1          -    Covered              
+            bin <sel_0,alt_01010101>                        4          1          -    Covered              
+            bin <sel_3,all_ones>                            4          1          -    Covered              
+            bin <sel_2,all_ones>                            2          1          -    Covered              
+            bin <sel_1,all_ones>                            4          1          -    Covered              
+            bin <sel_0,all_ones>                            8          1          -    Covered              
+            bin <sel_3,all_zeros>                           4          1          -    Covered              
+            bin <sel_2,all_zeros>                          10          1          -    Covered              
+            bin <sel_1,all_zeros>                           5          1          -    Covered              
+            bin <sel_0,all_zeros>                           3          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
