@@ -73,58 +73,39 @@ Coverage Report by instance with details
 Covergroup Coverage:
     Covergroups                      1        na        na   100.00%
         Coverpoints/Crosses          5        na        na        na
-            Covergroup Bins         12        12         0   100.00%
+            Covergroup Bins         16        16         0   100.00%
 ----------------------------------------------------------------------------------------------------------
 Covergroup                                             Metric       Goal       Bins    Status               
                                                                                                          
 ----------------------------------------------------------------------------------------------------------
  TYPE /DEMUX_pkg/DEMUX_subscriber/DEMUX_cg            100.00%        100          -    Covered              
-    covered/total bins:                                    12         12          -                      
-    missing/total bins:                                     0         12          -                      
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint cp_lp_data                             100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           25          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           24          1          -    Covered              
     Coverpoint cp_SEL_4                               100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin SEL_0                                          23          1          -    Covered              
-        bin SEL_1                                          26          1          -    Covered              
     Coverpoint cp_lp_data_0                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           36          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           13          1          -    Covered              
     Coverpoint cp_lp_data_1                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           38          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           11          1          -    Covered              
     Cross cross_sel_data                              100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        Auto, Default and User Defined Bins:
-            bin SEL_0_lp_data_1                            23          1          -    Covered              
-            bin SEL_1_lp_data_0                            26          1          -    Covered              
-            bin SEL_0_lp_data_0                            23          1          -    Covered              
-            bin SEL_1_lp_data_1                            26          1          -    Covered              
  Covergroup instance \/DEMUX_pkg::DEMUX_subscriber::DEMUX_cg  
                                                       100.00%        100          -    Covered              
-    covered/total bins:                                    12         12          -                      
-    missing/total bins:                                     0         12          -                      
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint cp_lp_data                             100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
@@ -133,38 +114,38 @@ Covergroup                                             Metric       Goal       B
         bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
                                                            25          1          -    Covered              
         bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           24          1          -    Covered              
+                                                           25          1          -    Covered              
     Coverpoint cp_SEL_4                               100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin SEL_0                                          23          1          -    Covered              
+        bin SEL_0                                          24          1          -    Covered              
         bin SEL_1                                          26          1          -    Covered              
+        bin SEL_toggle01                                    9          1          -    Covered              
+        bin SEL_toggle10                                    9          1          -    Covered              
     Coverpoint cp_lp_data_0                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           36          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           13          1          -    Covered              
+        bin zero                                           26          1          -    Covered              
+        bin ones                                            3          1          -    Covered              
+        bin alternating                                     3          1          -    Covered              
     Coverpoint cp_lp_data_1                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           38          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           11          1          -    Covered              
+        bin zero                                           27          1          -    Covered              
+        bin ones                                            2          1          -    Covered              
+        bin alternating                                     2          1          -    Covered              
     Cross cross_sel_data                              100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin SEL_0_lp_data_1                            23          1          -    Covered              
-            bin SEL_1_lp_data_0                            26          1          -    Covered              
-            bin SEL_0_lp_data_0                            23          1          -    Covered              
-            bin SEL_1_lp_data_1                            26          1          -    Covered              
+            bin SEL_0_lp_data_1                             6          1          -    Covered              
+            bin SEL_1_lp_data_0                             7          1          -    Covered              
+            bin SEL_0_lp_data_0                             6          1          -    Covered              
+            bin SEL_1_lp_data_1                             7          1          -    Covered              
 
 COVERGROUP COVERAGE:
 ----------------------------------------------------------------------------------------------------------
@@ -172,52 +153,33 @@ Covergroup                                             Metric       Goal       B
                                                                                                          
 ----------------------------------------------------------------------------------------------------------
  TYPE /DEMUX_pkg/DEMUX_subscriber/DEMUX_cg            100.00%        100          -    Covered              
-    covered/total bins:                                    12         12          -                      
-    missing/total bins:                                     0         12          -                      
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint cp_lp_data                             100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           25          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           24          1          -    Covered              
     Coverpoint cp_SEL_4                               100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin SEL_0                                          23          1          -    Covered              
-        bin SEL_1                                          26          1          -    Covered              
     Coverpoint cp_lp_data_0                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           36          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           13          1          -    Covered              
     Coverpoint cp_lp_data_1                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           38          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           11          1          -    Covered              
     Cross cross_sel_data                              100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        Auto, Default and User Defined Bins:
-            bin SEL_0_lp_data_1                            23          1          -    Covered              
-            bin SEL_1_lp_data_0                            26          1          -    Covered              
-            bin SEL_0_lp_data_0                            23          1          -    Covered              
-            bin SEL_1_lp_data_1                            26          1          -    Covered              
  Covergroup instance \/DEMUX_pkg::DEMUX_subscriber::DEMUX_cg  
                                                       100.00%        100          -    Covered              
-    covered/total bins:                                    12         12          -                      
-    missing/total bins:                                     0         12          -                      
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint cp_lp_data                             100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
@@ -226,38 +188,38 @@ Covergroup                                             Metric       Goal       B
         bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
                                                            25          1          -    Covered              
         bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           24          1          -    Covered              
+                                                           25          1          -    Covered              
     Coverpoint cp_SEL_4                               100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin SEL_0                                          23          1          -    Covered              
+        bin SEL_0                                          24          1          -    Covered              
         bin SEL_1                                          26          1          -    Covered              
+        bin SEL_toggle01                                    9          1          -    Covered              
+        bin SEL_toggle10                                    9          1          -    Covered              
     Coverpoint cp_lp_data_0                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           36          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           13          1          -    Covered              
+        bin zero                                           26          1          -    Covered              
+        bin ones                                            3          1          -    Covered              
+        bin alternating                                     3          1          -    Covered              
     Coverpoint cp_lp_data_1                           100.00%        100          -    Covered              
-        covered/total bins:                                 2          2          -                      
-        missing/total bins:                                 0          2          -                      
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
-        bin auto[0:6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042047] 
-                                                           38          1          -    Covered              
-        bin auto[6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048:13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095] 
-                                                           11          1          -    Covered              
+        bin zero                                           27          1          -    Covered              
+        bin ones                                            2          1          -    Covered              
+        bin alternating                                     2          1          -    Covered              
     Cross cross_sel_data                              100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin SEL_0_lp_data_1                            23          1          -    Covered              
-            bin SEL_1_lp_data_0                            26          1          -    Covered              
-            bin SEL_0_lp_data_0                            23          1          -    Covered              
-            bin SEL_1_lp_data_1                            26          1          -    Covered              
+            bin SEL_0_lp_data_1                             6          1          -    Covered              
+            bin SEL_1_lp_data_0                             7          1          -    Covered              
+            bin SEL_0_lp_data_0                             6          1          -    Covered              
+            bin SEL_1_lp_data_1                             7          1          -    Covered              
 
 TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
 

@@ -26,18 +26,24 @@ class DEMUX_subscriber extends uvm_subscriber #(DEMUX_sequence_item);
     cp_SEL_4: coverpoint cov_tr.SEL_4{
       bins SEL_0 = {0};
       bins SEL_1 = {1};
+      bins SEL_toggle01 = (0 => 1);
+      bins SEL_toggle10 = (1 => 0);
     }
     cp_lp_data_0: coverpoint cov_tr.lp_data_0 {
-      option.auto_bin_max = 2;
+      bins zero = { {64{8'h00}} };
+      bins ones = { {64{8'hFF}} };
+      bins alternating = {{64{8'hAA}}, {64{8'h55}}};
     }
     cp_lp_data_1: coverpoint cov_tr.lp_data_1 {
-      option.auto_bin_max = 2;
+      bins zero = { {64{8'h00}} };
+      bins ones = { {64{8'hFF}} };
+      bins alternating = {{64{8'hAA}}, {64{8'h55}}};
     }
 
     cross_sel_data: cross cp_SEL_4, cp_lp_data_0, cp_lp_data_1{ 
       option.cross_auto_bin_max = 0;
-      bins SEL_0_lp_data_1 = binsof(cp_SEL_4.SEL_0) && binsof(cp_lp_data_1) intersect {0};
-      bins SEL_1_lp_data_0 = binsof(cp_SEL_4.SEL_1) && binsof(cp_lp_data_0) intersect {0};
+      bins SEL_0_lp_data_1 = binsof(cp_SEL_4.SEL_0) && binsof(cp_lp_data_1.zero);
+      bins SEL_1_lp_data_0 = binsof(cp_SEL_4.SEL_1) && binsof(cp_lp_data_0.zero);
       bins SEL_0_lp_data_0 = binsof(cp_SEL_4.SEL_0) && binsof(cp_lp_data_0);
       bins SEL_1_lp_data_1 = binsof(cp_SEL_4.SEL_1) && binsof(cp_lp_data_1);
     }
