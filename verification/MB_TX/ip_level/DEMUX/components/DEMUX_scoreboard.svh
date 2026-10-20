@@ -7,8 +7,8 @@ class DEMUX_scoreboard extends uvm_scoreboard;
   uvm_analysis_export#(DEMUX_sequence_item) scb_aexp;
   uvm_tlm_analysis_fifo#(DEMUX_sequence_item) scb_fifo;
 
-  logic [511:0] data_0_ref;
-  logic [511:0] data_1_ref;
+  logic [63:0] [7:0] data_0_ref;
+  logic [63:0] [7:0] data_1_ref;
   
   int pass_count, error_count;
 
