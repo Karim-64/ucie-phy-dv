@@ -1,0 +1,396 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Timer_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Timer_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Timer_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    25                                      1135     Count coming in to IF
+    25              1                        586     
+    30              1                        308     
+                                             241     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    34                                       308     Count coming in to IF
+    34              1                          8     
+    39              1                        300     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       3         3         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.Timer_SBTX --
+
+  File ../RTL/Timer_SBTX.sv
+----------------Focused Condition View-------------------
+Line       30 Item    1  (start || counting_in_process)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       34 Item    1  (count == (32 - 1))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      1         1         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.Timer_SBTX --
+
+  File ../RTL/Timer_SBTX.sv
+----------------Focused Expression View-----------------
+Line       48 Item    1  (count == (32 - 1))
+Expression totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       8         8         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Timer_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Timer_SBTX.sv
+    23              1                       1135     
+    27              1                        586     
+    28              1                        586     
+    32              1                        308     
+    36              1                          8     
+    37              1                          8     
+    41              1                        300     
+    48              1                        315     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         20        20         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Timer_SBTX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         10 
+Toggled Node Count   =         10 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (20 of 20 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Timer_SBTX_pkg
+=== Design Unit: work.Timer_SBTX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses         10        na        na        na
+            Covergroup Bins         34        34         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Timer_SBTX_pkg/Timer_SBTX_subscriber/Timer_SBTX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    34         34          -                      
+    missing/total bins:                                     0         34          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_rst_n_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_alarm_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_n_x_start                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_n_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_start_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_n_x_start_x_alarm                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance Timer_SBTX_Functional_Coverage 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    34         34          -                      
+    missing/total bins:                                     0         34          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin asserted                                      508          1          -    Covered              
+        bin deasserted                                  10200          1          -    Covered              
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10284          1          -    Covered              
+        bin high                                          424          1          -    Covered              
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10700          1          -    Covered              
+        bin high                                            8          1          -    Covered              
+    Coverpoint cp_rst_n_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin assert_edge                                   245          1          -    Covered              
+        bin deassert_edge                                 246          1          -    Covered              
+        bin held_asserted                                 262          1          -    Covered              
+        bin held_released                                9954          1          -    Covered              
+    Coverpoint cp_start_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rise                                          282          1          -    Covered              
+        bin fall                                          282          1          -    Covered              
+        bin held_high                                     142          1          -    Covered              
+        bin held_low                                    10001          1          -    Covered              
+    Coverpoint cp_alarm_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rise                                            8          1          -    Covered              
+        bin fall                                            8          1          -    Covered              
+        bin held_low                                    10691          1          -    Covered              
+    Cross cross_rst_n_x_start                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high>                          75          1          -    Covered              
+            bin <asserted,high>                           349          1          -    Covered              
+            bin <deasserted,low>                        10125          1          -    Covered              
+            bin <asserted,low>                            159          1          -    Covered              
+    Cross cross_rst_n_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high>                           8          1          -    Covered              
+            bin <deasserted,low>                        10192          1          -    Covered              
+            bin <asserted,low>                            508          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin rst_asserted_alarm_high              0                     -    ZERO                 
+    Cross cross_start_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <high,high>                                 2          1          -    Covered              
+            bin <low,high>                                  6          1          -    Covered              
+            bin <high,low>                                422          1          -    Covered              
+            bin <low,low>                               10278          1          -    Covered              
+    Cross cross_rst_n_x_start_x_alarm                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high,high>                      2          1          -    Covered              
+            bin <deasserted,low,high>                       6          1          -    Covered              
+            bin <deasserted,high,low>                      73          1          -    Covered              
+            bin <asserted,high,low>                       349          1          -    Covered              
+            bin <deasserted,low,low>                    10119          1          -    Covered              
+            bin <asserted,low,low>                        159          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin rst_asserted_alarm_high              0                     -    ZERO                 
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Timer_SBTX_pkg/Timer_SBTX_subscriber/Timer_SBTX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    34         34          -                      
+    missing/total bins:                                     0         34          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_rst_n_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_alarm_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_n_x_start                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_n_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_start_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_n_x_start_x_alarm                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance Timer_SBTX_Functional_Coverage 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    34         34          -                      
+    missing/total bins:                                     0         34          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin asserted                                      508          1          -    Covered              
+        bin deasserted                                  10200          1          -    Covered              
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10284          1          -    Covered              
+        bin high                                          424          1          -    Covered              
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10700          1          -    Covered              
+        bin high                                            8          1          -    Covered              
+    Coverpoint cp_rst_n_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin assert_edge                                   245          1          -    Covered              
+        bin deassert_edge                                 246          1          -    Covered              
+        bin held_asserted                                 262          1          -    Covered              
+        bin held_released                                9954          1          -    Covered              
+    Coverpoint cp_start_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rise                                          282          1          -    Covered              
+        bin fall                                          282          1          -    Covered              
+        bin held_high                                     142          1          -    Covered              
+        bin held_low                                    10001          1          -    Covered              
+    Coverpoint cp_alarm_trans                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rise                                            8          1          -    Covered              
+        bin fall                                            8          1          -    Covered              
+        bin held_low                                    10691          1          -    Covered              
+    Cross cross_rst_n_x_start                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high>                          75          1          -    Covered              
+            bin <asserted,high>                           349          1          -    Covered              
+            bin <deasserted,low>                        10125          1          -    Covered              
+            bin <asserted,low>                            159          1          -    Covered              
+    Cross cross_rst_n_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high>                           8          1          -    Covered              
+            bin <deasserted,low>                        10192          1          -    Covered              
+            bin <asserted,low>                            508          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin rst_asserted_alarm_high              0                     -    ZERO                 
+    Cross cross_start_x_alarm                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <high,high>                                 2          1          -    Covered              
+            bin <low,high>                                  6          1          -    Covered              
+            bin <high,low>                                422          1          -    Covered              
+            bin <low,low>                               10278          1          -    Covered              
+    Cross cross_rst_n_x_start_x_alarm                 100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high,high>                      2          1          -    Covered              
+            bin <deasserted,low,high>                       6          1          -    Covered              
+            bin <deasserted,high,low>                      73          1          -    Covered              
+            bin <asserted,high,low>                       349          1          -    Covered              
+            bin <deasserted,low,low>                    10119          1          -    Covered              
+            bin <asserted,low,low>                        159          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin rst_asserted_alarm_high              0                     -    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
