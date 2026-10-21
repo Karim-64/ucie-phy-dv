@@ -1,0 +1,2136 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_top/up_down_counter_if_inst
+=== Design Unit: work.up_down_counter_if
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top/up_down_counter_if_inst --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../interfaces/up_down_counter_if.sv
+    10              1                          1     
+    17              1                          1     
+    19              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18        18         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top/up_down_counter_if_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          9 
+Toggled Node Count   =          9 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (18 of 18 bins)
+
+=================================================================================
+=== Instance: /tb_top/dut
+=== Design Unit: work.up_down_counter
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tb_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/up_down_counter.sv
+------------------------------------IF Branch------------------------------------
+    12                                      3243     Count coming in to IF
+    12              1                        582     
+    14              1                       2661     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                      2661     Count coming in to IF
+    15              1                        514     
+    17              1                        936     
+                                            1211     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         6         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tb_top/dut --
+
+  File ../RTL/up_down_counter.sv
+----------------Focused Condition View-------------------
+Line       15 Item    1  ((up && ~down) && (count != {5{1}}))
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       17 Item    1  ((down && ~up) && (count != 0))
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/up_down_counter.sv
+    11              1                       3243     
+    13              1                        582     
+    16              1                        514     
+    18              1                        936     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18        18         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          9 
+Toggled Node Count   =          9 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (18 of 18 bins)
+
+=================================================================================
+=== Instance: /tb_top
+=== Design Unit: work.tb_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/tb_top.sv
+    12              1                          1     
+    13              1                          1     
+    14              1                      14374     
+    14              2                      14373     
+    35              1                          1     
+    37              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /up_down_counter_pkg
+=== Design Unit: work.up_down_counter_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                       355       153       202    43.09%
+
+================================Branch Details================================
+
+Branch Coverage for instance /up_down_counter_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ..//cfg_obj/up_down_counter_drv_mon_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//cfg_obj/up_down_counter_agt_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//cfg_obj/up_down_counter_env_cfg_obj.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//sequences/up_down_counter_sequence_item.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                       7187     Count coming in to IF
+    5               2                    ***0***     
+                                            7187     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                       7187     Count coming in to IF
+    5               5                    ***0***     
+                                            7187     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//sequences/up_down_counter_base_sequence.svh
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                          1     Count coming in to IF
+    5               2                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               3                    ***0***     
+    5               4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                          1     Count coming in to IF
+    5               5                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    5                                    ***0***     Count coming in to IF
+    5               6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                          1     Count coming in to IF
+    6               1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                      1577     Count coming in to IF
+    20              1                    ***0***     
+                                            1577     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    34                                       110     Count coming in to IF
+    34              1                    ***0***     
+                                             110     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                   ***0***     Count coming in to IF
+    36              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------CASE Branch------------------------------------
+    46                                      5500     Count coming in to CASE
+    47              1                       1000     
+    48              1                        500     
+    49              1                        500     
+    50              1                        500     
+    51              1                        500     
+    52              1                        500     
+    53              1                        500     
+    54              1                        500     
+    55              1                        500     
+    56              1                        500     
+    57              1                    ***0***     
+Branch totals: 10 hits of 11 branches = 90.90%
+
+------------------------------------IF Branch------------------------------------
+    59                                      5500     Count coming in to IF
+    59              1                    ***0***     
+                                            5500     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                   ***0***     Count coming in to IF
+    60              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    92                                         1     Count coming in to IF
+    92              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    99                                         1     Count coming in to IF
+    99              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    106                                        1     Count coming in to IF
+    106             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    113                                        1     Count coming in to IF
+    113             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    120                                        1     Count coming in to IF
+    120             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    132                                        1     Count coming in to IF
+    132             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    138                                        1     Count coming in to IF
+    138             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    145                                        1     Count coming in to IF
+    145             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    151                                        1     Count coming in to IF
+    151             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    162                                        1     Count coming in to IF
+    162             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    167                                        1     Count coming in to IF
+    167             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    172                                        1     Count coming in to IF
+    172             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    177                                        1     Count coming in to IF
+    177             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    182                                        1     Count coming in to IF
+    182             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    191                                        1     Count coming in to IF
+    191             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    196                                        1     Count coming in to IF
+    196             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    202                                        1     Count coming in to IF
+    202             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    209                                        1     Count coming in to IF
+    209             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    214                                        1     Count coming in to IF
+    214             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    220                                        1     Count coming in to IF
+    220             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    227                                        1     Count coming in to IF
+    227             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    235                                        1     Count coming in to IF
+    235             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    243                                        1     Count coming in to IF
+    243             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    250                                        1     Count coming in to IF
+    250             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    262                                        1     Count coming in to IF
+    262             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    268                                        1     Count coming in to IF
+    268             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    273                                        1     Count coming in to IF
+    273             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    278                                        1     Count coming in to IF
+    278             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    283                                        1     Count coming in to IF
+    283             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    288                                        1     Count coming in to IF
+    288             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    293                                        1     Count coming in to IF
+    293             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    298                                        1     Count coming in to IF
+    298             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    303                                        1     Count coming in to IF
+    303             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    308                                        1     Count coming in to IF
+    308             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    313                                        1     Count coming in to IF
+    313             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    318                                        1     Count coming in to IF
+    318             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    323                                        1     Count coming in to IF
+    323             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    328                                        1     Count coming in to IF
+    328             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    333                                        1     Count coming in to IF
+    333             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    338                                        1     Count coming in to IF
+    338             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    347                                        1     Count coming in to IF
+    347             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    354                                        1     Count coming in to IF
+    354             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    361                                        1     Count coming in to IF
+    361             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    369                                        1     Count coming in to IF
+    369             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    380                                        1     Count coming in to IF
+    380             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    388                                        1     Count coming in to IF
+    388             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    396                                        1     Count coming in to IF
+    396             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    404                                        1     Count coming in to IF
+    404             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    416                                        1     Count coming in to IF
+    416             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    422                                       16     Count coming in to IF
+    422             1                         15     
+                                               1     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    429                                        1     Count coming in to IF
+    429             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    436                                       16     Count coming in to IF
+    436             1                         15     
+                                               1     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    443                                        1     Count coming in to IF
+    443             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    451                                        1     Count coming in to IF
+    451             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    459                                        1     Count coming in to IF
+    459             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    470                                        1     Count coming in to IF
+    470             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    479                                        1     Count coming in to IF
+    479             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    491                                        1     Count coming in to IF
+    491             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    497                                        1     Count coming in to IF
+    497             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    503                                        1     Count coming in to IF
+    503             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    509                                        1     Count coming in to IF
+    509             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    515                                        1     Count coming in to IF
+    515             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    521                                        1     Count coming in to IF
+    521             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    528                                        1     Count coming in to IF
+    528             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    535                                        1     Count coming in to IF
+    535             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    541                                        1     Count coming in to IF
+    541             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    547                                        1     Count coming in to IF
+    547             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    553                                        1     Count coming in to IF
+    553             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/up_down_counter_driver.svh
+------------------------------------IF Branch------------------------------------
+    20                                         1     Count coming in to IF
+    20              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ..//components/up_down_counter_monitor.svh
+------------------------------------IF Branch------------------------------------
+    19                                         1     Count coming in to IF
+    19              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    46                                      7187     Count coming in to IF
+    46              1                       7186     
+                                               1     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+  File ..//components/up_down_counter_agent.svh
+------------------------------------IF Branch------------------------------------
+    22                                         1     Count coming in to IF
+    22              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                         1     Count coming in to IF
+    30              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    41                                         1     Count coming in to IF
+    41              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/up_down_counter_scoreboard.svh
+------------------------------------IF Branch------------------------------------
+    44                                      7186     Count coming in to IF
+    44              1                    ***0***     
+                                            7186     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    45                                   ***0***     Count coming in to IF
+    45              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    51                                      7186     Count coming in to IF
+    51              1                        686     
+    60              1                       6500     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                       686     Count coming in to IF
+    53              1                    ***0***     
+    56              1                        686     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    55                                   ***0***     Count coming in to IF
+    55              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    61                                      6500     Count coming in to IF
+    61              1                    ***0***     
+    64              1                       6500     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                   ***0***     Count coming in to IF
+    63              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    67                                      6500     Count coming in to IF
+    67              1                       1456     
+    71              1                       1919     
+                                            3125     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                      1456     Count coming in to IF
+    68              1                        514     
+                                             942     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    72                                      1919     Count coming in to IF
+    72              1                        936     
+                                             983     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    83                                         1     Count coming in to IF
+    83              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    84                                         1     Count coming in to IF
+    84              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    85                                         1     Count coming in to IF
+    85              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    86                                         1     Count coming in to IF
+    86              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    87                                         1     Count coming in to IF
+    87              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    88                                         1     Count coming in to IF
+    88              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    89                                         1     Count coming in to IF
+    89              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    91                                         1     Count coming in to IF
+    91              1                          1     
+    93              1                    ***0***     
+    95              1                    ***0***     
+Branch totals: 1 hit of 3 branches = 33.33%
+
+------------------------------------IF Branch------------------------------------
+    92                                         1     Count coming in to IF
+    92              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    94                                   ***0***     Count coming in to IF
+    94              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    96                                   ***0***     Count coming in to IF
+    96              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    98                                         1     Count coming in to IF
+    98              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/up_down_counter_subscriber.svh
+------------------------------------IF Branch------------------------------------
+    173                                     7186     Count coming in to IF
+    173             1                    ***0***     
+                                            7186     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    174                                  ***0***     Count coming in to IF
+    174             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    177                                     7186     Count coming in to IF
+    177             1                       7185     
+    177             2                          1     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    188                                        1     Count coming in to IF
+    188             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    189                                        1     Count coming in to IF
+    189             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    190                                        1     Count coming in to IF
+    190             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    191                                        1     Count coming in to IF
+    191             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    192                                        1     Count coming in to IF
+    192             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    193                                        1     Count coming in to IF
+    193             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    194                                        1     Count coming in to IF
+    194             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    195                                        1     Count coming in to IF
+    195             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    196                                        1     Count coming in to IF
+    196             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    197                                        1     Count coming in to IF
+    197             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    198                                        1     Count coming in to IF
+    198             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    199                                        1     Count coming in to IF
+    199             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    200                                        1     Count coming in to IF
+    200             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    201                                        1     Count coming in to IF
+    201             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    202                                        1     Count coming in to IF
+    202             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    203                                        1     Count coming in to IF
+    203             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    204                                        1     Count coming in to IF
+    204             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    205                                        1     Count coming in to IF
+    205             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    206                                        1     Count coming in to IF
+    206             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    207                                        1     Count coming in to IF
+    207             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    208                                        1     Count coming in to IF
+    208             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    210                                        1     Count coming in to IF
+    210             1                          1     
+    212             1                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    211                                        1     Count coming in to IF
+    211             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    213                                  ***0***     Count coming in to IF
+    213             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    214                                        1     Count coming in to IF
+    214             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/up_down_counter_environment.svh
+------------------------------------IF Branch------------------------------------
+    25                                         1     Count coming in to IF
+    25              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                   ***0***     Count coming in to IF
+    26              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                         1     Count coming in to IF
+    36              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    39                                         1     Count coming in to IF
+    39              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         1     Count coming in to IF
+    42              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                         1     Count coming in to IF
+    49              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                         1     Count coming in to IF
+    50              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                         1     Count coming in to IF
+    53              1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ..//components/up_down_counter_base_test.svh
+------------------------------------IF Branch------------------------------------
+    22                                         1     Count coming in to IF
+    22              1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      26         8        18    30.76%
+
+================================Condition Details================================
+
+Condition Coverage for instance /up_down_counter_pkg --
+
+  File ..//cfg_obj/up_down_counter_drv_mon_cfg_obj.svh
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+----------------Focused Condition View-------------------
+Line       5 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       5 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       422 Item    1  ((c + 2) <= this.max_count)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       436 Item    1  ((c + 2) <= this.max_count)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+
+
+
+----------------Focused Condition View-------------------
+Line       44 Item    1  (t == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (t == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t == null)_0         -                             
+  Row   2:    ***0***  (t == null)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       53 Item    1  (t.count != this.ex_count)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                  Input Term   Covered  Reason for no coverage   Hint
+                 -----------  --------  -----------------------  --------------
+  (t.count != this.ex_count)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                    Non-masking condition(s)      
+ ---------  ---------  --------------------          -------------------------     
+  Row   1:          1  (t.count != this.ex_count)_0  -                             
+  Row   2:    ***0***  (t.count != this.ex_count)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       61 Item    1  (t.count != this.ex_count)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                  Input Term   Covered  Reason for no coverage   Hint
+                 -----------  --------  -----------------------  --------------
+  (t.count != this.ex_count)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                    Non-masking condition(s)      
+ ---------  ---------  --------------------          -------------------------     
+  Row   1:          1  (t.count != this.ex_count)_0  -                             
+  Row   2:    ***0***  (t.count != this.ex_count)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       67 Item    1  (~t.down & t.up)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       68 Item    1  (this.ex_count < {5{1}})
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       71 Item    1  (t.down & ~t.up)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       72 Item    1  (this.ex_count > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       91 Item    1  ((this.mismatch_count == 0) && (this.total_transactions > 0))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+     (this.mismatch_count == 0)         N  '_0' not hit             Hit '_0'
+  (this.total_transactions > 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:    ***0***  (this.mismatch_count == 0)_0     -                             
+  Row   2:          1  (this.mismatch_count == 0)_1     (this.total_transactions > 0) 
+  Row   3:    ***0***  (this.total_transactions > 0)_0  (this.mismatch_count == 0)    
+  Row   4:          1  (this.total_transactions > 0)_1  (this.mismatch_count == 0)    
+
+----------------Focused Condition View-------------------
+Line       93 Item    1  (this.total_transactions == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                      Input Term   Covered  Reason for no coverage   Hint
+                     -----------  --------  -----------------------  --------------
+  (this.total_transactions == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                        Non-masking condition(s)      
+ ---------  ---------  --------------------              -------------------------     
+  Row   1:    ***0***  (this.total_transactions == 0)_0  -                             
+  Row   2:    ***0***  (this.total_transactions == 0)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       173 Item    1  (t == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (t == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (t == null)_0         -                             
+  Row   2:    ***0***  (t == null)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       210 Item    1  (get_coverage(#dummy_covered_bins#,#dummy_total_bins#) >= 100.000000)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                                                             Input Term   Covered  Reason for no coverage   Hint
+                                                            -----------  --------  -----------------------  --------------
+  (get_coverage(#dummy_covered_bins#,#dummy_total_bins#) >= 100.000000)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                                                               Non-masking condition(s)      
+ ---------  ---------  --------------------                                                     -------------------------     
+  Row   1:    ***0***  (get_coverage(#dummy_covered_bins#,#dummy_total_bins#) >= 100.000000)_0  -                             
+  Row   2:          1  (get_coverage(#dummy_covered_bins#,#dummy_total_bins#) >= 100.000000)_1  -                             
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     593       509        84    85.83%
+
+================================Statement Details================================
+
+Statement Coverage for instance /up_down_counter_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ..//cfg_obj/up_down_counter_drv_mon_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    10              1                          1     
+  File ..//cfg_obj/up_down_counter_agt_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    12              1                          1     
+  File ..//cfg_obj/up_down_counter_env_cfg_obj.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                    ***0***     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                    ***0***     
+    5              10                    ***0***     
+    15              1                          1     
+  File ..//sequences/up_down_counter_sequence_item.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                       7187     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                       7187     
+    5              10                    ***0***     
+    154             1                      21562     
+    155             1                      21562     
+    156             1                      21562     
+    157             1                      21562     
+    164             1                    ***0***     
+  File ..//components/up_down_counter_sequencer.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    10              1                          1     
+    14              1                          1     
+    15              1                          1     
+    19              1                          1     
+  File ..//sequences/up_down_counter_base_sequence.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                    ***0***     
+    5               4                    ***0***     
+    5               5                    ***0***     
+    5               6                        133     
+    5               7                    ***0***     
+    5               8                    ***0***     
+    5               9                          1     
+    5              10                    ***0***     
+    6               1                          1     
+    6               2                    ***0***     
+    9               1                          1     
+    12              1                          1     
+    17              1                       1577     
+    18              1                       1577     
+    19              1                       1577     
+    24              1                    ***0***     
+    25              1                       1577     
+    26              1                       1577     
+    31              1                        110     
+    32              1                        110     
+    33              1                        110     
+    36              1                    ***0***     
+    37              1                        110     
+    38              1                        110     
+    43              1                       5500     
+    44              1                       5500     
+    45              1                       5500     
+    47              1                       1000     
+    48              1                        500     
+    49              1                        500     
+    50              1                        500     
+    51              1                        500     
+    52              1                        500     
+    53              1                        500     
+    54              1                        500     
+    55              1                        500     
+    56              1                        500     
+    57              1                    ***0***     
+    60              1                    ***0***     
+    61              1                       5500     
+    62              1                       5500     
+    66              1                         18     
+    67              1                         18     
+    71              1                          8     
+    72              1                          8     
+    72              2                        120     
+    73              1                        120     
+    75              1                          8     
+    79              1                         10     
+    79              2                        320     
+    80              1                        320     
+    82              1                         10     
+    92              1                          1     
+    93              1                          1     
+    93              2                          5     
+    94              1                          5     
+    96              1                          1     
+    99              1                          1     
+    100             1                          1     
+    100             2                          5     
+    101             1                          5     
+    103             1                          1     
+    106             1                          1     
+    107             1                          1     
+    107             2                          5     
+    108             1                          5     
+    110             1                          1     
+    113             1                          1     
+    114             1                          1     
+    114             2                          5     
+    115             1                          5     
+    117             1                          1     
+    120             1                          1     
+    121             1                          1     
+    124             1                          1     
+    126             1                          1     
+    126             2                          1     
+    128             1                          1     
+    132             1                          1     
+    133             1                          1     
+    134             1                          1     
+    135             1                          1     
+    138             1                          1     
+    139             1                          1     
+    140             1                          1     
+    140             2                          5     
+    141             1                          5     
+    145             1                          1     
+    146             1                          1     
+    147             1                          1     
+    148             1                          1     
+    151             1                          1     
+    152             1                          1     
+    152             2                        110     
+    153             1                        110     
+    155             1                          1     
+    162             1                          1     
+    163             1                          1     
+    164             1                          1     
+    167             1                          1     
+    168             1                          1     
+    169             1                          1     
+    172             1                          1     
+    173             1                          1     
+    174             1                          1     
+    177             1                          1     
+    178             1                          1     
+    179             1                          1     
+    182             1                          1     
+    183             1                          1     
+    184             1                          1     
+    191             1                          1     
+    192             1                          1     
+    193             1                          1     
+    196             1                          1     
+    197             1                          1     
+    197             2                         20     
+    198             1                         20     
+    202             1                          1     
+    203             1                          1     
+    204             1                          1     
+    205             1                          1     
+    206             1                          1     
+    209             1                          1     
+    210             1                          1     
+    211             1                          1     
+    214             1                          1     
+    215             1                          1     
+    215             2                         20     
+    216             1                         20     
+    220             1                          1     
+    221             1                          1     
+    222             1                          1     
+    223             1                          1     
+    224             1                          1     
+    227             1                          1     
+    228             1                          1     
+    229             1                          1     
+    229             2                          3     
+    230             1                          3     
+    232             1                          1     
+    235             1                          1     
+    236             1                          1     
+    237             1                          1     
+    237             2                          3     
+    238             1                          3     
+    240             1                          1     
+    243             1                          1     
+    244             1                          1     
+    245             1                          1     
+    245             2                          3     
+    246             1                          3     
+    250             1                          1     
+    251             1                          1     
+    252             1                          1     
+    252             2                          3     
+    253             1                          3     
+    262             1                          1     
+    263             1                          1     
+    264             1                          1     
+    265             1                          1     
+    268             1                          1     
+    269             1                          1     
+    270             1                          1     
+    273             1                          1     
+    274             1                          1     
+    275             1                          1     
+    278             1                          1     
+    279             1                          1     
+    280             1                          1     
+    283             1                          1     
+    284             1                          1     
+    285             1                          1     
+    288             1                          1     
+    289             1                          1     
+    290             1                          1     
+    293             1                          1     
+    294             1                          1     
+    295             1                          1     
+    298             1                          1     
+    299             1                          1     
+    300             1                          1     
+    303             1                          1     
+    304             1                          1     
+    305             1                          1     
+    308             1                          1     
+    309             1                          1     
+    310             1                          1     
+    313             1                          1     
+    314             1                          1     
+    315             1                          1     
+    318             1                          1     
+    319             1                          1     
+    320             1                          1     
+    323             1                          1     
+    324             1                          1     
+    325             1                          1     
+    328             1                          1     
+    329             1                          1     
+    330             1                          1     
+    333             1                          1     
+    334             1                          1     
+    335             1                          1     
+    338             1                          1     
+    339             1                          1     
+    340             1                          1     
+    347             1                          1     
+    348             1                          1     
+    349             1                          1     
+    349             2                         32     
+    350             1                         32     
+    354             1                          1     
+    355             1                          1     
+    356             1                          1     
+    356             2                         32     
+    357             1                         32     
+    361             1                          1     
+    362             1                          1     
+    363             1                          1     
+    363             2                         25     
+    364             1                         25     
+    365             1                         25     
+    369             1                          1     
+    370             1                          1     
+    371             1                          1     
+    371             2                         11     
+    372             1                         11     
+    374             1                          1     
+    374             2                         15     
+    375             1                         15     
+    376             1                         15     
+    380             1                          1     
+    381             1                          1     
+    382             1                          1     
+    382             2                          4     
+    383             1                          4     
+    383             2                         12     
+    383             3                         12     
+    384             1                          4     
+    384             2                         12     
+    384             3                         12     
+    388             1                          1     
+    389             1                          1     
+    390             1                          1     
+    390             2                          4     
+    391             1                          4     
+    391             2                         12     
+    391             3                         12     
+    392             1                          4     
+    392             2                         12     
+    392             3                         12     
+    396             1                          1     
+    397             1                          1     
+    398             1                          1     
+    398             2                         10     
+    399             1                         10     
+    400             1                         10     
+    404             1                          1     
+    405             1                          1     
+    406             1                          1     
+    406             2                         10     
+    407             1                         10     
+    408             1                         10     
+    416             1                          1     
+    417             1                          1     
+    418             1                          1     
+    418             2                         16     
+    419             1                         16     
+    419             2                         48     
+    420             1                         48     
+    423             1                         15     
+    424             1                         15     
+    429             1                          1     
+    430             1                          1     
+    431             1                          1     
+    432             1                          1     
+    432             2                         16     
+    433             1                         16     
+    433             2                         48     
+    434             1                         48     
+    437             1                         15     
+    438             1                         15     
+    443             1                          1     
+    444             1                          1     
+    445             1                          1     
+    446             1                          1     
+    447             1                          1     
+    448             1                          1     
+    451             1                          1     
+    452             1                          1     
+    453             1                          1     
+    454             1                          1     
+    455             1                          1     
+    456             1                          1     
+    459             1                          1     
+    460             1                          1     
+    461             1                          1     
+    461             2                        500     
+    462             1                        500     
+    470             1                          1     
+    471             1                          1     
+    472             1                          1     
+    472             2                         27     
+    473             1                         27     
+    475             1                          1     
+    476             1                          1     
+    479             1                          1     
+    481             1                          1     
+    482             1                          1     
+    482             2                          1     
+    484             1                          1     
+    491             1                          1     
+    492             1                          1     
+    492             2                       1000     
+    493             1                       1000     
+    497             1                          1     
+    498             1                          1     
+    498             2                        500     
+    499             1                        500     
+    503             1                          1     
+    504             1                          1     
+    504             2                        500     
+    505             1                        500     
+    509             1                          1     
+    510             1                          1     
+    510             2                        500     
+    511             1                        500     
+    515             1                          1     
+    516             1                          1     
+    516             2                        500     
+    517             1                        500     
+    521             1                          1     
+    522             1                          1     
+    522             2                        500     
+    523             1                        500     
+    525             1                          1     
+    528             1                          1     
+    529             1                          1     
+    530             1                          1     
+    530             2                        500     
+    531             1                        500     
+    535             1                          1     
+    536             1                          1     
+    536             2                        500     
+    537             1                        500     
+    541             1                          1     
+    542             1                          1     
+    542             2                        500     
+    543             1                        500     
+    547             1                          1     
+    548             1                          1     
+    549             1                          1     
+    549             2                        500     
+    550             1                        500     
+    553             1                          1     
+  File ..//components/up_down_counter_driver.svh
+    9               1                    ***0***     
+    9               2                    ***0***     
+    9               3                          2     
+    15              1                          1     
+    19              1                          1     
+    21              1                    ***0***     
+    22              1                          1     
+    26              1                          1     
+    30              1                          1     
+    31              1                          1     
+    32              1                       7188     
+    36              1                       7187     
+    39              1                       7187     
+    40              1                       7187     
+    41              1                       7187     
+    43              1                       7187     
+  File ..//components/up_down_counter_monitor.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    14              1                          1     
+    18              1                          1     
+    20              1                    ***0***     
+    21              1                          1     
+    22              1                          1     
+    26              1                          1     
+    30              1                       7187     
+    31              1                       7187     
+    32              1                       7187     
+    33              1                       7187     
+    34              1                       7187     
+    38              1                          1     
+    39              1                          1     
+    40              1                       7187     
+    43              1                       7187     
+    47              1                       7186     
+    48              1                       7186     
+    49              1                       7186     
+    50              1                       7186     
+    52              1                       7187     
+    53              1                       7187     
+    53              2                       7186     
+  File ..//components/up_down_counter_agent.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    16              1                          1     
+    20              1                          1     
+    23              1                    ***0***     
+    25              1                          1     
+    26              1                          1     
+    28              1                          1     
+    31              1                          1     
+    32              1                          1     
+    35              1                          1     
+    36              1                          1     
+    40              1                          1     
+    42              1                          1     
+    43              1                          1     
+    45              1                          1     
+  File ..//components/up_down_counter_scoreboard.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    16              1                          1     
+    17              1                          1     
+    18              1                          1     
+    19              1                          1     
+    20              1                          1     
+    24              1                          1     
+    25              1                          1     
+    26              1                          1     
+    27              1                          1     
+    31              1                          1     
+    36              1                          1     
+    37              1                          1     
+    38              1                       7187     
+    39              1                       7186     
+    45              1                    ***0***     
+    46              1                    ***0***     
+    49              1                       7186     
+    52              1                        686     
+    54              1                    ***0***     
+    55              1                    ***0***     
+    57              1                        686     
+    62              1                    ***0***     
+    63              1                    ***0***     
+    65              1                       6500     
+    69              1                        514     
+    73              1                        936     
+    81              1                          1     
+    83              1                          1     
+    84              1                          1     
+    85              1                          1     
+    86              1                          1     
+    87              1                          1     
+    88              1                          1     
+    89              1                          1     
+    92              1                          1     
+    94              1                    ***0***     
+    96              1                    ***0***     
+    98              1                          1     
+  File ..//components/up_down_counter_subscriber.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    154             1                          1     
+    155             1                          1     
+    156             1                          1     
+    157             1                          1     
+    158             1                          1     
+    159             1                          1     
+    160             1                          1     
+    165             1                          1     
+    166             1                          1     
+    167             1                       7187     
+    168             1                       7186     
+    174             1                    ***0***     
+    175             1                    ***0***     
+    177             1                       7186     
+    178             1                       7186     
+    179             1                       7186     
+    180             1                       7186     
+    187             1                          1     
+    188             1                          1     
+    189             1                          1     
+    190             1                          1     
+    191             1                          1     
+    192             1                          1     
+    193             1                          1     
+    194             1                          1     
+    195             1                          1     
+    196             1                          1     
+    197             1                          1     
+    198             1                          1     
+    199             1                          1     
+    200             1                          1     
+    201             1                          1     
+    202             1                          1     
+    203             1                          1     
+    204             1                          1     
+    205             1                          1     
+    206             1                          1     
+    207             1                          1     
+    208             1                          1     
+    211             1                          1     
+    213             1                    ***0***     
+    214             1                          1     
+  File ..//components/up_down_counter_environment.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          2     
+    17              1                          1     
+    21              1                          1     
+    23              1                          1     
+    26              1                    ***0***     
+    29              1                          1     
+    30              1                          1     
+    31              1                          1     
+    33              1                          1     
+    37              1                          1     
+    40              1                          1     
+    43              1                          1     
+    47              1                          1     
+    51              1                          1     
+    54              1                          1     
+    56              1                          1     
+  File ..//components/up_down_counter_base_test.svh
+    5               1                    ***0***     
+    5               2                    ***0***     
+    5               3                          4     
+    12              1                          1     
+    16              1                          1     
+    19              1                          1     
+    24              1                    ***0***     
+    27              1                          1     
+    28              1                          1     
+    29              1                          1     
+    30              1                          1     
+    32              1                          1     
+    34              1                          1     
+    35              1                          1     
+    39              1                          1     
+    43              1                          1     
+    45              1                          1     
+    46              1                          1     
+    47              1                          1     
+
+
+Total Coverage By Instance (filtered view): 68.44%
+

@@ -1,0 +1,2 @@
+var g_data = {"11":{"pr":"/up_down_counter_pkg","ty":2,"dui":3,"dun":"work.up_down_counter_pkg","cvgs":[{"h":["up_down_counter_Functional_Coverage",2,1,27,12],"cov":[131,131,100.00],"opts":{"goal":"100","per_instance":"true"}},{"h":["/up_down_counter_pkg/up_down_counter_subscriber/up_down_counter_cg",1,1,12],"cov":[131,131,100.00],"opts":{"goal":"100"}}]}};
+processCovergroupsData(g_data);
