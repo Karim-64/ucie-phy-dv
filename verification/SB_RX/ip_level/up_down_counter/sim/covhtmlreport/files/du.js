@@ -1,0 +1,2 @@
+var g_data = {"data":[{"n":"work.tb_top","id":5,"zf":1,"tc":100.00,"s":100.00,"t":100.00},{"n":"work.up_down_counter","id":6,"zf":1,"tc":100.00,"s":100.00,"b":100.00,"fc":100.00,"t":100.00},{"n":"work.up_down_counter_if","id":1,"zf":1,"tc":100.00,"s":100.00,"t":100.00},{"n":"work.up_down_counter_pkg","id":3,"zf":1,"tc":64.92,"s":85.83,"b":43.09,"fc":30.76,"g":100.00}]};
+processDuData(g_data);
