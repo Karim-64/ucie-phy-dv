@@ -1,0 +1,399 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.WR_Control_MBRX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        26        26         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.WR_Control_MBRX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/WR_Control_MBRX.sv
+------------------------------------IF Branch------------------------------------
+    27                                       128     Count coming in to IF
+    27              1                          2     
+    29              1                        126     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    35                                       200     Count coming in to CASE
+    36              1                         89     
+    48              1                        108     
+                                               3     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    37                                        89     Count coming in to IF
+    37              1                         80     
+    43              1                          9     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                        80     Count coming in to IF
+    38              1                         78     
+    40              1                          2     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                       108     Count coming in to IF
+    49              1                         87     
+    51              1                         21     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    59                                       188     Count coming in to IF
+    59              1                          3     
+    63              1                        113     
+    78              1                         71     
+                                               1     All False Count
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                       113     Count coming in to IF
+    66              1                        101     
+                                              12     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    67                                       101     Count coming in to IF
+    67              1                         21     
+    69              1                         21     
+    71              1                         51     
+    74              1                          8     
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                        71     Count coming in to IF
+    79              1                         50     
+                                              21     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    81                                        50     Count coming in to IF
+    81              1                         41     
+    83              1                          1     
+    85              1                          8     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      14        12         2    85.71%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.WR_Control_MBRX --
+
+  File ../RTL/WR_Control_MBRX.sv
+----------------Focused Condition View-------------------
+Line       37 Item    1  (EN && Deser_Done)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       38 Item    1  (Width_Degrade != 3)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       49 Item    1  (EN && Deser_Done)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+          EN         Y
+  Deser_Done         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  EN_0                  -                             
+  Row   2:          1  EN_1                  Deser_Done                    
+  Row   3:    ***0***  Deser_Done_0          EN                            
+  Row   4:          1  Deser_Done_1          EN                            
+
+----------------Focused Condition View-------------------
+Line       66 Item    1  (EN && Deser_Done)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       67 Item    1  (Width_Degrade == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       69 Item    1  (Width_Degrade == 2)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       71 Item    1  (Width_Degrade == 3)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       79 Item    1  (EN && Deser_Done)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+          EN         Y
+  Deser_Done         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  EN_0                  -                             
+  Row   2:          1  EN_1                  Deser_Done                    
+  Row   3:    ***0***  Deser_Done_0          EN                            
+  Row   4:          1  Deser_Done_1          EN                            
+
+----------------Focused Condition View-------------------
+Line       81 Item    1  (Width_Degrade == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       83 Item    1  (Width_Degrade == 2)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      23        23         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.WR_Control_MBRX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/WR_Control_MBRX.sv
+    26              1                        128     
+    28              1                          2     
+    30              1                        126     
+    34              1                        200     
+    39              1                         78     
+    41              1                          2     
+    44              1                          9     
+    50              1                         87     
+    52              1                         21     
+    58              1                        188     
+    60              1                          3     
+    61              1                          3     
+    62              1                          3     
+    64              1                        113     
+    68              1                         21     
+    70              1                         21     
+    72              1                         51     
+    73              1                         51     
+    75              1                          8     
+    80              1                         50     
+    82              1                         41     
+    84              1                          1     
+    86              1                          8     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        660       660         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.WR_Control_MBRX
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                     current_state               ENUM type       Value       Count 
+                                        next_state               ENUM type       Value       Count 
+
+Total Node Count     =        332 
+Toggled Node Count   =        332 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (660 of 660 bins)
+
+
+Total Coverage By Design Unit (filtered view): 96.42%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /wr_control_pkg
+=== Design Unit: work.wr_control_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na    95.00%
+        Coverpoints/Crosses          5        na        na        na
+            Covergroup Bins         27        23         4    85.18%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /wr_control_pkg/wr_control_subscriber/wr_control_cg 
+                                                       95.00%        100          -    Uncovered            
+    covered/total bins:                                    23         27          -                      
+    missing/total bins:                                     4         27          -                      
+    % Hit:                                             85.18%        100          -                      
+    Coverpoint cp_reset                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_width_degrade                       100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_done                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_mode_handshake                         75.00%        100          -    Uncovered            
+        covered/total bins:                                12         16          -                      
+        missing/total bins:                                 4         16          -                      
+        % Hit:                                         75.00%        100          -                      
+ Covergroup instance \/wr_control_pkg::wr_control_subscriber::wr_control_cg  
+                                                       95.00%        100          -    Uncovered            
+    covered/total bins:                                    23         27          -                      
+    missing/total bins:                                     4         27          -                      
+    % Hit:                                             85.18%        100          -                      
+    Coverpoint cp_reset                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          3          1          -    Covered              
+        bin inactive                                      183          1          -    Covered              
+        bin transition                                      1          1          -    Covered              
+    Coverpoint cp_width_degrade                       100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin full_width                                     56          1          -    Covered              
+        bin degraded_lower                                 88          1          -    Covered              
+        bin degraded_upper                                 26          1          -    Covered              
+        bin illegal_codes                                  16          1          -    Covered              
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin disabled                                       32          1          -    Covered              
+        bin enabled                                       154          1          -    Covered              
+    Coverpoint cp_deser_done                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin not_done                                       26          1          -    Covered              
+        bin done                                          160          1          -    Covered              
+    Cross cross_mode_handshake                         75.00%        100          -    Uncovered            
+        covered/total bins:                                12         16          -                      
+        missing/total bins:                                 4         16          -                      
+        % Hit:                                         75.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <illegal_codes,enabled,done>               15          1          -    Covered              
+            bin <degraded_upper,enabled,done>              22          1          -    Covered              
+            bin <degraded_lower,enabled,done>              62          1          -    Covered              
+            bin <full_width,enabled,done>                  53          1          -    Covered              
+            bin <degraded_upper,disabled,done>              2          1          -    Covered              
+            bin <degraded_lower,disabled,done>              4          1          -    Covered              
+            bin <full_width,disabled,done>                  2          1          -    Covered              
+            bin <degraded_upper,enabled,not_done>           1          1          -    Covered              
+            bin <full_width,enabled,not_done>               1          1          -    Covered              
+            bin <illegal_codes,disabled,not_done>           1          1          -    Covered              
+            bin <degraded_upper,disabled,not_done>          1          1          -    Covered              
+            bin <degraded_lower,disabled,not_done>         22          1          -    Covered              
+            bin <illegal_codes,disabled,done>               0          1          1    ZERO                 
+            bin <illegal_codes,enabled,not_done>            0          1          1    ZERO                 
+            bin <degraded_lower,enabled,not_done>           0          1          1    ZERO                 
+            bin <full_width,disabled,not_done>              0          1          1    ZERO                 
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /wr_control_pkg/wr_control_subscriber/wr_control_cg 
+                                                       95.00%        100          -    Uncovered            
+    covered/total bins:                                    23         27          -                      
+    missing/total bins:                                     4         27          -                      
+    % Hit:                                             85.18%        100          -                      
+    Coverpoint cp_reset                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_width_degrade                       100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_done                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_mode_handshake                         75.00%        100          -    Uncovered            
+        covered/total bins:                                12         16          -                      
+        missing/total bins:                                 4         16          -                      
+        % Hit:                                         75.00%        100          -                      
+ Covergroup instance \/wr_control_pkg::wr_control_subscriber::wr_control_cg  
+                                                       95.00%        100          -    Uncovered            
+    covered/total bins:                                    23         27          -                      
+    missing/total bins:                                     4         27          -                      
+    % Hit:                                             85.18%        100          -                      
+    Coverpoint cp_reset                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          3          1          -    Covered              
+        bin inactive                                      183          1          -    Covered              
+        bin transition                                      1          1          -    Covered              
+    Coverpoint cp_width_degrade                       100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin full_width                                     56          1          -    Covered              
+        bin degraded_lower                                 88          1          -    Covered              
+        bin degraded_upper                                 26          1          -    Covered              
+        bin illegal_codes                                  16          1          -    Covered              
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin disabled                                       32          1          -    Covered              
+        bin enabled                                       154          1          -    Covered              
+    Coverpoint cp_deser_done                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin not_done                                       26          1          -    Covered              
+        bin done                                          160          1          -    Covered              
+    Cross cross_mode_handshake                         75.00%        100          -    Uncovered            
+        covered/total bins:                                12         16          -                      
+        missing/total bins:                                 4         16          -                      
+        % Hit:                                         75.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <illegal_codes,enabled,done>               15          1          -    Covered              
+            bin <degraded_upper,enabled,done>              22          1          -    Covered              
+            bin <degraded_lower,enabled,done>              62          1          -    Covered              
+            bin <full_width,enabled,done>                  53          1          -    Covered              
+            bin <degraded_upper,disabled,done>              2          1          -    Covered              
+            bin <degraded_lower,disabled,done>              4          1          -    Covered              
+            bin <full_width,disabled,done>                  2          1          -    Covered              
+            bin <degraded_upper,enabled,not_done>           1          1          -    Covered              
+            bin <full_width,enabled,not_done>               1          1          -    Covered              
+            bin <illegal_codes,disabled,not_done>           1          1          -    Covered              
+            bin <degraded_upper,disabled,not_done>          1          1          -    Covered              
+            bin <degraded_lower,disabled,not_done>         22          1          -    Covered              
+            bin <illegal_codes,disabled,done>               0          1          1    ZERO                 
+            bin <illegal_codes,enabled,not_done>            0          1          1    ZERO                 
+            bin <degraded_lower,enabled,not_done>           0          1          1    ZERO                 
+            bin <full_width,disabled,not_done>              0          1          1    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 95.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 95.00%
+
