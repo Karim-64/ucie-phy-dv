@@ -16,6 +16,11 @@ from .model import DutPortSpec, DutSpec, EnvFlags, ParamSpec, SignalSpec, UvmEnv
 
 _IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
+# Used to check that a localparam value only refers to constants declared before it.
+_SIZED_LITERAL_RE = re.compile(r"\d*'[sS]?[bBoOdDhH][0-9a-fA-F_xXzZ?]+")
+_SYSTEM_NAME_RE = re.compile(r"\$\w+")
+_IDENT_FIND_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
+
 _RESERVED_SIGNAL_NAMES = {"clk"}  # the clock is declared separately; don't let it collide
 
 
@@ -29,6 +34,48 @@ def _require_identifier(value: str, what: str) -> str:
         raise SpecError(
             f"{what} must be a valid SystemVerilog identifier, got: {value!r}"
         )
+    return value
+
+
+_EXPR_CHARS_RE = re.compile(r"[A-Za-z0-9_\s+\-*/%()<>]*")
+_NUMERIC_EXPR_RE = re.compile(r"[0-9+\-*/%()\s]+")
+
+
+def _check_size(value: str, what: str, known: set[str]) -> str:
+    """A width/depth/unpacked size: a positive integer literal, a declared
+    parameter/localparam name, or a constant expression over them (e.g. '2*NC',
+    'NC+8', '$clog2(DEPTH)'). A purely numeric expression ('2*32') is folded to its value."""
+    value = value.strip()
+    if not value:
+        raise SpecError(f"{what} is empty")
+
+    if value.isdigit():
+        if int(value) < 1:
+            raise SpecError(f"{what} is a non-positive literal: {value}")
+        return value
+
+    stripped = _SYSTEM_NAME_RE.sub("", _SIZED_LITERAL_RE.sub("", value))
+    if not _EXPR_CHARS_RE.fullmatch(stripped):
+        raise SpecError(
+            f"{what} '{value}' contains characters that are not allowed in a size "
+            f"expression (allowed: names, integers, + - * / % ( ) << >>)"
+        )
+    for ident in _IDENT_FIND_RE.findall(stripped):
+        if ident not in known:
+            raise SpecError(
+                f"{what} '{value}' refers to '{ident}', which is not a declared "
+                f"<parameter>/<localparam>"
+            )
+
+    # Fold pure-number expressions ('2*32' -> '64') so the output reads [63:0].
+    if _NUMERIC_EXPR_RE.fullmatch(value) and "**" not in value and "//" not in value:
+        try:
+            folded = int(eval(value.replace("/", "//"), {"__builtins__": {}}, {}))  # noqa: S307 (charset-restricted)
+        except Exception as e:  # malformed such as '2*', '(3'
+            raise SpecError(f"{what} '{value}' is not a valid expression: {e}") from e
+        if folded < 1:
+            raise SpecError(f"{what} '{value}' evaluates to a non-positive value ({folded})")
+        return str(folded)
     return value
 
 
@@ -60,6 +107,7 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
     # ---- parameters ----
     parameters: list[ParamSpec] = []
     seen_params: set[str] = set()
+    localparams: list[ParamSpec] = []
     params_node = root.find("parameters")
     if params_node is not None:
         for p in params_node.findall("parameter"):
@@ -71,6 +119,26 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
                 raise SpecError(f"Duplicate parameter name: '{pname}'")
             seen_params.add(pname)
             parameters.append(ParamSpec(name=pname, value=pvalue.strip()))
+
+        # All <parameter>s are emitted before any <localparam>, so a localparam may use any
+        # parameter plus any localparam declared EARLIER in the XML.
+        for lp in params_node.findall("localparam"):
+            lname = _require_identifier(lp.get("name", ""), "localparam/@name")
+            lvalue = lp.get("value")
+            if lvalue is None or not lvalue.strip():
+                raise SpecError(f"localparam '{lname}' is missing a non-empty @value")
+            lvalue = lvalue.strip()
+            if lname in seen_params:
+                raise SpecError(f"Duplicate parameter/localparam name: '{lname}'")
+            stripped = _SYSTEM_NAME_RE.sub("", _SIZED_LITERAL_RE.sub("", lvalue))
+            for ident in _IDENT_FIND_RE.findall(stripped):
+                if ident not in seen_params:
+                    raise SpecError(
+                        f"localparam '{lname}' value '{lvalue}' refers to '{ident}', which is "
+                        f"not a <parameter> or an earlier <localparam>"
+                    )
+            seen_params.add(lname)
+            localparams.append(ParamSpec(name=lname, value=lvalue))
 
     # ---- clock ----
     clock_node = root.find("clock")
@@ -98,25 +166,15 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
         width = s.get("width", "").strip()
         if not width:
             raise SpecError(f"signal '{sname}' is missing @width")
-        if not (width.isdigit() or width in seen_params):
-            raise SpecError(
-                f"signal '{sname}' has width '{width}', which is neither an integer "
-                f"literal nor a declared <parameter name=\"{width}\">"
-            )
-        if width.isdigit() and int(width) < 1:
-            raise SpecError(f"signal '{sname}' has non-positive width literal: {width}")
+        width = _check_size(width, f"signal '{sname}' width", seen_params)
 
+        # optional packed outer dimension:  logic [depth-1:0][width-1:0] name
         depth_raw = s.get("depth")
-        depth: str | None = None
-        if depth_raw is not None:
-            depth = depth_raw.strip()
-            if not (depth.isdigit() or depth in seen_params):
-                raise SpecError(
-                    f"signal '{sname}' has depth '{depth}', which is neither an integer "
-                    f"literal nor a declared <parameter name=\"{depth}\">"
-                )
-            if depth.isdigit() and int(depth) < 1:
-                raise SpecError(f"signal '{sname}' has non-positive depth literal: {depth}")
+        depth = _check_size(depth_raw, f"signal '{sname}' depth", seen_params) if depth_raw is not None else None
+
+        # optional unpacked dimension:      logic [width-1:0] name [unpacked-1:0]
+        unp_raw = s.get("unpacked")
+        unpacked = _check_size(unp_raw, f"signal '{sname}' unpacked", seen_params) if unp_raw is not None else None
 
         direction = s.get("direction", "").strip()
         if direction not in ("drv", "mon"):
@@ -124,7 +182,7 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
                 f"signal '{sname}' has direction '{direction}'; must be 'drv' or 'mon'"
             )
 
-        signals.append(SignalSpec(name=sname, width=width, direction=direction, depth=depth))
+        signals.append(SignalSpec(name=sname, width=width, direction=direction, depth=depth, unpacked=unpacked))
 
     if not any(s.is_driven for s in signals):
         raise SpecError("At least one signal must have direction=\"drv\" (nothing to drive)")
@@ -199,6 +257,7 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
         name=agent_name,
         clock_name=clock_name,
         parameters=parameters,
+        localparams=localparams,
         signals=signals,
         dut=dut,
         env=env_flags,

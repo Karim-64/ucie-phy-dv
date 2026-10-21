@@ -7,7 +7,7 @@ vlog ../RTL/*.sv +cover
 vlog +incdir+../ ../packages/{{ spec.name }}_pkg.sv ../interfaces/{{ spec.name }}_if.sv ../tb/tb_top.sv +cover -covercells
 
 # 3. Elaborate and simulate
-vsim -voptargs=+acc -classdebug work.tb_top -cover -uvmcontrol=all +UVM_TESTNAME={{ spec.name }}_base_test
+vsim -voptargs=+acc -classdebug work.tb_top -cover -uvmcontrol=all -onfinish stop +UVM_TESTNAME={{ spec.name }}_base_test
 
 run 0
 # do wave.do
@@ -35,4 +35,5 @@ coverage report -output coverage_detailed_report.txt -append -details -cvg
 
 echo ">>> Detailed coverage written to coverage_detailed_report.txt"
 
+# Uncomment for batch runs (vsim -c -do run.do) so the simulator closes when done
 # quit -f
