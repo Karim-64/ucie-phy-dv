@@ -1,0 +1,71 @@
+Sideband Receiver Submodules Description
+3.3.2.1. Deserializer
+
+Overview
+The Deserializer module functions as a serial-to-parallel converter that transforms incoming serial data into a parallel data word of configurable width (64 bits). It is specifically designed so that the serial data stream is received using a dedicated clock signal (RXCKSB) that operates at the same nominal frequency as the system clock (sb_clk), but originates from an independent clock source. Although the frequencies are matched, the differing sources can result in asynchronous behavior due to potential phase misalignment or jitter.
+
+Primary Functions
+1. Captures incoming serial bits on the falling edge of the RXCKSB signal.
+2. Accumulates the received bits and assembles them into a complete parallel word of width defined by the DATA_WIDTH parameter.
+3. Once a full word is collected, safely transfers the output into the system clock domain (sb_clk) using proper clock-domain crossing (CDC) techniques to ensure data integrity and prevent metastability.
+
+Block Diagram Signals
+- Inputs:
+  - RXCKSB: Serial-data sampling clock from the UCIe link.
+  - RXDATASB: Serial data input from the UCIe link, received bit by bit.
+  - sb_clk: System clock used for output and control. It has the same nominal frequency as RXCKSB but comes from a different clock source.
+  - sb_sys_rst: Active-low asynchronous reset signal from the interface.
+- Outputs:
+  - deser_data_out[DATA_WIDTH-1:0]: Parallel output of width DATA_WIDTH, updated when a full word has been assembled.
+  - data_valid: Asserted for one cycle of sb_clk when deser_data_out is valid. This signal is sent to the Pattern Detector and Asynchronous FIFO.
+
+Parameters
+- DATA_WIDTH
+  - Width: 64 bits
+  - Description: Defines the width of the parallel output word.
+
+Port and Signal Descriptions
+1. sb_clk
+   - Direction: Input
+   - Width: 1 bit
+   - Description: System clock used for output and control. It has the same nominal frequency as RXCKSB, but comes from a different clock source.
+
+2. sb_sys_rst
+   - Direction: Input
+   - Width: 1 bit
+   - Description: Active-low asynchronous reset signal from the interface.
+
+3. RXCKSB
+   - Direction: Input
+   - Width: 1 bit
+   - Description: Clock signal associated with the serial data from the UCIe link. Sampling occurs on its falling edge.
+
+4. RXDATASB
+   - Direction: Input
+   - Width: 1 bit
+   - Description: Serial data input received bit by bit from the UCIe link.
+
+5. deser_data_out
+   - Direction: Output
+   - Width: DATA_WIDTH (64 bits by default)
+   - Description: Parallel output of width DATA_WIDTH. It is updated when a full word is assembled.
+
+6. data_valid
+   - Direction: Output
+   - Width: 1 bit
+   - Description: Asserted for one cycle of sb_clk when deser_data_out is valid. This signal is sent to the Pattern Detector and Asynchronous FIFO.
+
+Behavioral Summary
+- The module samples RXDATASB on each falling edge of RXCKSB.
+- Each sampled bit is accumulated until DATA_WIDTH bits have been received.
+- After a complete word is assembled, the parallel word is transferred safely into the sb_clk clock domain.
+- deser_data_out is updated when the complete word is available.
+- data_valid is asserted for one sb_clk cycle to indicate that deser_data_out contains valid data.
+
+Reset Behavior
+- sb_sys_rst is an active-low asynchronous reset. When asserted low, the deserializer's state and output-valid control should be reset to their defined initial states.
+
+Design Notes
+- RXCKSB and sb_clk originate from independent clock sources. Even though they have the same nominal frequency, they must be treated as asynchronous clocks because their phases may differ and jitter may occur.
+- A suitable CDC mechanism is required when transferring assembled data from the RXCKSB domain to the sb_clk domain.
+- The provided description does not specify bit ordering (MSB-first or LSB-first), exact reset values for all outputs, or the detailed CDC implementation. These should be defined by the design specification or implementation.
