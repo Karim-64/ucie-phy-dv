@@ -1,0 +1,329 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Clk_Gate_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Clk_Gate_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Clk_Gate_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    22                                        76     Count coming in to IF
+    22              1                         57     
+                                              19     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      4         4         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.Clk_Gate_SBTX --
+
+  File ../RTL/Clk_Gate_SBTX.sv
+----------------Focused Expression View-----------------
+Line       23 Item    1  (Enable | Load)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       27 Item    1  (latch_out & CLK)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Clk_Gate_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Clk_Gate_SBTX.sv
+    20              1                         76     
+    23              1                         57     
+    27              1                        123     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Clk_Gate_SBTX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /clk_gate_sbtx_pkg
+=== Design Unit: work.clk_gate_sbtx_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          6        na        na        na
+            Covergroup Bins         24        24         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /clk_gate_sbtx_pkg/clk_gate_sbtx_subscriber/clk_gate_sbtx_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    24         24          -                      
+    missing/total bins:                                     0         24          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_Load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        50          1          -    Covered              
+        bin auto[1]                                        77          1          -    Covered              
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        74          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_SBTX_CLK                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        46          1          -    Covered              
+    Coverpoint cp_CLK                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        63          1          -    Covered              
+    Coverpoint cp_delay                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin valid_delay[0]                                 41          1          -    Covered              
+        bin valid_delay[1]                                 31          1          -    Covered              
+        bin valid_delay[2]                                 27          1          -    Covered              
+        bin valid_delay[3]                                 28          1          -    Covered              
+    Cross cp_cross_out_clk                            100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <auto[1],auto[1],auto[1],auto[1]>          13          1          -    Covered              
+            bin <auto[1],auto[0],auto[1],auto[1]>           9          1          -    Covered              
+            bin <auto[0],auto[1],auto[1],auto[1]>          20          1          -    Covered              
+            bin <auto[0],auto[0],auto[1],auto[1]>           4          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[0]>          16          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[0]>          11          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[1]>           1          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[0]>          25          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[1]>          11          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[0]>          13          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_clk_low_sbtx_high             0                     -    ZERO                 
+ Covergroup instance \/clk_gate_sbtx_pkg::clk_gate_sbtx_subscriber::clk_gate_sbtx_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    24         24          -                      
+    missing/total bins:                                     0         24          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_Load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        50          1          -    Covered              
+        bin auto[1]                                        77          1          -    Covered              
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        74          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_SBTX_CLK                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        46          1          -    Covered              
+    Coverpoint cp_CLK                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        63          1          -    Covered              
+    Coverpoint cp_delay                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin valid_delay[0]                                 41          1          -    Covered              
+        bin valid_delay[1]                                 31          1          -    Covered              
+        bin valid_delay[2]                                 27          1          -    Covered              
+        bin valid_delay[3]                                 28          1          -    Covered              
+    Cross cp_cross_out_clk                            100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <auto[1],auto[1],auto[1],auto[1]>          13          1          -    Covered              
+            bin <auto[1],auto[0],auto[1],auto[1]>           9          1          -    Covered              
+            bin <auto[0],auto[1],auto[1],auto[1]>          20          1          -    Covered              
+            bin <auto[0],auto[0],auto[1],auto[1]>           4          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[0]>          16          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[0]>          11          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[1]>           1          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[0]>          25          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[1]>          11          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[0]>          13          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_clk_low_sbtx_high             0                     -    ZERO                 
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /clk_gate_sbtx_pkg/clk_gate_sbtx_subscriber/clk_gate_sbtx_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    24         24          -                      
+    missing/total bins:                                     0         24          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_Load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        50          1          -    Covered              
+        bin auto[1]                                        77          1          -    Covered              
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        74          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_SBTX_CLK                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        46          1          -    Covered              
+    Coverpoint cp_CLK                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        63          1          -    Covered              
+    Coverpoint cp_delay                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin valid_delay[0]                                 41          1          -    Covered              
+        bin valid_delay[1]                                 31          1          -    Covered              
+        bin valid_delay[2]                                 27          1          -    Covered              
+        bin valid_delay[3]                                 28          1          -    Covered              
+    Cross cp_cross_out_clk                            100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <auto[1],auto[1],auto[1],auto[1]>          13          1          -    Covered              
+            bin <auto[1],auto[0],auto[1],auto[1]>           9          1          -    Covered              
+            bin <auto[0],auto[1],auto[1],auto[1]>          20          1          -    Covered              
+            bin <auto[0],auto[0],auto[1],auto[1]>           4          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[0]>          16          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[0]>          11          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[1]>           1          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[0]>          25          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[1]>          11          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[0]>          13          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_clk_low_sbtx_high             0                     -    ZERO                 
+ Covergroup instance \/clk_gate_sbtx_pkg::clk_gate_sbtx_subscriber::clk_gate_sbtx_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    24         24          -                      
+    missing/total bins:                                     0         24          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_Load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        50          1          -    Covered              
+        bin auto[1]                                        77          1          -    Covered              
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        74          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_SBTX_CLK                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        46          1          -    Covered              
+    Coverpoint cp_CLK                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        63          1          -    Covered              
+    Coverpoint cp_delay                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin valid_delay[0]                                 41          1          -    Covered              
+        bin valid_delay[1]                                 31          1          -    Covered              
+        bin valid_delay[2]                                 27          1          -    Covered              
+        bin valid_delay[3]                                 28          1          -    Covered              
+    Cross cp_cross_out_clk                            100.00%        100          -    Covered              
+        covered/total bins:                                12         12          -                      
+        missing/total bins:                                 0         12          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <auto[1],auto[1],auto[1],auto[1]>          13          1          -    Covered              
+            bin <auto[1],auto[0],auto[1],auto[1]>           9          1          -    Covered              
+            bin <auto[0],auto[1],auto[1],auto[1]>          20          1          -    Covered              
+            bin <auto[0],auto[0],auto[1],auto[1]>           4          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[1],auto[0],auto[0]>          16          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[1]>           2          1          -    Covered              
+            bin <auto[1],auto[0],auto[0],auto[0]>          11          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[1]>           1          1          -    Covered              
+            bin <auto[0],auto[1],auto[0],auto[0]>          25          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[1]>          11          1          -    Covered              
+            bin <auto[0],auto[0],auto[0],auto[0]>          13          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_clk_low_sbtx_high             0                     -    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
