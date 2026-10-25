@@ -70,7 +70,4 @@ module Credits_Handler_SBTX
             Prev_Comp_Sent <= Comp_Sent;
         end
     end
-
 endmodule
-
-

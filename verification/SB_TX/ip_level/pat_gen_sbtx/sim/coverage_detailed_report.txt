@@ -1,0 +1,250 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Pattern_Generator_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         6         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Pattern_Generator_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Pattern_Generator_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    22                                       673     Count coming in to IF
+    22              1                         11     
+    26              1                        627     
+    30              1                         35     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    41                                       683     Count coming in to IF
+    41              1                         11     
+    46              1                        627     
+    51              1                         45     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11        11         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Pattern_Generator_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Pattern_Generator_SBTX.sv
+    20              1                        673     
+    24              1                         11     
+    28              1                        627     
+    32              1                         35     
+    39              1                        683     
+    43              1                         11     
+    44              1                         11     
+    48              1                        627     
+    49              1                        627     
+    53              1                         45     
+    54              1                         45     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         12        12         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Pattern_Generator_SBTX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          6 
+Toggled Node Count   =          6 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (12 of 12 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /pat_gen_sbtx_pkg
+=== Design Unit: work.pat_gen_sbtx_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          5        na        na        na
+            Covergroup Bins         23        23         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pat_gen_sbtx_pkg/pat_gen_sbtx_subscriber/pat_gen_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_sbtx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_active                            100.00%        100          -    Covered              
+        covered/total bins:                                10         10          -                      
+        missing/total bins:                                 0         10          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/pat_gen_sbtx_pkg::pat_gen_sbtx_subscriber::pat_gen_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          8          1          -    Covered              
+        bin inactive                                      885          1          -    Covered              
+        bin assert_deassert                                 3          1          -    Covered              
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin disabled                                      262          1          -    Covered              
+        bin enabled                                       631          1          -    Covered              
+        bin turn_on                                        25          1          -    Covered              
+        bin turn_off                                       25          1          -    Covered              
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                           268          1          -    Covered              
+        bin high                                          625          1          -    Covered              
+    Coverpoint cp_sbtx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                          574          1          -    Covered              
+        bin one                                           319          1          -    Covered              
+        bin toggle_01                                     319          1          -    Covered              
+        bin toggle_10                                     319          1          -    Covered              
+    Cross cross_rst_active                            100.00%        100          -    Covered              
+        covered/total bins:                                10         10          -                      
+        missing/total bins:                                 0         10          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin idle_reset                                262          1          -    Covered              
+            bin <assert_deassert,turn_off>                  1          1          -    Covered              
+            bin <assert_deassert,turn_on>                   1          1          -    Covered              
+            bin <assert_deassert,enabled>                   2          1          -    Covered              
+            bin <inactive,turn_off>                        24          1          -    Covered              
+            bin <active,turn_off>                           1          1          -    Covered              
+            bin <inactive,turn_on>                         24          1          -    Covered              
+            bin <active,turn_on>                            1          1          -    Covered              
+            bin <inactive,enabled>                        627          1          -    Covered              
+            bin <active,enabled>                            4          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pat_gen_sbtx_pkg/pat_gen_sbtx_subscriber/pat_gen_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_sbtx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_active                            100.00%        100          -    Covered              
+        covered/total bins:                                10         10          -                      
+        missing/total bins:                                 0         10          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/pat_gen_sbtx_pkg::pat_gen_sbtx_subscriber::pat_gen_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          8          1          -    Covered              
+        bin inactive                                      885          1          -    Covered              
+        bin assert_deassert                                 3          1          -    Covered              
+    Coverpoint cp_en                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin disabled                                      262          1          -    Covered              
+        bin enabled                                       631          1          -    Covered              
+        bin turn_on                                        25          1          -    Covered              
+        bin turn_off                                       25          1          -    Covered              
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                           268          1          -    Covered              
+        bin high                                          625          1          -    Covered              
+    Coverpoint cp_sbtx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                          574          1          -    Covered              
+        bin one                                           319          1          -    Covered              
+        bin toggle_01                                     319          1          -    Covered              
+        bin toggle_10                                     319          1          -    Covered              
+    Cross cross_rst_active                            100.00%        100          -    Covered              
+        covered/total bins:                                10         10          -                      
+        missing/total bins:                                 0         10          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin idle_reset                                262          1          -    Covered              
+            bin <assert_deassert,turn_off>                  1          1          -    Covered              
+            bin <assert_deassert,turn_on>                   1          1          -    Covered              
+            bin <assert_deassert,enabled>                   2          1          -    Covered              
+            bin <inactive,turn_off>                        24          1          -    Covered              
+            bin <active,turn_off>                           1          1          -    Covered              
+            bin <inactive,turn_on>                         24          1          -    Covered              
+            bin <active,turn_on>                            1          1          -    Covered              
+            bin <inactive,enabled>                        627          1          -    Covered              
+            bin <active,enabled>                            4          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
