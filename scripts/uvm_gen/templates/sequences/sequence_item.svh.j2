@@ -7,14 +7,14 @@ class {{ spec.name }}_sequence_item extends uvm_sequence_item;
   // -------------------------------------------------------------------------
   //  Stimulus fields (directly driven to the DUT) - declared rand
   // -------------------------------------------------------------------------
-{% for s in spec.driven_signals %}
-  rand {{ s.sv_type }} {{ s.name }};
+{% for s in spec.pkg_driven_signals %}
+  rand {{ s.decl }};
 {% endfor %}
   // -------------------------------------------------------------------------
   //  Response fields (sampled from the DUT) - NOT rand
   // -------------------------------------------------------------------------
-{% for s in spec.monitored_signals %}
-  {{ s.sv_type }} {{ s.name }};
+{% for s in spec.pkg_monitored_signals %}
+  {{ s.decl }};
 {% endfor %}
   // -------------------------------------------------------------------------
   //  Constructor
@@ -27,13 +27,33 @@ class {{ spec.name }}_sequence_item extends uvm_sequence_item;
   //  convert2string - human-readable representation for logs / debug
   // -------------------------------------------------------------------------
   virtual function string convert2string();
+{% set all_sigs = spec.pkg_driven_signals + spec.pkg_monitored_signals %}
+{% set flat = all_sigs | rejectattr('is_unpacked') | list %}
+{% set unp = all_sigs | selectattr('is_unpacked') | list %}
 {% set fmt_parts = [] %}
-{% for s in spec.driven_signals + spec.monitored_signals %}
-{% set fmt = s.name ~ "=%0b" if s.is_scalar else s.name ~ "=0x%0h" %}
-{% set _ = fmt_parts.append(fmt) %}
+{% for s in flat %}
+{% set _ = fmt_parts.append(s.name ~ ("=%0b" if s.is_scalar else "=0x%0h")) %}
 {% endfor %}
+{% if unp %}
+    string str;
+{% if flat %}
+    str = $sformatf("{{ spec.name }}_seq_item: {{ fmt_parts | join(' ') }}",
+      {{ flat | map(attribute='name') | join(', ') }});
+{% else %}
+    str = "{{ spec.name }}_seq_item:";
+{% endif %}
+    // Unpacked arrays cannot be passed to $sformatf directly: print element by element.
+{% for s in unp %}
+    foreach ({{ s.name }}[i])
+      str = {str, $sformatf(" {{ s.name }}[%0d]=0x%0h", i, {{ s.name }}[i])};
+{% endfor %}
+    return str;
+{% elif flat %}
     return $sformatf("{{ spec.name }}_seq_item: {{ fmt_parts | join(' ') }}",
-      {{ (spec.driven_signals + spec.monitored_signals) | map(attribute='name') | join(', ') }});
+      {{ flat | map(attribute='name') | join(', ') }});
+{% else %}
+    return "{{ spec.name }}_seq_item";
+{% endif %}
   endfunction
 
 endclass

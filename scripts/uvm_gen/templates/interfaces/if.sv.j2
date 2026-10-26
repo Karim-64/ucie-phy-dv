@@ -3,12 +3,19 @@ interface {{ spec.name }}_if #(
   parameter {{ p.name }} = {{ p.value }}{{ "," if not loop.last }}
 {% endfor %}
 ) (input logic {{ spec.clock_name }});
+{% if spec.localparams %}
+  // Localparams (not overridable; declared only here -- the package sees their values inlined)
+{% for p in spec.localparams %}
+  localparam {{ p.name }} = {{ p.value }};
+{% endfor %}
+
+{% endif %}
 {% for s in spec.driven_signals %}
-  wire {{ s.sv_type }} {{ s.name }};
+  wire {{ s.decl }};
 {% endfor %}
 
 {% for s in spec.monitored_signals %}
-  wire {{ s.sv_type }} {{ s.name }};
+  wire {{ s.decl }};
 {% endfor %}
 
   clocking drv_cb @(posedge {{ spec.clock_name }});
