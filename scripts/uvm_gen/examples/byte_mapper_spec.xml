@@ -1,0 +1,35 @@
+<uvm_env name="byte_mapper">
+  <parameters>
+    <localparam name="NUM_LANES" value="16"/>   <!-- localparam: not overridable, never passed to the DUT -->
+    <localparam name="NUM_BYTES" value="64"/>
+  </parameters>
+  <clock name="MB_CLK"/>
+  <signals>
+    <signal name="BYTE_MAP_EN"              width="1" direction="drv"/>
+    <signal name="width_degrade_LTSM_Synch" width="2" direction="drv"/>
+    <!-- packed 2D:  input [63:0][7:0] lp_data_Synch -->
+    <signal name="lp_data_Synch" width="8" depth="NUM_BYTES" direction="drv"/>
+    <!-- unpacked:   output reg [7:0] Lanes [15:0] -->
+    <signal name="Lanes"       width="8" unpacked="NUM_LANES" direction="mon"/>
+    <signal name="Valid"       width="8" direction="mon"/>
+    <signal name="VLD_SER_EN"  width="1" direction="mon"/>
+    <signal name="LANE_SER_EN" width="1" direction="mon"/>
+    <signal name="Done_2"      width="1" direction="mon"/>
+  </signals>
+  <dut>
+    <module_name>Byte_Mapper</module_name>
+    <instance_name>dut</instance_name>
+    <port dut_port="MB_CLK"                    signal="MB_CLK"/>
+    <port dut_port="BYTE_MAP_EN"               signal="BYTE_MAP_EN"/>
+    <port dut_port="width_degrade_LTSM_Synch"  signal="width_degrade_LTSM_Synch"/>
+    <port dut_port="lp_data_Synch"             signal="lp_data_Synch"/>
+    <port dut_port="Lanes"                     signal="Lanes"/>
+    <port dut_port="Valid"                     signal="Valid"/>
+    <port dut_port="VLD_SER_EN"                signal="VLD_SER_EN"/>
+    <port dut_port="LANE_SER_EN"               signal="LANE_SER_EN"/>
+    <port dut_port="Done_2"                    signal="Done_2"/>
+  </dut>
+  <env>
+    <has_scoreboard>true</has_scoreboard>
+  </env>
+</uvm_env>

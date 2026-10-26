@@ -9,7 +9,7 @@ XML/ElementTree nodes.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 
 
 # An expression made only of identifiers/numbers and the operators * / %  binds tighter
@@ -28,10 +28,47 @@ def _msb(n: str) -> str:
     return f"{n}-1" if _TIGHT_EXPR_RE.fullmatch(n) else f"({n})-1"
 
 
+# Tokens of a size expression: sized literals (8'hFF) and $functions are skipped over,
+# bare identifiers are the names that may need substituting.
+_TOKEN_RE = re.compile(r"\d*'[sS]?[bBoOdDhH][0-9a-fA-F_xXzZ?]+|\$\w+|[A-Za-z_]\w*")
+_ATOM_RE = re.compile(r"[A-Za-z_]\w*|\d+")
+_NUMERIC_RE = re.compile(r"[0-9+\-*/%()\s]+")
+
+
+def _fold_numeric(expr: str) -> str:
+    """'2*8' -> '16'. Anything that is not a plain numeric expression is returned unchanged."""
+    if _NUMERIC_RE.fullmatch(expr) and "**" not in expr and "//" not in expr:
+        try:
+            value = int(eval(expr.replace("/", "//"), {"__builtins__": {}}, {}))  # noqa: S307
+        except Exception:
+            return expr
+        if value >= 1:
+            return str(value)
+    return expr
+
+
 @dataclass
 class ParamSpec:
     name: str
     value: str  # kept as string; it's emitted verbatim into SystemVerilog
+
+
+def _substitute(expr: str, consts: dict[str, str]) -> str:
+    """Replace localparam names in a size expression by their (already resolved) values,
+    parenthesising non-trivial values so operator precedence is preserved, then fold
+    pure-number results ('NUM_LANES' -> '16')."""
+    expr = expr.strip()
+    if expr in consts:
+        return consts[expr]
+
+    def repl(match: re.Match) -> str:
+        tok = match.group(0)
+        if tok not in consts:
+            return tok
+        val = consts[tok]
+        return val if _ATOM_RE.fullmatch(val) else f"({val})"
+
+    return _fold_numeric(_TOKEN_RE.sub(repl, expr))
 
 
 @dataclass
@@ -41,6 +78,12 @@ class SignalSpec:
     direction: str       # "drv" or "mon"
     depth: str | None = None     # optional outer PACKED dimension (literal or parameter/localparam name)
     unpacked: str | None = None  # optional UNPACKED dimension (literal or parameter/localparam name)
+
+    def resolved(self, consts: dict[str, str]) -> "SignalSpec":
+        """Copy whose width/depth/unpacked have every localparam name replaced by its value."""
+        sub_ = lambda x: None if x is None else _substitute(x, consts)  # noqa: E731
+        return replace(self, width=sub_(self.width), depth=sub_(self.depth),
+                       unpacked=sub_(self.unpacked))
 
     @property
     def is_packed_array(self) -> bool:
@@ -141,8 +184,10 @@ class UvmEnvSpec:
     name: str
     clock_name: str
     parameters: list[ParamSpec] = field(default_factory=list)
-    # localparams: constants that can NOT be overridden. They are declared in the package
-    # and inside the interface, but never passed through #(...) to the interface or DUT.
+    # localparams: constants that can NOT be overridden. They are declared ONLY inside the
+    # interface (never in the package, never passed through #(...) to the interface or DUT).
+    # Package-side code (sequence item, subscriber) cannot see them, so it uses the
+    # pkg_* signal views below, in which every localparam is replaced by its value.
     localparams: list[ParamSpec] = field(default_factory=list)
     signals: list[SignalSpec] = field(default_factory=list)
     dut: DutSpec | None = None
@@ -156,6 +201,28 @@ class UvmEnvSpec:
     @property
     def monitored_signals(self) -> list[SignalSpec]:
         return [s for s in self.signals if s.is_monitored]
+
+    @property
+    def localparam_values(self) -> dict[str, str]:
+        """localparam name -> value expressed only with literals and <parameter> names."""
+        values: dict[str, str] = {}
+        for lp in self.localparams:
+            values[lp.name] = _substitute(lp.value, values)
+        return values
+
+    @property
+    def pkg_signals(self) -> list[SignalSpec]:
+        """Signals as seen from the package: localparams substituted by their values."""
+        consts = self.localparam_values
+        return [s.resolved(consts) for s in self.signals]
+
+    @property
+    def pkg_driven_signals(self) -> list[SignalSpec]:
+        return [s for s in self.pkg_signals if s.is_driven]
+
+    @property
+    def pkg_monitored_signals(self) -> list[SignalSpec]:
+        return [s for s in self.pkg_signals if s.is_monitored]
 
     @property
     def constant_names(self) -> list[str]:

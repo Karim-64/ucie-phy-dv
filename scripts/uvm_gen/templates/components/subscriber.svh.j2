@@ -20,14 +20,14 @@ class {{ spec.name }}_subscriber extends uvm_subscriber #({{ spec.name }}_sequen
   covergroup {{ spec.name }}_cg;
     option.per_instance = 1;
 
-{% for s in spec.signals %}
+{% for s in spec.pkg_signals %}
 {% if s.is_array %}
-    // {{ s.name }} is a {{ s.depth }}-element array; sample first and last element only.
-{% for idx, tag in (("0", "first"), (s.last_index, "last")) %}
+    // {{ s.name }} is an array signal; sample first and last element only.
+{% for tag, idx in s.cov_elements %}
 {% if s.width == "1" %}
-    cp_{{ s.name }}_{{ tag }}: coverpoint cov_tr.{{ s.name }}[{{ idx }}];
+    cp_{{ s.name }}_{{ tag }}: coverpoint cov_tr.{{ s.name }}{{ idx }};
 {% else %}
-    cp_{{ s.name }}_{{ tag }}: coverpoint cov_tr.{{ s.name }}[{{ idx }}] {
+    cp_{{ s.name }}_{{ tag }}: coverpoint cov_tr.{{ s.name }}{{ idx }} {
       option.auto_bin_max = 16;
     }
 {% endif %}

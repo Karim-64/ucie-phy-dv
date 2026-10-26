@@ -7,6 +7,10 @@ vlog ../RTL/*.sv +cover
 vlog +incdir+../ ../packages/{{ spec.name }}_pkg.sv ../interfaces/{{ spec.name }}_if.sv ../tb/tb_top.sv +cover -covercells
 
 # 3. Elaborate and simulate
+#    -onfinish stop: UVM ends the test with $finish. By default vsim then exits (batch mode)
+#    or asks for confirmation (GUI), so everything after "run -all" never executes and no
+#    coverage report is produced. With "stop" the simulator stays loaded after $finish and
+#    this script continues on to the coverage commands below.
 vsim -voptargs=+acc -classdebug work.tb_top -cover -uvmcontrol=all -onfinish stop +UVM_TESTNAME={{ spec.name }}_base_test
 
 run 0
