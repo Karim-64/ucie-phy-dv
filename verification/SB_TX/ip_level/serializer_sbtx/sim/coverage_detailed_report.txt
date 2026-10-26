@@ -1,0 +1,659 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Serializer_64_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Serializer_64_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Serializer_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    25                                     10570     Count coming in to IF
+    25              1                         88     
+    30              1                        680     
+    35              1                       9399     
+    40              1                        403     
+Branch totals: 4 hits of 4 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       8         8         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Serializer_64_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Serializer_SBTX.sv
+    23              1                      10570     
+    27              1                         88     
+    28              1                         88     
+    32              1                        680     
+    33              1                        680     
+    37              1                       9399     
+    38              1                       9399     
+    42              1                        403     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        268       268         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Serializer_64_SBTX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =        134 
+Toggled Node Count   =        134 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (268 of 268 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /serializer_sbtx_pkg
+=== Design Unit: work.serializer_sbtx_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses         13        na        na        na
+            Covergroup Bins        167       167         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /serializer_sbtx_pkg/serializer_sbtx_subscriber/cg_serializer 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   167        167          -                      
+    missing/total bins:                                     0        167          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_reset_transitions                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_load_transitions                    100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Enable_transitions                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_pattern                        100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_walking_one_position                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_walking_zero_position               100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_controls                                 100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/serializer_sbtx_pkg::serializer_sbtx_subscriber::cg_serializer  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   167        167          -                      
+    missing/total bins:                                     0        167          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin asserted                                       54          1          -    Covered              
+        bin deasserted                                  12832          1          -    Covered              
+    Coverpoint cp_reset_transitions                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin reset_asserted                                 33          1          -    Covered              
+        bin reset_released                                 34          1          -    Covered              
+    Coverpoint cp_load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         12191          1          -    Covered              
+        bin high                                          695          1          -    Covered              
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                           782          1          -    Covered              
+        bin high                                        12104          1          -    Covered              
+    Coverpoint cp_load_transitions                    100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin start_load                                    516          1          -    Covered              
+        bin finish_load                                   516          1          -    Covered              
+        bin repeated_load                                 179          1          -    Covered              
+    Coverpoint cp_Enable_transitions                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin start_shift                                   559          1          -    Covered              
+        bin stop_shift                                    559          1          -    Covered              
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                       8          1          -    Covered              
+        bin all_ones                                       13          1          -    Covered              
+        bin alternating_a                                  28          1          -    Covered              
+        bin alternating_5                                   8          1          -    Covered              
+        default bin others                                622                     -    Occurred             
+    Coverpoint cp_data_pattern                        100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                       8          1          -    Covered              
+        bin walking_one                                    64          1          -    Covered              
+        bin other                                         530          1          -    Covered              
+        bin walking_zero                                   64          1          -    Covered              
+        bin all_ones                                       13          1          -    Covered              
+    Coverpoint cp_walking_one_position                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin positions[0]                                    1          1          -    Covered              
+        bin positions[1]                                    1          1          -    Covered              
+        bin positions[2]                                    1          1          -    Covered              
+        bin positions[3]                                    1          1          -    Covered              
+        bin positions[4]                                    1          1          -    Covered              
+        bin positions[5]                                    1          1          -    Covered              
+        bin positions[6]                                    1          1          -    Covered              
+        bin positions[7]                                    1          1          -    Covered              
+        bin positions[8]                                    1          1          -    Covered              
+        bin positions[9]                                    1          1          -    Covered              
+        bin positions[10]                                   1          1          -    Covered              
+        bin positions[11]                                   1          1          -    Covered              
+        bin positions[12]                                   1          1          -    Covered              
+        bin positions[13]                                   1          1          -    Covered              
+        bin positions[14]                                   1          1          -    Covered              
+        bin positions[15]                                   1          1          -    Covered              
+        bin positions[16]                                   1          1          -    Covered              
+        bin positions[17]                                   1          1          -    Covered              
+        bin positions[18]                                   1          1          -    Covered              
+        bin positions[19]                                   1          1          -    Covered              
+        bin positions[20]                                   1          1          -    Covered              
+        bin positions[21]                                   1          1          -    Covered              
+        bin positions[22]                                   1          1          -    Covered              
+        bin positions[23]                                   1          1          -    Covered              
+        bin positions[24]                                   1          1          -    Covered              
+        bin positions[25]                                   1          1          -    Covered              
+        bin positions[26]                                   1          1          -    Covered              
+        bin positions[27]                                   1          1          -    Covered              
+        bin positions[28]                                   1          1          -    Covered              
+        bin positions[29]                                   1          1          -    Covered              
+        bin positions[30]                                   1          1          -    Covered              
+        bin positions[31]                                   1          1          -    Covered              
+        bin positions[32]                                   1          1          -    Covered              
+        bin positions[33]                                   1          1          -    Covered              
+        bin positions[34]                                   1          1          -    Covered              
+        bin positions[35]                                   1          1          -    Covered              
+        bin positions[36]                                   1          1          -    Covered              
+        bin positions[37]                                   1          1          -    Covered              
+        bin positions[38]                                   1          1          -    Covered              
+        bin positions[39]                                   1          1          -    Covered              
+        bin positions[40]                                   1          1          -    Covered              
+        bin positions[41]                                   1          1          -    Covered              
+        bin positions[42]                                   1          1          -    Covered              
+        bin positions[43]                                   1          1          -    Covered              
+        bin positions[44]                                   1          1          -    Covered              
+        bin positions[45]                                   1          1          -    Covered              
+        bin positions[46]                                   1          1          -    Covered              
+        bin positions[47]                                   1          1          -    Covered              
+        bin positions[48]                                   1          1          -    Covered              
+        bin positions[49]                                   1          1          -    Covered              
+        bin positions[50]                                   1          1          -    Covered              
+        bin positions[51]                                   1          1          -    Covered              
+        bin positions[52]                                   1          1          -    Covered              
+        bin positions[53]                                   1          1          -    Covered              
+        bin positions[54]                                   1          1          -    Covered              
+        bin positions[55]                                   1          1          -    Covered              
+        bin positions[56]                                   1          1          -    Covered              
+        bin positions[57]                                   1          1          -    Covered              
+        bin positions[58]                                   1          1          -    Covered              
+        bin positions[59]                                   1          1          -    Covered              
+        bin positions[60]                                   1          1          -    Covered              
+        bin positions[61]                                   1          1          -    Covered              
+        bin positions[62]                                   1          1          -    Covered              
+        bin positions[63]                                   1          1          -    Covered              
+    Coverpoint cp_walking_zero_position               100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin positions[0]                                    1          1          -    Covered              
+        bin positions[1]                                    1          1          -    Covered              
+        bin positions[2]                                    1          1          -    Covered              
+        bin positions[3]                                    1          1          -    Covered              
+        bin positions[4]                                    1          1          -    Covered              
+        bin positions[5]                                    1          1          -    Covered              
+        bin positions[6]                                    1          1          -    Covered              
+        bin positions[7]                                    1          1          -    Covered              
+        bin positions[8]                                    1          1          -    Covered              
+        bin positions[9]                                    1          1          -    Covered              
+        bin positions[10]                                   1          1          -    Covered              
+        bin positions[11]                                   1          1          -    Covered              
+        bin positions[12]                                   1          1          -    Covered              
+        bin positions[13]                                   1          1          -    Covered              
+        bin positions[14]                                   1          1          -    Covered              
+        bin positions[15]                                   1          1          -    Covered              
+        bin positions[16]                                   1          1          -    Covered              
+        bin positions[17]                                   1          1          -    Covered              
+        bin positions[18]                                   1          1          -    Covered              
+        bin positions[19]                                   1          1          -    Covered              
+        bin positions[20]                                   1          1          -    Covered              
+        bin positions[21]                                   1          1          -    Covered              
+        bin positions[22]                                   1          1          -    Covered              
+        bin positions[23]                                   1          1          -    Covered              
+        bin positions[24]                                   1          1          -    Covered              
+        bin positions[25]                                   1          1          -    Covered              
+        bin positions[26]                                   1          1          -    Covered              
+        bin positions[27]                                   1          1          -    Covered              
+        bin positions[28]                                   1          1          -    Covered              
+        bin positions[29]                                   1          1          -    Covered              
+        bin positions[30]                                   1          1          -    Covered              
+        bin positions[31]                                   1          1          -    Covered              
+        bin positions[32]                                   1          1          -    Covered              
+        bin positions[33]                                   1          1          -    Covered              
+        bin positions[34]                                   1          1          -    Covered              
+        bin positions[35]                                   1          1          -    Covered              
+        bin positions[36]                                   1          1          -    Covered              
+        bin positions[37]                                   1          1          -    Covered              
+        bin positions[38]                                   1          1          -    Covered              
+        bin positions[39]                                   1          1          -    Covered              
+        bin positions[40]                                   1          1          -    Covered              
+        bin positions[41]                                   1          1          -    Covered              
+        bin positions[42]                                   1          1          -    Covered              
+        bin positions[43]                                   1          1          -    Covered              
+        bin positions[44]                                   1          1          -    Covered              
+        bin positions[45]                                   1          1          -    Covered              
+        bin positions[46]                                   1          1          -    Covered              
+        bin positions[47]                                   1          1          -    Covered              
+        bin positions[48]                                   1          1          -    Covered              
+        bin positions[49]                                   1          1          -    Covered              
+        bin positions[50]                                   1          1          -    Covered              
+        bin positions[51]                                   1          1          -    Covered              
+        bin positions[52]                                   1          1          -    Covered              
+        bin positions[53]                                   1          1          -    Covered              
+        bin positions[54]                                   1          1          -    Covered              
+        bin positions[55]                                   1          1          -    Covered              
+        bin positions[56]                                   1          1          -    Covered              
+        bin positions[57]                                   1          1          -    Covered              
+        bin positions[58]                                   1          1          -    Covered              
+        bin positions[59]                                   1          1          -    Covered              
+        bin positions[60]                                   1          1          -    Covered              
+        bin positions[61]                                   1          1          -    Covered              
+        bin positions[62]                                   1          1          -    Covered              
+        bin positions[63]                                   1          1          -    Covered              
+    Coverpoint cp_data_out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                         6936          1          -    Covered              
+        bin one                                          5950          1          -    Covered              
+        bin zero_to_one                                  1336          1          -    Covered              
+        bin one_to_zero                                  1336          1          -    Covered              
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         12054          1          -    Covered              
+        bin high                                          832          1          -    Covered              
+        bin asserted                                      463          1          -    Covered              
+        bin cleared                                       463          1          -    Covered              
+        bin held_high                                     369          1          -    Covered              
+    Cross cx_controls                                 100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high,high>                    329          1          -    Covered              
+            bin <asserted,high,high>                       12          1          -    Covered              
+            bin <deasserted,low,high>                   11751          1          -    Covered              
+            bin <asserted,low,high>                        12          1          -    Covered              
+            bin <deasserted,high,low>                     350          1          -    Covered              
+            bin <asserted,high,low>                         4          1          -    Covered              
+            bin <deasserted,low,low>                      402          1          -    Covered              
+            bin <asserted,low,low>                         26          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /serializer_sbtx_pkg/serializer_sbtx_subscriber/cg_serializer 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   167        167          -                      
+    missing/total bins:                                     0        167          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_reset_transitions                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_load_transitions                    100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Enable_transitions                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_pattern                        100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_walking_one_position                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_walking_zero_position               100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_controls                                 100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/serializer_sbtx_pkg::serializer_sbtx_subscriber::cg_serializer  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   167        167          -                      
+    missing/total bins:                                     0        167          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin asserted                                       54          1          -    Covered              
+        bin deasserted                                  12832          1          -    Covered              
+    Coverpoint cp_reset_transitions                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin reset_asserted                                 33          1          -    Covered              
+        bin reset_released                                 34          1          -    Covered              
+    Coverpoint cp_load                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         12191          1          -    Covered              
+        bin high                                          695          1          -    Covered              
+    Coverpoint cp_Enable                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                           782          1          -    Covered              
+        bin high                                        12104          1          -    Covered              
+    Coverpoint cp_load_transitions                    100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin start_load                                    516          1          -    Covered              
+        bin finish_load                                   516          1          -    Covered              
+        bin repeated_load                                 179          1          -    Covered              
+    Coverpoint cp_Enable_transitions                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin start_shift                                   559          1          -    Covered              
+        bin stop_shift                                    559          1          -    Covered              
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                       8          1          -    Covered              
+        bin all_ones                                       13          1          -    Covered              
+        bin alternating_a                                  28          1          -    Covered              
+        bin alternating_5                                   8          1          -    Covered              
+        default bin others                                622                     -    Occurred             
+    Coverpoint cp_data_pattern                        100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                       8          1          -    Covered              
+        bin walking_one                                    64          1          -    Covered              
+        bin other                                         530          1          -    Covered              
+        bin walking_zero                                   64          1          -    Covered              
+        bin all_ones                                       13          1          -    Covered              
+    Coverpoint cp_walking_one_position                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin positions[0]                                    1          1          -    Covered              
+        bin positions[1]                                    1          1          -    Covered              
+        bin positions[2]                                    1          1          -    Covered              
+        bin positions[3]                                    1          1          -    Covered              
+        bin positions[4]                                    1          1          -    Covered              
+        bin positions[5]                                    1          1          -    Covered              
+        bin positions[6]                                    1          1          -    Covered              
+        bin positions[7]                                    1          1          -    Covered              
+        bin positions[8]                                    1          1          -    Covered              
+        bin positions[9]                                    1          1          -    Covered              
+        bin positions[10]                                   1          1          -    Covered              
+        bin positions[11]                                   1          1          -    Covered              
+        bin positions[12]                                   1          1          -    Covered              
+        bin positions[13]                                   1          1          -    Covered              
+        bin positions[14]                                   1          1          -    Covered              
+        bin positions[15]                                   1          1          -    Covered              
+        bin positions[16]                                   1          1          -    Covered              
+        bin positions[17]                                   1          1          -    Covered              
+        bin positions[18]                                   1          1          -    Covered              
+        bin positions[19]                                   1          1          -    Covered              
+        bin positions[20]                                   1          1          -    Covered              
+        bin positions[21]                                   1          1          -    Covered              
+        bin positions[22]                                   1          1          -    Covered              
+        bin positions[23]                                   1          1          -    Covered              
+        bin positions[24]                                   1          1          -    Covered              
+        bin positions[25]                                   1          1          -    Covered              
+        bin positions[26]                                   1          1          -    Covered              
+        bin positions[27]                                   1          1          -    Covered              
+        bin positions[28]                                   1          1          -    Covered              
+        bin positions[29]                                   1          1          -    Covered              
+        bin positions[30]                                   1          1          -    Covered              
+        bin positions[31]                                   1          1          -    Covered              
+        bin positions[32]                                   1          1          -    Covered              
+        bin positions[33]                                   1          1          -    Covered              
+        bin positions[34]                                   1          1          -    Covered              
+        bin positions[35]                                   1          1          -    Covered              
+        bin positions[36]                                   1          1          -    Covered              
+        bin positions[37]                                   1          1          -    Covered              
+        bin positions[38]                                   1          1          -    Covered              
+        bin positions[39]                                   1          1          -    Covered              
+        bin positions[40]                                   1          1          -    Covered              
+        bin positions[41]                                   1          1          -    Covered              
+        bin positions[42]                                   1          1          -    Covered              
+        bin positions[43]                                   1          1          -    Covered              
+        bin positions[44]                                   1          1          -    Covered              
+        bin positions[45]                                   1          1          -    Covered              
+        bin positions[46]                                   1          1          -    Covered              
+        bin positions[47]                                   1          1          -    Covered              
+        bin positions[48]                                   1          1          -    Covered              
+        bin positions[49]                                   1          1          -    Covered              
+        bin positions[50]                                   1          1          -    Covered              
+        bin positions[51]                                   1          1          -    Covered              
+        bin positions[52]                                   1          1          -    Covered              
+        bin positions[53]                                   1          1          -    Covered              
+        bin positions[54]                                   1          1          -    Covered              
+        bin positions[55]                                   1          1          -    Covered              
+        bin positions[56]                                   1          1          -    Covered              
+        bin positions[57]                                   1          1          -    Covered              
+        bin positions[58]                                   1          1          -    Covered              
+        bin positions[59]                                   1          1          -    Covered              
+        bin positions[60]                                   1          1          -    Covered              
+        bin positions[61]                                   1          1          -    Covered              
+        bin positions[62]                                   1          1          -    Covered              
+        bin positions[63]                                   1          1          -    Covered              
+    Coverpoint cp_walking_zero_position               100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin positions[0]                                    1          1          -    Covered              
+        bin positions[1]                                    1          1          -    Covered              
+        bin positions[2]                                    1          1          -    Covered              
+        bin positions[3]                                    1          1          -    Covered              
+        bin positions[4]                                    1          1          -    Covered              
+        bin positions[5]                                    1          1          -    Covered              
+        bin positions[6]                                    1          1          -    Covered              
+        bin positions[7]                                    1          1          -    Covered              
+        bin positions[8]                                    1          1          -    Covered              
+        bin positions[9]                                    1          1          -    Covered              
+        bin positions[10]                                   1          1          -    Covered              
+        bin positions[11]                                   1          1          -    Covered              
+        bin positions[12]                                   1          1          -    Covered              
+        bin positions[13]                                   1          1          -    Covered              
+        bin positions[14]                                   1          1          -    Covered              
+        bin positions[15]                                   1          1          -    Covered              
+        bin positions[16]                                   1          1          -    Covered              
+        bin positions[17]                                   1          1          -    Covered              
+        bin positions[18]                                   1          1          -    Covered              
+        bin positions[19]                                   1          1          -    Covered              
+        bin positions[20]                                   1          1          -    Covered              
+        bin positions[21]                                   1          1          -    Covered              
+        bin positions[22]                                   1          1          -    Covered              
+        bin positions[23]                                   1          1          -    Covered              
+        bin positions[24]                                   1          1          -    Covered              
+        bin positions[25]                                   1          1          -    Covered              
+        bin positions[26]                                   1          1          -    Covered              
+        bin positions[27]                                   1          1          -    Covered              
+        bin positions[28]                                   1          1          -    Covered              
+        bin positions[29]                                   1          1          -    Covered              
+        bin positions[30]                                   1          1          -    Covered              
+        bin positions[31]                                   1          1          -    Covered              
+        bin positions[32]                                   1          1          -    Covered              
+        bin positions[33]                                   1          1          -    Covered              
+        bin positions[34]                                   1          1          -    Covered              
+        bin positions[35]                                   1          1          -    Covered              
+        bin positions[36]                                   1          1          -    Covered              
+        bin positions[37]                                   1          1          -    Covered              
+        bin positions[38]                                   1          1          -    Covered              
+        bin positions[39]                                   1          1          -    Covered              
+        bin positions[40]                                   1          1          -    Covered              
+        bin positions[41]                                   1          1          -    Covered              
+        bin positions[42]                                   1          1          -    Covered              
+        bin positions[43]                                   1          1          -    Covered              
+        bin positions[44]                                   1          1          -    Covered              
+        bin positions[45]                                   1          1          -    Covered              
+        bin positions[46]                                   1          1          -    Covered              
+        bin positions[47]                                   1          1          -    Covered              
+        bin positions[48]                                   1          1          -    Covered              
+        bin positions[49]                                   1          1          -    Covered              
+        bin positions[50]                                   1          1          -    Covered              
+        bin positions[51]                                   1          1          -    Covered              
+        bin positions[52]                                   1          1          -    Covered              
+        bin positions[53]                                   1          1          -    Covered              
+        bin positions[54]                                   1          1          -    Covered              
+        bin positions[55]                                   1          1          -    Covered              
+        bin positions[56]                                   1          1          -    Covered              
+        bin positions[57]                                   1          1          -    Covered              
+        bin positions[58]                                   1          1          -    Covered              
+        bin positions[59]                                   1          1          -    Covered              
+        bin positions[60]                                   1          1          -    Covered              
+        bin positions[61]                                   1          1          -    Covered              
+        bin positions[62]                                   1          1          -    Covered              
+        bin positions[63]                                   1          1          -    Covered              
+    Coverpoint cp_data_out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                         6936          1          -    Covered              
+        bin one                                          5950          1          -    Covered              
+        bin zero_to_one                                  1336          1          -    Covered              
+        bin one_to_zero                                  1336          1          -    Covered              
+    Coverpoint cp_start_64                            100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         12054          1          -    Covered              
+        bin high                                          832          1          -    Covered              
+        bin asserted                                      463          1          -    Covered              
+        bin cleared                                       463          1          -    Covered              
+        bin held_high                                     369          1          -    Covered              
+    Cross cx_controls                                 100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <deasserted,high,high>                    329          1          -    Covered              
+            bin <asserted,high,high>                       12          1          -    Covered              
+            bin <deasserted,low,high>                   11751          1          -    Covered              
+            bin <asserted,low,high>                        12          1          -    Covered              
+            bin <deasserted,high,low>                     350          1          -    Covered              
+            bin <asserted,high,low>                         4          1          -    Covered              
+            bin <deasserted,low,low>                      402          1          -    Covered              
+            bin <asserted,low,low>                         26          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
