@@ -1,0 +1,507 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Enable_Generator_MBRX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        37        37         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Enable_Generator_MBRX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Enable_Generator_MBRX.sv
+------------------------------------IF Branch------------------------------------
+    39                                      8582     Count coming in to IF
+    39              1                        812     
+    43              1                       7770     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    64                                      8270     Count coming in to IF
+    64              1                        810     
+    66              1                       3721     
+    68              1                       3280     
+                                             459     All False Count
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    80                                      8478     Count coming in to IF
+    80              1                        784     
+    82              1                       7694     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    89                                      8602     Count coming in to IF
+    89              1                        809     
+    91              1                       7663     
+    93              1                         57     
+                                              73     All False Count
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    105                                    13816     Count coming in to CASE
+    106             1                        684     
+    107             1                      13132     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    115                                    11773     Count coming in to IF
+    115             1                        593     
+    131             1                      11180     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    126                                      593     Count coming in to IF
+    126             1                        254     
+    126             2                        339     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    128                                      593     Count coming in to IF
+    128             1                        254     
+    128             2                        339     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    144                                    13818     Count coming in to CASE
+    145             1                        707     
+    145             2                        632     
+    145             3                        658     
+    146             1                        714     
+    146             2                        681     
+    146             3                        664     
+    147             1                        639     
+    147             2                        625     
+    149             1                       8498     
+Branch totals: 9 hits of 9 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    158                                    13883     Count coming in to CASE
+    160             1                        659     
+    160             2                        716     
+    160             3                        684     
+    160             4                        665     
+    161             1                        641     
+    161             2                        626     
+    166             1                        686     
+    173             1                       9206     
+Branch totals: 8 hits of 8 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       8         8         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.Enable_Generator_MBRX --
+
+  File ../RTL/Enable_Generator_MBRX.sv
+----------------Focused Condition View-------------------
+Line       68 Item    1  ((Comparison_Done || Valid_Frame_Error) || Detec_succ)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       91 Item    1  (((Valid_Frame_Error || Detec_succ) || Comparison_Done) || (LTSM_State != LTSM_State_old))
+Condition totals: 4 of 4 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       115 Item    1  (LTSM_State == _ACTIVE)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                     33        33         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.Enable_Generator_MBRX --
+
+  File ../RTL/Enable_Generator_MBRX.sv
+----------------Focused Expression View-----------------
+Line       55 Item    1  ((~Valid_Delay & (LTSM_State != _RESET)) & Valid)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       98 Item    1  (Valid_Frame_Error || Detec_succ)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       106 Item    1  ((Valid_Detected || Chunk_Marker) && ~Test_End_Detected)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       107 Item    1  ((~Test_End_Detected & (Valid_Detected || Chunk_Marker)) & Test_Resp_latched)
+Expression totals: 4 of 4 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       126 Item    1  ((Valid_Detected || Chunk_Marker)? ((Width_Degrade == 1) || (Width_Degrade == 3)): 1'b0)
+Expression totals: 4 of 4 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       128 Item    1  ((Valid_Detected || Chunk_Marker)? ((Width_Degrade == 2) || (Width_Degrade == 3)): 1'b0)
+Expression totals: 4 of 4 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       148 Item    1  ((~Comparison_Done & (Valid_Detected || Chunk_Marker)) & Test_Resp_latched)
+Expression totals: 4 of 4 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       162 Item    1  ((~Comparison_Done & (Valid_Detected || Chunk_Marker)) & Test_Resp_latched)
+Expression totals: 4 of 4 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       168 Item    1  ((Valid_Detected || Chunk_Marker) && ~Test_End_Detected)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       183 Item    1  ((LTSM_State == _MBINIT_REVERSALMB) || (LTSM_State == _MBINIT_REPAIRMB))
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      35        35         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Enable_Generator_MBRX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Enable_Generator_MBRX.sv
+    37              1                       8582     
+    41              1                        812     
+    45              1                       7770     
+    55              1                      15912     
+    62              1                       8270     
+    65              1                        810     
+    67              1                       3721     
+    69              1                       3280     
+    78              1                       8478     
+    81              1                        784     
+    83              1                       7694     
+    87              1                       8602     
+    90              1                        809     
+    92              1                       7663     
+    94              1                         57     
+    98              1                       6065     
+    103             1                      13816     
+    106             1                        684     
+    107             1                      13132     
+    113             1                      11773     
+    126             1                        593     
+    128             1                        593     
+    133             1                      11180     
+    135             1                      11180     
+    142             1                      13818     
+    148             1                       5320     
+    150             1                       8498     
+    156             1                      13883     
+    162             1                       3991     
+    163             1                       3991     
+    168             1                        686     
+    169             1                        686     
+    174             1                       9206     
+    175             1                       9206     
+    183             1                       7698     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         44        44         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Enable_Generator_MBRX
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+
+Total Node Count     =         22 
+Toggled Node Count   =         22 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (44 of 44 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Enable_Generator_MBRX_pkg
+=== Design Unit: work.Enable_Generator_MBRX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses         16        na        na        na
+            Covergroup Bins         52        52         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Enable_Generator_MBRX_pkg/Enable_Generator_MBRX_subscriber/Enable_Generator_MBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    52         52          -                      
+    missing/total bins:                                     0         52          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       421          1          -    Covered              
+        bin auto[1]                                      7923          1          -    Covered              
+    Coverpoint cp_LTSM_State                          100.00%        100          -    Covered              
+        covered/total bins:                                20         20          -                      
+        missing/total bins:                                 0         20          -                      
+        % Hit:                                        100.00%        100          -                      
+        ignore_bin unused_states                            2                     -    Occurred             
+        bin reset                                         831          1          -    Covered              
+        bin sbinit                                        406          1          -    Covered              
+        bin mbinit_param                                  379          1          -    Covered              
+        bin mbinit_cal                                    394          1          -    Covered              
+        bin mbinit_repairclk                              379          1          -    Covered              
+        bin mbinit_repairval                              374          1          -    Covered              
+        bin mbinit_reversalmb                             412          1          -    Covered              
+        bin mbinit_repairmb                               367          1          -    Covered              
+        bin mbtrain_valvref                               387          1          -    Covered              
+        bin mbtrain_datavref                              380          1          -    Covered              
+        bin mbtrain_speedidle                             424          1          -    Covered              
+        bin mbtrain_txselfcal                             396          1          -    Covered              
+        bin mbtrain_rxclkcal                              349          1          -    Covered              
+        bin mbtrain_valtraincenter                        365          1          -    Covered              
+        bin mbtrain_datatraincenter1                      418          1          -    Covered              
+        bin mbtrain_datatrainvref                         409          1          -    Covered              
+        bin mbtrain_rxdeskew                              389          1          -    Covered              
+        bin mbtrain_datatraincenter2                      385          1          -    Covered              
+        bin mbtrain_linkspeed                             377          1          -    Covered              
+        bin active                                        521          1          -    Covered              
+    Coverpoint cp_Width_Degrade                       100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin lower_half                                   2734          1          -    Covered              
+        bin upper_half                                   2620          1          -    Covered              
+        bin both_halves                                  2907          1          -    Covered              
+        bin illegal_widths                                 83          1          -    Covered              
+    Coverpoint cp_Valid                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4156          1          -    Covered              
+        bin auto[1]                                      4188          1          -    Covered              
+    Coverpoint cp_Comparison_Done                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4303          1          -    Covered              
+        bin auto[1]                                      4041          1          -    Covered              
+    Coverpoint cp_Valid_Frame_Error                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4315          1          -    Covered              
+        bin auto[1]                                      4029          1          -    Covered              
+    Coverpoint cp_Detec_succ                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4282          1          -    Covered              
+        bin auto[1]                                      4062          1          -    Covered              
+    Coverpoint cp_Test_Resp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4216          1          -    Covered              
+        bin auto[1]                                      4128          1          -    Covered              
+    Coverpoint cp_Vchk_EN                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7722          1          -    Covered              
+        bin auto[1]                                       622          1          -    Covered              
+    Coverpoint cp_Descr_EN                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7864          1          -    Covered              
+        bin auto[1]                                       480          1          -    Covered              
+    Coverpoint cp_Deserializer_EN1                    100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      8116          1          -    Covered              
+        bin auto[1]                                       228          1          -    Covered              
+    Coverpoint cp_Deserializer_EN2                    100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      8109          1          -    Covered              
+        bin auto[1]                                       235          1          -    Covered              
+    Coverpoint cp_Data_Comparator_EN                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7960          1          -    Covered              
+        bin auto[1]                                       384          1          -    Covered              
+    Coverpoint cp_Valid_Detected                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4686          1          -    Covered              
+        bin auto[1]                                      3658          1          -    Covered              
+    Coverpoint cp_Comparison_Type                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7565          1          -    Covered              
+        bin auto[1]                                       779          1          -    Covered              
+    Coverpoint cp_LFSR_SEL                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      5986          1          -    Covered              
+        bin auto[1]                                      2358          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Enable_Generator_MBRX_pkg/Enable_Generator_MBRX_subscriber/Enable_Generator_MBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    52         52          -                      
+    missing/total bins:                                     0         52          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       421          1          -    Covered              
+        bin auto[1]                                      7923          1          -    Covered              
+    Coverpoint cp_LTSM_State                          100.00%        100          -    Covered              
+        covered/total bins:                                20         20          -                      
+        missing/total bins:                                 0         20          -                      
+        % Hit:                                        100.00%        100          -                      
+        ignore_bin unused_states                            2                     -    Occurred             
+        bin reset                                         831          1          -    Covered              
+        bin sbinit                                        406          1          -    Covered              
+        bin mbinit_param                                  379          1          -    Covered              
+        bin mbinit_cal                                    394          1          -    Covered              
+        bin mbinit_repairclk                              379          1          -    Covered              
+        bin mbinit_repairval                              374          1          -    Covered              
+        bin mbinit_reversalmb                             412          1          -    Covered              
+        bin mbinit_repairmb                               367          1          -    Covered              
+        bin mbtrain_valvref                               387          1          -    Covered              
+        bin mbtrain_datavref                              380          1          -    Covered              
+        bin mbtrain_speedidle                             424          1          -    Covered              
+        bin mbtrain_txselfcal                             396          1          -    Covered              
+        bin mbtrain_rxclkcal                              349          1          -    Covered              
+        bin mbtrain_valtraincenter                        365          1          -    Covered              
+        bin mbtrain_datatraincenter1                      418          1          -    Covered              
+        bin mbtrain_datatrainvref                         409          1          -    Covered              
+        bin mbtrain_rxdeskew                              389          1          -    Covered              
+        bin mbtrain_datatraincenter2                      385          1          -    Covered              
+        bin mbtrain_linkspeed                             377          1          -    Covered              
+        bin active                                        521          1          -    Covered              
+    Coverpoint cp_Width_Degrade                       100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin lower_half                                   2734          1          -    Covered              
+        bin upper_half                                   2620          1          -    Covered              
+        bin both_halves                                  2907          1          -    Covered              
+        bin illegal_widths                                 83          1          -    Covered              
+    Coverpoint cp_Valid                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4156          1          -    Covered              
+        bin auto[1]                                      4188          1          -    Covered              
+    Coverpoint cp_Comparison_Done                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4303          1          -    Covered              
+        bin auto[1]                                      4041          1          -    Covered              
+    Coverpoint cp_Valid_Frame_Error                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4315          1          -    Covered              
+        bin auto[1]                                      4029          1          -    Covered              
+    Coverpoint cp_Detec_succ                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4282          1          -    Covered              
+        bin auto[1]                                      4062          1          -    Covered              
+    Coverpoint cp_Test_Resp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4216          1          -    Covered              
+        bin auto[1]                                      4128          1          -    Covered              
+    Coverpoint cp_Vchk_EN                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7722          1          -    Covered              
+        bin auto[1]                                       622          1          -    Covered              
+    Coverpoint cp_Descr_EN                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7864          1          -    Covered              
+        bin auto[1]                                       480          1          -    Covered              
+    Coverpoint cp_Deserializer_EN1                    100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      8116          1          -    Covered              
+        bin auto[1]                                       228          1          -    Covered              
+    Coverpoint cp_Deserializer_EN2                    100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      8109          1          -    Covered              
+        bin auto[1]                                       235          1          -    Covered              
+    Coverpoint cp_Data_Comparator_EN                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7960          1          -    Covered              
+        bin auto[1]                                       384          1          -    Covered              
+    Coverpoint cp_Valid_Detected                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      4686          1          -    Covered              
+        bin auto[1]                                      3658          1          -    Covered              
+    Coverpoint cp_Comparison_Type                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      7565          1          -    Covered              
+        bin auto[1]                                       779          1          -    Covered              
+    Coverpoint cp_LFSR_SEL                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      5986          1          -    Covered              
+        bin auto[1]                                      2358          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
