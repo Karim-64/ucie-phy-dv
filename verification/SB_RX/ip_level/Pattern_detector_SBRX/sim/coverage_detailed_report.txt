@@ -1,0 +1,789 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Pattern_detector_SBRX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        14        14         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Pattern_detector_SBRX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Pattern_detector_SBRX.sv
+------------------------------------IF Branch------------------------------------
+    17                                     11764     Count coming in to IF
+    17              1                       1503     
+    20              1                       8549     
+    34              1                       1712     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                      8549     Count coming in to IF
+    21              1                        347     
+    30              1                       8202     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                       347     Count coming in to IF
+    22              1                        117     
+    25              1                        230     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                     11633     Count coming in to IF
+    40              1                       1503     
+    42              1                       8449     
+    52              1                       1681     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                      8449     Count coming in to IF
+    43              1                        218     
+    49              1                       8231     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                       218     Count coming in to IF
+    44              1                         20     
+    46              1                        198     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         6         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.Pattern_detector_SBRX --
+
+  File ../RTL/Pattern_detector_SBRX.sv
+----------------Focused Condition View-------------------
+Line       21 Item    1  (pattern_data_in == 'h5555555555555555)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       43 Item    1  ((((pattern_data_in[4:0] == 18) && (pattern_data_in[21:14] == 145)) && pattern_data_in[40]) && (pattern_data_in[58:56] == 6))
+Condition totals: 4 of 4 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       44 Item    1  (pattern_data_in[62] != ^pattern_data_in[61:0])
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      16        16         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Pattern_detector_SBRX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Pattern_detector_SBRX.sv
+    16              1                      11764     
+    18              1                       1503     
+    19              1                       1503     
+    23              1                        117     
+    24              1                        117     
+    26              1                        230     
+    27              1                        230     
+    31              1                       8202     
+    32              1                       8202     
+    35              1                       1712     
+    39              1                      11633     
+    41              1                       1503     
+    45              1                         20     
+    47              1                        198     
+    50              1                       8231     
+    53              1                       1681     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        140       140         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Pattern_detector_SBRX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         70 
+Toggled Node Count   =         70 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (140 of 140 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Pattern_detector_SBRX_pkg
+=== Design Unit: work.Pattern_detector_SBRX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses         18        na        na        na
+            Covergroup Bins        101       101         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Pattern_detector_SBRX_pkg/Pattern_detector_SBRX_subscriber/Pattern_detector_SBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   101        101          -                      
+    missing/total bins:                                     0        101          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_pattern_data_in                     100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_single_bit_flip_pat                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_walking_bus_toggle                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_pattern_sequence                    100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_opcode                              100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_msgcode                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_srcid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_msgsubcode                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_result                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_dstid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_control_parity                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_parity                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_reserved_fields                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_pattern_detected                    100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_sb_o_detected                       100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_joint_outputs                       100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Pattern_detector_SBRX_pkg::Pattern_detector_SBRX_subscriber::Pattern_detector_SBRX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   101        101          -                      
+    missing/total bins:                                     0        101          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active_low_reset                             1027          1          -    Covered              
+        bin deasserted_run                              10559          1          -    Covered              
+        bin rst_assert_edge                               482          1          -    Covered              
+        bin rst_release_edge                              483          1          -    Covered              
+        bin rst_sustained                                 544          1          -    Covered              
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin invalid_low                                  2254          1          -    Covered              
+        bin valid_high                                   9332          1          -    Covered              
+        bin single_strobe                                 371          1          -    Covered              
+        bin valid_drop                                   1264          1          -    Covered              
+        bin long_idle_gap                                 251          1          -    Covered              
+    Coverpoint cp_pattern_data_in                     100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin exact_clk_pat_5555                            798          1          -    Covered              
+        bin inv_clk_pat_aaaa                               49          1          -    Covered              
+        bin canonical_sbinit                              113          1          -    Covered              
+        bin all_zeros                                      11          1          -    Covered              
+        bin all_ones                                        1          1          -    Covered              
+        default bin other_payload                       10615                     -    Occurred             
+    Coverpoint cp_single_bit_flip_pat                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin no_1bit_flip                                 8528          1          -    Covered              
+        bin walking_1bit_flip                              64          1          -    Covered              
+    Coverpoint cp_walking_bus_toggle                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin walking_one                                   133          1          -    Covered              
+        bin walking_zero                                  123          1          -    Covered              
+        bin normal_data                                  8336          1          -    Covered              
+    Coverpoint cp_pattern_sequence                    100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_match_then_nonmatch                    121          1          -    Covered              
+        bin two_consecutive_matches                        32          1          -    Covered              
+        bin sustained_four_matches                        179          1          -    Covered              
+        bin interrupted_match_101                          92          1          -    Covered              
+    Coverpoint cp_opcode                              100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin msg_without_data                              883          1          -    Covered              
+        bin other_valid_ucie[0]                           367          1          -    Covered              
+        bin other_valid_ucie[1]                           253          1          -    Covered              
+        bin other_valid_ucie[2]                           255          1          -    Covered              
+        bin other_valid_ucie[3]                           248          1          -    Covered              
+        bin other_valid_ucie[4]                           255          1          -    Covered              
+        bin other_valid_ucie[5]                           232          1          -    Covered              
+        bin other_valid_ucie[8]                           252          1          -    Covered              
+        bin other_valid_ucie[9]                           232          1          -    Covered              
+        bin other_valid_ucie[16]                          234          1          -    Covered              
+        bin other_valid_ucie[17]                          234          1          -    Covered              
+        bin other_valid_ucie[25]                          229          1          -    Covered              
+        bin other_valid_ucie[27]                          236          1          -    Covered              
+        default bin invalid_opcodes[6]                    232                     -    Occurred             
+        default bin invalid_opcodes[7]                    208                     -    Occurred             
+        default bin invalid_opcodes[10]                   281                     -    Occurred             
+        default bin invalid_opcodes[11]                   222                     -    Occurred             
+        default bin invalid_opcodes[12]                   201                     -    Occurred             
+        default bin invalid_opcodes[13]                   227                     -    Occurred             
+        default bin invalid_opcodes[14]                   219                     -    Occurred             
+        default bin invalid_opcodes[15]                   204                     -    Occurred             
+        default bin invalid_opcodes[19]                   225                     -    Occurred             
+        default bin invalid_opcodes[20]                   207                     -    Occurred             
+        default bin invalid_opcodes[21]                   644                     -    Occurred             
+        default bin invalid_opcodes[22]                   215                     -    Occurred             
+        default bin invalid_opcodes[23]                   229                     -    Occurred             
+        default bin invalid_opcodes[24]                   202                     -    Occurred             
+        default bin invalid_opcodes[26]                   198                     -    Occurred             
+        default bin invalid_opcodes[28]                   225                     -    Occurred             
+        default bin invalid_opcodes[29]                   225                     -    Occurred             
+        default bin invalid_opcodes[30]                   208                     -    Occurred             
+        default bin invalid_opcodes[31]                   310                     -    Occurred             
+    Coverpoint cp_msgcode                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sbinit_out_of_rst                             444          1          -    Covered              
+        bin sbinit_done_req                                46          1          -    Covered              
+        bin sbinit_done_resp                               35          1          -    Covered              
+        bin nop_crd                                       158          1          -    Covered              
+        bin all_ones_ff                                   127          1          -    Covered              
+        default bin other_msgcodes                       7782                     -    Occurred             
+    Coverpoint cp_srcid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin phy_layer_010                                1546          1          -    Covered              
+        bin other_srcid[0]                               1111          1          -    Covered              
+        bin other_srcid[1]                                902          1          -    Covered              
+        bin other_srcid[3]                               1003          1          -    Covered              
+        bin other_srcid[4]                                952          1          -    Covered              
+        bin other_srcid[5]                               1033          1          -    Covered              
+        bin other_srcid[6]                                949          1          -    Covered              
+        bin other_srcid[7]                               1096          1          -    Covered              
+    Coverpoint cp_msgsubcode                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin canonical_00                                  419          1          -    Covered              
+        bin nonzero_subcode                              8173          1          -    Covered              
+    Coverpoint cp_result                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin canonical_0001                               1145          1          -    Covered              
+        bin bit0_zero_even[0]                             588          1          -    Covered              
+        bin bit0_zero_even[2]                             448          1          -    Covered              
+        bin bit0_zero_even[4]                             467          1          -    Covered              
+        bin bit0_zero_even[6]                             458          1          -    Covered              
+        bin bit0_zero_even[8]                             460          1          -    Covered              
+        bin bit0_zero_even[10]                            487          1          -    Covered              
+        bin bit0_zero_even[12]                            456          1          -    Covered              
+        bin bit0_zero_even[14]                            439          1          -    Covered              
+        bin bit0_one_odd[3]                               412          1          -    Covered              
+        bin bit0_one_odd[5]                               896          1          -    Covered              
+        bin bit0_one_odd[7]                               431          1          -    Covered              
+        bin bit0_one_odd[9]                               479          1          -    Covered              
+        bin bit0_one_odd[11]                              423          1          -    Covered              
+        bin bit0_one_odd[13]                              441          1          -    Covered              
+        bin bit0_one_odd[15]                              562          1          -    Covered              
+    Coverpoint cp_dstid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin remote_phy_110                               1553          1          -    Covered              
+        bin other_dstid[0]                               1090          1          -    Covered              
+        bin other_dstid[1]                                895          1          -    Covered              
+        bin other_dstid[2]                                946          1          -    Covered              
+        bin other_dstid[3]                                931          1          -    Covered              
+        bin other_dstid[4]                                877          1          -    Covered              
+        bin other_dstid[5]                               1329          1          -    Covered              
+        bin other_dstid[7]                                971          1          -    Covered              
+    Coverpoint cp_control_parity                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin valid_even_parity                            4798          1          -    Covered              
+        bin parity_error_odd                             3794          1          -    Covered              
+    Coverpoint cp_data_parity                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin canonical_dp_0                               4468          1          -    Covered              
+        bin non_canonical_dp_1                           4124          1          -    Covered              
+    Coverpoint cp_reserved_fields                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_rsvd_zero                                 133          1          -    Covered              
+        bin rsvd_perturbed                               8459          1          -    Covered              
+    Coverpoint cp_pattern_detected                    100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10452          1          -    Covered              
+        bin high                                          107          1          -    Covered              
+        bin rise_edge                                     107          1          -    Covered              
+        bin fall_edge                                     107          1          -    Covered              
+        bin retrigger_pulse                                 9          1          -    Covered              
+    Coverpoint cp_sb_o_detected                       100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10343          1          -    Covered              
+        bin high                                          216          1          -    Covered              
+        bin rise_edge                                      63          1          -    Covered              
+        bin fall_edge                                      63          1          -    Covered              
+        bin burst_high                                    153          1          -    Covered              
+    Coverpoint cp_joint_outputs                       100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        illegal_bin both_11                                 0                     -    ZERO                 
+        bin both_idle_00                                10236          1          -    Covered              
+        bin sb_o_only_01                                  216          1          -    Covered              
+        bin pat_only_10                                   107          1          -    Covered              
+        bin idle_to_pat                                   107          1          -    Covered              
+        bin idle_to_sbo                                    60          1          -    Covered              
+        bin pat_to_sbo_direct                               3          1          -    Covered              
+        bin sbo_to_pat_seq                                  2          1          -    Covered              
+        bin pat_to_idle                                   104          1          -    Covered              
+        bin sbo_to_idle                                    63          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Pattern_detector_SBRX_pkg/Pattern_detector_SBRX_subscriber/Pattern_detector_SBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   101        101          -                      
+    missing/total bins:                                     0        101          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_pattern_data_in                     100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_single_bit_flip_pat                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_walking_bus_toggle                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_pattern_sequence                    100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_opcode                              100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_msgcode                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_srcid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_msgsubcode                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_result                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_dstid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_control_parity                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_parity                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_reserved_fields                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_pattern_detected                    100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_sb_o_detected                       100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_joint_outputs                       100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Pattern_detector_SBRX_pkg::Pattern_detector_SBRX_subscriber::Pattern_detector_SBRX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   101        101          -                      
+    missing/total bins:                                     0        101          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active_low_reset                             1027          1          -    Covered              
+        bin deasserted_run                              10559          1          -    Covered              
+        bin rst_assert_edge                               482          1          -    Covered              
+        bin rst_release_edge                              483          1          -    Covered              
+        bin rst_sustained                                 544          1          -    Covered              
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin invalid_low                                  2254          1          -    Covered              
+        bin valid_high                                   9332          1          -    Covered              
+        bin single_strobe                                 371          1          -    Covered              
+        bin valid_drop                                   1264          1          -    Covered              
+        bin long_idle_gap                                 251          1          -    Covered              
+    Coverpoint cp_pattern_data_in                     100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin exact_clk_pat_5555                            798          1          -    Covered              
+        bin inv_clk_pat_aaaa                               49          1          -    Covered              
+        bin canonical_sbinit                              113          1          -    Covered              
+        bin all_zeros                                      11          1          -    Covered              
+        bin all_ones                                        1          1          -    Covered              
+        default bin other_payload                       10615                     -    Occurred             
+    Coverpoint cp_single_bit_flip_pat                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin no_1bit_flip                                 8528          1          -    Covered              
+        bin walking_1bit_flip                              64          1          -    Covered              
+    Coverpoint cp_walking_bus_toggle                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin walking_one                                   133          1          -    Covered              
+        bin walking_zero                                  123          1          -    Covered              
+        bin normal_data                                  8336          1          -    Covered              
+    Coverpoint cp_pattern_sequence                    100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_match_then_nonmatch                    121          1          -    Covered              
+        bin two_consecutive_matches                        32          1          -    Covered              
+        bin sustained_four_matches                        179          1          -    Covered              
+        bin interrupted_match_101                          92          1          -    Covered              
+    Coverpoint cp_opcode                              100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin msg_without_data                              883          1          -    Covered              
+        bin other_valid_ucie[0]                           367          1          -    Covered              
+        bin other_valid_ucie[1]                           253          1          -    Covered              
+        bin other_valid_ucie[2]                           255          1          -    Covered              
+        bin other_valid_ucie[3]                           248          1          -    Covered              
+        bin other_valid_ucie[4]                           255          1          -    Covered              
+        bin other_valid_ucie[5]                           232          1          -    Covered              
+        bin other_valid_ucie[8]                           252          1          -    Covered              
+        bin other_valid_ucie[9]                           232          1          -    Covered              
+        bin other_valid_ucie[16]                          234          1          -    Covered              
+        bin other_valid_ucie[17]                          234          1          -    Covered              
+        bin other_valid_ucie[25]                          229          1          -    Covered              
+        bin other_valid_ucie[27]                          236          1          -    Covered              
+        default bin invalid_opcodes[6]                    232                     -    Occurred             
+        default bin invalid_opcodes[7]                    208                     -    Occurred             
+        default bin invalid_opcodes[10]                   281                     -    Occurred             
+        default bin invalid_opcodes[11]                   222                     -    Occurred             
+        default bin invalid_opcodes[12]                   201                     -    Occurred             
+        default bin invalid_opcodes[13]                   227                     -    Occurred             
+        default bin invalid_opcodes[14]                   219                     -    Occurred             
+        default bin invalid_opcodes[15]                   204                     -    Occurred             
+        default bin invalid_opcodes[19]                   225                     -    Occurred             
+        default bin invalid_opcodes[20]                   207                     -    Occurred             
+        default bin invalid_opcodes[21]                   644                     -    Occurred             
+        default bin invalid_opcodes[22]                   215                     -    Occurred             
+        default bin invalid_opcodes[23]                   229                     -    Occurred             
+        default bin invalid_opcodes[24]                   202                     -    Occurred             
+        default bin invalid_opcodes[26]                   198                     -    Occurred             
+        default bin invalid_opcodes[28]                   225                     -    Occurred             
+        default bin invalid_opcodes[29]                   225                     -    Occurred             
+        default bin invalid_opcodes[30]                   208                     -    Occurred             
+        default bin invalid_opcodes[31]                   310                     -    Occurred             
+    Coverpoint cp_msgcode                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sbinit_out_of_rst                             444          1          -    Covered              
+        bin sbinit_done_req                                46          1          -    Covered              
+        bin sbinit_done_resp                               35          1          -    Covered              
+        bin nop_crd                                       158          1          -    Covered              
+        bin all_ones_ff                                   127          1          -    Covered              
+        default bin other_msgcodes                       7782                     -    Occurred             
+    Coverpoint cp_srcid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin phy_layer_010                                1546          1          -    Covered              
+        bin other_srcid[0]                               1111          1          -    Covered              
+        bin other_srcid[1]                                902          1          -    Covered              
+        bin other_srcid[3]                               1003          1          -    Covered              
+        bin other_srcid[4]                                952          1          -    Covered              
+        bin other_srcid[5]                               1033          1          -    Covered              
+        bin other_srcid[6]                                949          1          -    Covered              
+        bin other_srcid[7]                               1096          1          -    Covered              
+    Coverpoint cp_msgsubcode                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin canonical_00                                  419          1          -    Covered              
+        bin nonzero_subcode                              8173          1          -    Covered              
+    Coverpoint cp_result                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin canonical_0001                               1145          1          -    Covered              
+        bin bit0_zero_even[0]                             588          1          -    Covered              
+        bin bit0_zero_even[2]                             448          1          -    Covered              
+        bin bit0_zero_even[4]                             467          1          -    Covered              
+        bin bit0_zero_even[6]                             458          1          -    Covered              
+        bin bit0_zero_even[8]                             460          1          -    Covered              
+        bin bit0_zero_even[10]                            487          1          -    Covered              
+        bin bit0_zero_even[12]                            456          1          -    Covered              
+        bin bit0_zero_even[14]                            439          1          -    Covered              
+        bin bit0_one_odd[3]                               412          1          -    Covered              
+        bin bit0_one_odd[5]                               896          1          -    Covered              
+        bin bit0_one_odd[7]                               431          1          -    Covered              
+        bin bit0_one_odd[9]                               479          1          -    Covered              
+        bin bit0_one_odd[11]                              423          1          -    Covered              
+        bin bit0_one_odd[13]                              441          1          -    Covered              
+        bin bit0_one_odd[15]                              562          1          -    Covered              
+    Coverpoint cp_dstid                               100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin remote_phy_110                               1553          1          -    Covered              
+        bin other_dstid[0]                               1090          1          -    Covered              
+        bin other_dstid[1]                                895          1          -    Covered              
+        bin other_dstid[2]                                946          1          -    Covered              
+        bin other_dstid[3]                                931          1          -    Covered              
+        bin other_dstid[4]                                877          1          -    Covered              
+        bin other_dstid[5]                               1329          1          -    Covered              
+        bin other_dstid[7]                                971          1          -    Covered              
+    Coverpoint cp_control_parity                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin valid_even_parity                            4798          1          -    Covered              
+        bin parity_error_odd                             3794          1          -    Covered              
+    Coverpoint cp_data_parity                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin canonical_dp_0                               4468          1          -    Covered              
+        bin non_canonical_dp_1                           4124          1          -    Covered              
+    Coverpoint cp_reserved_fields                     100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_rsvd_zero                                 133          1          -    Covered              
+        bin rsvd_perturbed                               8459          1          -    Covered              
+    Coverpoint cp_pattern_detected                    100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10452          1          -    Covered              
+        bin high                                          107          1          -    Covered              
+        bin rise_edge                                     107          1          -    Covered              
+        bin fall_edge                                     107          1          -    Covered              
+        bin retrigger_pulse                                 9          1          -    Covered              
+    Coverpoint cp_sb_o_detected                       100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low                                         10343          1          -    Covered              
+        bin high                                          216          1          -    Covered              
+        bin rise_edge                                      63          1          -    Covered              
+        bin fall_edge                                      63          1          -    Covered              
+        bin burst_high                                    153          1          -    Covered              
+    Coverpoint cp_joint_outputs                       100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        illegal_bin both_11                                 0                     -    ZERO                 
+        bin both_idle_00                                10236          1          -    Covered              
+        bin sb_o_only_01                                  216          1          -    Covered              
+        bin pat_only_10                                   107          1          -    Covered              
+        bin idle_to_pat                                   107          1          -    Covered              
+        bin idle_to_sbo                                    60          1          -    Covered              
+        bin pat_to_sbo_direct                               3          1          -    Covered              
+        bin sbo_to_pat_seq                                  2          1          -    Covered              
+        bin pat_to_idle                                   104          1          -    Covered              
+        bin sbo_to_idle                                    63          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_top/dut/sva_inst
+=== Design Unit: work.Pattern_detector_SBRX_sva
+=================================================================================
+
+Directive Coverage:
+    Directives                       9         9         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/tb_top/dut/sva_inst/COV_reset_clears_outputs 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(52)
+                                                                              1027 Covered   
+/tb_top/dut/sva_inst/COV_data_valid_low_clears_outputs 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(68)
+                                                                              1848 Covered   
+/tb_top/dut/sva_inst/COV_non_matching_valid_clears_pattern 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(76)
+                                                                              7912 Covered   
+/tb_top/dut/sva_inst/COV_first_valid_pattern_no_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(84)
+                                                                               210 Covered   
+/tb_top/dut/sva_inst/COV_two_consecutive_patterns_assert_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(92)
+                                                                               107 Covered   
+/tb_top/dut/sva_inst/COV_pattern_detected_single_cycle_pulse 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(101)
+                                                                               106 Covered   
+/tb_top/dut/sva_inst/COV_sbinit_valid_asserts_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(109)
+                                                                               216 Covered   
+/tb_top/dut/sva_inst/COV_sbinit_invalid_clears_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(118)
+                                                                              8013 Covered   
+/tb_top/dut/sva_inst/COV_outputs_mutually_exclusive 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(128)
+                                                                               323 Covered   
+
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/tb_top/dut/sva_inst/COV_reset_clears_outputs 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(52)
+                                                                              1027 Covered   
+/tb_top/dut/sva_inst/COV_data_valid_low_clears_outputs 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(68)
+                                                                              1848 Covered   
+/tb_top/dut/sva_inst/COV_non_matching_valid_clears_pattern 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(76)
+                                                                              7912 Covered   
+/tb_top/dut/sva_inst/COV_first_valid_pattern_no_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(84)
+                                                                               210 Covered   
+/tb_top/dut/sva_inst/COV_two_consecutive_patterns_assert_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(92)
+                                                                               107 Covered   
+/tb_top/dut/sva_inst/COV_pattern_detected_single_cycle_pulse 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(101)
+                                                                               106 Covered   
+/tb_top/dut/sva_inst/COV_sbinit_valid_asserts_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(109)
+                                                                               216 Covered   
+/tb_top/dut/sva_inst/COV_sbinit_invalid_clears_detect 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(118)
+                                                                              8013 Covered   
+/tb_top/dut/sva_inst/COV_outputs_mutually_exclusive 
+                                         Pattern_detector_SBRX_sva Verilog  SVA  ../interfaces/Pattern_detector_SBRX_sva.sv(128)
+                                                                               323 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 9
+
+Total Coverage By Instance (filtered view): 100.00%
+
