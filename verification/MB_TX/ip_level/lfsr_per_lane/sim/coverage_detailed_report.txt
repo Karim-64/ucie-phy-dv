@@ -1,0 +1,1278 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.LFSR_PerLane
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        12        12         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.LFSR_PerLane
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/LFSR_PerLane.sv
+------------------------------------IF Branch------------------------------------
+    30                                      3223     Count coming in to IF
+    30              1                         31     
+    38              1                        276     
+    45              1                       1715     
+    74              1                       1201     
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    51                                     37730     Count coming in to IF
+    51              1                       8575     
+    53              1                      29155     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    57                                      1715     Count coming in to IF
+    57              1                        781     
+    66              1                        934     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    85                                      3921     Count coming in to IF
+    85              1                       1910     
+    85              2                       2011     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    85                                      2011     Count coming in to IF
+    85              3                       1315     
+    85              4                        696     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       1         1         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.LFSR_PerLane --
+
+  File ../RTL/LFSR_PerLane.sv
+----------------Focused Condition View-------------------
+Line       38 Item    1  (Opcode_Synch != prev_LTSM_state)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      9         9         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.LFSR_PerLane --
+
+  File ../RTL/LFSR_PerLane.sv
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  (LFSR_REG[i-1] ^ LFSR_REG[22])
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+-----------Focused Expression View (Bimodal)------------
+Line       60 Item    1  (Data_In ^ LFSR_REG[22])
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+-----------Focused Expression View (Bimodal)------------
+Line       85 Item    1  (PN_EN? Data_Out_reg: (EN? (Data_In ^ LFSR_REG[22]): Data_In))
+Expression totals: 5 of 5 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      23        23         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.LFSR_PerLane --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/LFSR_PerLane.sv
+    28              1                       3223     
+    31              1                         31     
+    32              1                         31     
+    33              1                         31     
+    34              1                         31     
+    35              1                         31     
+    40              1                        276     
+    41              1                        276     
+    42              1                        276     
+    47              1                       1715     
+    49              1                       1715     
+    49              2                      37730     
+    52              1                       8575     
+    54              1                      29155     
+    60              1                        781     
+    63              1                        781     
+    64              1                        781     
+    68              1                        934     
+    69              1                        934     
+    76              1                       1201     
+    77              1                       1201     
+    78              1                       1201     
+    85              1                       3924     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         90        90         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.LFSR_PerLane
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         45 
+Toggled Node Count   =         45 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (90 of 90 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /lfsr_per_lane_pkg
+=== Design Unit: work.lfsr_per_lane_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses         24        na        na        na
+            Covergroup Bins        288       288         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /lfsr_per_lane_pkg/lfsr_per_lane_subscriber/lfsr_per_lane_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   288        288          -                      
+    missing/total bins:                                     0        288          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Opcode_Synch                        100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_EN                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_PN_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Data_In                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Data_Out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Valid                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_VLD_SER_EN                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_train_d                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_hold_d                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_EN_PN_EN                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_EN_Data_In                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_EN_Data_Out                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_PN_EN_Data_In                            100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_PN_EN_Data_Out                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Data_In_Data_Out                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Valid                                    100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_VLD_SER_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Valid_src                                100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_VLD_src                                  100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Valid_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_RST_n_out                                100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_RST_n_Valid                              100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_RST_n_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/lfsr_per_lane_pkg::lfsr_per_lane_subscriber::lfsr_per_lane_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   288        288          -                      
+    missing/total bins:                                     0        288          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         3505          1          -    Covered              
+        bin low                                            20          1          -    Covered              
+        bin toggle_01                                      14          1          -    Covered              
+        bin toggle_10                                      14          1          -    Covered              
+    Coverpoint cp_Opcode_Synch                        100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pattern                                      1531          1          -    Covered              
+        bin zero                                           66          1          -    Covered              
+        bin ones                                           64          1          -    Covered              
+        bin transition                                   3524          1          -    Covered              
+    Coverpoint cp_EN                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1861          1          -    Covered              
+        bin low                                          1664          1          -    Covered              
+        bin toggle_01                                      66          1          -    Covered              
+        bin toggle_10                                      66          1          -    Covered              
+    Coverpoint cp_PN_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1665          1          -    Covered              
+        bin low                                          1860          1          -    Covered              
+        bin toggle_01                                      72          1          -    Covered              
+        bin toggle_10                                      72          1          -    Covered              
+    Coverpoint cp_Data_In                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1780          1          -    Covered              
+        bin low                                          1745          1          -    Covered              
+        bin toggle_01                                    1345          1          -    Covered              
+        bin toggle_10                                    1345          1          -    Covered              
+    Coverpoint cp_Data_Out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1350          1          -    Covered              
+        bin low                                          2175          1          -    Covered              
+        bin toggle_01                                     800          1          -    Covered              
+        bin toggle_10                                     800          1          -    Covered              
+    Coverpoint cp_Valid                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pattern                                       840          1          -    Covered              
+        bin zero                                         2685          1          -    Covered              
+        bin toggle_01                                      50          1          -    Covered              
+        bin toggle_10                                      50          1          -    Covered              
+        illegal_bin other                                   0                     -    ZERO                 
+    Coverpoint cp_VLD_SER_EN                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                          840          1          -    Covered              
+        bin low                                          2685          1          -    Covered              
+        bin toggle_01                                      50          1          -    Covered              
+        bin toggle_10                                      50          1          -    Covered              
+    Coverpoint cp_train_d                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin no                                           2661          1          -    Covered              
+        bin yes                                           844          1          -    Covered              
+    Coverpoint cp_hold_d                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin no                                           3229          1          -    Covered              
+        bin yes                                           276          1          -    Covered              
+    Cross cx_EN_PN_EN                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      13          1          -    Covered              
+            bin <toggle_01,toggle_10>                      14          1          -    Covered              
+            bin <low,toggle_10>                            26          1          -    Covered              
+            bin <high,toggle_10>                           46          1          -    Covered              
+            bin <toggle_10,toggle_01>                      18          1          -    Covered              
+            bin <toggle_01,toggle_01>                      14          1          -    Covered              
+            bin <low,toggle_01>                            27          1          -    Covered              
+            bin <high,toggle_01>                           45          1          -    Covered              
+            bin <toggle_10,low>                            41          1          -    Covered              
+            bin <toggle_01,low>                            45          1          -    Covered              
+            bin <low,low>                                 854          1          -    Covered              
+            bin <high,low>                               1006          1          -    Covered              
+            bin <toggle_10,high>                           25          1          -    Covered              
+            bin <toggle_01,high>                           21          1          -    Covered              
+            bin <low,high>                                810          1          -    Covered              
+            bin <high,high>                               855          1          -    Covered              
+    Cross cx_EN_Data_In                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      18          1          -    Covered              
+            bin <toggle_01,toggle_10>                      17          1          -    Covered              
+            bin <low,toggle_10>                           641          1          -    Covered              
+            bin <high,toggle_10>                          704          1          -    Covered              
+            bin <toggle_10,toggle_01>                      14          1          -    Covered              
+            bin <toggle_01,toggle_01>                      12          1          -    Covered              
+            bin <low,toggle_01>                           644          1          -    Covered              
+            bin <high,toggle_01>                          701          1          -    Covered              
+            bin <toggle_10,low>                            31          1          -    Covered              
+            bin <toggle_01,low>                            29          1          -    Covered              
+            bin <low,low>                                 825          1          -    Covered              
+            bin <high,low>                                920          1          -    Covered              
+            bin <toggle_10,high>                           35          1          -    Covered              
+            bin <toggle_01,high>                           37          1          -    Covered              
+            bin <low,high>                                839          1          -    Covered              
+            bin <high,high>                               941          1          -    Covered              
+    Cross cx_EN_Data_Out                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      19          1          -    Covered              
+            bin <toggle_01,toggle_10>                      21          1          -    Covered              
+            bin <low,toggle_10>                           337          1          -    Covered              
+            bin <high,toggle_10>                          463          1          -    Covered              
+            bin <toggle_10,toggle_01>                      13          1          -    Covered              
+            bin <toggle_01,toggle_01>                      11          1          -    Covered              
+            bin <low,toggle_01>                           334          1          -    Covered              
+            bin <high,toggle_01>                          466          1          -    Covered              
+            bin <toggle_10,low>                            41          1          -    Covered              
+            bin <toggle_01,low>                            48          1          -    Covered              
+            bin <low,low>                                1236          1          -    Covered              
+            bin <high,low>                                939          1          -    Covered              
+            bin <toggle_10,high>                           25          1          -    Covered              
+            bin <toggle_01,high>                           18          1          -    Covered              
+            bin <low,high>                                428          1          -    Covered              
+            bin <high,high>                               922          1          -    Covered              
+    Cross cx_PN_EN_Data_In                            100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      19          1          -    Covered              
+            bin <toggle_01,toggle_10>                      23          1          -    Covered              
+            bin <low,toggle_10>                           701          1          -    Covered              
+            bin <high,toggle_10>                          644          1          -    Covered              
+            bin <toggle_10,toggle_01>                      15          1          -    Covered              
+            bin <toggle_01,toggle_01>                      14          1          -    Covered              
+            bin <low,toggle_01>                           706          1          -    Covered              
+            bin <high,toggle_01>                          639          1          -    Covered              
+            bin <toggle_10,low>                            35          1          -    Covered              
+            bin <toggle_01,low>                            35          1          -    Covered              
+            bin <low,low>                                 928          1          -    Covered              
+            bin <high,low>                                817          1          -    Covered              
+            bin <toggle_10,high>                           37          1          -    Covered              
+            bin <toggle_01,high>                           37          1          -    Covered              
+            bin <low,high>                                932          1          -    Covered              
+            bin <high,high>                               848          1          -    Covered              
+    Cross cx_PN_EN_Data_Out                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       9          1          -    Covered              
+            bin <toggle_01,toggle_10>                      37          1          -    Covered              
+            bin <low,toggle_10>                           566          1          -    Covered              
+            bin <high,toggle_10>                          234          1          -    Covered              
+            bin <toggle_10,toggle_01>                      32          1          -    Covered              
+            bin <toggle_01,toggle_01>                       5          1          -    Covered              
+            bin <low,toggle_01>                           592          1          -    Covered              
+            bin <high,toggle_01>                          208          1          -    Covered              
+            bin <toggle_10,low>                            36          1          -    Covered              
+            bin <toggle_01,low>                            65          1          -    Covered              
+            bin <low,low>                                 933          1          -    Covered              
+            bin <high,low>                               1242          1          -    Covered              
+            bin <toggle_10,high>                           36          1          -    Covered              
+            bin <toggle_01,high>                            7          1          -    Covered              
+            bin <low,high>                                927          1          -    Covered              
+            bin <high,high>                               423          1          -    Covered              
+    Cross cx_Data_In_Data_Out                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                     509          1          -    Covered              
+            bin <toggle_01,toggle_10>                     166          1          -    Covered              
+            bin <low,toggle_10>                           561          1          -    Covered              
+            bin <high,toggle_10>                          239          1          -    Covered              
+            bin <toggle_10,toggle_01>                     161          1          -    Covered              
+            bin <toggle_01,toggle_01>                     508          1          -    Covered              
+            bin <low,toggle_01>                           222          1          -    Covered              
+            bin <high,toggle_01>                          578          1          -    Covered              
+            bin <toggle_10,low>                          1010          1          -    Covered              
+            bin <toggle_01,low>                           659          1          -    Covered              
+            bin <low,low>                                1299          1          -    Covered              
+            bin <high,low>                                876          1          -    Covered              
+            bin <toggle_10,high>                          335          1          -    Covered              
+            bin <toggle_01,high>                          686          1          -    Covered              
+            bin <low,high>                                446          1          -    Covered              
+            bin <high,high>                               904          1          -    Covered              
+    Cross cx_Valid                                    100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10,toggle_10>             2          1          -    Covered              
+            bin <zero,toggle_10,toggle_10>                  3          1          -    Covered              
+            bin <toggle_01,toggle_10,toggle_10>             7          1          -    Covered              
+            bin <pattern,toggle_10,toggle_10>              10          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_10>             3          1          -    Covered              
+            bin <zero,toggle_01,toggle_10>                 14          1          -    Covered              
+            bin <toggle_10,low,toggle_10>                   2          1          -    Covered              
+            bin <toggle_10,high,toggle_10>                  4          1          -    Covered              
+            bin <zero,low,toggle_10>                       16          1          -    Covered              
+            bin <zero,high,toggle_10>                      17          1          -    Covered              
+            bin <toggle_01,low,toggle_10>                   7          1          -    Covered              
+            bin <toggle_01,high,toggle_10>                 22          1          -    Covered              
+            bin <pattern,low,toggle_10>                    10          1          -    Covered              
+            bin <pattern,high,toggle_10>                   29          1          -    Covered              
+            bin <toggle_10,toggle_10,toggle_01>             4          1          -    Covered              
+            bin <toggle_10,low,toggle_01>                   5          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_01>             1          1          -    Covered              
+            bin <toggle_10,high,toggle_01>                 10          1          -    Covered              
+            bin <zero,toggle_10,toggle_01>                 18          1          -    Covered              
+            bin <zero,low,toggle_01>                       27          1          -    Covered              
+            bin <zero,toggle_01,toggle_01>                 14          1          -    Covered              
+            bin <zero,high,toggle_01>                      45          1          -    Covered              
+            bin <toggle_10,toggle_10,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_10,high>                  4          1          -    Covered              
+            bin <zero,toggle_10,low>                       31          1          -    Covered              
+            bin <zero,toggle_10,high>                      19          1          -    Covered              
+            bin <toggle_01,toggle_10,low>                   7          1          -    Covered              
+            bin <toggle_01,toggle_10,high>                  4          1          -    Covered              
+            bin <pattern,toggle_10,low>                    10          1          -    Covered              
+            bin <pattern,toggle_10,high>                    6          1          -    Covered              
+            bin <toggle_10,toggle_01,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_01,high>                  1          1          -    Covered              
+            bin <zero,toggle_01,low>                       45          1          -    Covered              
+            bin <zero,toggle_01,high>                      21          1          -    Covered              
+            bin <toggle_10,low,low>                        11          1          -    Covered              
+            bin <toggle_10,low,high>                        8          1          -    Covered              
+            bin <toggle_10,high,low>                       19          1          -    Covered              
+            bin <toggle_10,high,high>                      12          1          -    Covered              
+            bin <zero,low,low>                            844          1          -    Covered              
+            bin <zero,low,high>                           804          1          -    Covered              
+            bin <zero,high,low>                           977          1          -    Covered              
+            bin <zero,high,high>                           60          1          -    Covered              
+            bin <toggle_01,low,low>                         7          1          -    Covered              
+            bin <toggle_01,low,high>                        4          1          -    Covered              
+            bin <toggle_01,high,low>                       22          1          -    Covered              
+            bin <toggle_01,high,high>                      17          1          -    Covered              
+            bin <pattern,low,low>                          10          1          -    Covered              
+            bin <pattern,low,high>                          6          1          -    Covered              
+            bin <pattern,high,low>                         29          1          -    Covered              
+            bin <pattern,high,high>                       795          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin tog_10_PN_EN                        0                     -    ZERO                 
+            illegal_bin tog_10_EN                           0                     -    ZERO                 
+            illegal_bin tog_high                            0                     -    ZERO                 
+    Cross cx_VLD_SER_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10,toggle_10>             2          1          -    Covered              
+            bin <low,toggle_10,toggle_10>                   3          1          -    Covered              
+            bin <toggle_01,toggle_10,toggle_10>             7          1          -    Covered              
+            bin <high,toggle_10,toggle_10>                 10          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_10>             3          1          -    Covered              
+            bin <low,toggle_01,toggle_10>                  14          1          -    Covered              
+            bin <toggle_10,low,toggle_10>                   2          1          -    Covered              
+            bin <toggle_10,high,toggle_10>                  4          1          -    Covered              
+            bin <low,low,toggle_10>                        16          1          -    Covered              
+            bin <low,high,toggle_10>                       17          1          -    Covered              
+            bin <toggle_01,low,toggle_10>                   7          1          -    Covered              
+            bin <toggle_01,high,toggle_10>                 22          1          -    Covered              
+            bin <high,low,toggle_10>                       10          1          -    Covered              
+            bin <high,high,toggle_10>                      29          1          -    Covered              
+            bin <toggle_10,toggle_10,toggle_01>             4          1          -    Covered              
+            bin <toggle_10,low,toggle_01>                   5          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_01>             1          1          -    Covered              
+            bin <toggle_10,high,toggle_01>                 10          1          -    Covered              
+            bin <low,toggle_10,toggle_01>                  18          1          -    Covered              
+            bin <low,low,toggle_01>                        27          1          -    Covered              
+            bin <low,toggle_01,toggle_01>                  14          1          -    Covered              
+            bin <low,high,toggle_01>                       45          1          -    Covered              
+            bin <toggle_10,toggle_10,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_10,high>                  4          1          -    Covered              
+            bin <low,toggle_10,low>                        31          1          -    Covered              
+            bin <low,toggle_10,high>                       19          1          -    Covered              
+            bin <toggle_01,toggle_10,low>                   7          1          -    Covered              
+            bin <toggle_01,toggle_10,high>                  4          1          -    Covered              
+            bin <high,toggle_10,low>                       10          1          -    Covered              
+            bin <high,toggle_10,high>                       6          1          -    Covered              
+            bin <toggle_10,toggle_01,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_01,high>                  1          1          -    Covered              
+            bin <low,toggle_01,low>                        45          1          -    Covered              
+            bin <low,toggle_01,high>                       21          1          -    Covered              
+            bin <toggle_10,low,low>                        11          1          -    Covered              
+            bin <toggle_10,low,high>                        8          1          -    Covered              
+            bin <toggle_10,high,low>                       19          1          -    Covered              
+            bin <toggle_10,high,high>                      12          1          -    Covered              
+            bin <low,low,low>                             844          1          -    Covered              
+            bin <low,low,high>                            804          1          -    Covered              
+            bin <low,high,low>                            977          1          -    Covered              
+            bin <low,high,high>                            60          1          -    Covered              
+            bin <toggle_01,low,low>                         7          1          -    Covered              
+            bin <toggle_01,low,high>                        4          1          -    Covered              
+            bin <toggle_01,high,low>                       22          1          -    Covered              
+            bin <toggle_01,high,high>                      17          1          -    Covered              
+            bin <high,low,low>                             10          1          -    Covered              
+            bin <high,low,high>                             6          1          -    Covered              
+            bin <high,high,low>                            29          1          -    Covered              
+            bin <high,high,high>                          795          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin tog_10_PN_EN                        0                     -    ZERO                 
+            illegal_bin tog_10_EN                           0                     -    ZERO                 
+            illegal_bin tog_high                            0                     -    ZERO                 
+    Cross cx_Valid_src                                100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <zero,yes,yes>                              4          1          -    Covered              
+            bin <pattern,yes,yes>                          65          1          -    Covered              
+            bin <zero,no,yes>                             207          1          -    Covered              
+            bin <toggle_01,yes,no>                         50          1          -    Covered              
+            bin <pattern,yes,no>                          775          1          -    Covered              
+            bin <toggle_10,no,no>                          43          1          -    Covered              
+            bin <zero,no,no>                             2454          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin vld_high_train_hold                 0                     -    ZERO                 
+            illegal_bin toggle_10_train                     0                     -    ZERO                 
+            illegal_bin toggle_01_train                     0                     -    ZERO                 
+            illegal_bin toggle_10_hold                      0                     -    ZERO                 
+            illegal_bin toggle_01_hold                      0                     -    ZERO                 
+            illegal_bin train_zero                          0                     -    ZERO                 
+            illegal_bin no_source                           0                     -    ZERO                 
+    Cross cx_VLD_src                                  100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <low,yes,yes>                               4          1          -    Covered              
+            bin <high,yes,yes>                             65          1          -    Covered              
+            bin <low,no,yes>                              207          1          -    Covered              
+            bin <toggle_01,yes,no>                         50          1          -    Covered              
+            bin <high,yes,no>                             775          1          -    Covered              
+            bin <toggle_10,no,no>                          43          1          -    Covered              
+            bin <low,no,no>                              2454          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin vld_high_train_hold                 0                     -    ZERO                 
+            illegal_bin toggle_10_train                     0                     -    ZERO                 
+            illegal_bin toggle_01_train                     0                     -    ZERO                 
+            illegal_bin toggle_10_hold                      0                     -    ZERO                 
+            illegal_bin toggle_01_hold                      0                     -    ZERO                 
+            illegal_bin train_low                           0                     -    ZERO                 
+            illegal_bin no_source                           0                     -    ZERO                 
+    Cross cx_Valid_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      50          1          -    Covered              
+            bin <toggle_10,low>                            50          1          -    Covered              
+            bin <zero,toggle_10>                           50          1          -    Covered              
+            bin <zero,low>                               2685          1          -    Covered              
+            bin <toggle_01,toggle_01>                      50          1          -    Covered              
+            bin <toggle_01,high>                           50          1          -    Covered              
+            bin <pattern,toggle_01>                        50          1          -    Covered              
+            bin <pattern,high>                            840          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin pattern8                            0                     -    ZERO                 
+            illegal_bin pattern7                            0                     -    ZERO                 
+            illegal_bin pattern6                            0                     -    ZERO                 
+            illegal_bin pattern5                            0                     -    ZERO                 
+            illegal_bin pattern4                            0                     -    ZERO                 
+            illegal_bin pattern3                            0                     -    ZERO                 
+            illegal_bin pattern2                            0                     -    ZERO                 
+            illegal_bin pattern1                            0                     -    ZERO                 
+    Cross cx_RST_n_out                                100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       4          1          -    Covered              
+            bin <toggle_01,toggle_10>                       2          1          -    Covered              
+            bin <low,toggle_10>                             5          1          -    Covered              
+            bin <high,toggle_10>                          795          1          -    Covered              
+            bin <toggle_10,toggle_01>                       3          1          -    Covered              
+            bin <toggle_01,toggle_01>                       2          1          -    Covered              
+            bin <low,toggle_01>                             3          1          -    Covered              
+            bin <high,toggle_01>                          797          1          -    Covered              
+            bin <toggle_10,low>                             9          1          -    Covered              
+            bin <toggle_01,low>                            10          1          -    Covered              
+            bin <low,low>                                  15          1          -    Covered              
+            bin <high,low>                               2160          1          -    Covered              
+            bin <toggle_10,high>                            5          1          -    Covered              
+            bin <toggle_01,high>                            4          1          -    Covered              
+            bin <low,high>                                  5          1          -    Covered              
+            bin <high,high>                              1345          1          -    Covered              
+    Cross cx_RST_n_Valid                              100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       7          1          -    Covered              
+            bin <low,toggle_10>                             7          1          -    Covered              
+            bin <high,toggle_10>                           43          1          -    Covered              
+            bin <high,toggle_01>                           50          1          -    Covered              
+            bin <toggle_10,zero>                           14          1          -    Covered              
+            bin <low,zero>                                 20          1          -    Covered              
+            bin <toggle_01,zero>                           14          1          -    Covered              
+            bin <high,zero>                              2665          1          -    Covered              
+            bin <high,pattern>                            840          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin pattern6                            0                     -    ZERO                 
+            illegal_bin pattern5                            0                     -    ZERO                 
+            illegal_bin pattern4                            0                     -    ZERO                 
+            illegal_bin pattern8                            0                     -    ZERO                 
+            illegal_bin pattern3                            0                     -    ZERO                 
+            illegal_bin pattern2                            0                     -    ZERO                 
+            illegal_bin pattern1                            0                     -    ZERO                 
+    Cross cx_RST_n_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       7          1          -    Covered              
+            bin <low,toggle_10>                             7          1          -    Covered              
+            bin <high,toggle_10>                           43          1          -    Covered              
+            bin <high,toggle_01>                           50          1          -    Covered              
+            bin <toggle_10,low>                            14          1          -    Covered              
+            bin <low,low>                                  20          1          -    Covered              
+            bin <toggle_01,low>                            14          1          -    Covered              
+            bin <high,low>                               2665          1          -    Covered              
+            bin <high,high>                               840          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin pattern7                            0                     -    ZERO                 
+            illegal_bin pattern6                            0                     -    ZERO                 
+            illegal_bin pattern5                            0                     -    ZERO                 
+            illegal_bin pattern4                            0                     -    ZERO                 
+            illegal_bin pattern3                            0                     -    ZERO                 
+            illegal_bin pattern2                            0                     -    ZERO                 
+            illegal_bin pattern1                            0                     -    ZERO                 
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /lfsr_per_lane_pkg/lfsr_per_lane_subscriber/lfsr_per_lane_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   288        288          -                      
+    missing/total bins:                                     0        288          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Opcode_Synch                        100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_EN                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_PN_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Data_In                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Data_Out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Valid                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_VLD_SER_EN                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_train_d                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_hold_d                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_EN_PN_EN                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_EN_Data_In                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_EN_Data_Out                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_PN_EN_Data_In                            100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_PN_EN_Data_Out                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Data_In_Data_Out                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Valid                                    100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_VLD_SER_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Valid_src                                100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_VLD_src                                  100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_Valid_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_RST_n_out                                100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_RST_n_Valid                              100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_RST_n_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/lfsr_per_lane_pkg::lfsr_per_lane_subscriber::lfsr_per_lane_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   288        288          -                      
+    missing/total bins:                                     0        288          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         3505          1          -    Covered              
+        bin low                                            20          1          -    Covered              
+        bin toggle_01                                      14          1          -    Covered              
+        bin toggle_10                                      14          1          -    Covered              
+    Coverpoint cp_Opcode_Synch                        100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pattern                                      1531          1          -    Covered              
+        bin zero                                           66          1          -    Covered              
+        bin ones                                           64          1          -    Covered              
+        bin transition                                   3524          1          -    Covered              
+    Coverpoint cp_EN                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1861          1          -    Covered              
+        bin low                                          1664          1          -    Covered              
+        bin toggle_01                                      66          1          -    Covered              
+        bin toggle_10                                      66          1          -    Covered              
+    Coverpoint cp_PN_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1665          1          -    Covered              
+        bin low                                          1860          1          -    Covered              
+        bin toggle_01                                      72          1          -    Covered              
+        bin toggle_10                                      72          1          -    Covered              
+    Coverpoint cp_Data_In                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1780          1          -    Covered              
+        bin low                                          1745          1          -    Covered              
+        bin toggle_01                                    1345          1          -    Covered              
+        bin toggle_10                                    1345          1          -    Covered              
+    Coverpoint cp_Data_Out                            100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         1350          1          -    Covered              
+        bin low                                          2175          1          -    Covered              
+        bin toggle_01                                     800          1          -    Covered              
+        bin toggle_10                                     800          1          -    Covered              
+    Coverpoint cp_Valid                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pattern                                       840          1          -    Covered              
+        bin zero                                         2685          1          -    Covered              
+        bin toggle_01                                      50          1          -    Covered              
+        bin toggle_10                                      50          1          -    Covered              
+        illegal_bin other                                   0                     -    ZERO                 
+    Coverpoint cp_VLD_SER_EN                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                          840          1          -    Covered              
+        bin low                                          2685          1          -    Covered              
+        bin toggle_01                                      50          1          -    Covered              
+        bin toggle_10                                      50          1          -    Covered              
+    Coverpoint cp_train_d                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin no                                           2661          1          -    Covered              
+        bin yes                                           844          1          -    Covered              
+    Coverpoint cp_hold_d                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin no                                           3229          1          -    Covered              
+        bin yes                                           276          1          -    Covered              
+    Cross cx_EN_PN_EN                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      13          1          -    Covered              
+            bin <toggle_01,toggle_10>                      14          1          -    Covered              
+            bin <low,toggle_10>                            26          1          -    Covered              
+            bin <high,toggle_10>                           46          1          -    Covered              
+            bin <toggle_10,toggle_01>                      18          1          -    Covered              
+            bin <toggle_01,toggle_01>                      14          1          -    Covered              
+            bin <low,toggle_01>                            27          1          -    Covered              
+            bin <high,toggle_01>                           45          1          -    Covered              
+            bin <toggle_10,low>                            41          1          -    Covered              
+            bin <toggle_01,low>                            45          1          -    Covered              
+            bin <low,low>                                 854          1          -    Covered              
+            bin <high,low>                               1006          1          -    Covered              
+            bin <toggle_10,high>                           25          1          -    Covered              
+            bin <toggle_01,high>                           21          1          -    Covered              
+            bin <low,high>                                810          1          -    Covered              
+            bin <high,high>                               855          1          -    Covered              
+    Cross cx_EN_Data_In                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      18          1          -    Covered              
+            bin <toggle_01,toggle_10>                      17          1          -    Covered              
+            bin <low,toggle_10>                           641          1          -    Covered              
+            bin <high,toggle_10>                          704          1          -    Covered              
+            bin <toggle_10,toggle_01>                      14          1          -    Covered              
+            bin <toggle_01,toggle_01>                      12          1          -    Covered              
+            bin <low,toggle_01>                           644          1          -    Covered              
+            bin <high,toggle_01>                          701          1          -    Covered              
+            bin <toggle_10,low>                            31          1          -    Covered              
+            bin <toggle_01,low>                            29          1          -    Covered              
+            bin <low,low>                                 825          1          -    Covered              
+            bin <high,low>                                920          1          -    Covered              
+            bin <toggle_10,high>                           35          1          -    Covered              
+            bin <toggle_01,high>                           37          1          -    Covered              
+            bin <low,high>                                839          1          -    Covered              
+            bin <high,high>                               941          1          -    Covered              
+    Cross cx_EN_Data_Out                              100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      19          1          -    Covered              
+            bin <toggle_01,toggle_10>                      21          1          -    Covered              
+            bin <low,toggle_10>                           337          1          -    Covered              
+            bin <high,toggle_10>                          463          1          -    Covered              
+            bin <toggle_10,toggle_01>                      13          1          -    Covered              
+            bin <toggle_01,toggle_01>                      11          1          -    Covered              
+            bin <low,toggle_01>                           334          1          -    Covered              
+            bin <high,toggle_01>                          466          1          -    Covered              
+            bin <toggle_10,low>                            41          1          -    Covered              
+            bin <toggle_01,low>                            48          1          -    Covered              
+            bin <low,low>                                1236          1          -    Covered              
+            bin <high,low>                                939          1          -    Covered              
+            bin <toggle_10,high>                           25          1          -    Covered              
+            bin <toggle_01,high>                           18          1          -    Covered              
+            bin <low,high>                                428          1          -    Covered              
+            bin <high,high>                               922          1          -    Covered              
+    Cross cx_PN_EN_Data_In                            100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      19          1          -    Covered              
+            bin <toggle_01,toggle_10>                      23          1          -    Covered              
+            bin <low,toggle_10>                           701          1          -    Covered              
+            bin <high,toggle_10>                          644          1          -    Covered              
+            bin <toggle_10,toggle_01>                      15          1          -    Covered              
+            bin <toggle_01,toggle_01>                      14          1          -    Covered              
+            bin <low,toggle_01>                           706          1          -    Covered              
+            bin <high,toggle_01>                          639          1          -    Covered              
+            bin <toggle_10,low>                            35          1          -    Covered              
+            bin <toggle_01,low>                            35          1          -    Covered              
+            bin <low,low>                                 928          1          -    Covered              
+            bin <high,low>                                817          1          -    Covered              
+            bin <toggle_10,high>                           37          1          -    Covered              
+            bin <toggle_01,high>                           37          1          -    Covered              
+            bin <low,high>                                932          1          -    Covered              
+            bin <high,high>                               848          1          -    Covered              
+    Cross cx_PN_EN_Data_Out                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       9          1          -    Covered              
+            bin <toggle_01,toggle_10>                      37          1          -    Covered              
+            bin <low,toggle_10>                           566          1          -    Covered              
+            bin <high,toggle_10>                          234          1          -    Covered              
+            bin <toggle_10,toggle_01>                      32          1          -    Covered              
+            bin <toggle_01,toggle_01>                       5          1          -    Covered              
+            bin <low,toggle_01>                           592          1          -    Covered              
+            bin <high,toggle_01>                          208          1          -    Covered              
+            bin <toggle_10,low>                            36          1          -    Covered              
+            bin <toggle_01,low>                            65          1          -    Covered              
+            bin <low,low>                                 933          1          -    Covered              
+            bin <high,low>                               1242          1          -    Covered              
+            bin <toggle_10,high>                           36          1          -    Covered              
+            bin <toggle_01,high>                            7          1          -    Covered              
+            bin <low,high>                                927          1          -    Covered              
+            bin <high,high>                               423          1          -    Covered              
+    Cross cx_Data_In_Data_Out                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                     509          1          -    Covered              
+            bin <toggle_01,toggle_10>                     166          1          -    Covered              
+            bin <low,toggle_10>                           561          1          -    Covered              
+            bin <high,toggle_10>                          239          1          -    Covered              
+            bin <toggle_10,toggle_01>                     161          1          -    Covered              
+            bin <toggle_01,toggle_01>                     508          1          -    Covered              
+            bin <low,toggle_01>                           222          1          -    Covered              
+            bin <high,toggle_01>                          578          1          -    Covered              
+            bin <toggle_10,low>                          1010          1          -    Covered              
+            bin <toggle_01,low>                           659          1          -    Covered              
+            bin <low,low>                                1299          1          -    Covered              
+            bin <high,low>                                876          1          -    Covered              
+            bin <toggle_10,high>                          335          1          -    Covered              
+            bin <toggle_01,high>                          686          1          -    Covered              
+            bin <low,high>                                446          1          -    Covered              
+            bin <high,high>                               904          1          -    Covered              
+    Cross cx_Valid                                    100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10,toggle_10>             2          1          -    Covered              
+            bin <zero,toggle_10,toggle_10>                  3          1          -    Covered              
+            bin <toggle_01,toggle_10,toggle_10>             7          1          -    Covered              
+            bin <pattern,toggle_10,toggle_10>              10          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_10>             3          1          -    Covered              
+            bin <zero,toggle_01,toggle_10>                 14          1          -    Covered              
+            bin <toggle_10,low,toggle_10>                   2          1          -    Covered              
+            bin <toggle_10,high,toggle_10>                  4          1          -    Covered              
+            bin <zero,low,toggle_10>                       16          1          -    Covered              
+            bin <zero,high,toggle_10>                      17          1          -    Covered              
+            bin <toggle_01,low,toggle_10>                   7          1          -    Covered              
+            bin <toggle_01,high,toggle_10>                 22          1          -    Covered              
+            bin <pattern,low,toggle_10>                    10          1          -    Covered              
+            bin <pattern,high,toggle_10>                   29          1          -    Covered              
+            bin <toggle_10,toggle_10,toggle_01>             4          1          -    Covered              
+            bin <toggle_10,low,toggle_01>                   5          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_01>             1          1          -    Covered              
+            bin <toggle_10,high,toggle_01>                 10          1          -    Covered              
+            bin <zero,toggle_10,toggle_01>                 18          1          -    Covered              
+            bin <zero,low,toggle_01>                       27          1          -    Covered              
+            bin <zero,toggle_01,toggle_01>                 14          1          -    Covered              
+            bin <zero,high,toggle_01>                      45          1          -    Covered              
+            bin <toggle_10,toggle_10,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_10,high>                  4          1          -    Covered              
+            bin <zero,toggle_10,low>                       31          1          -    Covered              
+            bin <zero,toggle_10,high>                      19          1          -    Covered              
+            bin <toggle_01,toggle_10,low>                   7          1          -    Covered              
+            bin <toggle_01,toggle_10,high>                  4          1          -    Covered              
+            bin <pattern,toggle_10,low>                    10          1          -    Covered              
+            bin <pattern,toggle_10,high>                    6          1          -    Covered              
+            bin <toggle_10,toggle_01,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_01,high>                  1          1          -    Covered              
+            bin <zero,toggle_01,low>                       45          1          -    Covered              
+            bin <zero,toggle_01,high>                      21          1          -    Covered              
+            bin <toggle_10,low,low>                        11          1          -    Covered              
+            bin <toggle_10,low,high>                        8          1          -    Covered              
+            bin <toggle_10,high,low>                       19          1          -    Covered              
+            bin <toggle_10,high,high>                      12          1          -    Covered              
+            bin <zero,low,low>                            844          1          -    Covered              
+            bin <zero,low,high>                           804          1          -    Covered              
+            bin <zero,high,low>                           977          1          -    Covered              
+            bin <zero,high,high>                           60          1          -    Covered              
+            bin <toggle_01,low,low>                         7          1          -    Covered              
+            bin <toggle_01,low,high>                        4          1          -    Covered              
+            bin <toggle_01,high,low>                       22          1          -    Covered              
+            bin <toggle_01,high,high>                      17          1          -    Covered              
+            bin <pattern,low,low>                          10          1          -    Covered              
+            bin <pattern,low,high>                          6          1          -    Covered              
+            bin <pattern,high,low>                         29          1          -    Covered              
+            bin <pattern,high,high>                       795          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin tog_10_PN_EN                        0                     -    ZERO                 
+            illegal_bin tog_10_EN                           0                     -    ZERO                 
+            illegal_bin tog_high                            0                     -    ZERO                 
+    Cross cx_VLD_SER_EN                               100.00%        100          -    Covered              
+        covered/total bins:                                50         50          -                      
+        missing/total bins:                                 0         50          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10,toggle_10>             2          1          -    Covered              
+            bin <low,toggle_10,toggle_10>                   3          1          -    Covered              
+            bin <toggle_01,toggle_10,toggle_10>             7          1          -    Covered              
+            bin <high,toggle_10,toggle_10>                 10          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_10>             3          1          -    Covered              
+            bin <low,toggle_01,toggle_10>                  14          1          -    Covered              
+            bin <toggle_10,low,toggle_10>                   2          1          -    Covered              
+            bin <toggle_10,high,toggle_10>                  4          1          -    Covered              
+            bin <low,low,toggle_10>                        16          1          -    Covered              
+            bin <low,high,toggle_10>                       17          1          -    Covered              
+            bin <toggle_01,low,toggle_10>                   7          1          -    Covered              
+            bin <toggle_01,high,toggle_10>                 22          1          -    Covered              
+            bin <high,low,toggle_10>                       10          1          -    Covered              
+            bin <high,high,toggle_10>                      29          1          -    Covered              
+            bin <toggle_10,toggle_10,toggle_01>             4          1          -    Covered              
+            bin <toggle_10,low,toggle_01>                   5          1          -    Covered              
+            bin <toggle_10,toggle_01,toggle_01>             1          1          -    Covered              
+            bin <toggle_10,high,toggle_01>                 10          1          -    Covered              
+            bin <low,toggle_10,toggle_01>                  18          1          -    Covered              
+            bin <low,low,toggle_01>                        27          1          -    Covered              
+            bin <low,toggle_01,toggle_01>                  14          1          -    Covered              
+            bin <low,high,toggle_01>                       45          1          -    Covered              
+            bin <toggle_10,toggle_10,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_10,high>                  4          1          -    Covered              
+            bin <low,toggle_10,low>                        31          1          -    Covered              
+            bin <low,toggle_10,high>                       19          1          -    Covered              
+            bin <toggle_01,toggle_10,low>                   7          1          -    Covered              
+            bin <toggle_01,toggle_10,high>                  4          1          -    Covered              
+            bin <high,toggle_10,low>                       10          1          -    Covered              
+            bin <high,toggle_10,high>                       6          1          -    Covered              
+            bin <toggle_10,toggle_01,low>                   8          1          -    Covered              
+            bin <toggle_10,toggle_01,high>                  1          1          -    Covered              
+            bin <low,toggle_01,low>                        45          1          -    Covered              
+            bin <low,toggle_01,high>                       21          1          -    Covered              
+            bin <toggle_10,low,low>                        11          1          -    Covered              
+            bin <toggle_10,low,high>                        8          1          -    Covered              
+            bin <toggle_10,high,low>                       19          1          -    Covered              
+            bin <toggle_10,high,high>                      12          1          -    Covered              
+            bin <low,low,low>                             844          1          -    Covered              
+            bin <low,low,high>                            804          1          -    Covered              
+            bin <low,high,low>                            977          1          -    Covered              
+            bin <low,high,high>                            60          1          -    Covered              
+            bin <toggle_01,low,low>                         7          1          -    Covered              
+            bin <toggle_01,low,high>                        4          1          -    Covered              
+            bin <toggle_01,high,low>                       22          1          -    Covered              
+            bin <toggle_01,high,high>                      17          1          -    Covered              
+            bin <high,low,low>                             10          1          -    Covered              
+            bin <high,low,high>                             6          1          -    Covered              
+            bin <high,high,low>                            29          1          -    Covered              
+            bin <high,high,high>                          795          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin tog_10_PN_EN                        0                     -    ZERO                 
+            illegal_bin tog_10_EN                           0                     -    ZERO                 
+            illegal_bin tog_high                            0                     -    ZERO                 
+    Cross cx_Valid_src                                100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <zero,yes,yes>                              4          1          -    Covered              
+            bin <pattern,yes,yes>                          65          1          -    Covered              
+            bin <zero,no,yes>                             207          1          -    Covered              
+            bin <toggle_01,yes,no>                         50          1          -    Covered              
+            bin <pattern,yes,no>                          775          1          -    Covered              
+            bin <toggle_10,no,no>                          43          1          -    Covered              
+            bin <zero,no,no>                             2454          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin vld_high_train_hold                 0                     -    ZERO                 
+            illegal_bin toggle_10_train                     0                     -    ZERO                 
+            illegal_bin toggle_01_train                     0                     -    ZERO                 
+            illegal_bin toggle_10_hold                      0                     -    ZERO                 
+            illegal_bin toggle_01_hold                      0                     -    ZERO                 
+            illegal_bin train_zero                          0                     -    ZERO                 
+            illegal_bin no_source                           0                     -    ZERO                 
+    Cross cx_VLD_src                                  100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <low,yes,yes>                               4          1          -    Covered              
+            bin <high,yes,yes>                             65          1          -    Covered              
+            bin <low,no,yes>                              207          1          -    Covered              
+            bin <toggle_01,yes,no>                         50          1          -    Covered              
+            bin <high,yes,no>                             775          1          -    Covered              
+            bin <toggle_10,no,no>                          43          1          -    Covered              
+            bin <low,no,no>                              2454          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin vld_high_train_hold                 0                     -    ZERO                 
+            illegal_bin toggle_10_train                     0                     -    ZERO                 
+            illegal_bin toggle_01_train                     0                     -    ZERO                 
+            illegal_bin toggle_10_hold                      0                     -    ZERO                 
+            illegal_bin toggle_01_hold                      0                     -    ZERO                 
+            illegal_bin train_low                           0                     -    ZERO                 
+            illegal_bin no_source                           0                     -    ZERO                 
+    Cross cx_Valid_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                      50          1          -    Covered              
+            bin <toggle_10,low>                            50          1          -    Covered              
+            bin <zero,toggle_10>                           50          1          -    Covered              
+            bin <zero,low>                               2685          1          -    Covered              
+            bin <toggle_01,toggle_01>                      50          1          -    Covered              
+            bin <toggle_01,high>                           50          1          -    Covered              
+            bin <pattern,toggle_01>                        50          1          -    Covered              
+            bin <pattern,high>                            840          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin pattern8                            0                     -    ZERO                 
+            illegal_bin pattern7                            0                     -    ZERO                 
+            illegal_bin pattern6                            0                     -    ZERO                 
+            illegal_bin pattern5                            0                     -    ZERO                 
+            illegal_bin pattern4                            0                     -    ZERO                 
+            illegal_bin pattern3                            0                     -    ZERO                 
+            illegal_bin pattern2                            0                     -    ZERO                 
+            illegal_bin pattern1                            0                     -    ZERO                 
+    Cross cx_RST_n_out                                100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       4          1          -    Covered              
+            bin <toggle_01,toggle_10>                       2          1          -    Covered              
+            bin <low,toggle_10>                             5          1          -    Covered              
+            bin <high,toggle_10>                          795          1          -    Covered              
+            bin <toggle_10,toggle_01>                       3          1          -    Covered              
+            bin <toggle_01,toggle_01>                       2          1          -    Covered              
+            bin <low,toggle_01>                             3          1          -    Covered              
+            bin <high,toggle_01>                          797          1          -    Covered              
+            bin <toggle_10,low>                             9          1          -    Covered              
+            bin <toggle_01,low>                            10          1          -    Covered              
+            bin <low,low>                                  15          1          -    Covered              
+            bin <high,low>                               2160          1          -    Covered              
+            bin <toggle_10,high>                            5          1          -    Covered              
+            bin <toggle_01,high>                            4          1          -    Covered              
+            bin <low,high>                                  5          1          -    Covered              
+            bin <high,high>                              1345          1          -    Covered              
+    Cross cx_RST_n_Valid                              100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       7          1          -    Covered              
+            bin <low,toggle_10>                             7          1          -    Covered              
+            bin <high,toggle_10>                           43          1          -    Covered              
+            bin <high,toggle_01>                           50          1          -    Covered              
+            bin <toggle_10,zero>                           14          1          -    Covered              
+            bin <low,zero>                                 20          1          -    Covered              
+            bin <toggle_01,zero>                           14          1          -    Covered              
+            bin <high,zero>                              2665          1          -    Covered              
+            bin <high,pattern>                            840          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin pattern6                            0                     -    ZERO                 
+            illegal_bin pattern5                            0                     -    ZERO                 
+            illegal_bin pattern4                            0                     -    ZERO                 
+            illegal_bin pattern8                            0                     -    ZERO                 
+            illegal_bin pattern3                            0                     -    ZERO                 
+            illegal_bin pattern2                            0                     -    ZERO                 
+            illegal_bin pattern1                            0                     -    ZERO                 
+    Cross cx_RST_n_VLD_SER_EN                         100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <toggle_10,toggle_10>                       7          1          -    Covered              
+            bin <low,toggle_10>                             7          1          -    Covered              
+            bin <high,toggle_10>                           43          1          -    Covered              
+            bin <high,toggle_01>                           50          1          -    Covered              
+            bin <toggle_10,low>                            14          1          -    Covered              
+            bin <low,low>                                  20          1          -    Covered              
+            bin <toggle_01,low>                            14          1          -    Covered              
+            bin <high,low>                               2665          1          -    Covered              
+            bin <high,high>                               840          1          -    Covered              
+        Illegal and Ignore Bins:
+            illegal_bin pattern7                            0                     -    ZERO                 
+            illegal_bin pattern6                            0                     -    ZERO                 
+            illegal_bin pattern5                            0                     -    ZERO                 
+            illegal_bin pattern4                            0                     -    ZERO                 
+            illegal_bin pattern3                            0                     -    ZERO                 
+            illegal_bin pattern2                            0                     -    ZERO                 
+            illegal_bin pattern1                            0                     -    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
