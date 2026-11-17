@@ -1,0 +1,843 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Priority_Encoder_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        25        25         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Priority_Encoder_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Priority_Encoder_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    42                                       717     Count coming in to IF
+    42              1                          8     
+    47              1                        709     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    53                                       709     Count coming in to CASE
+    55              1                        113     
+    57              1                        142     
+    59              1                         37     
+                                             417     All False Count
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                       768     Count coming in to IF
+    69              1                          8     
+    75              1                        760     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                       760     Count coming in to IF
+    77              1                        224     
+    86              1                        536     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                       224     Count coming in to IF
+    79              1                        111     
+    83              1                        113     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    88                                       536     Count coming in to CASE
+    90              1                        120     
+    96              1                         84     
+    102             1                         34     
+    108             1                        298     
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    92                                       120     Count coming in to IF
+    92              1                         58     
+                                              62     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    98                                        84     Count coming in to IF
+    98              1                         41     
+                                              43     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    104                                       34     Count coming in to IF
+    104             1                         14     
+                                              20     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    125                                     1183     Count coming in to CASE
+    127             1                        299     
+    135             1                        291     
+    143             1                        593     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      4         4         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.Priority_Encoder_SBTX --
+
+  File ../RTL/Priority_Encoder_SBTX.sv
+----------------Focused Expression View-----------------
+Line       55 Item    1  ((Last_Priority != 2) & Priority_Lock)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       57 Item    1  ((Last_Priority != 1) & Priority_Lock)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      40        40         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Priority_Encoder_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Priority_Encoder_SBTX.sv
+    37              1                        527     
+    40              1                        717     
+    44              1                          8     
+    45              1                          8     
+    50              1                        709     
+    51              1                        709     
+    55              1                        113     
+    57              1                        142     
+    59              1                         37     
+    67              1                        768     
+    71              1                          8     
+    72              1                          8     
+    73              1                          8     
+    80              1                        111     
+    81              1                        111     
+    82              1                        111     
+    84              1                        113     
+    91              1                        120     
+    93              1                         58     
+    97              1                         84     
+    99              1                         41     
+    103             1                         34     
+    105             1                         14     
+    108             1                        298     
+    116             1                       1183     
+    119             1                       1183     
+    120             1                       1183     
+    121             1                       1183     
+    122             1                       1183     
+    123             1                       1183     
+    128             1                        299     
+    129             1                        299     
+    130             1                        299     
+    131             1                        299     
+    132             1                        299     
+    136             1                        291     
+    137             1                        291     
+    138             1                        291     
+    139             1                        291     
+    140             1                        291     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        422       422         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Priority_Encoder_SBTX
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+
+Total Node Count     =        211 
+Toggled Node Count   =        211 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (422 of 422 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /pe_sbtx_pkg
+=== Design Unit: work.pe_sbtx_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      6        na        na    99.30%
+        Coverpoints/Crosses         18        na        na        na
+            Covergroup Bins         56        55         1    98.21%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen1_2_sanity_and_contention 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    13         13          -                      
+    missing/total bins:                                     0         13          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_req                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin idle                                          394          1          -    Covered              
+        bin d2d_only                                      122          1          -    Covered              
+        bin phy_only                                       85          1          -    Covered              
+        bin both_active                                    34          1          -    Covered              
+    Coverpoint cp_phy_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  557          1          -    Covered              
+        bin two_phase                                      79          1          -    Covered              
+    Coverpoint cp_d2d_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  514          1          -    Covered              
+        bin two_phase                                     121          1          -    Covered              
+    Cross cx_scen1_sanity                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin d2d_1phase                                 64          1          -    Covered              
+            bin d2d_2phase                                 58          1          -    Covered              
+            bin phy_1phase                                 44          1          -    Covered              
+            bin phy_2phase                                 41          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin others                             428                     -    Occurred             
+    Cross cx_scen2_contention                         100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin both_active_all_dm                         34          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin non_contended                      601                     -    Occurred             
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen1_2_sanity_and_contention  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    13         13          -                      
+    missing/total bins:                                     0         13          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_req                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin idle                                          394          1          -    Covered              
+        bin d2d_only                                      122          1          -    Covered              
+        bin phy_only                                       85          1          -    Covered              
+        bin both_active                                    34          1          -    Covered              
+    Coverpoint cp_phy_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  557          1          -    Covered              
+        bin two_phase                                      79          1          -    Covered              
+    Coverpoint cp_d2d_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  514          1          -    Covered              
+        bin two_phase                                     121          1          -    Covered              
+    Cross cx_scen1_sanity                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin d2d_1phase                                 64          1          -    Covered              
+            bin d2d_2phase                                 58          1          -    Covered              
+            bin phy_1phase                                 44          1          -    Covered              
+            bin phy_2phase                                 41          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin others                             428                     -    Occurred             
+    Cross cx_scen2_contention                         100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin both_active_all_dm                         34          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin non_contended                      601                     -    Occurred             
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen3_7_mid_lock_contention 
+                                                       95.83%        100          -    Uncovered            
+    covered/total bins:                                    14         15          -                      
+    missing/total bins:                                     1         15          -                      
+    % Hit:                                             93.33%        100          -                      
+    Coverpoint cp_lock_phase                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_cyc1                                       58          1          -    Covered              
+        bin d2d_cyc2                                       57          1          -    Covered              
+        bin phy_cyc1                                       55          1          -    Covered              
+        bin phy_cyc2                                       54          1          -    Covered              
+    Coverpoint cp_req_in_lock                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_only                                       22          1          -    Covered              
+        bin phy_only                                       29          1          -    Covered              
+        bin both_active                                     3          1          -    Covered              
+    Cross cx_lock_interruptions                        87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin phy_interrupts_d2d_cyc1                    15          1          -    Covered              
+            bin phy_interrupts_d2d_cyc2                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc1                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc2                     9          1          -    Covered              
+            bin both_active_in_d2d_cyc1                     1          1          -    Covered              
+            bin both_active_in_d2d_cyc2                     1          1          -    Covered              
+            bin both_active_in_phy_cyc1                     1          1          -    Covered              
+            bin both_active_in_phy_cyc2                     0          1          -    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin same_master_cont                     3                     -    Occurred             
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen3_7_mid_lock_contention  
+                                                       95.83%        100          -    Uncovered            
+    covered/total bins:                                    14         15          -                      
+    missing/total bins:                                     1         15          -                      
+    % Hit:                                             93.33%        100          -                      
+    Coverpoint cp_lock_phase                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_cyc1                                       58          1          -    Covered              
+        bin d2d_cyc2                                       57          1          -    Covered              
+        bin phy_cyc1                                       55          1          -    Covered              
+        bin phy_cyc2                                       54          1          -    Covered              
+    Coverpoint cp_req_in_lock                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_only                                       22          1          -    Covered              
+        bin phy_only                                       29          1          -    Covered              
+        bin both_active                                     3          1          -    Covered              
+    Cross cx_lock_interruptions                        87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin phy_interrupts_d2d_cyc1                    15          1          -    Covered              
+            bin phy_interrupts_d2d_cyc2                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc1                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc2                     9          1          -    Covered              
+            bin both_active_in_d2d_cyc1                     1          1          -    Covered              
+            bin both_active_in_d2d_cyc2                     1          1          -    Covered              
+            bin both_active_in_phy_cyc1                     1          1          -    Covered              
+            bin both_active_in_phy_cyc2                     0          1          -    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin same_master_cont                     3                     -    Occurred             
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen4_comp_marker 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_d2d_comp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin comp_0                                        670          1          -    Covered              
+        bin comp_1                                        189          1          -    Covered              
+    Coverpoint cp_arb_context                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_uncontended_win                           122          1          -    Covered              
+        bin phy_contention_win                             34          1          -    Covered              
+        bin phy_locked_suppress                            22          1          -    Covered              
+    Cross cx_scen4_comp_check                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <comp_1,phy_locked_suppress>               10          1          -    Covered              
+            bin <comp_0,phy_locked_suppress>               12          1          -    Covered              
+            bin <comp_1,phy_contention_win>                18          1          -    Covered              
+            bin <comp_0,phy_contention_win>                16          1          -    Covered              
+            bin <comp_1,d2d_uncontended_win>               50          1          -    Covered              
+            bin <comp_0,d2d_uncontended_win>               72          1          -    Covered              
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen4_comp_marker  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_d2d_comp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin comp_0                                        670          1          -    Covered              
+        bin comp_1                                        189          1          -    Covered              
+    Coverpoint cp_arb_context                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_uncontended_win                           122          1          -    Covered              
+        bin phy_contention_win                             34          1          -    Covered              
+        bin phy_locked_suppress                            22          1          -    Covered              
+    Cross cx_scen4_comp_check                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <comp_1,phy_locked_suppress>               10          1          -    Covered              
+            bin <comp_0,phy_locked_suppress>               12          1          -    Covered              
+            bin <comp_1,phy_contention_win>                18          1          -    Covered              
+            bin <comp_0,phy_contention_win>                16          1          -    Covered              
+            bin <comp_1,d2d_uncontended_win>               50          1          -    Covered              
+            bin <comp_0,d2d_uncontended_win>               72          1          -    Covered              
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen5_b2b_and_bubble 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     7          7          -                      
+    missing/total bins:                                     0          7          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_b2b_stream                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_bubble_req                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen5_b2b_and_bubble  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     7          7          -                      
+    missing/total bins:                                     0          7          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_b2b_stream                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_b2b                                         3          1          -    Covered              
+        bin phy_b2b                                         2          1          -    Covered              
+        bin d2d_to_phy                                      5          1          -    Covered              
+        bin phy_to_d2d                                      3          1          -    Covered              
+    Coverpoint cp_bubble_req                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_req_in_bubble                               8          1          -    Covered              
+        bin phy_req_in_bubble                               7          1          -    Covered              
+        bin both_req_in_bubble                              1          1          -    Covered              
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen6_reactive_retry 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_phy_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                25          1          -    Covered              
+    Coverpoint cp_d2d_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                44          1          -    Covered              
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen6_reactive_retry  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_phy_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                25          1          -    Covered              
+    Coverpoint cp_d2d_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                44          1          -    Covered              
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen8_reset_recovery 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_rst_during_lock                     100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_post_rst_recovery                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen8_reset_recovery  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active_low                                      4          1          -    Covered              
+        bin active_high                                   860          1          -    Covered              
+        bin rst_assert_edge                                 3          1          -    Covered              
+        bin rst_deassert_edge                               4          1          -    Covered              
+    Coverpoint cp_rst_during_lock                     100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rst_in_idle                                     2          1          -    Covered              
+        bin rst_in_d2d_lock                                 1          1          -    Covered              
+        bin rst_in_phy_lock                                 1          1          -    Covered              
+    Coverpoint cp_post_rst_recovery                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin recovered_and_transacting                       2          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen1_2_sanity_and_contention 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    13         13          -                      
+    missing/total bins:                                     0         13          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_req                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin idle                                          394          1          -    Covered              
+        bin d2d_only                                      122          1          -    Covered              
+        bin phy_only                                       85          1          -    Covered              
+        bin both_active                                    34          1          -    Covered              
+    Coverpoint cp_phy_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  557          1          -    Covered              
+        bin two_phase                                      79          1          -    Covered              
+    Coverpoint cp_d2d_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  514          1          -    Covered              
+        bin two_phase                                     121          1          -    Covered              
+    Cross cx_scen1_sanity                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin d2d_1phase                                 64          1          -    Covered              
+            bin d2d_2phase                                 58          1          -    Covered              
+            bin phy_1phase                                 44          1          -    Covered              
+            bin phy_2phase                                 41          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin others                             428                     -    Occurred             
+    Cross cx_scen2_contention                         100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin both_active_all_dm                         34          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin non_contended                      601                     -    Occurred             
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen1_2_sanity_and_contention  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    13         13          -                      
+    missing/total bins:                                     0         13          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_req                                 100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin idle                                          394          1          -    Covered              
+        bin d2d_only                                      122          1          -    Covered              
+        bin phy_only                                       85          1          -    Covered              
+        bin both_active                                    34          1          -    Covered              
+    Coverpoint cp_phy_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  557          1          -    Covered              
+        bin two_phase                                      79          1          -    Covered              
+    Coverpoint cp_d2d_dm                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin single_phase                                  514          1          -    Covered              
+        bin two_phase                                     121          1          -    Covered              
+    Cross cx_scen1_sanity                             100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin d2d_1phase                                 64          1          -    Covered              
+            bin d2d_2phase                                 58          1          -    Covered              
+            bin phy_1phase                                 44          1          -    Covered              
+            bin phy_2phase                                 41          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin others                             428                     -    Occurred             
+    Cross cx_scen2_contention                         100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin both_active_all_dm                         34          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin non_contended                      601                     -    Occurred             
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen3_7_mid_lock_contention 
+                                                       95.83%        100          -    Uncovered            
+    covered/total bins:                                    14         15          -                      
+    missing/total bins:                                     1         15          -                      
+    % Hit:                                             93.33%        100          -                      
+    Coverpoint cp_lock_phase                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_cyc1                                       58          1          -    Covered              
+        bin d2d_cyc2                                       57          1          -    Covered              
+        bin phy_cyc1                                       55          1          -    Covered              
+        bin phy_cyc2                                       54          1          -    Covered              
+    Coverpoint cp_req_in_lock                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_only                                       22          1          -    Covered              
+        bin phy_only                                       29          1          -    Covered              
+        bin both_active                                     3          1          -    Covered              
+    Cross cx_lock_interruptions                        87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin phy_interrupts_d2d_cyc1                    15          1          -    Covered              
+            bin phy_interrupts_d2d_cyc2                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc1                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc2                     9          1          -    Covered              
+            bin both_active_in_d2d_cyc1                     1          1          -    Covered              
+            bin both_active_in_d2d_cyc2                     1          1          -    Covered              
+            bin both_active_in_phy_cyc1                     1          1          -    Covered              
+            bin both_active_in_phy_cyc2                     0          1          -    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin same_master_cont                     3                     -    Occurred             
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen3_7_mid_lock_contention  
+                                                       95.83%        100          -    Uncovered            
+    covered/total bins:                                    14         15          -                      
+    missing/total bins:                                     1         15          -                      
+    % Hit:                                             93.33%        100          -                      
+    Coverpoint cp_lock_phase                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_cyc1                                       58          1          -    Covered              
+        bin d2d_cyc2                                       57          1          -    Covered              
+        bin phy_cyc1                                       55          1          -    Covered              
+        bin phy_cyc2                                       54          1          -    Covered              
+    Coverpoint cp_req_in_lock                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_only                                       22          1          -    Covered              
+        bin phy_only                                       29          1          -    Covered              
+        bin both_active                                     3          1          -    Covered              
+    Cross cx_lock_interruptions                        87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin phy_interrupts_d2d_cyc1                    15          1          -    Covered              
+            bin phy_interrupts_d2d_cyc2                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc1                    12          1          -    Covered              
+            bin d2d_interrupts_phy_cyc2                     9          1          -    Covered              
+            bin both_active_in_d2d_cyc1                     1          1          -    Covered              
+            bin both_active_in_d2d_cyc2                     1          1          -    Covered              
+            bin both_active_in_phy_cyc1                     1          1          -    Covered              
+            bin both_active_in_phy_cyc2                     0          1          -    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin same_master_cont                     3                     -    Occurred             
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen4_comp_marker 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_d2d_comp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin comp_0                                        670          1          -    Covered              
+        bin comp_1                                        189          1          -    Covered              
+    Coverpoint cp_arb_context                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_uncontended_win                           122          1          -    Covered              
+        bin phy_contention_win                             34          1          -    Covered              
+        bin phy_locked_suppress                            22          1          -    Covered              
+    Cross cx_scen4_comp_check                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <comp_1,phy_locked_suppress>               10          1          -    Covered              
+            bin <comp_0,phy_locked_suppress>               12          1          -    Covered              
+            bin <comp_1,phy_contention_win>                18          1          -    Covered              
+            bin <comp_0,phy_contention_win>                16          1          -    Covered              
+            bin <comp_1,d2d_uncontended_win>               50          1          -    Covered              
+            bin <comp_0,d2d_uncontended_win>               72          1          -    Covered              
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen4_comp_marker  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_d2d_comp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin comp_0                                        670          1          -    Covered              
+        bin comp_1                                        189          1          -    Covered              
+    Coverpoint cp_arb_context                         100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_uncontended_win                           122          1          -    Covered              
+        bin phy_contention_win                             34          1          -    Covered              
+        bin phy_locked_suppress                            22          1          -    Covered              
+    Cross cx_scen4_comp_check                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <comp_1,phy_locked_suppress>               10          1          -    Covered              
+            bin <comp_0,phy_locked_suppress>               12          1          -    Covered              
+            bin <comp_1,phy_contention_win>                18          1          -    Covered              
+            bin <comp_0,phy_contention_win>                16          1          -    Covered              
+            bin <comp_1,d2d_uncontended_win>               50          1          -    Covered              
+            bin <comp_0,d2d_uncontended_win>               72          1          -    Covered              
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen5_b2b_and_bubble 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     7          7          -                      
+    missing/total bins:                                     0          7          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_b2b_stream                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_bubble_req                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen5_b2b_and_bubble  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     7          7          -                      
+    missing/total bins:                                     0          7          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_b2b_stream                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_b2b                                         3          1          -    Covered              
+        bin phy_b2b                                         2          1          -    Covered              
+        bin d2d_to_phy                                      5          1          -    Covered              
+        bin phy_to_d2d                                      3          1          -    Covered              
+    Coverpoint cp_bubble_req                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d2d_req_in_bubble                               8          1          -    Covered              
+        bin phy_req_in_bubble                               7          1          -    Covered              
+        bin both_req_in_bubble                              1          1          -    Covered              
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen6_reactive_retry 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_phy_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                25          1          -    Covered              
+    Coverpoint cp_d2d_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                44          1          -    Covered              
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen6_reactive_retry  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_phy_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                25          1          -    Covered              
+    Coverpoint cp_d2d_retry_success                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin retry_completed                                44          1          -    Covered              
+ TYPE /pe_sbtx_pkg/pe_sbtx_coverage/cg_scen8_reset_recovery 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_rst_during_lock                     100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_post_rst_recovery                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/pe_sbtx_pkg::pe_sbtx_coverage::cg_scen8_reset_recovery  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active_low                                      4          1          -    Covered              
+        bin active_high                                   860          1          -    Covered              
+        bin rst_assert_edge                                 3          1          -    Covered              
+        bin rst_deassert_edge                               4          1          -    Covered              
+    Coverpoint cp_rst_during_lock                     100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rst_in_idle                                     2          1          -    Covered              
+        bin rst_in_d2d_lock                                 1          1          -    Covered              
+        bin rst_in_phy_lock                                 1          1          -    Covered              
+    Coverpoint cp_post_rst_recovery                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin recovered_and_transacting                       2          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 99.30%  COVERGROUP TYPES: 6
+
+Total Coverage By Instance (filtered view): 99.30%
+
