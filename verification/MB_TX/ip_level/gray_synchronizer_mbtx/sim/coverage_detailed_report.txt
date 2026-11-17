@@ -1,0 +1,168 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /gray_synchronizer_mbtx_pkg
+=== Design Unit: work.gray_synchronizer_mbtx_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          4        na        na        na
+            Covergroup Bins         28        28         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /gray_synchronizer_mbtx_pkg/gray_synchronizer_mbtx_subscriber/gray_synchronizer_mbtx_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Async_Data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Sync_Data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_data_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/gray_synchronizer_mbtx_pkg::gray_synchronizer_mbtx_subscriber::gray_synchronizer_mbtx_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                          495          1          -    Covered              
+        bin low                                            55          1          -    Covered              
+        bin toggle_01                                      49          1          -    Covered              
+        bin toggle_10                                      48          1          -    Covered              
+    Coverpoint cp_Async_Data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       208          1          -    Covered              
+        bin auto[1]                                        68          1          -    Covered              
+        bin auto[2]                                        61          1          -    Covered              
+        bin auto[3]                                       213          1          -    Covered              
+    Coverpoint cp_Sync_Data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       293          1          -    Covered              
+        bin auto[1]                                        55          1          -    Covered              
+        bin auto[2]                                        52          1          -    Covered              
+        bin auto[3]                                       150          1          -    Covered              
+    Cross cx_data_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <auto[3],auto[3]>                         105          1          -    Covered              
+            bin <auto[2],auto[3]>                           5          1          -    Covered              
+            bin <auto[1],auto[3]>                          39          1          -    Covered              
+            bin <auto[0],auto[3]>                           1          1          -    Covered              
+            bin <auto[3],auto[2]>                           3          1          -    Covered              
+            bin <auto[2],auto[2]>                           1          1          -    Covered              
+            bin <auto[1],auto[2]>                           5          1          -    Covered              
+            bin <auto[0],auto[2]>                          43          1          -    Covered              
+            bin <auto[3],auto[1]>                          43          1          -    Covered              
+            bin <auto[2],auto[1]>                           4          1          -    Covered              
+            bin <auto[1],auto[1]>                           5          1          -    Covered              
+            bin <auto[0],auto[1]>                           3          1          -    Covered              
+            bin <auto[3],auto[0]>                          62          1          -    Covered              
+            bin <auto[2],auto[0]>                          51          1          -    Covered              
+            bin <auto[1],auto[0]>                          19          1          -    Covered              
+            bin <auto[0],auto[0]>                         161          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /gray_synchronizer_mbtx_pkg/gray_synchronizer_mbtx_subscriber/gray_synchronizer_mbtx_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Async_Data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_Sync_Data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cx_data_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/gray_synchronizer_mbtx_pkg::gray_synchronizer_mbtx_subscriber::gray_synchronizer_mbtx_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_RST_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                          495          1          -    Covered              
+        bin low                                            55          1          -    Covered              
+        bin toggle_01                                      49          1          -    Covered              
+        bin toggle_10                                      48          1          -    Covered              
+    Coverpoint cp_Async_Data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       208          1          -    Covered              
+        bin auto[1]                                        68          1          -    Covered              
+        bin auto[2]                                        61          1          -    Covered              
+        bin auto[3]                                       213          1          -    Covered              
+    Coverpoint cp_Sync_Data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       293          1          -    Covered              
+        bin auto[1]                                        55          1          -    Covered              
+        bin auto[2]                                        52          1          -    Covered              
+        bin auto[3]                                       150          1          -    Covered              
+    Cross cx_data_out                                 100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <auto[3],auto[3]>                         105          1          -    Covered              
+            bin <auto[2],auto[3]>                           5          1          -    Covered              
+            bin <auto[1],auto[3]>                          39          1          -    Covered              
+            bin <auto[0],auto[3]>                           1          1          -    Covered              
+            bin <auto[3],auto[2]>                           3          1          -    Covered              
+            bin <auto[2],auto[2]>                           1          1          -    Covered              
+            bin <auto[1],auto[2]>                           5          1          -    Covered              
+            bin <auto[0],auto[2]>                          43          1          -    Covered              
+            bin <auto[3],auto[1]>                          43          1          -    Covered              
+            bin <auto[2],auto[1]>                           4          1          -    Covered              
+            bin <auto[1],auto[1]>                           5          1          -    Covered              
+            bin <auto[0],auto[1]>                           3          1          -    Covered              
+            bin <auto[3],auto[0]>                          62          1          -    Covered              
+            bin <auto[2],auto[0]>                          51          1          -    Covered              
+            bin <auto[1],auto[0]>                          19          1          -    Covered              
+            bin <auto[0],auto[0]>                         161          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
