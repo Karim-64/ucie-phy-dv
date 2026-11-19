@@ -41,19 +41,19 @@ class BIT_SYNC_SBTX_scoreboard extends uvm_scoreboard;
   endtask
 
   task reference();
-    $write("item_queue: [ ");
-    foreach (item_queue[i]) $write("%b ", item_queue[i].async);
-    $write("]\n");
-    $display("================Transaction===================\n%s", item.convert2string);
+    // $write("item_queue: [ ");
+    // foreach (item_queue[i]) $write("%b ", item_queue[i].async);
+    // $write("]\n");
+    // $display("================Transaction===================\n%s", item.convert2string);
     if(!item.rst_n) begin
       item_queue.delete;
       sync_ref = 'b0 ;
-      $display("Reset signal is received\n");
+      // $display("Reset signal is received\n");
       check_item;
     end
     else if(item_queue.size() > NUM_STAGES) begin
       sync_ref = item_queue.pop_front().async;
-      $display("Sync reference is %b\n", sync_ref);
+      // $display("Sync reference is %b\n", sync_ref);
       check_item;
     end
 

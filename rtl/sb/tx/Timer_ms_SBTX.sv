@@ -1,4 +1,4 @@
-module Timer_ms_SBTX #(parameter CLK_FREQ_HZ = 800_000_000 ,FACTOR = 1000)
+module Timer_ms_SBTX #(parameter  = 800_000_000 ,FACTOR = 1000)
 (
     input  logic  clk  ,                     // Clock input
     input  logic  rst_n,                     // Active-low reset
