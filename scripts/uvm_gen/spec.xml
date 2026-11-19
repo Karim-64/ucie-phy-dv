@@ -1,29 +1,49 @@
-<uvm_env name="Credits_Handler_SBTX">
+<uvm_env name="fifo_sbtx">
 <parameters>
+<parameter name="FIFO_WIDTH" value="64"/>
+<parameter name="FIFO_DEPTH" value="64"/>
 </parameters>
 <clock name="clk"/>
 <signals>
 <signal name="rst_n" width="1" direction="drv"/>
-<signal name="comp_sent" width="1" direction="drv"/>
+<signal name="wr_en" width="1" direction="drv"/>
+<signal name="rd_en" width="1" direction="drv"/>
 <signal name="UIE" width="1" direction="drv"/>
-<signal name="credit" width="1" direction="drv"/>
-<signal name="D2D_phy_marker" width="1" direction="drv"/>
-<signal name="data_marker" width="1" direction="drv"/>
-<signal name="comp_marker" width="1" direction="drv"/>
-<signal name="pl_cfg_crd" width="1" direction="mon"/>
+<signal name="data_in" width="FIFO_WIDTH" direction="drv"/>
+<signal name="Data_Marker" width="1" direction="drv"/>
+<signal name="Reg_Acc_Marker" width="1" direction="drv"/>
+<signal name="Reg_Acc_Data_Marker" width="1" direction="drv"/>
+<signal name="Comp_Marker" width="1" direction="drv"/>
+<signal name="Req_Resp_Marker" width="1" direction="drv"/>
+<signal name="data_out" width="FIFO_WIDTH" direction="mon"/>
+<signal name="Data_Marker_Out" width="1" direction="mon"/>
+<signal name="Reg_Acc_Marker_Out" width="1" direction="mon"/>
+<signal name="Reg_Acc_Data_Marker_Out" width="1" direction="mon"/>
+<signal name="Comp_Marker_Out" width="1" direction="mon"/>
+<signal name="empty" width="1" direction="mon"/>
+<signal name="rd_ack" width="1" direction="mon"/>
 </signals>
 <dut>
-<module_name>Credits_Handler_SBTX</module_name>
+<module_name>FIFO_SBTX</module_name>
 <instance_name>dut</instance_name>
-<port dut_port="CLK" signal="clk"/>
-<port dut_port="RST_n" signal="rst_n"/>
-<port dut_port="Comp_Sent" signal="comp_sent"/>
+<port dut_port="clk" signal="clk"/>
+<port dut_port="rst_n" signal="rst_n"/>
+<port dut_port="wr_en" signal="wr_en"/>
+<port dut_port="rd_en" signal="rd_en"/>
 <port dut_port="UIE" signal="UIE"/>
-<port dut_port="Credit" signal="credit"/>
-<port dut_port="D2D_PHY_Marker" signal="D2D_phy_marker"/>
-<port dut_port="Data_Marker" signal="data_marker"/>
-<port dut_port="Comp_Marker" signal="comp_marker"/>
-<port dut_port="pl_cfg_crd" signal="pl_cfg_crd"/>
+<port dut_port="data_in" signal="data_in"/>
+<port dut_port="Data_Marker" signal="Data_Marker"/>
+<port dut_port="Reg_Acc_Marker" signal="Reg_Acc_Marker"/>
+<port dut_port="Reg_Acc_Data_Marker" signal="Reg_Acc_Data_Marker"/>
+<port dut_port="Comp_Marker" signal="Comp_Marker"/>
+<port dut_port="Req_Resp_Marker" signal="Req_Resp_Marker"/>
+<port dut_port="data_out" signal="data_out"/>
+<port dut_port="Data_Marker_Out" signal="Data_Marker_Out"/>
+<port dut_port="Reg_Acc_Marker_Out" signal="Reg_Acc_Marker_Out"/>
+<port dut_port="Reg_Acc_Data_Marker_Out" signal="Reg_Acc_Data_Marker_Out"/>
+<port dut_port="Comp_Marker_Out" signal="Comp_Marker_Out"/>
+<port dut_port="empty" signal="empty"/>
+<port dut_port="rd_ack" signal="rd_ack"/>
 </dut>
 <env>
 <has_scoreboard>true</has_scoreboard>
