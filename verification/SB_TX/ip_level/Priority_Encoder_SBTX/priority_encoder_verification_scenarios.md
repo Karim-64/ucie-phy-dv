@@ -45,33 +45,57 @@ This document outlines the core verification scenarios required to thoroughly va
 ## 5. Back-to-Back Traffic & The Post-Lock Bubble
 * **Objective:** Test high-throughput back-to-back traffic patterns and verify behavior around the 1-cycle post-lock cooldown window.
 * **Execution Steps:**
-  1. Stream multiple header-only messages back-to-back on consecutive cycles for a single master.
-  2. Immediately issue a new request on the cycle *directly following* the completion of a 2-phase locked transaction.
-* **Expected Outcome:** Verify whether the state machine requires a mandatory 1-cycle idle bubble after a 2-cycle lock release (where `Last_Priority` resets to `NONE`), ensuring back-to-back requests across lock boundaries handle re-arbitration correctly without dropping packets.
+  1. Stream multiple header-only messages back-to-back on consecutive cycles for a single master (D2D and PHY independently).
+  2. Immediately issue a single-master request on the cycle *directly following* the completion of a D2D 2-phase locked transaction (during the post-lock cooldown bubble).
+  3. Complete a PHY 2-phase locked transaction and immediately assert **both** `PHY_En = 1` and `D2D_En = 1` (`BOTH_ACTIVE`) during the 1-cycle post-lock cooldown bubble.
+* **Expected Outcome:** Verify that the state machine enforces the mandatory 1-cycle idle bubble after a 2-cycle lock release (`Last_Priority` resets to `NONE`), and handles single-master and contended re-arbitration cleanly in the cooldown cycle without dropping packets.
 
 ---
 
 ## 6. Reactive Retry Loop (End-to-End Resend Completion)
-* **Objective:** Verify that an upstream master receiving a resend request (`*_Resend_Req = 1`) successfully backs off and re-drives its transaction after the block becomes available.
+* **Objective:** Verify that an upstream master receiving a resend request (`*_Resend_Req = 1`) successfully detects the NACK via `p_sequencer.seqr_fifo`, backs off, and reactively re-drives its enable and data until accepted.
 * **Execution Steps:**
-  1. Induce a contention or lock rejection so that `*_Resend_Req` asserts for a specific master.
-  2. Have the agent's driver react to `*_Resend_Req` by holding or re-issuing the packet once `*_Resend_Req` drops back to `0`.
-* **Expected Outcome:** The priority lock cleanly releases, the deferred packet is accepted on the subsequent attempt, and its data makes it into the FIFO intact.
+  1. **D2D Reactive Retry:** Assert D2D 1-phase request simultaneously with a PHY 2-phase packet so `D2D_Resend_Req = 1` is asserted. The D2D sequence monitors `p_sequencer.seqr_fifo` in a `do ... while (rsp.resend_req === 1'b1)` loop and reactively re-sends its enable and payload until `D2D_Resend_Req = 0`.
+  2. **PHY Reactive Retry:** Assert PHY 1-phase request during an active D2D 2-phase lock so `PHY_Resend_Req = 1` is asserted. The PHY sequence monitors `p_sequencer.seqr_fifo` in a `do ... while (rsp.resend_req === 1'b1)` loop and reactively re-sends its enable and payload until `PHY_Resend_Req = 0`.
+* **Expected Outcome:** Each rejected master detects its NACK, the priority lock releases cleanly, and the deferred packet is accepted on the subsequent attempt with its payload intact in the CDC FIFO.
 
 ---
 
 ## 7. Simultaneous Contention During a Lock (`BOTH_ACTIVE` Edge Case)
-* **Objective:** Validate how the arbiter behaves when both masters are active (`BOTH_ACTIVE`) while a multi-cycle Priority Lock is already held by one of the masters.
+* **Objective:** Validate how the arbiter behaves when both masters are active (`BOTH_ACTIVE`) while a multi-cycle Priority Lock is already held by either master across both Lock Cycle 1 and Lock Cycle 2, with reactive NACK recovery on both sides.
 * **Execution Steps:**
-  1. Initiate a 2-phase packet from the D2D Decoder, locking the priority.
-  2. During the active lock window (Cycle $N+1$), keep the D2D Decoder active (`D2D_En = 1`) while simultaneously asserting the PHY Controller request (`PHY_En = 1`).
-* **Expected Outcome:** Verify whether the RTL correctly identifies the conflicting request and asserts the appropriate resend flag (`PHY_Resend_Req`) without erroneously penalizing the locked master.
+  1. **Sub-test 7a (D2D Lock, Lock Cycle 1):** D2D initiates a 2-phase packet; during **Lock Cycle 1**, both `D2D_En = 1` and `PHY_En = 1` are asserted simultaneously. Both sequences check `seqr_fifo` and reactively retry if `resend_req == 1`.
+  2. **Sub-test 7b (PHY Lock, Lock Cycle 1):** PHY initiates a 2-phase packet; during **Lock Cycle 1**, both `PHY_En = 1` and `D2D_En = 1` are asserted simultaneously, with reactive NACK retry on both sides.
+  3. **Sub-test 7c (D2D Lock, Lock Cycle 2):** D2D initiates a 2-phase packet; during **Lock Cycle 2**, both `D2D_En = 1` and `PHY_En = 1` are asserted simultaneously, with reactive NACK retry on both sides.
+  4. **Sub-test 7d (PHY Lock, Lock Cycle 2):** PHY initiates a 2-phase packet; during **Lock Cycle 2**, both `PHY_En = 1` and `D2D_En = 1` are asserted simultaneously, with reactive NACK retry on both sides.
+* **Expected Outcome:** `D2D_Resend_Req` is asserted (`1'b1`) and `PHY_Resend_Req` remains low (`1'b0`) on all `BOTH_ACTIVE` cycles per specification, the ongoing 2-phase packet completes uninterrupted, and the NACKed master successfully retries after lock release.
 
 ---
 
 ## 8. Mid-Transaction Asynchronous Reset (`RST_n`) Recovery
-* **Objective:** Verify that asserting the asynchronous reset (`RST_n = 0`) mid-transaction immediately flushes all internal states and outputs to a safe idle state.
+* **Objective:** Verify that asserting the asynchronous reset (`RST_n = 0`) mid-transaction immediately flushes all internal states and outputs to a safe idle state for both D2D-locked and PHY-locked transfers.
 * **Execution Steps:**
-  1. Grant access to a master and assert `RST_n = 0` right between the Header Phase and Data Phase of a locked 2-phase transaction.
-  2. De-assert `RST_n = 1` on the following cycle and issue a standard 1-phase sanity packet.
-* **Expected Outcome:** All internal states (`Priority_Lock`, `Lock_Counter`, `Last_Priority`, `*_Resend_Req`) and FIFO outputs (`FIFO_WR`, data, markers) clear to `0` instantly. The block recovers cleanly and processes subsequent packets normally without remaining "half-locked."
+  1. **Mid-D2D-Lock Reset:** Grant access to D2D for a 2-phase transaction, assert `RST_n = 0` between the Header Phase and Data Phase, de-assert `RST_n = 1` on the following cycle, and issue post-reset 1-phase sanity packets on both D2D and PHY.
+  2. **Mid-PHY-Lock Reset:** Grant access to PHY for a 2-phase transaction, assert `RST_n = 0` between the Header Phase and Data Phase, de-assert `RST_n = 1` on the following cycle, and issue a post-reset 1-phase sanity packet on PHY.
+* **Expected Outcome:** All internal states (`Priority_Lock`, `Lock_Counter`, `Last_Priority`, `*_Resend_Req`) and FIFO outputs (`FIFO_WR`, data, markers) clear to `0` instantly. The block recovers cleanly from both D2D and PHY mid-lock resets and processes subsequent packets normally.
+
+---
+
+## 9. Coverage Closure Sequence
+* **Objective:** Close remaining RTL expression coverage (FEC targets) and cross-coverage corner cases not exercised by standard traffic.
+* **Execution Steps:**
+  1. **Same-Master Request During Own Lock (`Last_Priority == D2D_ONLY` / `PHY_ONLY`):**
+     * D2D initiates a 2-phase packet and keeps `D2D_En = 1` (with `PHY_En = 0`) during Lock Cycle 1, exercising `(Last_Priority != D2D_ONLY & Priority_Lock) == 0` without triggering a false `D2D_Resend_Req`.
+     * PHY initiates a 2-phase packet and keeps `PHY_En = 1` (with `D2D_En = 0`) during Lock Cycle 1, exercising `(Last_Priority != PHY_ONLY & Priority_Lock) == 0` without triggering a false `PHY_Resend_Req`.
+  2. **Lock Cycle 2 Cross Corner:** Assert `D2D_En = 1, Data_Marker_D2D = 1` while `PHY_En = 0, Data_Marker_PHY = 1` during PHY Lock Cycle 2.
+* **Expected Outcome:** Achieves `100.00%` DUT code coverage across Branch, Expression, Statement, and Toggle metrics with zero scoreboard mismatches.
+
+---
+
+## 10. Randomized Stress Sequence
+* **Objective:** Stress-test arbitration, multi-phase locking, completion marker propagation, and reactive NACK recovery under unpredictable randomized timing and traffic mixes.
+* **Execution Steps:**
+  1. Launch `pe_sbtx_D2D_rand_seq` and `pe_sbtx_PHY_rand_seq` concurrently via `fork ... join`, each configured for `100` transactions (`num_tx = 100`).
+  2. For every transaction, randomize packet type (1-phase vs. 2-phase), `Comp_Marker_D2D` (for D2D), 64-bit header/data payloads, and inter-transaction idle gaps (`0..4` cycles).
+  3. After each attempt, check `p_sequencer.seqr_fifo` for `resend_req === 1'b1` (NACK); on NACK, apply a randomized backoff (`0..2` cycles) and re-issue the exact same packet until accepted.
+* **Expected Outcome:** All 100 D2D and 100 PHY transactions complete and are written to the CDC FIFO in exact cycle-accurate agreement with the scoreboard reference model (`Error Count : 0`).
