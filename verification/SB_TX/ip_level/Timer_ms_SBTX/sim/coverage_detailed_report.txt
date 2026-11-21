@@ -1,0 +1,275 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Timer_ms_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Timer_ms_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Timer_ms_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    16                                       613     Count coming in to IF
+    16              1                         38     
+    21              1                        565     
+                                              10     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    25                                       565     Count coming in to IF
+    25              1                          1     
+    30              1                        564     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       3         3         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.Timer_ms_SBTX --
+
+  File ../RTL/Timer_ms_SBTX.sv
+----------------Focused Condition View-------------------
+Line       21 Item    1  (start || counting_in_process)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       25 Item    1  (count == (200 - 1))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      2         2         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.Timer_ms_SBTX --
+
+  File ../RTL/Timer_ms_SBTX.sv
+----------------Focused Expression View-----------------
+Line       39 Item    1  (count == (200 - 1))
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       40 Item    1  (count == (200 - 32))
+Expression totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       9         9         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Timer_ms_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Timer_ms_SBTX.sv
+    14              1                        613     
+    18              1                         38     
+    19              1                         38     
+    23              1                        565     
+    27              1                          1     
+    28              1                          1     
+    32              1                        564     
+    39              1                        585     
+    40              1                        585     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         28        28         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Timer_ms_SBTX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         14 
+Toggled Node Count   =         14 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (28 of 28 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Timer_ms_SBTX_pkg
+=== Design Unit: work.Timer_ms_SBTX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          5        na        na        na
+            Covergroup Bins         18        18         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Timer_ms_SBTX_pkg/Timer_ms_SBTX_subscriber/Timer_ms_SBTX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    18         18          -                      
+    missing/total bins:                                     0         18          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_patt_alarm                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Timer_ms_SBTX_pkg::Timer_ms_SBTX_subscriber::Timer_ms_SBTX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    18         18          -                      
+    missing/total bins:                                     0         18          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                         20          1          -    Covered              
+        bin inactive                                      586          1          -    Covered              
+        bin toggle[1=>0]                                   18          1          -    Covered              
+        bin toggle[0=>1]                                   19          1          -    Covered              
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                        243          1          -    Covered              
+        bin inactive                                      363          1          -    Covered              
+        bin toggle[1=>0]                                   94          1          -    Covered              
+        bin toggle[0=>1]                                   93          1          -    Covered              
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          1          1          -    Covered              
+        bin inactive                                      605          1          -    Covered              
+        bin toggle[1=>0]                                    1          1          -    Covered              
+        bin toggle[0=>1]                                    1          1          -    Covered              
+    Coverpoint cp_patt_alarm                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          2          1          -    Covered              
+        bin inactive                                      604          1          -    Covered              
+        bin toggle[1=>0]                                    2          1          -    Covered              
+        bin toggle[0=>1]                                    2          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin alarm_not_start                             1          1          -    Covered              
+            bin patt_alarm_not_start                        1          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Timer_ms_SBTX_pkg/Timer_ms_SBTX_subscriber/Timer_ms_SBTX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    18         18          -                      
+    missing/total bins:                                     0         18          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_patt_alarm                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Timer_ms_SBTX_pkg::Timer_ms_SBTX_subscriber::Timer_ms_SBTX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    18         18          -                      
+    missing/total bins:                                     0         18          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                         20          1          -    Covered              
+        bin inactive                                      586          1          -    Covered              
+        bin toggle[1=>0]                                   18          1          -    Covered              
+        bin toggle[0=>1]                                   19          1          -    Covered              
+    Coverpoint cp_start                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                        243          1          -    Covered              
+        bin inactive                                      363          1          -    Covered              
+        bin toggle[1=>0]                                   94          1          -    Covered              
+        bin toggle[0=>1]                                   93          1          -    Covered              
+    Coverpoint cp_alarm                               100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          1          1          -    Covered              
+        bin inactive                                      605          1          -    Covered              
+        bin toggle[1=>0]                                    1          1          -    Covered              
+        bin toggle[0=>1]                                    1          1          -    Covered              
+    Coverpoint cp_patt_alarm                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                          2          1          -    Covered              
+        bin inactive                                      604          1          -    Covered              
+        bin toggle[1=>0]                                    2          1          -    Covered              
+        bin toggle[0=>1]                                    2          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin alarm_not_start                             1          1          -    Covered              
+            bin patt_alarm_not_start                        1          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+

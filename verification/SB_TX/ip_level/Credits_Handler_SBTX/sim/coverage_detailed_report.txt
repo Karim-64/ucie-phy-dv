@@ -1,0 +1,347 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Credits_Handler_SBTX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Credits_Handler_SBTX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Credits_Handler_SBTX.sv
+------------------------------------IF Branch------------------------------------
+    25                                       137     Count coming in to IF
+    25              1                         28     
+    30              1                        109     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    33                                       109     Count coming in to IF
+    33              1                         74     
+    37              1                         35     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       1         1         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.Credits_Handler_SBTX --
+
+  File ../RTL/Credits_Handler_SBTX.sv
+----------------Focused Condition View-------------------
+Line       33 Item    1  (total_credits > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      6         6         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.Credits_Handler_SBTX --
+
+  File ../RTL/Credits_Handler_SBTX.sv
+----------------Focused Expression View-----------------
+Line       18 Item    1  ((Data_Marker ~| Comp_Marker) & D2D_PHY_Marker)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       19 Item    1  ((Comp_Sent & ~prev_comp_sent) | Credit)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      12        12         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Credits_Handler_SBTX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Credits_Handler_SBTX.sv
+    18              1                         99     
+    19              1                         92     
+    22              1                        150     
+    24              1                        137     
+    26              1                         28     
+    27              1                         28     
+    28              1                         28     
+    31              1                        109     
+    34              1                         74     
+    35              1                         74     
+    38              1                         35     
+    39              1                         35     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         44        44         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Credits_Handler_SBTX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         22 
+Toggled Node Count   =         22 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (44 of 44 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Credits_Handler_SBTX_pkg
+=== Design Unit: work.Credits_Handler_SBTX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          8        na        na        na
+            Covergroup Bins         16        16         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Credits_Handler_SBTX_pkg/Credits_Handler_SBTX_subscriber/Credits_Handler_SBTX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        15          1          -    Covered              
+        bin auto[1]                                       120          1          -    Covered              
+    Coverpoint cp_comp_sent                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       112          1          -    Covered              
+        bin auto[1]                                        23          1          -    Covered              
+    Coverpoint cp_UIE                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_credit                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        99          1          -    Covered              
+        bin auto[1]                                        36          1          -    Covered              
+    Coverpoint cp_D2D_phy_marker                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        84          1          -    Covered              
+        bin auto[1]                                        51          1          -    Covered              
+    Coverpoint cp_data_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        93          1          -    Covered              
+        bin auto[1]                                        42          1          -    Covered              
+    Coverpoint cp_comp_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        87          1          -    Covered              
+        bin auto[1]                                        48          1          -    Covered              
+    Coverpoint cp_pl_cfg_crd                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        69          1          -    Covered              
+ Covergroup instance \/Credits_Handler_SBTX_pkg::Credits_Handler_SBTX_subscriber::Credits_Handler_SBTX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        15          1          -    Covered              
+        bin auto[1]                                       120          1          -    Covered              
+    Coverpoint cp_comp_sent                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       112          1          -    Covered              
+        bin auto[1]                                        23          1          -    Covered              
+    Coverpoint cp_UIE                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_credit                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        99          1          -    Covered              
+        bin auto[1]                                        36          1          -    Covered              
+    Coverpoint cp_D2D_phy_marker                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        84          1          -    Covered              
+        bin auto[1]                                        51          1          -    Covered              
+    Coverpoint cp_data_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        93          1          -    Covered              
+        bin auto[1]                                        42          1          -    Covered              
+    Coverpoint cp_comp_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        87          1          -    Covered              
+        bin auto[1]                                        48          1          -    Covered              
+    Coverpoint cp_pl_cfg_crd                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        69          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Credits_Handler_SBTX_pkg/Credits_Handler_SBTX_subscriber/Credits_Handler_SBTX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        15          1          -    Covered              
+        bin auto[1]                                       120          1          -    Covered              
+    Coverpoint cp_comp_sent                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       112          1          -    Covered              
+        bin auto[1]                                        23          1          -    Covered              
+    Coverpoint cp_UIE                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_credit                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        99          1          -    Covered              
+        bin auto[1]                                        36          1          -    Covered              
+    Coverpoint cp_D2D_phy_marker                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        84          1          -    Covered              
+        bin auto[1]                                        51          1          -    Covered              
+    Coverpoint cp_data_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        93          1          -    Covered              
+        bin auto[1]                                        42          1          -    Covered              
+    Coverpoint cp_comp_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        87          1          -    Covered              
+        bin auto[1]                                        48          1          -    Covered              
+    Coverpoint cp_pl_cfg_crd                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        69          1          -    Covered              
+ Covergroup instance \/Credits_Handler_SBTX_pkg::Credits_Handler_SBTX_subscriber::Credits_Handler_SBTX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    16         16          -                      
+    missing/total bins:                                     0         16          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_rst_n                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        15          1          -    Covered              
+        bin auto[1]                                       120          1          -    Covered              
+    Coverpoint cp_comp_sent                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       112          1          -    Covered              
+        bin auto[1]                                        23          1          -    Covered              
+    Coverpoint cp_UIE                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        82          1          -    Covered              
+        bin auto[1]                                        53          1          -    Covered              
+    Coverpoint cp_credit                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        99          1          -    Covered              
+        bin auto[1]                                        36          1          -    Covered              
+    Coverpoint cp_D2D_phy_marker                      100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        84          1          -    Covered              
+        bin auto[1]                                        51          1          -    Covered              
+    Coverpoint cp_data_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        93          1          -    Covered              
+        bin auto[1]                                        42          1          -    Covered              
+    Coverpoint cp_comp_marker                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        87          1          -    Covered              
+        bin auto[1]                                        48          1          -    Covered              
+    Coverpoint cp_pl_cfg_crd                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        66          1          -    Covered              
+        bin auto[1]                                        69          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+

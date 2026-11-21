@@ -1,0 +1,407 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Deserializer_SBRX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         6         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Deserializer_SBRX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Deserializer_SBRX.sv
+------------------------------------IF Branch------------------------------------
+    24                                     11671     Count coming in to IF
+    24              1                         82     
+    28              1                      11589     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                    148633     Count coming in to IF
+    38              1                        101     
+    42              1                     148532     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                    148532     Count coming in to IF
+    50              1                       2310     
+                                          146222     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       1         1         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for Design Unit work.Deserializer_SBRX --
+
+  File ../RTL/Deserializer_SBRX.sv
+----------------Focused Condition View-------------------
+Line       50 Item    1  (bit_counter == (64 - 1))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      1         1         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for Design Unit work.Deserializer_SBRX --
+
+  File ../RTL/Deserializer_SBRX.sv
+----------------Focused Expression View-----------------
+Line       58 Item    1  (bit_counter == (64 - 1))
+Expression totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      16        16         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Deserializer_SBRX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Deserializer_SBRX.sv
+    23              1                      11671     
+    25              1                         82     
+    26              1                         82     
+    27              1                         82     
+    30              1                      11589     
+    31              1                      11589     
+    32              1                      11589     
+    37              1                     148633     
+    39              1                        101     
+    40              1                        101     
+    41              1                        101     
+    44              1                     148532     
+    47              1                     148532     
+    52              1                       2310     
+    53              1                       2310     
+    58              1                     148572     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        284       284         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Deserializer_SBRX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =        142 
+Toggled Node Count   =        142 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (284 of 284 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Deserializer_SBRX_pkg
+=== Design Unit: work.Deserializer_SBRX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          8        na        na        na
+            Covergroup Bins         50        50         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Deserializer_SBRX_pkg/Deserializer_SBRX_subscriber/Deserializer_SBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_RXDATASB                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_data_out                      100.00%        100          -    Covered              
+        covered/total bins:                                14         14          -                      
+        missing/total bins:                                 0         14          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_byte0                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_byte7                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_valid                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_rx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Deserializer_SBRX_pkg::Deserializer_SBRX_subscriber::Deserializer_SBRX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                        116          1          -    Covered              
+        bin inactive                                   148530          1          -    Covered              
+        bin trans_assert                                   40          1          -    Covered              
+        bin trans_deassert                                 41          1          -    Covered              
+    Coverpoint cp_RXDATASB                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bit_zero                                    79739          1          -    Covered              
+        bin bit_one                                     68907          1          -    Covered              
+        bin trans_0_0                                   46583          1          -    Covered              
+        bin trans_0_1                                   33155          1          -    Covered              
+        bin trans_1_0                                   33155          1          -    Covered              
+        bin trans_1_1                                   35752          1          -    Covered              
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin deasserted                                 146337          1          -    Covered              
+        bin asserted                                     2309          1          -    Covered              
+        bin single_cycle_pulse                           2309          1          -    Covered              
+    Coverpoint cp_deser_data_out                      100.00%        100          -    Covered              
+        covered/total bins:                                14         14          -                      
+        missing/total bins:                                 0         14          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      21          1          -    Covered              
+        bin all_ones                                        1          1          -    Covered              
+        bin alt_01                                          2          1          -    Covered              
+        bin alt_10                                          4          1          -    Covered              
+        bin lsb_bit_only                                    2          1          -    Covered              
+        bin msb_bit_only                                    2          1          -    Covered              
+        bin auto_ranges[0]                                458          1          -    Covered              
+        bin auto_ranges[1]                                270          1          -    Covered              
+        bin auto_ranges[2]                                266          1          -    Covered              
+        bin auto_ranges[3]                                223          1          -    Covered              
+        bin auto_ranges[4]                                223          1          -    Covered              
+        bin auto_ranges[5]                                283          1          -    Covered              
+        bin auto_ranges[6]                                237          1          -    Covered              
+        bin auto_ranges[7]                                327          1          -    Covered              
+    Coverpoint cp_deser_byte0                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin byte0_zero                                    160          1          -    Covered              
+        bin byte0_ones                                     59          1          -    Covered              
+        bin byte0_alt55                                    12          1          -    Covered              
+        bin byte0_altAA                                    12          1          -    Covered              
+        bin byte_ranges[0]                                725          1          -    Covered              
+        bin byte_ranges[1]                                516          1          -    Covered              
+        bin byte_ranges[2]                                495          1          -    Covered              
+        bin byte_ranges[3]                                573          1          -    Covered              
+    Coverpoint cp_deser_byte7                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin byte7_zero                                    163          1          -    Covered              
+        bin byte7_ones                                     67          1          -    Covered              
+        bin byte7_alt55                                    13          1          -    Covered              
+        bin byte7_altAA                                    13          1          -    Covered              
+        bin byte_ranges[0]                                749          1          -    Covered              
+        bin byte_ranges[1]                                490          1          -    Covered              
+        bin byte_ranges[2]                                506          1          -    Covered              
+        bin byte_ranges[3]                                564          1          -    Covered              
+    Cross cross_rst_valid                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <inactive,asserted>                      2309          1          -    Covered              
+            bin <inactive,deasserted>                  146221          1          -    Covered              
+            bin <active,deasserted>                       116          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin invalid_during_rst                   0                     -    ZERO                 
+            ignore_bin valid_trans                       2309                     -    Occurred             
+            ignore_bin rst_trans                           81                     -    Occurred             
+    Cross cross_rst_rx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <inactive,bit_one>                      68858          1          -    Covered              
+            bin <active,bit_one>                           49          1          -    Covered              
+            bin <inactive,bit_zero>                     79672          1          -    Covered              
+            bin <active,bit_zero>                          67          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin data_trans                      148645                     -    Occurred             
+            ignore_bin rst_trans                           81                     -    Occurred             
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Deserializer_SBRX_pkg/Deserializer_SBRX_subscriber/Deserializer_SBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_RXDATASB                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_data_out                      100.00%        100          -    Covered              
+        covered/total bins:                                14         14          -                      
+        missing/total bins:                                 0         14          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_byte0                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_deser_byte7                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_valid                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_rst_rx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Deserializer_SBRX_pkg::Deserializer_SBRX_subscriber::Deserializer_SBRX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_sb_sys_rst                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                        116          1          -    Covered              
+        bin inactive                                   148530          1          -    Covered              
+        bin trans_assert                                   40          1          -    Covered              
+        bin trans_deassert                                 41          1          -    Covered              
+    Coverpoint cp_RXDATASB                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bit_zero                                    79739          1          -    Covered              
+        bin bit_one                                     68907          1          -    Covered              
+        bin trans_0_0                                   46583          1          -    Covered              
+        bin trans_0_1                                   33155          1          -    Covered              
+        bin trans_1_0                                   33155          1          -    Covered              
+        bin trans_1_1                                   35752          1          -    Covered              
+    Coverpoint cp_data_valid                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin deasserted                                 146337          1          -    Covered              
+        bin asserted                                     2309          1          -    Covered              
+        bin single_cycle_pulse                           2309          1          -    Covered              
+    Coverpoint cp_deser_data_out                      100.00%        100          -    Covered              
+        covered/total bins:                                14         14          -                      
+        missing/total bins:                                 0         14          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      21          1          -    Covered              
+        bin all_ones                                        1          1          -    Covered              
+        bin alt_01                                          2          1          -    Covered              
+        bin alt_10                                          4          1          -    Covered              
+        bin lsb_bit_only                                    2          1          -    Covered              
+        bin msb_bit_only                                    2          1          -    Covered              
+        bin auto_ranges[0]                                458          1          -    Covered              
+        bin auto_ranges[1]                                270          1          -    Covered              
+        bin auto_ranges[2]                                266          1          -    Covered              
+        bin auto_ranges[3]                                223          1          -    Covered              
+        bin auto_ranges[4]                                223          1          -    Covered              
+        bin auto_ranges[5]                                283          1          -    Covered              
+        bin auto_ranges[6]                                237          1          -    Covered              
+        bin auto_ranges[7]                                327          1          -    Covered              
+    Coverpoint cp_deser_byte0                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin byte0_zero                                    160          1          -    Covered              
+        bin byte0_ones                                     59          1          -    Covered              
+        bin byte0_alt55                                    12          1          -    Covered              
+        bin byte0_altAA                                    12          1          -    Covered              
+        bin byte_ranges[0]                                725          1          -    Covered              
+        bin byte_ranges[1]                                516          1          -    Covered              
+        bin byte_ranges[2]                                495          1          -    Covered              
+        bin byte_ranges[3]                                573          1          -    Covered              
+    Coverpoint cp_deser_byte7                         100.00%        100          -    Covered              
+        covered/total bins:                                 8          8          -                      
+        missing/total bins:                                 0          8          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin byte7_zero                                    163          1          -    Covered              
+        bin byte7_ones                                     67          1          -    Covered              
+        bin byte7_alt55                                    13          1          -    Covered              
+        bin byte7_altAA                                    13          1          -    Covered              
+        bin byte_ranges[0]                                749          1          -    Covered              
+        bin byte_ranges[1]                                490          1          -    Covered              
+        bin byte_ranges[2]                                506          1          -    Covered              
+        bin byte_ranges[3]                                564          1          -    Covered              
+    Cross cross_rst_valid                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <inactive,asserted>                      2309          1          -    Covered              
+            bin <inactive,deasserted>                  146221          1          -    Covered              
+            bin <active,deasserted>                       116          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin invalid_during_rst                   0                     -    ZERO                 
+            ignore_bin valid_trans                       2309                     -    Occurred             
+            ignore_bin rst_trans                           81                     -    Occurred             
+    Cross cross_rst_rx_data                           100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <inactive,bit_one>                      68858          1          -    Covered              
+            bin <active,bit_one>                           49          1          -    Covered              
+            bin <inactive,bit_zero>                     79672          1          -    Covered              
+            bin <active,bit_zero>                          67          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin data_trans                      148645                     -    Occurred             
+            ignore_bin rst_trans                           81                     -    Occurred             
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+

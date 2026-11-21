@@ -82,7 +82,7 @@ class DEMUX_scoreboard extends uvm_scoreboard;
     // $display("Data 1 Expected : %h", data_1_ref);
     // $display("Data 1 Received : %h", seq_item.lp_data_1);
     if(seq_item.lp_data_0 !== data_0_ref || seq_item.lp_data_1 !== data_1_ref) begin
-      // `uvm_error("DEMUX_SCOREBOARD", "DUT output does not match reference")
+      `uvm_error("DEMUX_SCOREBOARD", "DUT output does not match reference")
       error_count++;
     end else begin
       // `uvm_info("DEMUX_SCOREBOARD", "DUT output matches reference", UVM_LOW)

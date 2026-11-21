@@ -1,0 +1,718 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Demux1x2
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         3         3         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Demux1x2
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Demux1x2.sv
+------------------------------------CASE Branch------------------------------------
+    16                                      1075     Count coming in to CASE
+    17              1                        525     
+    18              1                        549     
+                                               1     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       5         5         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Demux1x2 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Demux1x2.sv
+    10              1                       1075     
+    12              1                       1075     
+    13              1                       1075     
+    17              1                        525     
+    18              1                        549     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        386       386         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Demux1x2
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =        193 
+Toggled Node Count   =        193 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (386 of 386 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Demux1x2_pkg
+=== Design Unit: work.Demux1x2_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          5        na        na        na
+            Covergroup Bins        145       145         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Demux1x2_pkg/Demux1x2_subscriber/Demux1x2_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   145        145          -                      
+    missing/total bins:                                     0        145          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           21          1          -    Covered              
+        bin ones                                           11          1          -    Covered              
+        bin alternating_10                                 21          1          -    Covered              
+        bin alternating_01                                 20          1          -    Covered              
+        bin other                                        1072          1          -    Covered              
+    Coverpoint cp_sel                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin select_0                                      542          1          -    Covered              
+        bin select_1                                      552          1          -    Covered              
+    Coverpoint cp_out0                                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0:288230376151711743]                    574          1          -    Covered              
+        bin auto[288230376151711744:576460752303423487] 
+                                                           11          1          -    Covered              
+        bin auto[576460752303423488:864691128455135231] 
+                                                           11          1          -    Covered              
+        bin auto[864691128455135232:1152921504606846975] 
+                                                            7          1          -    Covered              
+        bin auto[1152921504606846976:1441151880758558719] 
+                                                            6          1          -    Covered              
+        bin auto[1441151880758558720:1729382256910270463] 
+                                                            6          1          -    Covered              
+        bin auto[1729382256910270464:2017612633061982207] 
+                                                            9          1          -    Covered              
+        bin auto[2017612633061982208:2305843009213693951] 
+                                                            6          1          -    Covered              
+        bin auto[2305843009213693952:2594073385365405695] 
+                                                            7          1          -    Covered              
+        bin auto[2594073385365405696:2882303761517117439] 
+                                                            6          1          -    Covered              
+        bin auto[2882303761517117440:3170534137668829183] 
+                                                            4          1          -    Covered              
+        bin auto[3170534137668829184:3458764513820540927] 
+                                                            8          1          -    Covered              
+        bin auto[3458764513820540928:3746994889972252671] 
+                                                           10          1          -    Covered              
+        bin auto[3746994889972252672:4035225266123964415] 
+                                                            7          1          -    Covered              
+        bin auto[4035225266123964416:4323455642275676159] 
+                                                           12          1          -    Covered              
+        bin auto[4323455642275676160:4611686018427387903] 
+                                                            3          1          -    Covered              
+        bin auto[4611686018427387904:4899916394579099647] 
+                                                            4          1          -    Covered              
+        bin auto[4899916394579099648:5188146770730811391] 
+                                                           11          1          -    Covered              
+        bin auto[5188146770730811392:5476377146882523135] 
+                                                            5          1          -    Covered              
+        bin auto[5476377146882523136:5764607523034234879] 
+                                                            7          1          -    Covered              
+        bin auto[5764607523034234880:6052837899185946623] 
+                                                            5          1          -    Covered              
+        bin auto[6052837899185946624:6341068275337658367] 
+                                                           21          1          -    Covered              
+        bin auto[6341068275337658368:6629298651489370111] 
+                                                            5          1          -    Covered              
+        bin auto[6629298651489370112:6917529027641081855] 
+                                                            9          1          -    Covered              
+        bin auto[6917529027641081856:7205759403792793599] 
+                                                            8          1          -    Covered              
+        bin auto[7205759403792793600:7493989779944505343] 
+                                                            5          1          -    Covered              
+        bin auto[7493989779944505344:7782220156096217087] 
+                                                            9          1          -    Covered              
+        bin auto[7782220156096217088:8070450532247928831] 
+                                                            8          1          -    Covered              
+        bin auto[8070450532247928832:8358680908399640575] 
+                                                            8          1          -    Covered              
+        bin auto[8358680908399640576:8646911284551352319] 
+                                                           14          1          -    Covered              
+        bin auto[8646911284551352320:8935141660703064063] 
+                                                            3          1          -    Covered              
+        bin auto[8935141660703064064:9223372036854775807] 
+                                                            4          1          -    Covered              
+        bin auto[9223372036854775808:9511602413006487551] 
+                                                           10          1          -    Covered              
+        bin auto[9511602413006487552:9799832789158199295] 
+                                                            6          1          -    Covered              
+        bin auto[9799832789158199296:10088063165309911039] 
+                                                           11          1          -    Covered              
+        bin auto[10088063165309911040:10376293541461622783] 
+                                                           15          1          -    Covered              
+        bin auto[10376293541461622784:10664523917613334527] 
+                                                            8          1          -    Covered              
+        bin auto[10664523917613334528:10952754293765046271] 
+                                                           10          1          -    Covered              
+        bin auto[10952754293765046272:11240984669916758015] 
+                                                            8          1          -    Covered              
+        bin auto[11240984669916758016:11529215046068469759] 
+                                                            8          1          -    Covered              
+        bin auto[11529215046068469760:11817445422220181503] 
+                                                            6          1          -    Covered              
+        bin auto[11817445422220181504:12105675798371893247] 
+                                                            5          1          -    Covered              
+        bin auto[12105675798371893248:12393906174523604991] 
+                                                           20          1          -    Covered              
+        bin auto[12393906174523604992:12682136550675316735] 
+                                                            2          1          -    Covered              
+        bin auto[12682136550675316736:12970366926827028479] 
+                                                            9          1          -    Covered              
+        bin auto[12970366926827028480:13258597302978740223] 
+                                                            6          1          -    Covered              
+        bin auto[13258597302978740224:13546827679130451967] 
+                                                            9          1          -    Covered              
+        bin auto[13546827679130451968:13835058055282163711] 
+                                                           10          1          -    Covered              
+        bin auto[13835058055282163712:14123288431433875455] 
+                                                            8          1          -    Covered              
+        bin auto[14123288431433875456:14411518807585587199] 
+                                                            7          1          -    Covered              
+        bin auto[14411518807585587200:14699749183737298943] 
+                                                            7          1          -    Covered              
+        bin auto[14699749183737298944:14987979559889010687] 
+                                                            4          1          -    Covered              
+        bin auto[14987979559889010688:15276209936040722431] 
+                                                           11          1          -    Covered              
+        bin auto[15276209936040722432:15564440312192434175] 
+                                                            5          1          -    Covered              
+        bin auto[15564440312192434176:15852670688344145919] 
+                                                           11          1          -    Covered              
+        bin auto[15852670688344145920:16140901064495857663] 
+                                                            8          1          -    Covered              
+        bin auto[16140901064495857664:16429131440647569407] 
+                                                            3          1          -    Covered              
+        bin auto[16429131440647569408:16717361816799281151] 
+                                                           11          1          -    Covered              
+        bin auto[16717361816799281152:17005592192950992895] 
+                                                            3          1          -    Covered              
+        bin auto[17005592192950992896:17293822569102704639] 
+                                                           10          1          -    Covered              
+        bin auto[17293822569102704640:17582052945254416383] 
+                                                           14          1          -    Covered              
+        bin auto[17582052945254416384:17870283321406128127] 
+                                                           10          1          -    Covered              
+        bin auto[17870283321406128128:18158513697557839871] 
+                                                           10          1          -    Covered              
+        bin auto[18158513697557839872:18446744073709551615] 
+                                                           17          1          -    Covered              
+    Coverpoint cp_out1                                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0:288230376151711743]                    555          1          -    Covered              
+        bin auto[288230376151711744:576460752303423487] 
+                                                           10          1          -    Covered              
+        bin auto[576460752303423488:864691128455135231] 
+                                                            5          1          -    Covered              
+        bin auto[864691128455135232:1152921504606846975] 
+                                                            4          1          -    Covered              
+        bin auto[1152921504606846976:1441151880758558719] 
+                                                            7          1          -    Covered              
+        bin auto[1441151880758558720:1729382256910270463] 
+                                                           10          1          -    Covered              
+        bin auto[1729382256910270464:2017612633061982207] 
+                                                            5          1          -    Covered              
+        bin auto[2017612633061982208:2305843009213693951] 
+                                                           10          1          -    Covered              
+        bin auto[2305843009213693952:2594073385365405695] 
+                                                           11          1          -    Covered              
+        bin auto[2594073385365405696:2882303761517117439] 
+                                                            8          1          -    Covered              
+        bin auto[2882303761517117440:3170534137668829183] 
+                                                            8          1          -    Covered              
+        bin auto[3170534137668829184:3458764513820540927] 
+                                                            7          1          -    Covered              
+        bin auto[3458764513820540928:3746994889972252671] 
+                                                           10          1          -    Covered              
+        bin auto[3746994889972252672:4035225266123964415] 
+                                                            6          1          -    Covered              
+        bin auto[4035225266123964416:4323455642275676159] 
+                                                           10          1          -    Covered              
+        bin auto[4323455642275676160:4611686018427387903] 
+                                                            6          1          -    Covered              
+        bin auto[4611686018427387904:4899916394579099647] 
+                                                           13          1          -    Covered              
+        bin auto[4899916394579099648:5188146770730811391] 
+                                                            9          1          -    Covered              
+        bin auto[5188146770730811392:5476377146882523135] 
+                                                           11          1          -    Covered              
+        bin auto[5476377146882523136:5764607523034234879] 
+                                                            6          1          -    Covered              
+        bin auto[5764607523034234880:6052837899185946623] 
+                                                            4          1          -    Covered              
+        bin auto[6052837899185946624:6341068275337658367] 
+                                                           21          1          -    Covered              
+        bin auto[6341068275337658368:6629298651489370111] 
+                                                            6          1          -    Covered              
+        bin auto[6629298651489370112:6917529027641081855] 
+                                                           11          1          -    Covered              
+        bin auto[6917529027641081856:7205759403792793599] 
+                                                            7          1          -    Covered              
+        bin auto[7205759403792793600:7493989779944505343] 
+                                                            6          1          -    Covered              
+        bin auto[7493989779944505344:7782220156096217087] 
+                                                            5          1          -    Covered              
+        bin auto[7782220156096217088:8070450532247928831] 
+                                                            8          1          -    Covered              
+        bin auto[8070450532247928832:8358680908399640575] 
+                                                           11          1          -    Covered              
+        bin auto[8358680908399640576:8646911284551352319] 
+                                                            9          1          -    Covered              
+        bin auto[8646911284551352320:8935141660703064063] 
+                                                            9          1          -    Covered              
+        bin auto[8935141660703064064:9223372036854775807] 
+                                                           16          1          -    Covered              
+        bin auto[9223372036854775808:9511602413006487551] 
+                                                            4          1          -    Covered              
+        bin auto[9511602413006487552:9799832789158199295] 
+                                                           11          1          -    Covered              
+        bin auto[9799832789158199296:10088063165309911039] 
+                                                            8          1          -    Covered              
+        bin auto[10088063165309911040:10376293541461622783] 
+                                                            6          1          -    Covered              
+        bin auto[10376293541461622784:10664523917613334527] 
+                                                            8          1          -    Covered              
+        bin auto[10664523917613334528:10952754293765046271] 
+                                                            6          1          -    Covered              
+        bin auto[10952754293765046272:11240984669916758015] 
+                                                            7          1          -    Covered              
+        bin auto[11240984669916758016:11529215046068469759] 
+                                                            5          1          -    Covered              
+        bin auto[11529215046068469760:11817445422220181503] 
+                                                            5          1          -    Covered              
+        bin auto[11817445422220181504:12105675798371893247] 
+                                                           12          1          -    Covered              
+        bin auto[12105675798371893248:12393906174523604991] 
+                                                           22          1          -    Covered              
+        bin auto[12393906174523604992:12682136550675316735] 
+                                                           13          1          -    Covered              
+        bin auto[12682136550675316736:12970366926827028479] 
+                                                            8          1          -    Covered              
+        bin auto[12970366926827028480:13258597302978740223] 
+                                                            8          1          -    Covered              
+        bin auto[13258597302978740224:13546827679130451967] 
+                                                            8          1          -    Covered              
+        bin auto[13546827679130451968:13835058055282163711] 
+                                                           15          1          -    Covered              
+        bin auto[13835058055282163712:14123288431433875455] 
+                                                            7          1          -    Covered              
+        bin auto[14123288431433875456:14411518807585587199] 
+                                                            6          1          -    Covered              
+        bin auto[14411518807585587200:14699749183737298943] 
+                                                            6          1          -    Covered              
+        bin auto[14699749183737298944:14987979559889010687] 
+                                                            4          1          -    Covered              
+        bin auto[14987979559889010688:15276209936040722431] 
+                                                            8          1          -    Covered              
+        bin auto[15276209936040722432:15564440312192434175] 
+                                                            6          1          -    Covered              
+        bin auto[15564440312192434176:15852670688344145919] 
+                                                           10          1          -    Covered              
+        bin auto[15852670688344145920:16140901064495857663] 
+                                                            7          1          -    Covered              
+        bin auto[16140901064495857664:16429131440647569407] 
+                                                            7          1          -    Covered              
+        bin auto[16429131440647569408:16717361816799281151] 
+                                                            6          1          -    Covered              
+        bin auto[16717361816799281152:17005592192950992895] 
+                                                           12          1          -    Covered              
+        bin auto[17005592192950992896:17293822569102704639] 
+                                                            8          1          -    Covered              
+        bin auto[17293822569102704640:17582052945254416383] 
+                                                            7          1          -    Covered              
+        bin auto[17582052945254416384:17870283321406128127] 
+                                                           14          1          -    Covered              
+        bin auto[17870283321406128128:18158513697557839871] 
+                                                           10          1          -    Covered              
+        bin auto[18158513697557839872:18446744073709551615] 
+                                                            7          1          -    Covered              
+    Cross sel_x_data                                  100.00%        100          -    Covered              
+        covered/total bins:                                10         10          -                      
+        missing/total bins:                                 0         10          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <select_1,other>                          545          1          -    Covered              
+            bin <select_0,other>                          527          1          -    Covered              
+            bin <select_1,alternating_01>                  10          1          -    Covered              
+            bin <select_0,alternating_01>                  10          1          -    Covered              
+            bin <select_1,alternating_10>                  10          1          -    Covered              
+            bin <select_0,alternating_10>                  11          1          -    Covered              
+            bin <select_1,ones>                             3          1          -    Covered              
+            bin <select_0,ones>                             8          1          -    Covered              
+            bin <select_1,zero>                             7          1          -    Covered              
+            bin <select_0,zero>                            14          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Demux1x2_pkg/Demux1x2_subscriber/Demux1x2_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                   145        145          -                      
+    missing/total bins:                                     0        145          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           21          1          -    Covered              
+        bin ones                                           11          1          -    Covered              
+        bin alternating_10                                 21          1          -    Covered              
+        bin alternating_01                                 20          1          -    Covered              
+        bin other                                        1072          1          -    Covered              
+    Coverpoint cp_sel                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin select_0                                      542          1          -    Covered              
+        bin select_1                                      552          1          -    Covered              
+    Coverpoint cp_out0                                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0:288230376151711743]                    574          1          -    Covered              
+        bin auto[288230376151711744:576460752303423487] 
+                                                           11          1          -    Covered              
+        bin auto[576460752303423488:864691128455135231] 
+                                                           11          1          -    Covered              
+        bin auto[864691128455135232:1152921504606846975] 
+                                                            7          1          -    Covered              
+        bin auto[1152921504606846976:1441151880758558719] 
+                                                            6          1          -    Covered              
+        bin auto[1441151880758558720:1729382256910270463] 
+                                                            6          1          -    Covered              
+        bin auto[1729382256910270464:2017612633061982207] 
+                                                            9          1          -    Covered              
+        bin auto[2017612633061982208:2305843009213693951] 
+                                                            6          1          -    Covered              
+        bin auto[2305843009213693952:2594073385365405695] 
+                                                            7          1          -    Covered              
+        bin auto[2594073385365405696:2882303761517117439] 
+                                                            6          1          -    Covered              
+        bin auto[2882303761517117440:3170534137668829183] 
+                                                            4          1          -    Covered              
+        bin auto[3170534137668829184:3458764513820540927] 
+                                                            8          1          -    Covered              
+        bin auto[3458764513820540928:3746994889972252671] 
+                                                           10          1          -    Covered              
+        bin auto[3746994889972252672:4035225266123964415] 
+                                                            7          1          -    Covered              
+        bin auto[4035225266123964416:4323455642275676159] 
+                                                           12          1          -    Covered              
+        bin auto[4323455642275676160:4611686018427387903] 
+                                                            3          1          -    Covered              
+        bin auto[4611686018427387904:4899916394579099647] 
+                                                            4          1          -    Covered              
+        bin auto[4899916394579099648:5188146770730811391] 
+                                                           11          1          -    Covered              
+        bin auto[5188146770730811392:5476377146882523135] 
+                                                            5          1          -    Covered              
+        bin auto[5476377146882523136:5764607523034234879] 
+                                                            7          1          -    Covered              
+        bin auto[5764607523034234880:6052837899185946623] 
+                                                            5          1          -    Covered              
+        bin auto[6052837899185946624:6341068275337658367] 
+                                                           21          1          -    Covered              
+        bin auto[6341068275337658368:6629298651489370111] 
+                                                            5          1          -    Covered              
+        bin auto[6629298651489370112:6917529027641081855] 
+                                                            9          1          -    Covered              
+        bin auto[6917529027641081856:7205759403792793599] 
+                                                            8          1          -    Covered              
+        bin auto[7205759403792793600:7493989779944505343] 
+                                                            5          1          -    Covered              
+        bin auto[7493989779944505344:7782220156096217087] 
+                                                            9          1          -    Covered              
+        bin auto[7782220156096217088:8070450532247928831] 
+                                                            8          1          -    Covered              
+        bin auto[8070450532247928832:8358680908399640575] 
+                                                            8          1          -    Covered              
+        bin auto[8358680908399640576:8646911284551352319] 
+                                                           14          1          -    Covered              
+        bin auto[8646911284551352320:8935141660703064063] 
+                                                            3          1          -    Covered              
+        bin auto[8935141660703064064:9223372036854775807] 
+                                                            4          1          -    Covered              
+        bin auto[9223372036854775808:9511602413006487551] 
+                                                           10          1          -    Covered              
+        bin auto[9511602413006487552:9799832789158199295] 
+                                                            6          1          -    Covered              
+        bin auto[9799832789158199296:10088063165309911039] 
+                                                           11          1          -    Covered              
+        bin auto[10088063165309911040:10376293541461622783] 
+                                                           15          1          -    Covered              
+        bin auto[10376293541461622784:10664523917613334527] 
+                                                            8          1          -    Covered              
+        bin auto[10664523917613334528:10952754293765046271] 
+                                                           10          1          -    Covered              
+        bin auto[10952754293765046272:11240984669916758015] 
+                                                            8          1          -    Covered              
+        bin auto[11240984669916758016:11529215046068469759] 
+                                                            8          1          -    Covered              
+        bin auto[11529215046068469760:11817445422220181503] 
+                                                            6          1          -    Covered              
+        bin auto[11817445422220181504:12105675798371893247] 
+                                                            5          1          -    Covered              
+        bin auto[12105675798371893248:12393906174523604991] 
+                                                           20          1          -    Covered              
+        bin auto[12393906174523604992:12682136550675316735] 
+                                                            2          1          -    Covered              
+        bin auto[12682136550675316736:12970366926827028479] 
+                                                            9          1          -    Covered              
+        bin auto[12970366926827028480:13258597302978740223] 
+                                                            6          1          -    Covered              
+        bin auto[13258597302978740224:13546827679130451967] 
+                                                            9          1          -    Covered              
+        bin auto[13546827679130451968:13835058055282163711] 
+                                                           10          1          -    Covered              
+        bin auto[13835058055282163712:14123288431433875455] 
+                                                            8          1          -    Covered              
+        bin auto[14123288431433875456:14411518807585587199] 
+                                                            7          1          -    Covered              
+        bin auto[14411518807585587200:14699749183737298943] 
+                                                            7          1          -    Covered              
+        bin auto[14699749183737298944:14987979559889010687] 
+                                                            4          1          -    Covered              
+        bin auto[14987979559889010688:15276209936040722431] 
+                                                           11          1          -    Covered              
+        bin auto[15276209936040722432:15564440312192434175] 
+                                                            5          1          -    Covered              
+        bin auto[15564440312192434176:15852670688344145919] 
+                                                           11          1          -    Covered              
+        bin auto[15852670688344145920:16140901064495857663] 
+                                                            8          1          -    Covered              
+        bin auto[16140901064495857664:16429131440647569407] 
+                                                            3          1          -    Covered              
+        bin auto[16429131440647569408:16717361816799281151] 
+                                                           11          1          -    Covered              
+        bin auto[16717361816799281152:17005592192950992895] 
+                                                            3          1          -    Covered              
+        bin auto[17005592192950992896:17293822569102704639] 
+                                                           10          1          -    Covered              
+        bin auto[17293822569102704640:17582052945254416383] 
+                                                           14          1          -    Covered              
+        bin auto[17582052945254416384:17870283321406128127] 
+                                                           10          1          -    Covered              
+        bin auto[17870283321406128128:18158513697557839871] 
+                                                           10          1          -    Covered              
+        bin auto[18158513697557839872:18446744073709551615] 
+                                                           17          1          -    Covered              
+    Coverpoint cp_out1                                100.00%        100          -    Covered              
+        covered/total bins:                                64         64          -                      
+        missing/total bins:                                 0         64          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0:288230376151711743]                    555          1          -    Covered              
+        bin auto[288230376151711744:576460752303423487] 
+                                                           10          1          -    Covered              
+        bin auto[576460752303423488:864691128455135231] 
+                                                            5          1          -    Covered              
+        bin auto[864691128455135232:1152921504606846975] 
+                                                            4          1          -    Covered              
+        bin auto[1152921504606846976:1441151880758558719] 
+                                                            7          1          -    Covered              
+        bin auto[1441151880758558720:1729382256910270463] 
+                                                           10          1          -    Covered              
+        bin auto[1729382256910270464:2017612633061982207] 
+                                                            5          1          -    Covered              
+        bin auto[2017612633061982208:2305843009213693951] 
+                                                           10          1          -    Covered              
+        bin auto[2305843009213693952:2594073385365405695] 
+                                                           11          1          -    Covered              
+        bin auto[2594073385365405696:2882303761517117439] 
+                                                            8          1          -    Covered              
+        bin auto[2882303761517117440:3170534137668829183] 
+                                                            8          1          -    Covered              
+        bin auto[3170534137668829184:3458764513820540927] 
+                                                            7          1          -    Covered              
+        bin auto[3458764513820540928:3746994889972252671] 
+                                                           10          1          -    Covered              
+        bin auto[3746994889972252672:4035225266123964415] 
+                                                            6          1          -    Covered              
+        bin auto[4035225266123964416:4323455642275676159] 
+                                                           10          1          -    Covered              
+        bin auto[4323455642275676160:4611686018427387903] 
+                                                            6          1          -    Covered              
+        bin auto[4611686018427387904:4899916394579099647] 
+                                                           13          1          -    Covered              
+        bin auto[4899916394579099648:5188146770730811391] 
+                                                            9          1          -    Covered              
+        bin auto[5188146770730811392:5476377146882523135] 
+                                                           11          1          -    Covered              
+        bin auto[5476377146882523136:5764607523034234879] 
+                                                            6          1          -    Covered              
+        bin auto[5764607523034234880:6052837899185946623] 
+                                                            4          1          -    Covered              
+        bin auto[6052837899185946624:6341068275337658367] 
+                                                           21          1          -    Covered              
+        bin auto[6341068275337658368:6629298651489370111] 
+                                                            6          1          -    Covered              
+        bin auto[6629298651489370112:6917529027641081855] 
+                                                           11          1          -    Covered              
+        bin auto[6917529027641081856:7205759403792793599] 
+                                                            7          1          -    Covered              
+        bin auto[7205759403792793600:7493989779944505343] 
+                                                            6          1          -    Covered              
+        bin auto[7493989779944505344:7782220156096217087] 
+                                                            5          1          -    Covered              
+        bin auto[7782220156096217088:8070450532247928831] 
+                                                            8          1          -    Covered              
+        bin auto[8070450532247928832:8358680908399640575] 
+                                                           11          1          -    Covered              
+        bin auto[8358680908399640576:8646911284551352319] 
+                                                            9          1          -    Covered              
+        bin auto[8646911284551352320:8935141660703064063] 
+                                                            9          1          -    Covered              
+        bin auto[8935141660703064064:9223372036854775807] 
+                                                           16          1          -    Covered              
+        bin auto[9223372036854775808:9511602413006487551] 
+                                                            4          1          -    Covered              
+        bin auto[9511602413006487552:9799832789158199295] 
+                                                           11          1          -    Covered              
+        bin auto[9799832789158199296:10088063165309911039] 
+                                                            8          1          -    Covered              
+        bin auto[10088063165309911040:10376293541461622783] 
+                                                            6          1          -    Covered              
+        bin auto[10376293541461622784:10664523917613334527] 
+                                                            8          1          -    Covered              
+        bin auto[10664523917613334528:10952754293765046271] 
+                                                            6          1          -    Covered              
+        bin auto[10952754293765046272:11240984669916758015] 
+                                                            7          1          -    Covered              
+        bin auto[11240984669916758016:11529215046068469759] 
+                                                            5          1          -    Covered              
+        bin auto[11529215046068469760:11817445422220181503] 
+                                                            5          1          -    Covered              
+        bin auto[11817445422220181504:12105675798371893247] 
+                                                           12          1          -    Covered              
+        bin auto[12105675798371893248:12393906174523604991] 
+                                                           22          1          -    Covered              
+        bin auto[12393906174523604992:12682136550675316735] 
+                                                           13          1          -    Covered              
+        bin auto[12682136550675316736:12970366926827028479] 
+                                                            8          1          -    Covered              
+        bin auto[12970366926827028480:13258597302978740223] 
+                                                            8          1          -    Covered              
+        bin auto[13258597302978740224:13546827679130451967] 
+                                                            8          1          -    Covered              
+        bin auto[13546827679130451968:13835058055282163711] 
+                                                           15          1          -    Covered              
+        bin auto[13835058055282163712:14123288431433875455] 
+                                                            7          1          -    Covered              
+        bin auto[14123288431433875456:14411518807585587199] 
+                                                            6          1          -    Covered              
+        bin auto[14411518807585587200:14699749183737298943] 
+                                                            6          1          -    Covered              
+        bin auto[14699749183737298944:14987979559889010687] 
+                                                            4          1          -    Covered              
+        bin auto[14987979559889010688:15276209936040722431] 
+                                                            8          1          -    Covered              
+        bin auto[15276209936040722432:15564440312192434175] 
+                                                            6          1          -    Covered              
+        bin auto[15564440312192434176:15852670688344145919] 
+                                                           10          1          -    Covered              
+        bin auto[15852670688344145920:16140901064495857663] 
+                                                            7          1          -    Covered              
+        bin auto[16140901064495857664:16429131440647569407] 
+                                                            7          1          -    Covered              
+        bin auto[16429131440647569408:16717361816799281151] 
+                                                            6          1          -    Covered              
+        bin auto[16717361816799281152:17005592192950992895] 
+                                                           12          1          -    Covered              
+        bin auto[17005592192950992896:17293822569102704639] 
+                                                            8          1          -    Covered              
+        bin auto[17293822569102704640:17582052945254416383] 
+                                                            7          1          -    Covered              
+        bin auto[17582052945254416384:17870283321406128127] 
+                                                           14          1          -    Covered              
+        bin auto[17870283321406128128:18158513697557839871] 
+                                                           10          1          -    Covered              
+        bin auto[18158513697557839872:18446744073709551615] 
+                                                            7          1          -    Covered              
+    Cross sel_x_data                                  100.00%        100          -    Covered              
+        covered/total bins:                                10         10          -                      
+        missing/total bins:                                 0         10          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <select_1,other>                          545          1          -    Covered              
+            bin <select_0,other>                          527          1          -    Covered              
+            bin <select_1,alternating_01>                  10          1          -    Covered              
+            bin <select_0,alternating_01>                  10          1          -    Covered              
+            bin <select_1,alternating_10>                  10          1          -    Covered              
+            bin <select_0,alternating_10>                  11          1          -    Covered              
+            bin <select_1,ones>                             3          1          -    Covered              
+            bin <select_0,ones>                             8          1          -    Covered              
+            bin <select_1,zero>                             7          1          -    Covered              
+            bin <select_0,zero>                            14          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_top/dut/demux1x2_assertions_i
+=== Design Unit: work.Demux1x2_assertions
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       2         2         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/tb_top/dut/demux1x2_assertions_i/a_select_zero_routes_data_to_out0
+                     ../tb/Demux1x2_assertions.sv(21)
+                                                        0          1
+/tb_top/dut/demux1x2_assertions_i/a_select_one_routes_data_to_out1
+                     ../tb/Demux1x2_assertions.sv(24)
+                                                        0          1
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/tb_top/dut/demux1x2_assertions_i/a_select_zero_routes_data_to_out0
+                     ../tb/Demux1x2_assertions.sv(21)
+                                                        0          1
+/tb_top/dut/demux1x2_assertions_i/a_select_one_routes_data_to_out1
+                     ../tb/Demux1x2_assertions.sv(24)
+                                                        0          1
+
+Total Coverage By Instance (filtered view): 100.00%
+

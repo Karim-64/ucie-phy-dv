@@ -1,0 +1,4 @@
+1 tb_top.CLK
+1 tb_top.phy_if
+1 tb_top.d2d_if
+1 tb_top.fifo_if

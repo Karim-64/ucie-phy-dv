@@ -1,0 +1,207 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.Synchronizer_SBRX
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.Synchronizer_SBRX
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Synchronizer_SBRX.sv
+------------------------------------IF Branch------------------------------------
+    11                                       213     Count coming in to IF
+    11              1                         24     
+    14              1                        189     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       5         5         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.Synchronizer_SBRX --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../RTL/Synchronizer_SBRX.sv
+    10              1                        213     
+    12              1                         24     
+    13              1                         24     
+    15              1                        189     
+    16              1                        189     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         12        12         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.Synchronizer_SBRX
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          6 
+Toggled Node Count   =          6 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (12 of 12 bins)
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Synchronizer_SBRX_pkg
+=== Design Unit: work.Synchronizer_SBRX_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          3        na        na        na
+            Covergroup Bins          8         8         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Synchronizer_SBRX_pkg/Synchronizer_SBRX_subscriber/Synchronizer_SBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint rst_n_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint signal_src_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint signal_dst_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Synchronizer_SBRX_pkg::Synchronizer_SBRX_subscriber::Synchronizer_SBRX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint rst_n_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin LOW                                            21          1          -    Covered              
+        bin HIGH                                          388          1          -    Covered              
+    Coverpoint signal_src_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin LOW                                           207          1          -    Covered              
+        bin HIGH                                          202          1          -    Covered              
+        bin TOGGLE                                        151          1          -    Covered              
+    Coverpoint signal_dst_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin LOW                                           227          1          -    Covered              
+        bin HIGH                                          182          1          -    Covered              
+        bin TOGGLE                                        136          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /Synchronizer_SBRX_pkg/Synchronizer_SBRX_subscriber/Synchronizer_SBRX_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint rst_n_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint signal_src_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint signal_dst_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/Synchronizer_SBRX_pkg::Synchronizer_SBRX_subscriber::Synchronizer_SBRX_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     8          8          -                      
+    missing/total bins:                                     0          8          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint rst_n_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin LOW                                            21          1          -    Covered              
+        bin HIGH                                          388          1          -    Covered              
+    Coverpoint signal_src_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin LOW                                           207          1          -    Covered              
+        bin HIGH                                          202          1          -    Covered              
+        bin TOGGLE                                        151          1          -    Covered              
+    Coverpoint signal_dst_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin LOW                                           227          1          -    Covered              
+        bin HIGH                                          182          1          -    Covered              
+        bin TOGGLE                                        136          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_top/dut/synchronizer_assertions_i
+=== Design Unit: work.Synchronizer_SBRX_assertions
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       2         2         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/tb_top/dut/synchronizer_assertions_i/reset_assertion
+                     ../tb/Synchronizer_SBRX_assertions.sv(11)
+                                                        0          1
+/tb_top/dut/synchronizer_assertions_i/p1
+                     ../tb/Synchronizer_SBRX_assertions.sv(28)
+                                                        0          1
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/tb_top/dut/synchronizer_assertions_i/reset_assertion
+                     ../tb/Synchronizer_SBRX_assertions.sv(11)
+                                                        0          1
+/tb_top/dut/synchronizer_assertions_i/p1
+                     ../tb/Synchronizer_SBRX_assertions.sv(28)
+                                                        0          1
+
+Total Coverage By Instance (filtered view): 100.00%
+
