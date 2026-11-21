@@ -1,0 +1,75 @@
+`ifndef {{ agent.prefix | upper }}_MONITOR_SVH
+`define {{ agent.prefix | upper }}_MONITOR_SVH
+
+class {{ agent.cls('monitor') }} extends uvm_monitor;
+  `uvm_component_utils({{ agent.cls('monitor') }})
+
+  {{ agent.item }} seq_item;
+{% if agent.is_active %}
+  {{ agent.item }} seqr_item;
+{% endif %}
+  {{ agent.cls('drv_mon_cfg_obj') }} cfg;
+{% if agent.is_active %}
+  uvm_analysis_imp#({{ agent.item }}, {{ agent.cls('monitor') }}) mon_aimp;
+{% endif %}
+  uvm_analysis_port#({{ agent.item }}) mon_aport;
+
+  function new(string name = "{{ agent.cls('monitor') }}", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    if (!uvm_config_db#({{ agent.cls('drv_mon_cfg_obj') }})::get(this, "", "cfg", cfg))
+      `uvm_fatal("{{ agent.prefix | upper }}_MON", "{{ agent.cls('drv_mon_cfg_obj') }} not found in config_db for {{ agent.cls('monitor') }}")
+    mon_aport = new("mon_aport", this);
+{% if agent.is_active %}
+    mon_aimp = new("mon_aimp", this);
+{% endif %}
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+  endfunction
+{% if agent.is_active %}
+
+  // Called by the sequences (through seqr_aport) with the item currently being driven
+  function void write({{ agent.item }} t);
+    seqr_item = {{ agent.item }}::type_id::create("seqr_item");
+{% for s in agent.driven_signals %}
+    seqr_item.{{ s.name }} = t.{{ s.name }};
+{% endfor %}
+  endfunction
+{% endif %}
+
+  task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    forever begin
+      seq_item = {{ agent.item }}::type_id::create("seq_item");
+      @(cfg.{{ spec.name }}_vif.mon_cb);
+{% if agent.is_active %}
+      if (seqr_item) begin
+{% for s in agent.driven_signals %}
+        seq_item.{{ s.name }} <= seqr_item.{{ s.name }};
+{% endfor %}
+      end
+      else begin
+        // no stimulus published yet (or agent configured passive): sample the bus
+{% for s in agent.driven_signals %}
+        seq_item.{{ s.name }} <= cfg.{{ spec.name }}_vif.mon_cb.{{ s.name }};
+{% endfor %}
+      end
+{% for s in agent.monitored_signals %}
+      seq_item.{{ s.name }} <= cfg.{{ spec.name }}_vif.mon_cb.{{ s.name }};
+{% endfor %}
+{% else %}
+{% for s in agent.signals %}
+      seq_item.{{ s.name }} <= cfg.{{ spec.name }}_vif.mon_cb.{{ s.name }};
+{% endfor %}
+{% endif %}
+      #1step mon_aport.write(seq_item);
+    end
+  endtask
+endclass
+
+`endif // {{ agent.prefix | upper }}_MONITOR_SVH

@@ -1,0 +1,48 @@
+`timescale 1ns/1ns
+module tb_top();
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
+
+  import {{ spec.name }}_pkg::*;
+
+  bit {{ spec.clock_name }};
+
+  // Clock generator
+  initial begin
+    {{ spec.clock_name }} = 0;
+    forever begin
+      #1 {{ spec.clock_name }} = ~{{ spec.clock_name }};
+    end
+  end
+
+  // Interface instantiations (one per agent)
+{% for a in spec.agents %}
+  {{ a.interface.type_name }} {{ spec.param_overrides ~ " " if spec.param_overrides }}{{ a.if_inst }} (.{{ spec.clock_name }}({{ spec.clock_name }}));
+{% endfor %}
+{% if spec.dut %}
+
+  // DUT instantiation
+  {{ spec.dut.module_name }} {% if spec.parameters %}#(
+{% for p in spec.parameters %}
+    .{{ p.name }}({{ p.name }}){{ "," if not loop.last }}
+{% endfor %}
+  ) {% endif %}{{ spec.dut.instance_name }} (
+{% for port in spec.dut.ports %}
+{% if port.agent is none %}
+    .{{ port.dut_port }}({{ spec.clock_name }}){{ "," if not loop.last }}
+{% else %}
+    .{{ port.dut_port }}({{ spec.agent(port.agent).if_inst }}.{{ port.signal }}){{ "," if not loop.last }}
+{% endif %}
+{% endfor %}
+  );
+{% endif %}
+
+  // Config DB & test start
+  initial begin
+{% for a in spec.agents %}
+    uvm_config_db#({{ spec.vif_type(a) }})::set(
+        null, "uvm_test_top", "{{ a.vif_key }}", {{ a.if_inst }});
+{% endfor %}
+    run_test();
+  end
+endmodule

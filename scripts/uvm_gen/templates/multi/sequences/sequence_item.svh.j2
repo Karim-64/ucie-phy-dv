@@ -1,0 +1,54 @@
+`ifndef {{ agent.prefix | upper }}_SEQUENCE_ITEM_SVH
+`define {{ agent.prefix | upper }}_SEQUENCE_ITEM_SVH
+
+class {{ agent.item }} extends uvm_sequence_item;
+  `uvm_object_utils({{ agent.item }})
+{% if agent.pkg_driven_signals %}
+
+  // Stimulus fields (driven to the {{ agent.name }} interface)
+{% for s in agent.pkg_driven_signals %}
+  {{ "rand " if agent.is_active }}{{ s.decl }};
+{% endfor %}
+{% endif %}
+{% if agent.pkg_monitored_signals %}
+
+  // Response fields (sampled from the {{ agent.name }} interface)
+{% for s in agent.pkg_monitored_signals %}
+  {{ s.decl }};
+{% endfor %}
+{% endif %}
+
+  function new(string name = "{{ agent.item }}");
+    super.new(name);
+  endfunction
+
+  virtual function string convert2string();
+{% set all_sigs = agent.pkg_signals %}
+{% set flat = all_sigs | rejectattr('is_unpacked') | list %}
+{% set unp = all_sigs | selectattr('is_unpacked') | list %}
+{% set fmt_parts = [] %}
+{% for s in flat %}
+{% set _ = fmt_parts.append(s.name ~ "=" ~ s.fmt) %}
+{% endfor %}
+{% if unp %}
+    string str;
+{% if flat %}
+    str = $sformatf("{{ agent.prefix }}_seq_item: {{ fmt_parts | join(' ') }}",
+      {{ flat | map(attribute='name') | join(', ') }});
+{% else %}
+    str = "{{ agent.prefix }}_seq_item:";
+{% endif %}
+    // Unpacked arrays cannot be passed to $sformatf directly: print element by element.
+{% for s in unp %}
+    foreach ({{ s.name }}[i])
+      str = {str, $sformatf(" {{ s.name }}[%0d]=0x%0h", i, {{ s.name }}[i])};
+{% endfor %}
+    return str;
+{% else %}
+    return $sformatf("{{ agent.prefix }}_seq_item: {{ fmt_parts | join(' ') }}",
+      {{ flat | map(attribute='name') | join(', ') }});
+{% endif %}
+  endfunction
+endclass
+
+`endif // {{ agent.prefix | upper }}_SEQUENCE_ITEM_SVH

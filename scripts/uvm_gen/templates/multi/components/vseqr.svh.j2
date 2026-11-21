@@ -1,0 +1,16 @@
+`ifndef {{ spec.upper }}_VSEQR_SVH
+`define {{ spec.upper }}_VSEQR_SVH
+
+class {{ spec.name }}_vseqr extends uvm_sequencer;
+  `uvm_component_utils({{ spec.name }}_vseqr)
+
+{% for a in spec.active_agents %}
+  {{ a.cls('sequencer') }} {{ a.name }}_seqr;
+{% endfor %}
+
+  function new(string name = "{{ spec.name }}_vseqr", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+endclass
+
+`endif // {{ spec.upper }}_VSEQR_SVH

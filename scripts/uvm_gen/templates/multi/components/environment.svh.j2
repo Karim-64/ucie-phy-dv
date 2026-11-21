@@ -1,0 +1,95 @@
+`ifndef {{ spec.upper }}_ENVIRONMENT_SVH
+`define {{ spec.upper }}_ENVIRONMENT_SVH
+
+class {{ spec.name }}_environment extends uvm_env;
+  `uvm_component_utils({{ spec.name }}_environment)
+
+{% for a in spec.agents %}
+  {{ a.cls('agent') }} {{ a.inst }};
+{% endfor %}
+{% if spec.env.has_scoreboard %}
+  {{ spec.name }}_scoreboard sb;
+{% endif %}
+{% if spec.env.has_coverage %}
+  {{ spec.name }}_coverage cov;
+{% endif %}
+  {{ spec.name }}_vseqr vseqr;
+
+  {{ spec.name }}_env_cfg_obj cfg;
+{% for a in spec.agents %}
+  {{ a.cls('agt_cfg_obj') }} {{ a.name }}_agt_cfg;
+{% endfor %}
+
+  function new(string name = "{{ spec.name }}_environment", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+
+    if (!uvm_config_db#({{ spec.name }}_env_cfg_obj)::get(this, "", "cfg", cfg))
+      `uvm_fatal("{{ spec.upper }}_ENV", "{{ spec.name }}_env_cfg_obj not found in config_db for {{ spec.name }}_environment")
+{% for a in spec.agents %}
+
+    // ---- {{ a.name }} Agent ----
+    if (cfg.{{ spec.name }}_has_{{ a.name }}_agent) begin
+      {{ a.name }}_agt_cfg = {{ a.cls('agt_cfg_obj') }}::type_id::create("{{ a.name }}_agt_cfg");
+      {{ a.name }}_agt_cfg.{{ spec.name }}_vif = cfg.{{ a.vif }};
+      {{ a.name }}_agt_cfg.is_active = cfg.active_passive_agents["{{ a.name }}"];
+      {{ a.name }}_agt_cfg.{{ a.prefix }}_has_monitor = 1;
+
+      uvm_config_db#({{ a.cls('agt_cfg_obj') }})::set(this, "{{ a.inst }}", "cfg", {{ a.name }}_agt_cfg);
+      {{ a.inst }} = {{ a.cls('agent') }}::type_id::create("{{ a.inst }}", this);
+    end
+{% endfor %}
+{% if spec.env.has_scoreboard %}
+
+    // ---- Scoreboard ----
+    if (cfg.{{ spec.name }}_has_scoreboard)
+      sb = {{ spec.name }}_scoreboard::type_id::create("sb", this);
+{% endif %}
+{% if spec.env.has_coverage %}
+
+    // ---- Coverage Collector ----
+    if (cfg.{{ spec.name }}_has_coverage)
+      cov = {{ spec.name }}_coverage::type_id::create("cov", this);
+{% endif %}
+
+    // ---- Virtual Sequencer ----
+    vseqr = {{ spec.name }}_vseqr::type_id::create("vseqr", this);
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+{% if spec.active_agents %}
+
+    // Connect virtual sequencer handles
+{% for a in spec.active_agents %}
+    if (cfg.{{ spec.name }}_has_{{ a.name }}_agent && cfg.active_passive_agents["{{ a.name }}"] == UVM_ACTIVE)
+      vseqr.{{ a.name }}_seqr = {{ a.inst }}.seqr;
+{% endfor %}
+{% endif %}
+{% if spec.sb_agents %}
+
+    // Connect agents to scoreboard
+    if (cfg.{{ spec.name }}_has_scoreboard) begin
+{% for a in spec.sb_agents %}
+      if (cfg.{{ spec.name }}_has_{{ a.name }}_agent)
+        {{ a.inst }}.agt_aport.connect(sb.sb_{{ a.lower }}_aexport);
+{% endfor %}
+    end
+{% endif %}
+{% if spec.cov_agents %}
+
+    // Connect agents to coverage collector
+    if (cfg.{{ spec.name }}_has_coverage) begin
+{% for a in spec.cov_agents %}
+      if (cfg.{{ spec.name }}_has_{{ a.name }}_agent)
+        {{ a.inst }}.agt_aport.connect(cov.{{ a.lower }}_imp);
+{% endfor %}
+    end
+{% endif %}
+  endfunction
+endclass
+
+`endif // {{ spec.upper }}_ENVIRONMENT_SVH

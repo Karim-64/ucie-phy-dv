@@ -1,0 +1,16 @@
+`ifndef {{ agent.prefix | upper }}_AGT_CFG_OBJ_SVH
+`define {{ agent.prefix | upper }}_AGT_CFG_OBJ_SVH
+
+class {{ agent.cls('agt_cfg_obj') }} extends uvm_object;
+  `uvm_object_utils({{ agent.cls('agt_cfg_obj') }})
+
+  {{ spec.vif_type(agent) }} {{ spec.name }}_vif;
+  uvm_active_passive_enum is_active{{ " = UVM_PASSIVE" if not agent.is_active }};
+  bit {{ agent.prefix }}_has_monitor;
+
+  function new(string name = "{{ agent.cls('agt_cfg_obj') }}");
+    super.new(name);
+  endfunction
+endclass
+
+`endif // {{ agent.prefix | upper }}_AGT_CFG_OBJ_SVH

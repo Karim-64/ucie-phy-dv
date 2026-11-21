@@ -1,31 +1,60 @@
-<uvm_env name="mem">
-    <parameters>
-        <parameter name="DATA_WIDTH" value="128"/>
-        <parameter name="ADDRESS_WIDTH" value="4"/>
-    </parameters>
-        <clock name="clk"/>
-        <signals>
-        <signal name="rst" width="1" direction="drv"/>
-        <signal name="cs" width="1" direction="drv"/>
-        <signal name="we" width="1" direction="drv"/>
-        <signal name="addr" width="ADDRESS_WIDTH" direction="drv"/>
-        <signal name="data_in" width="DATA_WIDTH" direction="drv"/>
-        <signal name="data_out" width="DATA_WIDTH" direction="mon"/>
-        <signal name="valid_out" width="1" direction="mon"/>
-    </signals>
-    <dut>
-        <module_name>Memory</module_name>
-        <instance_name>dut</instance_name>
-        <port dut_port="data_in" signal="data_in"/>
-        <port dut_port="addr" signal="addr"/>
-        <port dut_port="cs" signal="cs"/>
-        <port dut_port="we" signal="we"/>
-        <port dut_port="clk" signal="clk"/>
-        <port dut_port="rst" signal="rst"/>
-        <port dut_port="data_out" signal="data_out"/>
-        <port dut_port="valid_out" signal="valid_out"/>
-    </dut>
-    <env>
-        <has_scoreboard>true</has_scoreboard>
-    </env>
+<uvm_env name="pe_sbtx">
+  <parameters>
+    <parameter name="DATA_WIDTH" value="64"/>
+  </parameters>
+
+  <clock name="CLK"/>
+
+  <interfaces>
+    <interface name="in">
+      <signal name="rst_n"       width="1"          direction="drv" idle="1'b1"/>
+      <signal name="en"          width="1"          direction="drv"/>
+      <signal name="data_marker" width="1"          direction="drv"/>
+      <signal name="comp_marker" width="1"          direction="drv"/>
+      <signal name="data"        width="DATA_WIDTH" direction="drv"/>
+      <signal name="resend_req"  width="1"          direction="mon"/>
+    </interface>
+
+    <interface name="out">
+      <signal name="fifo_wr"        width="1"          direction="mon"/>
+      <signal name="fifo_data"      width="DATA_WIDTH" direction="mon"/>
+      <signal name="data_marker"    width="1"          direction="mon"/>
+      <signal name="d2d_phy_marker" width="1"          direction="mon"/>
+      <signal name="comp_marker"    width="1"          direction="mon"/>
+    </interface>
+  </interfaces>
+
+  <agents count="3">
+    <agent name="D2D"  interface="in"  mode="active"  scoreboard="true" coverage="true"/>
+    <agent name="PHY"  interface="in"  mode="active"  scoreboard="true" coverage="true"/>
+    <agent name="FIFO" interface="out" mode="passive" scoreboard="true" coverage="false"/>
+  </agents>
+
+  <dut>
+    <module_name>Priority_Encoder_SBTX</module_name>
+    <instance_name>dut</instance_name>
+    <rtl_file>Universal_pkg.sv</rtl_file>
+    <rtl_file>Priority_Encoder_SBTX.sv</rtl_file>
+    <port dut_port="CLK"             signal="CLK"/>
+    <port dut_port="RST_n"           agent="PHY"  signal="rst_n"/>
+    <port dut_port="PHY_En"          agent="PHY"  signal="en"/>
+    <port dut_port="D2D_En"          agent="D2D"  signal="en"/>
+    <port dut_port="Data_Marker_D2D" agent="D2D"  signal="data_marker"/>
+    <port dut_port="Data_Marker_PHY" agent="PHY"  signal="data_marker"/>
+    <port dut_port="Comp_Marker_D2D" agent="D2D"  signal="comp_marker"/>
+    <port dut_port="PHY_Data"        agent="PHY"  signal="data"/>
+    <port dut_port="D2D_Data"        agent="D2D"  signal="data"/>
+    <port dut_port="FIFO_WR"         agent="FIFO" signal="fifo_wr"/>
+    <port dut_port="FIFO_Data"       agent="FIFO" signal="fifo_data"/>
+    <port dut_port="Data_Marker"     agent="FIFO" signal="data_marker"/>
+    <port dut_port="D2D_PHY_Marker"  agent="FIFO" signal="d2d_phy_marker"/>
+    <port dut_port="Comp_Marker"     agent="FIFO" signal="comp_marker"/>
+    <port dut_port="D2D_Resend_Req"  agent="D2D"  signal="resend_req"/>
+    <port dut_port="PHY_Resend_Req"  agent="PHY"  signal="resend_req"/>
+  </dut>
+
+  <env>
+    <has_scoreboard>true</has_scoreboard>
+    <has_coverage>true</has_coverage>
+  </env>
 </uvm_env>

@@ -78,6 +78,19 @@ class SignalSpec:
     direction: str       # "drv" or "mon"
     depth: str | None = None     # optional outer PACKED dimension (literal or parameter/localparam name)
     unpacked: str | None = None  # optional UNPACKED dimension (literal or parameter/localparam name)
+    idle: str | None = None      # optional idle/default value for generated sequence helpers
+
+    @property
+    def idle_value(self) -> str:
+        """Default argument value used by the generated drive_<agt>_item() helper."""
+        return self.idle if self.idle is not None else "'0"
+
+    @property
+    def fmt(self) -> str:
+        """$sformatf format specifier for this signal's value."""
+        if self.is_unpacked:
+            return "%p"
+        return "%0b" if self.is_scalar else "0x%0h"
 
     def resolved(self, consts: dict[str, str]) -> "SignalSpec":
         """Copy whose width/depth/unpacked have every localparam name replaced by its value."""
