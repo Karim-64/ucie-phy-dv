@@ -1,24 +1,54 @@
 # uvm_gen
 
-Generates a single-agent UVM verification environment (interface, config
-objects, sequence item, sequencer/driver/monitor, agent, scoreboard,
-coverage subscriber, environment, base test, `tb_top`, `run.do`) from one
-XML spec file. The output structure and SystemVerilog conventions reproduce
-the `mem` reference environment this tool was built from.
+Generates single-agent (`mem`-style) or multi-agent (`Priority_Encoder_SBTX`-style)
+UVM verification environments from a single XML spec file.
 
-## Usage
+The mode is chosen automatically from the XML:
+- `<signals>` at root -> **single-agent** mode (`mem` layout)
+- `<agents>` + `<interfaces>` at root -> **multi-agent** mode (`Priority_Encoder_SBTX` layout)
+
+## Quick Start (Copy & Paste)
+
+Requires Python 3.10+ and `jinja2` (`pip install jinja2`).
 
 ```bash
-py generate_uvm.py --config spec.xml --out-dir ./generated
-py generate_uvm.py --config spec.xml --out-dir ./generated --dry-run   # validate + preview only
-py generate_uvm.py --config spec.xml --out-dir ./generated --force    # overwrite existing output
+# Quick Command to run 
+python generate_uvm.py --config spec.xml --out-dir ./generated --force
+
+# Run from scripts/uvm_gen/ (multi-agent example)
+python generate_uvm.py --config examples/pe_sbtx_spec.xml --out-dir ./generated --force
+
+# Preview files without writing anything
+python generate_uvm.py --config examples/pe_sbtx_spec.xml --out-dir ./generated --dry-run
+
+# Single-agent example
+python generate_uvm.py --config examples/mem_spec.xml --out-dir ./generated --force
 ```
 
-Output lands at `<out-dir>/<agent_name>/...`. Requires Python 3.10+ and
-`jinja2`.
+> On Windows you can replace `python` with `py`.
 
-Then put your DUT source files (`.sv` / `.v`) in `<agent_name>/RTL/` and run
-`sim/run.do` from the `sim/` directory in Questa/ModelSim.
+Output lands at `<out-dir>/<env_name>/...`. Copy your DUT source files
+(`.sv` / `.v`) into `<out-dir>/<env_name>/RTL/`, then run QuestaSim from
+`sim/`:
+
+```bash
+cd generated/pe_sbtx/sim
+vsim -do run.do
+```
+
+## Features & How to Use Them
+
+| Feature | What it generates / does | How to use it |
+|---------|--------------------------|---------------|
+| **Multi-agent environments** | Separate UVCs (`components/<AGT>_agent/`), per-agent sequence items & base sequences, virtual sequencer (`vseqr`), and virtual sequence (`vseq`) | Add `<interfaces>` and `<agents count="N">` with `<agent name="D2D" .../>` entries |
+| **Single-agent environments** | Compact single-agent UVM environment (`mem` layout) | Put `<signals>` directly under `<uvm_env>` (no `<agents>`) |
+| **Active & passive agents** | Active agents get driver + sequencer + base sequence (`drive_<agt>_item` / `drive_<agt>_idle`) + TLM feedback (`seqr_aport` -> `mon_aimp`, `mon_aport` -> `seqr_aexport`/`seqr_fifo`); passive agents get monitor + agent only | Set `mode="active"` or `mode="passive"` on each `<agent>` |
+| **Reusable interfaces** | One `.sv` interface per `<interface>` definition with `drv_cb` & `mon_cb` clocking blocks; multiple agents can share one interface type with separate instances in `tb_top` | Define `<interface name="in">` under `<interfaces>` and reference it via `interface="in"` on `<agent>` |
+| **TLM-FIFO scoreboard** | `uvm_analysis_export` + `uvm_tlm_analysis_fifo` per connected agent, `run_phase` (skipping cycle 0), `ref_model()` stub, auto-generated `check_results()` (including `foreach` for unpacked arrays), and `report_phase()` summary | Set `<has_scoreboard>true</has_scoreboard>` in `<env>` and `scoreboard="true\|false"` per `<agent>` |
+| **Multi-agent coverage collector** | Extends `uvm_component` with `` `uvm_analysis_imp_decl(_<agt>) ``, `write_<agt>()`, cycle-synchronized `all_valid()` -> `sample_and_advance()` -> `update_state()`, and generic per-agent covergroups | Set `<has_coverage>true</has_coverage>` in `<env>` and `coverage="true\|false"` per `<agent>` |
+| **Parameters, localparams & arrays** | Overridable `<parameter>`s, interface-only `<localparam>`s (auto-inlined in package code), expression widths (`2*NC`, `$clog2(N)`), packed 2D (`depth`), unpacked (`unpacked`), and idle defaults (`idle`) | Declare under `<parameters>` and use `width`, `depth`, `unpacked`, `idle` attributes on `<signal>` |
+| **DUT wiring & Questa `run.do`** | Instantiates DUT in `tb_top.sv`, registers VIFs in `uvm_config_db`, and generates `sim/run.do` with ordered RTL compilation and code/functional coverage reports | Add `<dut>` with `<module_name>`, optional `<rtl_file>`, and `<port>` mappings |
+| **Fail-fast XML validation & CLI flags** | Validates all identifiers, agent counts, widths, interfaces, and DUT ports before writing any file | Use `--dry-run` to validate/preview and `--force` to overwrite an existing output folder |
 
 ## XML reference
 
@@ -172,6 +202,83 @@ Optional. Omit it to generate a testbench without a DUT instance (the
 When a flag is `false` the corresponding file, config bit, environment code
 and package `include` are all left out.
 
+### Multi-agent XML reference (`<agents>`)
+
+Complete multi-agent skeleton (see `examples/pe_sbtx_spec.xml` for a full
+working example reproducing `Priority_Encoder_SBTX`):
+
+```xml
+<uvm_env name="pe_sbtx">
+  <parameters>                                    <!-- optional, same rules as single-agent -->
+    <parameter name="DATA_WIDTH" value="64"/>
+  </parameters>
+
+  <clock name="CLK"/>                             <!-- required -->
+
+  <interfaces>                                    <!-- required: 1+ reusable interface defs -->
+    <interface name="in">                         <!-- emits <env>_<name>_if -->
+      <signal name="rst_n"       width="1"          direction="drv" idle="1'b1"/>
+      <signal name="en"          width="1"          direction="drv"/>
+      <signal name="data"        width="DATA_WIDTH" direction="drv"/>
+      <signal name="resend_req"  width="1"          direction="mon"/>
+    </interface>
+    <interface name="out">
+      <signal name="fifo_wr"     width="1"          direction="mon"/>
+      <signal name="fifo_data"   width="DATA_WIDTH" direction="mon"/>
+    </interface>
+  </interfaces>
+
+  <agents count="3">                              <!-- count optional; validated if present -->
+    <agent name="D2D"  interface="in"  mode="active"  scoreboard="true" coverage="true"/>
+    <agent name="PHY"  interface="in"  mode="active"  scoreboard="true" coverage="true"/>
+    <agent name="FIFO" interface="out" mode="passive" scoreboard="true" coverage="false"/>
+  </agents>
+
+  <dut>                                           <!-- optional -->
+    <module_name>Priority_Encoder_SBTX</module_name>
+    <instance_name>dut</instance_name>            <!-- optional, default "dut" -->
+    <rtl_file>Universal_pkg.sv</rtl_file>         <!-- optional, controls run.do vlog order -->
+    <rtl_file>Priority_Encoder_SBTX.sv</rtl_file>
+    <port dut_port="CLK"    signal="CLK"/>        <!-- clock port omits @agent -->
+    <port dut_port="PHY_En" agent="PHY" signal="en"/>
+    ...
+  </dut>
+
+  <env>                                           <!-- optional -->
+    <has_scoreboard>true</has_scoreboard>         <!-- optional, default true -->
+    <has_coverage>true</has_coverage>             <!-- optional, default true (alias: has_subscriber) -->
+  </env>
+</uvm_env>
+```
+
+#### Multi-agent tags & attributes
+
+- **`<interface name="...">`**: Declares a reusable interface `<env>_<name>_if`.
+  Multiple agents may share the same interface type (each gets its own instance
+  `<agt_lower>_if` in `tb_top` and config DB key `<ENV>_<AGT>_VIF`). Signals use
+  the same attributes as single-agent mode, plus optional `idle="..."` (default
+  `'0`) for the generated `drive_<agt>_item()` helper in `<env>_<AGT>_base_seq`.
+- **`<agents count="N">`**: Optional `count` attribute is checked against the
+  number of `<agent>` children.
+- **`<agent>`**:
+  - `name`: Agent abbreviation (e.g., `D2D`, `PHY`, `FIFO`), unique ignoring
+    case. Used for prefixes (`<env>_<AGT>_*`), folders (`components/<AGT>_agent`,
+    `sequences/<AGT>_seqs`), and instance handles (`<AGT>_agt`).
+  - `interface`: Name of a declared `<interface>`.
+  - `mode`: `active` (default; generates driver, sequencer with
+    `seqr_aport`/`seqr_aexport`/`seqr_fifo`, and base sequence) or `passive`
+    (monitor + agent only). Active agents require at least one `direction="drv"`
+    signal on their interface.
+  - `scoreboard`: `true` (default) or `false` — connects `agt_aport` to the
+    scoreboard's `sb_<agt>_aexport`.
+  - `coverage`: `true` (default) or `false` — connects `agt_aport` to the
+    coverage collector's `<agt>_imp`.
+- **`<dut>`**:
+  - `<rtl_file>`: Optional ordered list of RTL files under `RTL/` for `sim/run.do`
+    (omitting `<rtl_file>` compiles `../RTL/*.sv`).
+  - `<port>`: Uses `agent="<AGT>" signal="<sig>"` to wire `dut_port` to
+    `<agt>_if.<sig>`, or `signal="<clock_name>"` without `agent` for the clock.
+
 ## Validation
 
 The parser checks everything before writing any file and stops with a
@@ -188,6 +295,8 @@ specific message on the first problem:
 
 ## Generated files
 
+### Single-agent (`<signals>`)
+
 ```
 <name>/
   cfg_obj/      <name>_drv_mon_cfg_obj.svh  <name>_agt_cfg_obj.svh  <name>_env_cfg_obj.svh
@@ -201,9 +310,45 @@ specific message on the first problem:
   RTL/          README.md     (drop your DUT files here)
 ```
 
-`[...]` files depend on the `<env>` flags above.
+### Multi-agent (`<agents>`)
 
-### Coverage subscriber
+```
+<name>/
+  cfg_obj/                      <name>_<AGT>_drv_mon_cfg_obj.svh  <name>_<AGT>_agt_cfg_obj.svh
+                                <name>_env_cfg_obj.svh
+  sequences/sequence_items/     <name>_<AGT>_sequence_item.svh
+  sequences/<AGT>_seqs/         <name>_<AGT>_base_seq.svh              (active agents)
+  sequences/                    <name>_vseq.svh
+  components/<AGT>_agent/       <name>_<AGT>_agent.svh  _monitor.svh
+                                [_driver.svh  _sequencer.svh]          (active agents)
+  components/                   <name>_vseqr.svh  [_scoreboard.svh]  [_coverage.svh]
+                                _environment.svh  _base_test.svh
+  interfaces/                   <name>_<if>_if.sv
+  packages/                     <name>_pkg.sv
+  tb/                           tb_top.sv
+  sim/                          run.do
+  RTL/                          README.md
+```
+
+`[...]` files depend on `<env>` flags and each agent's `mode`.
+
+### Multi-agent Scoreboard & Coverage Collector
+
+- **Scoreboard (`<name>_scoreboard`)**: Uses one `uvm_analysis_export` and
+  `uvm_tlm_analysis_fifo` (`sb_<agt>_aexport` / `sb_<agt>_fifo`) per
+  scoreboard-connected agent. `run_phase` discards the initial cycle-0 item,
+  then pulls one item from each FIFO per cycle and calls `ref_model(...)` and
+  `check_results(...)`, reporting `pass_count` and `error_count` in
+  `report_phase`. Output signal comparisons in `check_results` are generated
+  automatically; `ref_model` is left as a `TODO` stub for DUT logic.
+- **Coverage collector (`<name>_coverage`)**: Extends `uvm_component` (not
+  `uvm_subscriber`) and declares `` `uvm_analysis_imp_decl(_<agt>) `` ports
+  and `write_<agt>()` callbacks for each coverage-connected agent. Valid flags
+  synchronize sampling once per cycle after all connected monitors have written
+  (`all_valid()` -> `sample_and_advance()` -> `update_state()`), with a
+  generic per-signal `covergroup cg_<agt>` ready to extend with scenario crosses.
+
+### Coverage subscriber (single-agent)
 
 `<name>_subscriber` is a `uvm_subscriber` with one coverpoint per signal,
 default binning (`auto_bin_max = 16` on multi-bit fields). It is
@@ -224,19 +369,20 @@ for batch runs.
 
 | File | Shows |
 |------|-------|
-| `dut_spec.xml`, `examples/mem_spec.xml` | the `mem` reference: parameters, plain signals, DUT, scoreboard |
+| `spec.xml`, `examples/mem_spec.xml` | single-agent `mem` reference: parameters, plain signals, DUT, scoreboard |
 | `examples/demux_spec.xml` | packed 2D arrays (`width="8" depth="64"`) |
 | `examples/byte_mapper_spec.xml` | unpacked arrays, localparams used as sizes, packed array |
+| `examples/pe_sbtx_spec.xml` | multi-agent `Priority_Encoder_SBTX` architecture (`D2D`, `PHY`, `FIFO`), shared `in` interface, `active`/`passive`, virtual sequencer/sequence, TLM FIFO scoreboard, `uvm_component` coverage collector |
 
-## Scope (v1, by design)
+## Scope
 
-- **One agent per environment.** No multi-agent/multi-interface XML; each
-  run produces one self-contained agent environment.
-- **Scoreboard and base_sequence are TODO-stubs**, same as the reference —
-  no reference-model logic is invented, since that's DUT-specific.
-- **Active by default.** `active_passive_agents[name] = UVM_ACTIVE` is
-  hardcoded in the generated `base_test`, matching the reference; there's
-  no passive-mode XML toggle yet.
+- **Single-agent or multi-agent environments.** Single-agent specs use `<signals>`;
+  multi-agent specs use `<interfaces>` and `<agents count="N">` with per-agent
+  `active`/`passive` modes, `scoreboard`/`coverage` routing, virtual sequencer,
+  and virtual sequence.
+- **Scoreboard `ref_model` and scenario coverage/sequences are TODO-stubs** —
+  DUT-specific functional logic is not invented; structural TLM wiring, output
+  comparison checks, and generic coverpoints are generated automatically.
 - **Logic types only.** Signals are `logic` (4-state), packed arrays are
   `logic` vectors; structs, enums, interfaces-as-ports and multiple
   unpacked dimensions are not supported.
@@ -244,25 +390,24 @@ for batch runs.
 
 ## Fidelity check
 
-`examples/mem_spec.xml` was written to reproduce `mem.zip`'s `mem`
-environment. Diffing the generated output against the original files
-(ignoring line-ending differences — the originals are CRLF) shows the
-only semantic delta is that `mem_subscriber` is the generic version (no
-hand-written `iff`/cross coverage). Every class structure, phase method,
-config_db call, signal wiring, and the DUT instantiation in `tb_top.sv`
-match exactly.
+`examples/mem_spec.xml` reproduces `mem.zip`'s `mem` single-agent environment.
+`examples/pe_sbtx_spec.xml` reproduces the folder structure, agent UVCs, TLM
+feedback loops, virtual sequencer/sequence, TLM FIFO scoreboard skeleton, and
+`uvm_component` coverage collector skeleton of `verification/SB_TX/ip_level/Priority_Encoder_SBTX`.
 
 ## Project layout
 
 ```
 generate_uvm.py          CLI entry point
 uvm_gen/
-  model.py                Dataclasses: UvmEnvSpec, SignalSpec, ParamSpec, DutSpec, DutPortSpec, EnvFlags
-  xml_parser.py            XML -> UvmEnvSpec, with validation (SpecError on anything malformed)
-  renderer.py               UvmEnvSpec -> rendered files via Jinja2 templates
-templates/                 One .j2 per generated file, mirroring mem/'s folder layout
-dut_spec.xml               Spec used to produce generated/mem
-examples/                  mem_spec.xml, demux_spec.xml, byte_mapper_spec.xml
+  model.py                Single-agent dataclasses & shared SignalSpec/ParamSpec/DutSpec
+  multi_model.py          Multi-agent dataclasses (MultiEnvSpec, AgentSpec, InterfaceSpec, ...)
+  xml_parser.py           Single-agent parser + shared validation helpers & format dispatch
+  multi_parser.py         Multi-agent XML -> MultiEnvSpec parser & validation
+  renderer.py             UvmEnvSpec / MultiEnvSpec -> rendered files via Jinja2 templates
+templates/                 Single-agent .j2 templates + templates/multi/ for multi-agent
+spec.xml                   Spec used to produce generated/mem
+examples/                  mem_spec.xml, demux_spec.xml, byte_mapper_spec.xml, pe_sbtx_spec.xml
 generated/                 Output of the fidelity-check run (safe to delete/regenerate)
 ```
 
@@ -304,20 +449,19 @@ Quick reference. Details are in the "XML reference" section above.
 | DUT instance name | `<instance_name>` | `dut` |
 | Partial DUT port wiring | one `<port>` per port you want wired | - |
 | Scoreboard | `<has_scoreboard>` | `true` |
-| Coverage subscriber | `<has_subscriber>` | `true` |
+| Coverage collector / subscriber | `<has_coverage>` (multi-agent) / `<has_subscriber>` (single-agent) | `true` |
 
 ### Generated automatically
 
-- Interface with `drv_cb` / `mon_cb` clocking blocks, config objects (drv/mon, agent, env).
-- Sequence item, base sequence, sequencer, driver, monitor, agent, environment, base test.
-- Scoreboard stub and generic coverage subscriber (first/last element coverpoints for arrays).
+- Interface(s) with `drv_cb` / `mon_cb` clocking blocks and config objects (`drv_mon`, `agt`, `env`).
+- Per-agent sequence item, base sequence, sequencer (with feedback FIFO in multi-agent mode), driver, monitor, and agent; plus virtual sequencer (`vseqr`) and virtual sequence (`vseq`) in multi-agent mode.
+- Scoreboard (`uvm_tlm_analysis_fifo` + `run_phase` / `ref_model` / `check_results` in multi-agent mode) and coverage collector (`uvm_component` with `uvm_analysis_imp_decl` in multi-agent mode; `uvm_subscriber` in single-agent mode).
 - Package with correct include order, `tb_top`, and a Questa `run.do` that saves and reports code and functional coverage.
 
 ### Not supported
 
-- More than one agent or interface per environment.
 - Types other than `logic` (structs, enums, interface ports).
 - More than one unpacked dimension per signal; unpacked ranges written `[0:N-1]` (always generated `[N-1:0]`).
 - A `<parameter>` default that refers to a `<localparam>`.
-- Passive agents (the base test is always `UVM_ACTIVE`).
+- Passive mode toggle in single-agent XML (use multi-agent `<agents>` format for `active`/`passive` control).
 - Simulators other than Questa/ModelSim for `run.do`.

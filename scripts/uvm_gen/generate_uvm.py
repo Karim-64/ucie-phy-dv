@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-generate_uvm.py - generate a single-agent UVM verification environment
-from an XML config, following the mem.zip reference structure/conventions.
+generate_uvm.py - generate a single-agent or multi-agent UVM verification
+environment from an XML config.
 
 Usage:
     python generate_uvm.py --config spec.xml --out-dir ./generated
@@ -24,7 +24,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--config", required=True, help="Path to the XML config file")
     parser.add_argument(
-        "--out-dir", required=True, help="Directory under which <agent_name>/ will be created"
+        "--out-dir", required=True, help="Directory under which <env_name>/ will be created"
     )
     parser.add_argument(
         "--dry-run",
@@ -34,7 +34,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--force",
         action="store_true",
-        help="Overwrite the output directory if <out_dir>/<agent_name> already exists",
+        help="Overwrite the output directory if <out_dir>/<env_name> already exists",
     )
     args = parser.parse_args(argv)
 
@@ -58,12 +58,15 @@ def main(argv: list[str] | None = None) -> int:
     # --- RTL Folder Generation ---
     rtl_dir = target_dir / "RTL"
     readme_file = rtl_dir / "README.md"
-    
+
     if not args.dry_run:
         rtl_dir.mkdir(parents=True, exist_ok=True)
-        readme_file.write_text("Place your SystemVerilog/Verilog design files (.sv, .v) in this directory.\n")
-    
-    written.append(str(readme_file))
+        readme_file.write_text(
+            "Place your SystemVerilog/Verilog design files (.sv, .v) in this directory.\n",
+            encoding="utf-8",
+        )
+
+    written.append(readme_file)
     # -----------------------------
 
     verb = "Would generate" if args.dry_run else "Generated"

@@ -1,0 +1,44 @@
+`ifndef {{ spec.upper }}_VSEQ_SVH
+`define {{ spec.upper }}_VSEQ_SVH
+
+class {{ spec.name }}_vseq extends uvm_sequence#(uvm_sequence_item);
+  `uvm_object_utils({{ spec.name }}_vseq)
+  `uvm_declare_p_sequencer({{ spec.name }}_vseqr)
+
+{% for a in spec.active_agents %}
+  {{ a.cls('base_seq') }} {{ a.lower }}_base_seq;
+{% endfor %}
+  // TODO: declare your scenario sequences here (one per agent per scenario)
+
+  function new(string name = "{{ spec.name }}_vseq");
+    super.new(name);
+  endfunction
+
+  task body();
+{% for a in spec.active_agents %}
+    {{ a.lower }}_base_seq = {{ a.cls('base_seq') }}::type_id::create("{{ a.lower }}_base_seq");
+{% endfor %}
+{% if spec.active_agents %}
+
+    // -------------------------------------------------------------------------
+    // Scenario 0: base sequences on every active agent in parallel
+    // -------------------------------------------------------------------------
+    `uvm_info("{{ spec.upper }}_VSEQ", "Starting base sequences", UVM_LOW)
+    fork
+{% for a in spec.active_agents %}
+      if (p_sequencer.{{ a.name }}_seqr != null) {{ a.lower }}_base_seq.start(p_sequencer.{{ a.name }}_seqr);
+{% endfor %}
+    join
+{% endif %}
+
+    // TODO: add scenarios, e.g.
+    //   fork
+    //     <agt>_scenario_seq.start(p_sequencer.<AGT>_seqr);
+    //     ...
+    //   join
+
+    `uvm_info("{{ spec.upper }}_VSEQ", "All Verification Scenarios Completed.", UVM_LOW)
+  endtask
+endclass
+
+`endif // {{ spec.upper }}_VSEQ_SVH

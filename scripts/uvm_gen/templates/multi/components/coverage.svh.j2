@@ -1,0 +1,116 @@
+`ifndef {{ spec.upper }}_COVERAGE_SVH
+`define {{ spec.upper }}_COVERAGE_SVH
+
+// 1. Declare unique suffixes for each analysis imp port OUTSIDE the class
+{% for a in spec.cov_agents %}
+`uvm_analysis_imp_decl(_{{ a.lower }})
+{% endfor %}
+
+class {{ spec.name }}_coverage extends uvm_component;
+  `uvm_component_utils({{ spec.name }}_coverage)
+
+  // 2. Instantiate one analysis implementation port per connected agent
+{% for a in spec.cov_agents %}
+  uvm_analysis_imp_{{ a.lower }}#({{ a.item }}, {{ spec.name }}_coverage) {{ a.lower }}_imp;
+{% endfor %}
+
+  // Local handles to hold the latest transactions for sampling
+{% for a in spec.cov_agents %}
+  {{ a.item }} {{ a.lower }}_item;
+{% endfor %}
+
+  // Synchronization flags so sampling occurs once per clock cycle after all monitors write
+{% for a in spec.cov_agents %}
+  bit {{ a.lower }}_valid;
+{% endfor %}
+
+  // TODO: Shadow state / helper variables for temporal scenarios
+{% for a in spec.cov_agents %}
+
+  // ===========================================================================
+  // {{ a.name }} interface coverage (generic, one coverpoint per signal)
+  // TODO: replace / extend with scenario covergroups (iff gates, crosses, transitions)
+  // ===========================================================================
+  covergroup cg_{{ a.lower }};
+    option.per_instance = 1;
+
+{% for s in a.pkg_signals %}
+{% if s.is_array %}
+    // {{ s.name }} is an array signal; sample first and last element only.
+{% for tag, idx in s.cov_elements %}
+{% if s.width == "1" %}
+    cp_{{ s.name }}_{{ tag }}: coverpoint {{ a.lower }}_item.{{ s.name }}{{ idx }};
+{% else %}
+    cp_{{ s.name }}_{{ tag }}: coverpoint {{ a.lower }}_item.{{ s.name }}{{ idx }} {
+      option.auto_bin_max = 16;
+    }
+{% endif %}
+{% endfor %}
+{% elif s.width == "1" %}
+    cp_{{ s.name }}: coverpoint {{ a.lower }}_item.{{ s.name }};
+{% else %}
+    cp_{{ s.name }}: coverpoint {{ a.lower }}_item.{{ s.name }} {
+      option.auto_bin_max = 16;
+    }
+{% endif %}
+{% endfor %}
+  endgroup
+{% endfor %}
+
+  // ===========================================================================
+  // Constructor & Build Phase
+  // ===========================================================================
+  function new(string name = "{{ spec.name }}_coverage", uvm_component parent = null);
+    super.new(name, parent);
+{% for a in spec.cov_agents %}
+    cg_{{ a.lower }} = new();
+{% endfor %}
+  endfunction
+
+  virtual function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+{% for a in spec.cov_agents %}
+    {{ a.lower }}_imp = new("{{ a.lower }}_imp", this);
+{% endfor %}
+{% for a in spec.cov_agents %}
+    {{ a.lower }}_item = {{ a.item }}::type_id::create("{{ a.lower }}_item");
+{% endfor %}
+  endfunction
+
+  // ===========================================================================
+  // Monitor Write Callbacks & Cycle-Aligned Sampling
+  // ===========================================================================
+{% for a in spec.cov_agents %}
+  virtual function void write_{{ a.lower }}({{ a.item }} t);
+    {{ a.lower }}_item = t;
+    {{ a.lower }}_valid = 1'b1;
+    if (all_valid()) sample_and_advance();
+  endfunction
+
+{% endfor %}
+  // True once every connected monitor has written its item for the current cycle
+  virtual function bit all_valid();
+    return {{ spec.cov_agents | map(attribute='lower') | map('suffix', '_valid') | join(' && ') }};
+  endfunction
+
+  // Samples all covergroups for the current clock edge, then advances the shadow state
+  virtual function void sample_and_advance();
+{% for a in spec.cov_agents %}
+    {{ a.lower }}_valid = 1'b0;
+{% endfor %}
+
+    // 1. Sample all covergroups using the current cycle items
+{% for a in spec.cov_agents %}
+    cg_{{ a.lower }}.sample();
+{% endfor %}
+
+    // 2. Advance shadow state for the next cycle
+    update_state();
+  endfunction
+
+  virtual function void update_state();
+    // TODO: Update shadow state variables used by temporal coverage
+  endfunction
+endclass
+
+`endif // {{ spec.upper }}_COVERAGE_SVH

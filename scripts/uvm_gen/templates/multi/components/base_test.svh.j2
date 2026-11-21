@@ -1,0 +1,62 @@
+`ifndef {{ spec.upper }}_BASE_TEST_SVH
+`define {{ spec.upper }}_BASE_TEST_SVH
+
+class {{ spec.name }}_base_test extends uvm_test;
+  `uvm_component_utils({{ spec.name }}_base_test)
+
+  {{ spec.name }}_environment env;
+  {{ spec.name }}_env_cfg_obj env_cfg;
+  {{ spec.name }}_vseq vseq;
+
+  function new(string name = "{{ spec.name }}_base_test", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+
+    // Create and configure the environment config object
+    env_cfg = {{ spec.name }}_env_cfg_obj::type_id::create("env_cfg");
+
+    // Retrieve the virtual interfaces from config_db (set in tb_top)
+{% for a in spec.agents %}
+    if (!uvm_config_db#({{ spec.vif_type(a) }})::get(this, "", "{{ a.vif_key }}", env_cfg.{{ a.vif }}))
+      `uvm_fatal("{{ spec.upper }}_TEST", "{{ a.vif_key }} not found in config_db")
+
+{% endfor %}
+    // Assign all env_cfg members for the env
+{% for a in spec.agents %}
+    env_cfg.{{ spec.name }}_has_{{ a.name }}_agent = 1;
+{% endfor %}
+{% if spec.env.has_scoreboard %}
+    env_cfg.{{ spec.name }}_has_scoreboard = 1;
+{% endif %}
+{% if spec.env.has_coverage %}
+    env_cfg.{{ spec.name }}_has_coverage = 1;
+{% endif %}
+
+    // Set agent active/passive modes
+{% for a in spec.agents %}
+    env_cfg.active_passive_agents["{{ a.name }}"] = {{ a.mode_enum }};
+{% endfor %}
+
+    uvm_config_db#({{ spec.name }}_env_cfg_obj)::set(this, "env", "cfg", env_cfg);
+    env = {{ spec.name }}_environment::type_id::create("env", this);
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    vseq = {{ spec.name }}_vseq::type_id::create("vseq");
+
+    phase.raise_objection(this);
+    vseq.start(env.vseqr);
+    #4ns; // let the monitors capture the DUT response to the last stimulus
+    phase.drop_objection(this);
+  endtask
+endclass
+
+`endif // {{ spec.upper }}_BASE_TEST_SVH

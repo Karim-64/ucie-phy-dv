@@ -10,9 +10,13 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from typing import TYPE_CHECKING
 from xml.etree import ElementTree as ET
 
 from .model import DutPortSpec, DutSpec, EnvFlags, ParamSpec, SignalSpec, UvmEnvSpec
+
+if TYPE_CHECKING:
+    from .multi_model import MultiEnvSpec
 
 _IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
@@ -88,7 +92,9 @@ def _text(node: ET.Element | None, tag: str, parent_desc: str) -> str:
     return value
 
 
-def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
+def parse_spec(xml_path: str | Path) -> UvmEnvSpec | MultiEnvSpec:
+    """Parse an XML spec. Returns a UvmEnvSpec (legacy single-agent format, root
+    <signals>) or a MultiEnvSpec (multi-agent format, root <agents>)."""
     xml_path = Path(xml_path)
     if not xml_path.exists():
         raise SpecError(f"Config file not found: {xml_path}")
@@ -102,9 +108,20 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
     if root.tag != "uvm_env":
         raise SpecError(f"Root element must be <uvm_env>, got <{root.tag}>")
 
-    agent_name = _require_identifier(root.get("name", ""), "uvm_env/@name")
+    if root.find("agents") is not None:
+        if root.find("signals") is not None:
+            raise SpecError(
+                "<agents> and a top-level <signals> cannot be combined: in the multi-agent "
+                "format signals are declared inside <interfaces><interface>"
+            )
+        from .multi_parser import parse_multi  # local import: multi_parser imports this module
+        return parse_multi(root)
 
-    # ---- parameters ----
+    return _parse_single(root)
+
+
+def parse_parameters(root: ET.Element) -> tuple[list[ParamSpec], list[ParamSpec], set[str]]:
+    """Parse the optional <parameters> block. Returns (parameters, localparams, all names)."""
     parameters: list[ParamSpec] = []
     seen_params: set[str] = set()
     localparams: list[ParamSpec] = []
@@ -140,6 +157,61 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
             seen_params.add(lname)
             localparams.append(ParamSpec(name=lname, value=lvalue))
 
+    return parameters, localparams, seen_params
+
+
+def parse_signal(s: ET.Element, known_consts: set[str], reserved: set[str],
+                 clock_name: str, where: str = "") -> SignalSpec:
+    """Parse one <signal> element (name/width/direction/depth/unpacked/idle)."""
+    sname = _require_identifier(s.get("name", ""), f"{where}signal/@name")
+    if sname in reserved or sname == clock_name:
+        raise SpecError(f"{where}signal '{sname}' collides with the clock name '{clock_name}'")
+
+    width = s.get("width", "").strip()
+    if not width:
+        raise SpecError(f"{where}signal '{sname}' is missing @width")
+    width = _check_size(width, f"{where}signal '{sname}' width", known_consts)
+
+    # optional packed outer dimension:  logic [depth-1:0][width-1:0] name
+    depth_raw = s.get("depth")
+    depth = (_check_size(depth_raw, f"{where}signal '{sname}' depth", known_consts)
+             if depth_raw is not None else None)
+
+    # optional unpacked dimension:      logic [width-1:0] name [unpacked-1:0]
+    unp_raw = s.get("unpacked")
+    unpacked = (_check_size(unp_raw, f"{where}signal '{sname}' unpacked", known_consts)
+                if unp_raw is not None else None)
+
+    direction = s.get("direction", "").strip()
+    if direction not in ("drv", "mon"):
+        raise SpecError(
+            f"{where}signal '{sname}' has direction '{direction}'; must be 'drv' or 'mon'"
+        )
+
+    # optional idle/default value used by generated sequence helpers (e.g. rst_n idle="1")
+    idle = s.get("idle")
+    if idle is not None:
+        idle = idle.strip()
+        if not idle or not re.fullmatch(r"[A-Za-z0-9_'\s+\-*/()]+", idle):
+            raise SpecError(f"{where}signal '{sname}' has an invalid @idle value: {idle!r}")
+
+    return SignalSpec(name=sname, width=width, direction=direction, depth=depth,
+                      unpacked=unpacked, idle=idle)
+
+
+def parse_bool(node: ET.Element | None, tag: str, default: bool) -> bool:
+    if node is None:
+        return default
+    val = (node.text or "").strip().lower()
+    if val not in ("true", "false"):
+        raise SpecError(f"<{tag}> must be 'true' or 'false', got: {node.text!r}")
+    return val == "true"
+
+
+def _parse_single(root: ET.Element) -> UvmEnvSpec:
+    agent_name = _require_identifier(root.get("name", ""), "uvm_env/@name")
+    parameters, localparams, seen_params = parse_parameters(root)
+
     # ---- clock ----
     clock_node = root.find("clock")
     if clock_node is None:
@@ -154,35 +226,11 @@ def parse_spec(xml_path: str | Path) -> UvmEnvSpec:
         raise SpecError("<signals> must contain at least one <signal>")
 
     for s in signals_node.findall("signal"):
-        sname = _require_identifier(s.get("name", ""), "signal/@name")
-        if sname in _RESERVED_SIGNAL_NAMES or sname == clock_name:
-            raise SpecError(
-                f"signal '{sname}' collides with the clock name '{clock_name}'"
-            )
-        if sname in seen_signals:
-            raise SpecError(f"Duplicate signal name: '{sname}'")
-        seen_signals.add(sname)
-
-        width = s.get("width", "").strip()
-        if not width:
-            raise SpecError(f"signal '{sname}' is missing @width")
-        width = _check_size(width, f"signal '{sname}' width", seen_params)
-
-        # optional packed outer dimension:  logic [depth-1:0][width-1:0] name
-        depth_raw = s.get("depth")
-        depth = _check_size(depth_raw, f"signal '{sname}' depth", seen_params) if depth_raw is not None else None
-
-        # optional unpacked dimension:      logic [width-1:0] name [unpacked-1:0]
-        unp_raw = s.get("unpacked")
-        unpacked = _check_size(unp_raw, f"signal '{sname}' unpacked", seen_params) if unp_raw is not None else None
-
-        direction = s.get("direction", "").strip()
-        if direction not in ("drv", "mon"):
-            raise SpecError(
-                f"signal '{sname}' has direction '{direction}'; must be 'drv' or 'mon'"
-            )
-
-        signals.append(SignalSpec(name=sname, width=width, direction=direction, depth=depth, unpacked=unpacked))
+        sig = parse_signal(s, seen_params, _RESERVED_SIGNAL_NAMES, clock_name)
+        if sig.name in seen_signals:
+            raise SpecError(f"Duplicate signal name: '{sig.name}'")
+        seen_signals.add(sig.name)
+        signals.append(sig)
 
     if not any(s.is_driven for s in signals):
         raise SpecError("At least one signal must have direction=\"drv\" (nothing to drive)")

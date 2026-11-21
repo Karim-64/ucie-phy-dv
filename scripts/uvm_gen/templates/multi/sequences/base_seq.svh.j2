@@ -1,0 +1,45 @@
+`ifndef {{ agent.prefix | upper }}_BASE_SEQ_SVH
+`define {{ agent.prefix | upper }}_BASE_SEQ_SVH
+
+class {{ agent.cls('base_seq') }} extends uvm_sequence#({{ agent.item }});
+  `uvm_object_utils({{ agent.cls('base_seq') }})
+  `uvm_declare_p_sequencer({{ agent.cls('sequencer') }})
+
+  function new(string name = "{{ agent.cls('base_seq') }}");
+    super.new(name);
+  endfunction
+
+  // Helper task to drive a single {{ agent.name }} cycle and notify the {{ agent.name }} monitor
+  virtual task drive_{{ agent.lower }}_item(
+{%- for s in agent.helper_args %}{{ s.sv_type }} {{ s.name }} = {{ s.idle_value }}{{ ", " if not loop.last }}{% endfor -%}
+  );
+    {{ agent.item }} m_item;
+{% for s in agent.helper_args %}
+    {{ s.sv_type }} _{{ s.name }} = {{ s.name }};
+{% endfor %}
+
+{% if agent.helper_args %}
+    `uvm_do_with(m_item, {
+{% for s in agent.helper_args %}
+      m_item.{{ s.name }} == _{{ s.name }};
+{% endfor %}
+    })
+{% else %}
+    `uvm_do(m_item)
+{% endif %}
+    p_sequencer.seqr_aport.write(m_item);
+  endtask
+
+  // Helper task to drive N idle cycles on the {{ agent.name }} interface
+  virtual task drive_{{ agent.lower }}_idle(int cycles = 1);
+    repeat (cycles) begin
+      drive_{{ agent.lower }}_item();
+    end
+  endtask
+
+  virtual task body();
+    drive_{{ agent.lower }}_idle(1);
+  endtask
+endclass
+
+`endif // {{ agent.prefix | upper }}_BASE_SEQ_SVH

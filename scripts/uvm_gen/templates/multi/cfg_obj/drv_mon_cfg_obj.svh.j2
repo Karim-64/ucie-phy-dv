@@ -1,0 +1,14 @@
+`ifndef {{ agent.prefix | upper }}_DRV_MON_CFG_OBJ_SVH
+`define {{ agent.prefix | upper }}_DRV_MON_CFG_OBJ_SVH
+
+class {{ agent.cls('drv_mon_cfg_obj') }} extends uvm_object;
+  `uvm_object_utils({{ agent.cls('drv_mon_cfg_obj') }})
+
+  {{ spec.vif_type(agent) }} {{ spec.name }}_vif;
+
+  function new(string name = "{{ agent.cls('drv_mon_cfg_obj') }}");
+    super.new(name);
+  endfunction
+endclass
+
+`endif // {{ agent.prefix | upper }}_DRV_MON_CFG_OBJ_SVH

@@ -1,0 +1,40 @@
+`ifndef {{ agent.prefix | upper }}_DRIVER_SVH
+`define {{ agent.prefix | upper }}_DRIVER_SVH
+
+class {{ agent.cls('driver') }} extends uvm_driver #({{ agent.item }});
+  `uvm_component_utils({{ agent.cls('driver') }})
+
+  {{ agent.item }} seq_item;
+  {{ agent.cls('drv_mon_cfg_obj') }} cfg;
+
+  function new(string name = "{{ agent.cls('driver') }}", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    if (!uvm_config_db #({{ agent.cls('drv_mon_cfg_obj') }})::get(this, "", "cfg", cfg))
+      `uvm_fatal("{{ agent.prefix | upper }}_DRV", "{{ agent.cls('drv_mon_cfg_obj') }} not found in config_db for {{ agent.cls('driver') }}")
+    seq_item = {{ agent.item }}::type_id::create("seq_item");
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    forever begin
+      seq_item_port.get_next_item(seq_item);
+
+      @(cfg.{{ spec.name }}_vif.drv_cb);
+{% for s in agent.driven_signals %}
+      cfg.{{ spec.name }}_vif.drv_cb.{{ s.name }} <= seq_item.{{ s.name }};
+{% endfor %}
+
+      seq_item_port.item_done();
+    end
+  endtask
+endclass
+
+`endif // {{ agent.prefix | upper }}_DRIVER_SVH

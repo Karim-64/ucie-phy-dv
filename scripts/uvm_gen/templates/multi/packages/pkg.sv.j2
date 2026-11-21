@@ -1,0 +1,80 @@
+`timescale 1ns/1ps
+package {{ spec.name }}_pkg;
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
+{% if spec.parameters %}
+
+  // Shared design parameters
+{% for p in spec.parameters %}
+  parameter {{ p.name }} = {{ p.value }};
+{% endfor %}
+{% endif %}
+
+  // ---------------------------------------------------------------------------
+  // Configuration Objects (cfg_obj/)
+  // ---------------------------------------------------------------------------
+{% for a in spec.agents %}
+  `include "cfg_obj/{{ a.cls('drv_mon_cfg_obj') }}.svh"
+{% endfor %}
+{% for a in spec.agents %}
+  `include "cfg_obj/{{ a.cls('agt_cfg_obj') }}.svh"
+{% endfor %}
+  `include "cfg_obj/{{ spec.name }}_env_cfg_obj.svh"
+
+  // ---------------------------------------------------------------------------
+  // Sequence Items
+  // ---------------------------------------------------------------------------
+{% for a in spec.agents %}
+  `include "sequences/sequence_items/{{ a.item }}.svh"
+{% endfor %}
+
+  // ---------------------------------------------------------------------------
+  // Sequencers
+  // ---------------------------------------------------------------------------
+{% for a in spec.active_agents %}
+  `include "{{ a.comp_dir }}/{{ a.cls('sequencer') }}.svh"
+{% endfor %}
+  `include "components/{{ spec.name }}_vseqr.svh"
+
+  // ---------------------------------------------------------------------------
+  // Drivers & Monitors
+  // ---------------------------------------------------------------------------
+{% for a in spec.agents %}
+{% if a.is_active %}
+  `include "{{ a.comp_dir }}/{{ a.cls('driver') }}.svh"
+{% endif %}
+  `include "{{ a.comp_dir }}/{{ a.cls('monitor') }}.svh"
+{% endfor %}
+
+  // ---------------------------------------------------------------------------
+  // Agents
+  // ---------------------------------------------------------------------------
+{% for a in spec.agents %}
+  `include "{{ a.comp_dir }}/{{ a.cls('agent') }}.svh"
+{% endfor %}
+
+  // ---------------------------------------------------------------------------
+  // Sequences
+  // ---------------------------------------------------------------------------
+{% for a in spec.active_agents %}
+  `include "{{ a.seq_dir }}/{{ a.cls('base_seq') }}.svh"
+{% endfor %}
+  `include "sequences/{{ spec.name }}_vseq.svh"
+
+  // ---------------------------------------------------------------------------
+  // Scoreboard, Coverage Collector, Environment
+  // ---------------------------------------------------------------------------
+{% if spec.env.has_scoreboard %}
+  `include "components/{{ spec.name }}_scoreboard.svh"
+{% endif %}
+{% if spec.env.has_coverage %}
+  `include "components/{{ spec.name }}_coverage.svh"
+{% endif %}
+  `include "components/{{ spec.name }}_environment.svh"
+
+  // ---------------------------------------------------------------------------
+  // Base Test
+  // ---------------------------------------------------------------------------
+  `include "components/{{ spec.name }}_base_test.svh"
+
+endpackage : {{ spec.name }}_pkg

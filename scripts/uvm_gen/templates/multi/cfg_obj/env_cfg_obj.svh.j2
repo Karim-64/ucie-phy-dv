@@ -1,0 +1,28 @@
+`ifndef {{ spec.upper }}_ENV_CFG_OBJ_SVH
+`define {{ spec.upper }}_ENV_CFG_OBJ_SVH
+
+class {{ spec.name }}_env_cfg_obj extends uvm_object;
+  `uvm_object_utils({{ spec.name }}_env_cfg_obj)
+
+  // Virtual interfaces (one per agent)
+{% for a in spec.agents %}
+  {{ spec.vif_type(a) }} {{ a.vif }};
+{% endfor %}
+
+  uvm_active_passive_enum active_passive_agents [string];
+{% if spec.env.has_scoreboard %}
+  bit {{ spec.name }}_has_scoreboard;
+{% endif %}
+{% if spec.env.has_coverage %}
+  bit {{ spec.name }}_has_coverage;
+{% endif %}
+{% for a in spec.agents %}
+  bit {{ spec.name }}_has_{{ a.name }}_agent;
+{% endfor %}
+
+  function new(string name = "{{ spec.name }}_env_cfg_obj");
+    super.new(name);
+  endfunction
+endclass
+
+`endif // {{ spec.upper }}_ENV_CFG_OBJ_SVH
