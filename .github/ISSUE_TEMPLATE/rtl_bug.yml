@@ -1,6 +1,8 @@
 name: UCIe RTL / DV Bug Report
 description: Report an RTL bug, testbench bug, or specification ambiguity in the UCIe PHY.
 title: "[Bug]: "
+labels: ["rtl-bug"]
+type: Bug
 body:
   - type: dropdown
     id: module
