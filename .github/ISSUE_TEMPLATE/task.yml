@@ -1,0 +1,77 @@
+name: UCIe Task / Block Status
+description: Track non-bug UCIe PHY work (TB bring-up, RTL features, coverage closure, documentation).
+title: "[Task]: "
+labels: ["task"]
+type: Task
+body:
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module / Sub-block
+      description: Which UCIe PHY module or sub-block does this task belong to?
+      options:
+        - SBTX
+        - SBRX
+        - LTSM
+        - Credits
+        - Adapter
+        - Top/Integration
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Stage
+      description: Current verification or design stage for this work item.
+      options:
+        - VPlan
+        - RTL Design
+        - TB Bring-up
+        - Regression
+        - Coverage Closure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Work Category
+      description: Kind of non-bug engineering work.
+      options:
+        - TB Bring-up
+        - RTL Feature
+        - Coverage Closure
+        - Documentation
+        - Infrastructure / Scripts
+    validations:
+      required: false
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary / Goal
+      description: Concise description of the task, target sub-block behavior, or milestone.
+      placeholder: Describe the feature, verification task, or coverage goal...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Scope / Acceptance Criteria
+      description: Concrete deliverables or exit criteria (e.g., tests passing, 100% functional/code coverage, PR merged).
+      placeholder: |
+        - [ ] Deliverable 1
+        - [ ] Deliverable 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Blockers
+      description: Related issues, PRs, spec sections, or upstream RTL/TB dependencies.
+      placeholder: None or list blocking issues/PRs...
+    validations:
+      required: false
