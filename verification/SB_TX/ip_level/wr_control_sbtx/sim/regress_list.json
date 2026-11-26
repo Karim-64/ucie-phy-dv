@@ -1,0 +1,106 @@
+{
+  "top_module": "tb_top",
+  "compile_file": "compile.f",
+  "default_timeout_sec": 1000000,
+  "vlog_opts": [],
+  "vopt_opts": [
+    "-debug",
+    "+designfile=design.bin"
+  ],
+  "vsim_opts": [
+    "-onfinish",
+    "stop",
+    "-qwavedb=+signal+wavefile=waveform.qdb"
+  ],
+  "tests": [
+    {
+      "name": "wr_control_sbtx_reset_test",
+      "seeds": [
+        101
+      ],
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_MEDIUM"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_rar_test",
+      "seeds": [
+        201
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_msg_test",
+      "seeds": [
+        301
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_comp_test",
+      "seeds": [
+        401
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_parity_err_test",
+      "seeds": [
+        501
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_b2b_pipeline_test",
+      "seeds": [
+        601
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_mid_pkt_rst_test",
+      "seeds": [
+        701
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_corner_cases_test",
+      "seeds": [
+        801
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "wr_control_sbtx_full_rand_stress_test",
+      "seeds": [
+        901
+      ],
+      "num_random_seeds": 0,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    }
+  ]
+}

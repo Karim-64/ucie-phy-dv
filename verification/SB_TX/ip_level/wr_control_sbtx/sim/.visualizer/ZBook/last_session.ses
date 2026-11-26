@@ -1,0 +1,46 @@
+<!-- THIS IS TOOL GENERATED SESSION FILE. PLEASE DO NOT MODIFY THIS -->
+<!DOCTYPE visualizer_session>
+<session skip_do_file="0" version="3">
+ <app argc="7">
+  <argv pos="0" value="visualizer"/>
+  <argv pos="1" value="-designfile"/>
+  <argv pos="2" value=".\sim_runs\design.bin"/>
+  <argv pos="3" value="-wavefile"/>
+  <argv pos="4" value=".\sim_runs\wr_control_sbtx_parity_err_test_seed501\waveform.qdb"/>
+  <argv pos="5" value="-do"/>
+  <argv pos="6" value="dump_waves.do"/>
+ </app>
+ <window_config>
+  <dockareas bottom="273" top="0" right="450" left="300"/>
+  <taborder bottom="transcript+" left="structure+"/>
+  <activetab bottom="transcript" activewindow="structure" left="structure"/>
+  <window type="structure" dock_location="left" visible="1" x="0" y="0" undocked="0"/>
+  <window type="transcript" dock_location="bottom" visible="1" x="0" y="0" undocked="0"/>
+  <window type="rtl" visible="1" width="1920" x="-1" y="-9" height="991" undocked="0"/>
+  <window type="testbench" dock_location="left" visible="0" x="0" y="0" undocked="0"/>
+  <window type="wave" dock_location="bottom" visible="0" width="1920" x="1927" y="-9" height="991" undocked="1"/>
+  <window type="source" dock_location="center" visible="1" x="0" y="0" undocked="0" firstVisibleLine="1" path="D:/University/Digital_Verification/UCIe_GP/git/ucie-phy-dv/verification/SB_TX/ip_level/wr_control_sbtx/tb/tb_top.sv"/>
+ </window_config>
+ <wave_file_mgr>
+  <waveFile tagName="F0" waveType="0" fileName="D:/University/Digital_Verification/UCIe_GP/git/ucie-phy-dv/verification/SB_TX/ip_level/wr_control_sbtx/sim/.\sim_runs\wr_control_sbtx_parity_err_test_seed501\waveform.qdb"/>
+ </wave_file_mgr>
+ <gui>
+  <main_window visible="1">
+   <srcbrowser primary="true" instancename="tb_top" filepath="D:/University/Digital_Verification/UCIe_GP/git/ucie-phy-dv/verification/SB_TX/ip_level/wr_control_sbtx/tb/tb_top.sv"/>
+   <sourcetclcommands>
+    <tcl command="src activate source"/>
+    <tcl command="src top 2"/>
+   </sourcetclcommands>
+   <edge_gui cur_selection="AnyEdge"/>
+  </main_window>
+  <watchTower_cur_setting curRadix="8" curDisplayTimeUnit="-12" curActiveWaveFile="F0" curDisplayTimeUnitStr="1ps" customDisplayTimeUnitListStr="">
+   <curTime hightime="0" lowtime="187481"/>
+  </watchTower_cur_setting>
+  <structure selection="tb_top"/>
+  <transcript/>
+ </gui>
+ <wave_mgr sync_time_range="0"/>
+ <mem_mgr/>
+ <windows/>
+ <dut selection="tb_top"/>
+</session>

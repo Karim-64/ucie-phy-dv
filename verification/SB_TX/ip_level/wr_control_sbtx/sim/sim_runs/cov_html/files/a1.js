@@ -1,0 +1,2 @@
+var g_data = {"12":{"pr":"/tb_top/dut/wr_ctrl_sbtx_sva_inst","ty":2,"dui":8,"dun":"work.wr_ctrl_sbtx_sva","asserts":[{"n":["assert__lp_cfg_vld_even_cycles_sva"],"h":[0,9]},{"n":["assert__lp_cfg_vld_2_or_4_cycles_assert"],"h":[0,9]},{"n":["assert__Marker_flags_assert"],"h":[0,9]},{"n":["assert__Error_Handler_assert"],"h":[0,4]},{"n":["assert__UIE_assert"],"h":[0,5]},{"n":["#ublk#58549249#6/immed__7"],"h":[0,9]}],"ad":0}}
+processAssertionsData(g_data);

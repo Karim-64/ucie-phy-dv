@@ -1,0 +1,2 @@
+var g_data = {"10":[9,"wr_control_sbtx_if_inst",1],"12":[11,"wr_ctrl_sbtx_sva_inst",1],"11":[9,"dut",1],"9":[-1,"tb_top",1],"14":[-1,"wr_control_sbtx_pkg",1],"91":[-1,"Universal_pkg",1]};
+processInstLinks(g_data);
