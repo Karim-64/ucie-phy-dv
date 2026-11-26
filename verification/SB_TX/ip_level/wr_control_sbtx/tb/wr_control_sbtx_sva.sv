@@ -15,14 +15,14 @@ module wr_ctrl_sbtx_sva (
 
   property UIE_assert;
     @(posedge wr_control_sbtx_if_inst.CLK) disable iff(~wr_control_sbtx_if_inst.RST_n)
-    (wr_control_sbtx_if_inst.UIE) |-> wr_control_sbtx_if_inst.FIFO_WR;
+    (wr_control_sbtx_if_inst.UIE) |-> !wr_control_sbtx_if_inst.FIFO_WR;
   endproperty
   assert property (UIE_assert);
   cover property (UIE_assert);
 
   property Error_Handler_assert;
     @(posedge wr_control_sbtx_if_inst.CLK) disable iff(~wr_control_sbtx_if_inst.RST_n)
-    (wr_control_sbtx_if_inst.Error_Handler) |-> (wr_control_sbtx_if_inst.FIFO_WR && wr_control_sbtx_if_inst.UIE);
+    (wr_control_sbtx_if_inst.Error_Handler) |-> (!wr_control_sbtx_if_inst.FIFO_WR && wr_control_sbtx_if_inst.UIE);
   endproperty
   assert property (Error_Handler_assert);
   cover property (Error_Handler_assert);

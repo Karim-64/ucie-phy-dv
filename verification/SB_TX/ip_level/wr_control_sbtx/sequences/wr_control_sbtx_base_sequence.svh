@@ -9,126 +9,7 @@ class wr_control_sbtx_base_sequence extends uvm_sequence #(wr_control_sbtx_seque
     super.new(name);
   endfunction
 
-  // Helper task to build and send a multi-phase packet using the pin-level sequence item
-  task send_sideband_packet(logic [4:0] opcode, logic [7:0] msgcode, bit has_data);
-    logic [63:0] header;
-    logic [63:0] data_payload;
-    bit          cp_calc;
-    bit          dp_calc;
-    
-    // 1. Construct the 64-bit Header
-    header = '0;
-    header[4:0]   = opcode;
-    header[21:14] = msgcode;
-    
-    // 2. Generate Dummy Data if required
-    if (has_data) begin
-      data_payload = 64'hDEADBEEF_CAFEBABE;
-      dp_calc = ^data_payload; // Data Parity
-    end else begin
-      data_payload = 64'h0;
-      dp_calc = 1'b0;          // DP must be 0 if no data
-    end
-    
-    // 3. Calculate Parity and Insert into Phase 1 (Upper 32 bits)
-    cp_calc = ^header[61:0];   // Control Parity
-    header[62] = cp_calc;
-    header[63] = dp_calc;
-    
-    // ---------------------------------------------------------
-    // Send Phase 0 (Header Lower 32 bits)
-    // ---------------------------------------------------------
-    req = wr_control_sbtx_sequence_item#()::type_id::create("req_ph0");
-    start_item(req);
-    if (!req.randomize() with {
-        RST_n      == 1'b1;
-        lp_cfg_vld == 1'b1;
-        lp_cfg     == header[31:0];
-    }) `uvm_error("SEQ", "Randomization failed for Phase 0")
-    finish_item(req);       p_sequencer.seqr_aport.write(req);
-
-    
-    // ---------------------------------------------------------
-    // Send Phase 1 (Header Upper 32 bits)
-    // ---------------------------------------------------------
-    req = wr_control_sbtx_sequence_item#()::type_id::create("req_ph1");
-    start_item(req);
-    if (!req.randomize() with {
-        RST_n      == 1'b1;
-        lp_cfg_vld == 1'b1;
-        lp_cfg     == header[63:32];
-    }) `uvm_error("SEQ", "Randomization failed for Phase 1")
-    finish_item(req);       p_sequencer.seqr_aport.write(req);
-
-    
-    // ---------------------------------------------------------
-    // Send Data Phases (If applicable)
-    // ---------------------------------------------------------
-    if (has_data) begin
-        // Send Phase 2 (Data Lower 32 bits)
-        req = wr_control_sbtx_sequence_item#()::type_id::create("req_ph2");
-        start_item(req);
-        if (!req.randomize() with {
-            RST_n      == 1'b1;
-            lp_cfg_vld == 1'b1;
-            lp_cfg     == data_payload[31:0];
-        }) `uvm_error("SEQ", "Randomization failed for Phase 2")
-        finish_item(req);       p_sequencer.seqr_aport.write(req);
-
-        
-        // Send Phase 3 (Data Upper 32 bits)
-        req = wr_control_sbtx_sequence_item#()::type_id::create("req_ph3");
-        start_item(req);
-        if (!req.randomize() with {
-            RST_n      == 1'b1;
-            lp_cfg_vld == 1'b1;
-            lp_cfg     == data_payload[63:32];
-        }) `uvm_error("SEQ", "Randomization failed for Phase 3")
-        finish_item(req);       p_sequencer.seqr_aport.write(req);
-
-    end
-    
-    //Insert a single cycle of de-assertion between packets (optional idle cycle)
-    req = wr_control_sbtx_sequence_item#()::type_id::create("req_idle");
-    start_item(req);
-    if (!req.randomize() with {
-        RST_n      == 1'b1;
-        lp_cfg_vld == 1'b0;
-        lp_cfg     == 32'h0;
-    }) `uvm_error("SEQ", "Randomization failed for Idle Phase")
-    finish_item(req);       p_sequencer.seqr_aport.write(req);
-
-    
-  endtask
-
-  task body();
-    `uvm_info("SEQ", "Starting wr_control_sbtx_base_sequence...", UVM_LOW)
-    req = wr_control_sbtx_sequence_item#()::type_id::create("req");
-    start_item(req);
-    req.randomize() with {RST_n==0;};
-    finish_item(req);       p_sequencer.seqr_aport.write(req);
-
-    // Transaction 1: Message Without Data (Start Tx Init D to C eye sweep req)
-    // Opcode: 5'b10010 (MSG_NO_DATA), MsgCode: 8'h85
-    send_sideband_packet(5'b10010, 8'h85, 1'b0);
-
-    // Transaction 2: Message With 64-bit Data Payload (Tx Init D to C results resp)
-    // Opcode: 5'b11011 (MSG_WITH_64B_DATA), MsgCode: 8'h8A
-    send_sideband_packet(5'b11011, 8'h8A, 1'b1);
-
-    // Transaction 3: Register Access Request (64-bit Configuration Write)
-    // Opcode: 5'b01101 (CFG_WR_64B), MsgCode: 8'h00 (Not used for RAR)
-    send_sideband_packet(5'b01101, 8'h00, 1'b1);
-
-    // Transaction 4: Completion Without Data (Sideband Completion)
-    // Opcode: 5'b10000 (CMPL_NO_DATA), MsgCode: 8'h00 (Not used for Completions)
-    send_sideband_packet(5'b10000, 8'h00, 1'b0);
-
-    `uvm_info("SEQ", "Finished wr_control_sbtx_base_sequence.", UVM_LOW)
-  endtask
-
-  //Reusable Tasks that child sequences will call
-
+  // Drive a single LCLK cycle onto the DUT via sequencer + monitor TLM port
   virtual task drive_cycle(logic rst_n, logic vld, logic [31:0] cfg_data);
     wr_control_sbtx_sequence_item cycle_req;
     cycle_req = wr_control_sbtx_sequence_item#()::type_id::create("cycle_req");
@@ -138,31 +19,86 @@ class wr_control_sbtx_base_sequence extends uvm_sequence #(wr_control_sbtx_seque
     cycle_req.lp_cfg     = cfg_data;
     finish_item(cycle_req);
     p_sequencer.seqr_aport.write(cycle_req);
-
   endtask
 
-  virtual task send_reset(int reset_cycles = 1);
+  // Assert active-low reset for reset_cycles clocks
+  virtual task send_reset(int reset_cycles = 2);
     repeat (reset_cycles) begin
-      drive_cycle(1'b0, 1'b0, 32'h0);
+      drive_cycle(1'b0, 1'b0, 32'h0000_0000);
     end
   endtask
 
-  virtual task send_packet(wr_control_sbtx_sequence_item pkt);
-    // 1. Send Header Phase 0 & Phase 1
+  // Flush trailing pipeline cycles so 4-phase Header+Data outputs complete before test ends
+  virtual task drain_pipeline(int drain_cycles = 3);
+    repeat (drain_cycles) begin
+      drive_cycle(1'b1, 1'b0, 32'h0000_0000);
+    end
+  endtask
+
+  // Drive a randomized wr_control_sbtx_sequence_item (2-phase or 4-phase + optional idle gap)
+  virtual task send_packet(wr_control_sbtx_sequence_item pkt, logic [31:0] idle_bus_val = 32'h0000_0000);
+    // 1. Header Phase 0 & Phase 1
     drive_cycle(1'b1, 1'b1, pkt.full_header[31:0]);
     drive_cycle(1'b1, 1'b1, pkt.full_header[63:32]);
 
-    // 2. Send Data Phase 0 & Phase 1 (if opcode carries data)
+    // 2. Data Phase 0 & Phase 1 (if packet carries 64-bit data payload)
     if (pkt.has_data) begin
       drive_cycle(1'b1, 1'b1, pkt.data_payload[31:0]);
       drive_cycle(1'b1, 1'b1, pkt.data_payload[63:32]);
     end
 
-    // 3. Send Trailing Idle Cycles (if pkt.num_idle_cycles > 0)
-    //    If num_idle_cycles == 0, the next packet starts immediately Back-to-Back!
+    // 3. Inter-packet idle cycles (num_idle_cycles == 0 -> immediate back-to-back)
     repeat (pkt.num_idle_cycles) begin
-      drive_cycle(1'b1, 1'b0, 32'h0);
+      drive_cycle(1'b1, 1'b0, idle_bus_val);
     end
+  endtask
+
+  // Legacy helper kept for backward compatibility
+  task send_sideband_packet(logic [4:0] opcode, logic [7:0] msgcode, bit has_data);
+    logic [63:0] header;
+    logic [63:0] data_payload;
+    bit          cp_calc;
+    bit          dp_calc;
+
+    header        = '0;
+    header[4:0]   = opcode;
+    header[21:14] = msgcode;
+
+    if (has_data) begin
+      if (opcode inside {SB_MEM_WR_32B, SB_CFG_WR_32B, SB_CMPL_WITH_32B_DATA})
+        data_payload = 64'h0000_0000_CAFE_BABE;
+      else
+        data_payload = 64'hDEAD_BEEF_CAFE_BABE;
+      dp_calc = ^data_payload;
+    end else begin
+      data_payload = 64'h0;
+      dp_calc      = 1'b0;
+    end
+
+    cp_calc    = ^header[61:0];
+    header[62] = cp_calc;
+    header[63] = dp_calc;
+
+    drive_cycle(1'b1, 1'b1, header[31:0]);
+    drive_cycle(1'b1, 1'b1, header[63:32]);
+    if (has_data) begin
+      drive_cycle(1'b1, 1'b1, data_payload[31:0]);
+      drive_cycle(1'b1, 1'b1, data_payload[63:32]);
+    end
+    drive_cycle(1'b1, 1'b0, 32'h0);
+  endtask
+
+  virtual task body();
+    `uvm_info("SEQ", "Starting wr_control_sbtx_base_sequence...", UVM_LOW)
+    send_reset(2);
+
+    send_sideband_packet(SB_MSG_NO_DATA,       SB_REQ_TESTS,  1'b0);
+    send_sideband_packet(SB_MSG_WITH_64B_DATA, SB_RESP_TESTS, 1'b1);
+    send_sideband_packet(SB_CFG_WR_64B,        SB_NOP_CREDIT, 1'b1);
+    send_sideband_packet(SB_CMPL_NO_DATA,      SB_NOP_CREDIT, 1'b0);
+
+    drain_pipeline(3);
+    `uvm_info("SEQ", "Finished wr_control_sbtx_base_sequence.", UVM_LOW)
   endtask
 endclass
 

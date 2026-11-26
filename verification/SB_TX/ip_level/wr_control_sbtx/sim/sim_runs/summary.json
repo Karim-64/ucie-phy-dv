@@ -1,0 +1,160 @@
+{
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "results": [
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_b2b_pipeline_test",
+        "seed": 601,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 193.50089039996965,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_b2b_pipeline_test_seed601\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_b2b_pipeline_test_seed601\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_reset_test",
+        "seed": 101,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_MEDIUM"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 198.0098722000257,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_reset_test_seed101\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_reset_test_seed101\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_comp_test",
+        "seed": 401,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 199.77047519996995,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_comp_test_seed401\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_comp_test_seed401\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_parity_err_test",
+        "seed": 501,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 200.5530203000526,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_parity_err_test_seed501\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_parity_err_test_seed501\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_rar_test",
+        "seed": 201,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 201.22149780002655,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_rar_test_seed201\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_rar_test_seed201\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_msg_test",
+        "seed": 301,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 201.6573658999987,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_msg_test_seed301\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_msg_test_seed301\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_mid_pkt_rst_test",
+        "seed": 701,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 171.25607860001037,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_mid_pkt_rst_test_seed701\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_mid_pkt_rst_test_seed701\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_corner_cases_test",
+        "seed": 801,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 173.2198024999816,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_corner_cases_test_seed801\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_corner_cases_test_seed801\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    },
+    {
+      "job": {
+        "test_name": "wr_control_sbtx_full_rand_stress_test",
+        "seed": 901,
+        "plusargs": [
+          "+UVM_VERBOSITY=UVM_LOW"
+        ],
+        "timeout_sec": 1000000
+      },
+      "status": "PASS",
+      "duration_sec": 175.45245580002666,
+      "log_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_full_rand_stress_test_seed901\\sim.log",
+      "ucdb_path": "D:\\University\\Digital_Verification\\UCIe_GP\\git\\ucie-phy-dv\\verification\\SB_TX\\ip_level\\wr_control_sbtx\\sim\\sim_runs\\wr_control_sbtx_full_rand_stress_test_seed901\\cov.ucdb",
+      "reason": "OK",
+      "failure_signature": "",
+      "repro_cmd": ""
+    }
+  ]
+}

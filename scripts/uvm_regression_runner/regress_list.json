@@ -1,0 +1,45 @@
+{
+  "top_module": "top_tb",
+  "compile_file": "compile.f",
+  "default_timeout_sec": 300,
+  "vlog_opts": [],
+  "vopt_opts": [
+    "-debug",
+    "+designfile=design.bin"
+  ],
+  "vsim_opts": [
+    "-onfinish",
+    "stop",
+    "-qwavedb=+signal+wavefile=waveform.qdb"
+  ],  
+  "tests": [
+    {
+      "name": "d2d_sanity_test",
+      "seeds": [
+        101
+      ],
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_MEDIUM"
+      ]
+    },
+    {
+      "name": "d2d_back2back_test",
+      "seeds": [
+        201
+      ],
+      "num_random_seeds": 4,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW"
+      ]
+    },
+    {
+      "name": "d2d_parity_err_test",
+      "num_random_seeds": 3,
+      "plusargs": [
+        "+UVM_VERBOSITY=UVM_LOW",
+        "+ERR_RATE=20"
+      ],
+      "timeout_sec": 180
+    }
+  ]
+}

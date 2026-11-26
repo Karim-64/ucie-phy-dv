@@ -8,9 +8,9 @@ input  logic [NC-1:0] lp_cfg                , // Data from the adapter
 output logic [2*NC-1:0] Interface_Message_exp   , // 2 phases from the message  (Data or Header)
 output logic Data_Marker_exp,Reg_Acc_Marker_exp     , // marker to mark that the Message is with Data/is Register Access Request
 output logic Reg_Acc_Data_Marker_exp,Comp_Marker_exp, // marker to mark that the RAR is with Data/is completion Message
-output logic Req_Resp_Marker_exp                , // marker to mark that the Message is Request or Response
-output logic Error_Handler_exp                  ,
-output logic FIFO_WR_exp                        , // write enable for the FIFO to write the 2 phases
+output logic Req_Resp_Marker_exp                    , // marker to mark that the Message is Request or Response
+output logic Error_Handler_exp                  		,
+output logic FIFO_WR_exp                        		, // write enable for the FIFO to write the 2 phases
 
 output logic UIE_exp                              // uncorrectable internal error is detected 
 );
@@ -213,5 +213,4 @@ always @(*) begin
             end
         endcase
 end
-
 endmodule

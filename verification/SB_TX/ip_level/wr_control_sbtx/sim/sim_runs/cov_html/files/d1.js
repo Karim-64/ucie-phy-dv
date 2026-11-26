@@ -1,0 +1,2 @@
+var g_data = {"12":{"pr":"/tb_top/dut/wr_ctrl_sbtx_sva_inst","ty":2,"dui":8,"dun":"work.wr_ctrl_sbtx_sva","direct":[{"n":["cover__lp_cfg_vld_even_cycles_sva"],"h":10233},{"n":["cover__lp_cfg_vld_2_or_4_cycles_assert"],"h":10299},{"n":["cover__Marker_flags_assert"],"h":13617},{"n":["cover__Error_Handler_assert"],"h":2341},{"n":["cover__UIE_assert"],"h":3564},{"n":["#ublk#58549249#6/i_cover__10"],"h":196}]}};
+processDirectivesData(g_data);

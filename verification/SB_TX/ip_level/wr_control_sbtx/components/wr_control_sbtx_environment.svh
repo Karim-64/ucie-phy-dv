@@ -48,7 +48,7 @@ class wr_control_sbtx_environment extends uvm_env;
 
     if (cfg.wr_control_sbtx_has_agent) begin
       if (cfg.wr_control_sbtx_has_scoreboard)
-        agt.agt_aport.connect(sb.sb_aimp);
+        agt.agt_aport.connect(sb.sb_aexp);
 
       if (cfg.wr_control_sbtx_has_subscriber)
         agt.agt_aport.connect(sub.analysis_export);

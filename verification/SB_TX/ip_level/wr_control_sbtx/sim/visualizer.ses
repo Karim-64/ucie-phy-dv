@@ -1,0 +1,97 @@
+<!-- THIS IS TOOL GENERATED SESSION FILE. PLEASE DO NOT MODIFY THIS -->
+<!DOCTYPE visualizer_session>
+<session skip_do_file="0" version="3">
+ <app argc="7">
+  <argv value="visualizer" pos="0"/>
+  <argv value="-designfile" pos="1"/>
+  <argv value=".\sim_runs\design.bin" pos="2"/>
+  <argv value="-wavefile" pos="3"/>
+  <argv value=".\sim_runs\wr_control_sbtx_corner_cases_test_seed801\waveform.qdb" pos="4"/>
+  <argv value="-do" pos="5"/>
+  <argv value="dump_waves.do" pos="6"/>
+ </app>
+ <window_config>
+  <dockareas bottom="273" left="300" top="0" right="450"/>
+  <taborder bottom="transcript+" left="structure+"/>
+  <activetab bottom="transcript" left="structure" activewindow="structure"/>
+  <window y="0" type="structure" x="0" visible="1" dock_location="left" undocked="0"/>
+  <window y="0" type="transcript" x="0" visible="1" dock_location="bottom" undocked="0"/>
+  <window y="-9" type="rtl" x="-1" width="1920" height="991" visible="1" undocked="0"/>
+  <window y="0" type="testbench" x="0" visible="0" dock_location="left" undocked="0"/>
+  <window y="-9" type="wave" x="-1" width="1920" height="991" visible="1" dock_location="bottom" undocked="1"/>
+  <window y="0" type="source" firstVisibleLine="1" x="0" visible="1" dock_location="center" undocked="0" path="D:/University/Digital_Verification/UCIe_GP/git/ucie-phy-dv/verification/SB_TX/ip_level/wr_control_sbtx/tb/tb_top.sv"/>
+ </window_config>
+ <wave_file_mgr>
+  <waveFile fileName="D:/University/Digital_Verification/UCIe_GP/git/ucie-phy-dv/verification/SB_TX/ip_level/wr_control_sbtx/sim/.\sim_runs\wr_control_sbtx_corner_cases_test_seed801\waveform.qdb" waveType="0" tagName="F0"/>
+ </wave_file_mgr>
+ <gui>
+  <main_window visible="1">
+   <srcbrowser instancename="tb_top" primary="true" filepath="D:/University/Digital_Verification/UCIe_GP/git/ucie-phy-dv/verification/SB_TX/ip_level/wr_control_sbtx/tb/tb_top.sv"/>
+   <sourcetclcommands>
+    <tcl command="src activate source"/>
+    <tcl command="src top 2"/>
+   </sourcetclcommands>
+   <edge_gui cur_selection="AnyEdge"/>
+  </main_window>
+  <watchTower_cur_setting curDisplayTimeUnit="-12" curRadix="8" curActiveWaveFile="F0" customDisplayTimeUnitListStr="" curDisplayTimeUnitStr="1ps">
+   <curTime hightime="0" lowtime="286818"/>
+  </watchTower_cur_setting>
+  <structure selection="tb_top"/>
+  <transcript/>
+  <wave name="Wave0">
+   <timeunit value="14"/>
+   <frequnit value="2"/>
+   <showdiff value="0"/>
+  </wave>
+ </gui>
+ <wave_mgr sync_time_range="0">
+  <waveWindow displayTimeUnit="-12" trackViewToTime="1" signalHeight="21" displayGrid="0" alignBaseName="0" displayRadixWithValue="1" showMarkers="1" waveWidth="1610" displayFileTag="1" displayLeadingZeros="0" valueWidth="83" displayScopeName="1" justifySignalPath="Right" displayGlobalView="1" value_tooltip="0" nameWidth="179" secNudge="1" swapRepresentationOfX="0" wintype="4" primNudge="1" snapToEdge="1" displayTimeUnitStr="1ps" showSecCursor="0">
+   <window name="Wave0">
+    <timeunit value="14"/>
+    <frequnit value="2"/>
+    <showdiff value="0"/>
+   </window>
+   <viewPort>
+    <beginTime hightime="0" lowtime="0"/>
+    <endTime hightime="0" lowtime="631000"/>
+    <beginViewTime hightime="0" lowtime="276258"/>
+    <endViewTime hightime="0" lowtime="297379"/>
+    <beginLastViewTime hightime="0" lowtime="276258"/>
+    <endLastViewTime hightime="0" lowtime="297379"/>
+   </viewPort>
+   <primCursor hightime="0" lowtime="286818"/>
+   <wavetclcommands>
+    <tcl command="wave update off"/>
+    <tcl command="wave clearselection"/>
+    <tcl commandblock="custom radix definitions"></tcl>
+    <tcl command="wave update off"/>
+    <tcl command="wave zoom range 276258 297379"/>
+    <tcl command="wave group {Clock &amp; Reset} -backgroundcolor #004466"/>
+    <tcl command="wave add -group {Clock &amp; Reset} tb_top.wr_control_sbtx_if_inst.CLK -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {Clock &amp; Reset} tb_top.wr_control_sbtx_if_inst.RST_n -tag F0 -radix hexadecimal -select"/>
+    <tcl command="wave insertion [expr [wave index insertpoint] + 1]"/>
+    <tcl command="wave group {DUT Inputs} -backgroundcolor #006666"/>
+    <tcl command="wave add -group {DUT Inputs} tb_top.wr_control_sbtx_if_inst.lp_cfg_vld -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Inputs} tb_top.wr_control_sbtx_if_inst.lp_cfg -tag F0 -radix hexadecimal"/>
+    <tcl command="wave insertion [expr [wave index insertpoint] + 1]"/>
+    <tcl command="wave group {DUT Outputs} -backgroundcolor #226600"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.FIFO_WR -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.Interface_Message -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.Data_Marker -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.Reg_Acc_Marker -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.Reg_Acc_Data_Marker -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.Comp_Marker -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.Req_Resp_Marker -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.Error_Handler -tag F0 -radix hexadecimal"/>
+    <tcl command="wave add -group {DUT Outputs} tb_top.wr_control_sbtx_if_inst.UIE -tag F0 -radix hexadecimal"/>
+    <tcl command="wave insertion [expr [wave index insertpoint] + 1]"/>
+    <tcl command="wave update on"/>
+    <tcl command="wave top 0"/>
+    <tcl command=""/>
+   </wavetclcommands>
+  </waveWindow>
+ </wave_mgr>
+ <mem_mgr/>
+ <windows/>
+ <dut selection="tb_top"/>
+</session>
